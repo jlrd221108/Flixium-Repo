@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='utf-8'?>
+<addons>
+  <addon id="repository.flixium" name="Flixium Repo" version="1.0.0" provider-name="Jack Davison">
+    <requires>
+      <import addon="xbmc.addon" version="21.0.0" />
+    </requires>
+    <extension point="xbmc.addon.repository" name="Flixium Repo">
+      <dir minversion="21.0.0" maxversion="21.9.999">
+        <info>https://raw.githubusercontent.com/jlrd221108/Flixium-Repo/main/index/omega/addons.xml</info>
+        <checksum verify="sha256">https://raw.githubusercontent.com/jlrd221108/Flixium-Repo/main/index/omega/addons.xml.sha256</checksum>
+        <datadir>https://github.com/jlrd221108/Flixium-Repo/releases/download/</datadir>
+        <artdir>https://raw.githubusercontent.com/jlrd221108/Flixium-Repo/main/artwork/</artdir>
+        <hashes>sha256</hashes>
+      </dir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">The home of Flixium for Kodi.</summary>
+      <description lang="en_GB">Install Flixium, its companion helper and the matching native visualizer and lyrics renderer for Windows x64 or Android. Packages are selected automatically for your Kodi platform.</description>
+      <disclaimer lang="en_GB">Independent project; not affiliated with Team Kodi. No media content is supplied. Native builds target Kodi 21 Omega.</disclaimer>
+      <platform>all</platform>
+      <license>MIT</license>
+      <website>https://github.com/jlrd221108/Flixium-Repo</website>
+      <source>https://github.com/jlrd221108/Flixium-Repo</source>
+      <forum>https://github.com/jlrd221108/Flixium-Repo/issues</forum>
+      <news>Initial release: Flixium skin, helper and native visualizer builds for five platforms.</news>
+      <assets>
+        <icon>repository.flixium/resources/icon.png</icon>
+        <fanart>repository.flixium/resources/fanart.jpg</fanart>
+      </assets>
+      <path>v1.0.0/repository.flixium-1.0.0.zip</path>
+    </extension>
+  </addon>
+  <addon id="script.flixium.helper" name="Flixium Helper" version="1.0.44" provider-name="Jack Davison">
+    <requires>
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.pil" version="5.1.0" />
+    </requires>
+    <extension point="xbmc.python.library" library="resources/lib/default.py" />
+    <extension point="xbmc.python.pluginsource" library="resources/lib/default.py">
+      <provides>audio video</provides>
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/service.py" start="startup" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Artwork effects and caching for Flixium.</summary>
+      <description lang="en_GB">The companion service for Flixium, providing adaptive background blur, artwork colours and cached image processing.</description>
+      <assets>
+        <icon>script.flixium.helper/resources/icon.png</icon>
+      </assets>
+      <platform>all</platform>
+      <license>GPL-2.0-only, CC BY-SA 3.0 (MQ5 translations)</license>
+      <path>v1.0.0/script.flixium.helper-1.0.44.zip</path>
+      <website>https://github.com/jlrd221108/Flixium-Repo</website>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+    </extension>
+  </addon>
+  <addon id="skin.flixium" version="1.1.23" name="Flixium" provider-name="Jack Davison">
+    <requires>
+      <import addon="xbmc.gui" version="5.17.0" />
+      <import addon="xbmc.python" version="3.0.0" />
+      <import addon="script.module.pil" version="5.1.0" />
+      <import addon="script.flixium.helper" version="1.0.44" />
+      <import addon="visualization.flixium" version="1.1.2" />
+    </requires>
+    <extension point="xbmc.gui.skin" debugging="false">
+      <res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+    </extension>
+    <extension point="xbmc.service" library="resources/lib/setstats_service.py" start="startup" />
+    <extension point="xbmc.service" library="resources/lib/mdblist_service.py" start="startup" />
+    <extension point="xbmc.python.pluginsource" library="extras/flixium_widgets.py">
+      <provides>video</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+      <platform>android-aarch64 android-armv7 android-i686 android-x86_64 windx</platform>
+      <license>CC BY-SA 4.0, CC BY-SA 3.0 (MQ5 Home), GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+      <assets>
+        <icon>skin.flixium/resources/icon.png</icon>
+        <fanart>skin.flixium/resources/fanart.jpg</fanart>
+        <screenshot>skin.flixium/resources/screenshot-01.jpg</screenshot>
+        <screenshot>skin.flixium/resources/screenshot-02.jpg</screenshot>
+        <screenshot>skin.flixium/resources/screenshot-03.jpg</screenshot>
+        <screenshot>skin.flixium/resources/screenshot-04.jpg</screenshot>
+        <screenshot>skin.flixium/resources/screenshot-05.jpg</screenshot>
+        <screenshot>skin.flixium/resources/screenshot-06.jpg</screenshot>
+        <screenshot>skin.flixium/resources/screenshot-07.jpg</screenshot>
+        <screenshot>skin.flixium/resources/screenshot-08.jpg</screenshot>
+      </assets>
+      <summary lang="en_GB">A cinematic, customisable Kodi skin.</summary>
+      <description lang="en_GB">A cinematic Kodi skin with artwork-led views, customisable home widgets and a choice of modern or Aeon MQ5 home screens.</description>
+      <path>v1.0.0/skin.flixium-1.1.23.zip</path>
+      <website>https://github.com/jlrd221108/Flixium-Repo</website>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+    </extension>
+  </addon>
+  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.1.2" provider-name="Jack Davison">
+    <requires>
+      <import addon="kodi.binary.global.main" version="2.0.2" />
+      <import addon="kodi.binary.global.general" version="1.0.5" />
+      <import addon="kodi.binary.global.filesystem" version="1.1.8" />
+      <import addon="kodi.binary.global.gui" version="5.15.0" />
+      <import addon="kodi.binary.instance.visualization" version="4.0.0" />
+    </requires>
+    <extension point="xbmc.player.musicviz" library_android="libvisualization.flixium.so" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Live cover-art warping for the Flixium music OSD.</summary>
+      <description lang="en_GB">Live Kawarp cover warping and cached GPU lyric glyphs for Flixium, including timed highlights, held-letter motion, duets and backing vocals. No per-frame lyric PNG generation in native mode.</description>
+      <platform>android-aarch64</platform>
+      <license>AGPL-3.0-or-later AND MIT</license>
+      <assets>
+        <icon>visualization.flixium/resources/icon.png</icon>
+      </assets>
+      <path>v1.0.0/visualization.flixium-1.1.2-android-arm64-v8a.zip</path>
+      <website>https://github.com/jlrd221108/Flixium-Repo</website>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+    </extension>
+  </addon>
+  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.1.2" provider-name="Jack Davison">
+    <requires>
+      <import addon="kodi.binary.global.main" version="2.0.2" />
+      <import addon="kodi.binary.global.general" version="1.0.5" />
+      <import addon="kodi.binary.global.filesystem" version="1.1.8" />
+      <import addon="kodi.binary.global.gui" version="5.15.0" />
+      <import addon="kodi.binary.instance.visualization" version="4.0.0" />
+    </requires>
+    <extension point="xbmc.player.musicviz" library_android="libvisualization.flixium.so" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Live cover-art warping for the Flixium music OSD.</summary>
+      <description lang="en_GB">Live Kawarp cover warping and cached GPU lyric glyphs for Flixium, including timed highlights, held-letter motion, duets and backing vocals. No per-frame lyric PNG generation in native mode.</description>
+      <platform>android-armv7</platform>
+      <license>AGPL-3.0-or-later AND MIT</license>
+      <assets>
+        <icon>visualization.flixium/resources/icon.png</icon>
+      </assets>
+      <path>v1.0.0/visualization.flixium-1.1.2-android-armeabi-v7a.zip</path>
+      <website>https://github.com/jlrd221108/Flixium-Repo</website>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+    </extension>
+  </addon>
+  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.1.2" provider-name="Jack Davison">
+    <requires>
+      <import addon="kodi.binary.global.main" version="2.0.2" />
+      <import addon="kodi.binary.global.general" version="1.0.5" />
+      <import addon="kodi.binary.global.filesystem" version="1.1.8" />
+      <import addon="kodi.binary.global.gui" version="5.15.0" />
+      <import addon="kodi.binary.instance.visualization" version="4.0.0" />
+    </requires>
+    <extension point="xbmc.player.musicviz" library_android="libvisualization.flixium.so" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Live cover-art warping for the Flixium music OSD.</summary>
+      <description lang="en_GB">Live Kawarp cover warping and cached GPU lyric glyphs for Flixium, including timed highlights, held-letter motion, duets and backing vocals. No per-frame lyric PNG generation in native mode.</description>
+      <platform>android-i686</platform>
+      <license>AGPL-3.0-or-later AND MIT</license>
+      <assets>
+        <icon>visualization.flixium/resources/icon.png</icon>
+      </assets>
+      <path>v1.0.0/visualization.flixium-1.1.2-android-x86.zip</path>
+      <website>https://github.com/jlrd221108/Flixium-Repo</website>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+    </extension>
+  </addon>
+  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.1.2" provider-name="Jack Davison">
+    <requires>
+      <import addon="kodi.binary.global.main" version="2.0.2" />
+      <import addon="kodi.binary.global.general" version="1.0.5" />
+      <import addon="kodi.binary.global.filesystem" version="1.1.8" />
+      <import addon="kodi.binary.global.gui" version="5.15.0" />
+      <import addon="kodi.binary.instance.visualization" version="4.0.0" />
+    </requires>
+    <extension point="xbmc.player.musicviz" library_android="libvisualization.flixium.so" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Live cover-art warping for the Flixium music OSD.</summary>
+      <description lang="en_GB">Live Kawarp cover warping and cached GPU lyric glyphs for Flixium, including timed highlights, held-letter motion, duets and backing vocals. No per-frame lyric PNG generation in native mode.</description>
+      <platform>android-x86_64</platform>
+      <license>AGPL-3.0-or-later AND MIT</license>
+      <assets>
+        <icon>visualization.flixium/resources/icon.png</icon>
+      </assets>
+      <path>v1.0.0/visualization.flixium-1.1.2-android-x86_64.zip</path>
+      <website>https://github.com/jlrd221108/Flixium-Repo</website>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+    </extension>
+  </addon>
+  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.1.2" provider-name="Jack Davison">
+    <requires>
+      <import addon="kodi.binary.global.main" version="2.0.2" />
+      <import addon="kodi.binary.global.general" version="1.0.5" />
+      <import addon="kodi.binary.global.filesystem" version="1.1.8" />
+      <import addon="kodi.binary.global.gui" version="5.15.0" />
+      <import addon="kodi.binary.instance.visualization" version="4.0.0" />
+    </requires>
+    <extension point="xbmc.player.musicviz" library_windx="visualization.flixium-1.1.2.dll" />
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en_GB">Live cover-art warping for the Flixium music OSD.</summary>
+      <description lang="en_GB">Live Kawarp cover warping and cached GPU lyric glyphs for Flixium, including timed highlights, held-letter motion, duets and backing vocals. No per-frame lyric PNG generation in native mode.</description>
+      <platform>windx</platform>
+      <license>AGPL-3.0-or-later AND MIT</license>
+      <assets>
+        <icon>visualization.flixium/resources/icon.png</icon>
+      </assets>
+      <path>v1.0.0/visualization.flixium-1.1.2-windows-x86_64.zip</path>
+      <website>https://github.com/jlrd221108/Flixium-Repo</website>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+    </extension>
+  </addon>
+</addons>

@@ -1,0 +1,23 @@
+name: Bug report
+description: Report installation, dependency, skin or music rendering problems.
+title: "[Bug] "
+body:
+  - type: textarea
+    id: environment
+    attributes:
+      label: Kodi and device
+      description: Kodi version, OS/device, Kodi process architecture and installed Flixium/helper/visualizer versions.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: What happened?
+      description: Steps to reproduce, expected result and actual result.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or relevant logs
+      description: Remove private URLs, credentials and personal information before sharing logs.

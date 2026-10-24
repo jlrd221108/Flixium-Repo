@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Installation guide
+    url: https://github.com/jlrd221108/Flixium-Repo/blob/main/docs/INSTALL.md
+    about: Start here for installation and dependency troubleshooting.
+  - name: Report a security vulnerability
+    url: https://github.com/jlrd221108/Flixium-Repo/security/advisories/new
+    about: Report vulnerabilities privately.

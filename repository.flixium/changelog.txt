@@ -1,0 +1,4 @@
+1.0.0 (2026-10-24)
+- Initial Flixium repository for Kodi 21 Omega.
+- Windows x64 and four Android architectures.
+- SHA-256 verified packages and automatic dependency selection.
