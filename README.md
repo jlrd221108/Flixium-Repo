@@ -45,20 +45,9 @@ The music OSD includes word highlighting, held-letter emphasis, line transitions
 
 Android builds target API 21 (Android 5.0+) and require compatible Kodi/GPU drivers. A 64-bit device can run 32-bit Kodi; selection follows Kodi. Linux, macOS, Windows ARM and other Kodi major versions are not supported by this release. The feed is limited to Kodi 21 to avoid offering an unverified native ABI.
 
-## Updates and downloads
-
-Keep the repository enabled for updates. Every package has a SHA-256 checksum; repository metadata is also SHA-256 verified. Large packages live in [GitHub Releases](https://github.com/jlrd221108/Flixium-Repo/releases), keeping this Git repository lightweight. Only the matching native build downloads to a device.
-
-Manually installed add-ons from another private repository may keep their old update origin. Open the add-on's **Versions** screen and select the entry from Flixium Repo to switch origins. [Kodi documents repository update origins here](https://kodi.wiki/view/About_Add-ons).
-
 ## Project information
 
 - [Installation and troubleshooting](docs/INSTALL.md)
 - [How platform selection and releases work](docs/DEVELOPMENT.md)
 - [Release notes](CHANGELOG.md)
-- [Licenses and credits](docs/LICENSES.md)
 - [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
-
-The repository tooling is MIT licensed. Distributed add-ons retain their own GPL, AGPL, Creative Commons and third-party notices; they are not relicensed by this repository. Corresponding source is provided with each release.
-
-Flixium is an independent project and is not affiliated with Team Kodi, Spotify, Spicetify or Apple. No films, music, streams or media subscriptions are included.
