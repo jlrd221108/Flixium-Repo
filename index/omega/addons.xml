@@ -53,7 +53,7 @@
       <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
     </extension>
   </addon>
-  <addon id="skin.flixium" version="1.1.23" name="Flixium" provider-name="Jack Davison">
+  <addon id="skin.flixium" version="1.1.24" name="Flixium" provider-name="Jack Davison">
     <requires>
       <import addon="xbmc.gui" version="5.17.0" />
       <import addon="xbmc.python" version="3.0.0" />
@@ -71,7 +71,7 @@
     </extension>
     <extension point="xbmc.addon.metadata">
       <platform>android-aarch64 android-armv7 android-i686 android-x86_64 windx</platform>
-      <license>CC BY-SA 4.0, CC BY-SA 3.0 (MQ5 Home), GNU GENERAL PUBLIC LICENSE Version 2.0</license>
+      <license>CC BY-SA 4.0, CC BY-SA 3.0 (retained assets), GNU GENERAL PUBLIC LICENSE Version 2.0, LGPL-2.1 (Gazetteer), CC BY 4.0 (geoBoundaries)</license>
       <assets>
         <icon>skin.flixium/resources/icon.png</icon>
         <fanart>skin.flixium/resources/fanart.jpg</fanart>
@@ -85,10 +85,10 @@
         <screenshot>skin.flixium/resources/screenshot-08.jpg</screenshot>
       </assets>
       <summary lang="en_GB">A cinematic, customisable Kodi skin.</summary>
-      <description lang="en_GB">A cinematic Kodi skin with artwork-led views, customisable home widgets and a choice of modern or Aeon MQ5 home screens.</description>
-      <path>v1.0.0/skin.flixium-1.1.23.zip</path>
+      <description lang="en_GB">A cinematic Kodi skin with artwork-led views and customisable home widgets. Flixium Home with an optional Aeon menu font.</description>
+      <path>v1.1.24/flixium-1.1.24.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
-      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.1.24/flixium-1.1.24.zip</source>
     </extension>
   </addon>
   <addon id="visualization.flixium" name="Flixium Visualizer" version="1.2.0" provider-name="Jack Davison">

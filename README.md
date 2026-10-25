@@ -26,7 +26,7 @@ Prefer Kodi's File Manager? Add **`https://jlrd221108.github.io/Flixium-Repo/`**
 
 | Add-on | Version | Purpose |
 | --- | --- | --- |
-| Flixium | 1.1.23 | Cinematic views, artwork-led browsing and customisable home screens |
+| Flixium | 1.1.24 | Cinematic views, artwork-led browsing and customisable home screens |
 | Flixium Helper | 1.0.44 | Artwork processing, colours and caching |
 | Flixium Visualizer | 1.1.2 | Animated cover backgrounds and GPU-rendered timed lyrics |
 | Flixium Repo | 1.0.0 | Dependency installation and updates |
