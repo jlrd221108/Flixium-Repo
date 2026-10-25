@@ -27,7 +27,7 @@
         <icon>repository.flixium/resources/icon.png</icon>
         <fanart>repository.flixium/resources/fanart.jpg</fanart>
       </assets>
-      <path>v1.0.0/repository.flixium-1.0.0.zip</path>
+      <path>v1.1.24-repo-fix/repository.flixium-1.0.0.zip</path>
     </extension>
   </addon>
   <addon id="script.flixium.helper" name="Flixium Helper" version="1.0.44" provider-name="Jack Davison">
@@ -48,7 +48,7 @@
       </assets>
       <platform>all</platform>
       <license>GPL-2.0-only, CC BY-SA 3.0 (MQ5 translations)</license>
-      <path>v1.0.0/script.flixium.helper-1.0.44.zip</path>
+      <path>v1.1.24-repo-fix/script.flixium.helper-1.0.44.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
       <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
     </extension>
@@ -86,9 +86,9 @@
       </assets>
       <summary lang="en_GB">A cinematic, customisable Kodi skin.</summary>
       <description lang="en_GB">A cinematic Kodi skin with artwork-led views and customisable home widgets. Flixium Home with an optional Aeon menu font.</description>
-      <path>v1.1.24/flixium-1.1.24.zip</path>
+      <path>v1.1.24-repo-fix/flixium-1.1.24.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
-      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.1.24/flixium-1.1.24.zip</source>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.1.24-repo-fix/flixium-1.1.24.zip</source>
     </extension>
   </addon>
   <addon id="visualization.flixium" name="Flixium Visualizer" version="1.2.0" provider-name="Jack Davison">
@@ -108,7 +108,7 @@
       <assets>
         <icon>visualization.flixium/resources/icon.png</icon>
       </assets>
-      <path>android-v1.2.0/visualization.flixium-1.2.0-android-arm64-v8a.zip</path>
+      <path>v1.1.24-repo-fix/visualization.flixium-1.2.0-android-arm64-v8a.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
       <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/android-v1.2.0/visualization.flixium-1.2.0-android-source.zip</source>
     </extension>
@@ -130,7 +130,7 @@
       <assets>
         <icon>visualization.flixium/resources/icon.png</icon>
       </assets>
-      <path>android-v1.2.0/visualization.flixium-1.2.0-android-armeabi-v7a.zip</path>
+      <path>v1.1.24-repo-fix/visualization.flixium-1.2.0-android-armeabi-v7a.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
       <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/android-v1.2.0/visualization.flixium-1.2.0-android-source.zip</source>
     </extension>
@@ -152,7 +152,7 @@
       <assets>
         <icon>visualization.flixium/resources/icon.png</icon>
       </assets>
-      <path>android-v1.2.0/visualization.flixium-1.2.0-android-x86.zip</path>
+      <path>v1.1.24-repo-fix/visualization.flixium-1.2.0-android-x86.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
       <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/android-v1.2.0/visualization.flixium-1.2.0-android-source.zip</source>
     </extension>
@@ -174,7 +174,7 @@
       <assets>
         <icon>visualization.flixium/resources/icon.png</icon>
       </assets>
-      <path>android-v1.2.0/visualization.flixium-1.2.0-android-x86_64.zip</path>
+      <path>v1.1.24-repo-fix/visualization.flixium-1.2.0-android-x86_64.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
       <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/android-v1.2.0/visualization.flixium-1.2.0-android-source.zip</source>
     </extension>
@@ -196,7 +196,7 @@
       <assets>
         <icon>visualization.flixium/resources/icon.png</icon>
       </assets>
-      <path>v1.0.0/visualization.flixium-1.1.2-windows-x86_64.zip</path>
+      <path>v1.1.24-repo-fix/visualization.flixium-1.1.2-windows-x86_64.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
       <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
     </extension>
