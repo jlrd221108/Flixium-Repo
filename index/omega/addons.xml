@@ -91,7 +91,7 @@
       <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
     </extension>
   </addon>
-  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.1.2" provider-name="Jack Davison">
+  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.2.0" provider-name="Jack Davison">
     <requires>
       <import addon="kodi.binary.global.main" version="2.0.2" />
       <import addon="kodi.binary.global.general" version="1.0.5" />
@@ -108,12 +108,12 @@
       <assets>
         <icon>visualization.flixium/resources/icon.png</icon>
       </assets>
-      <path>v1.0.0/visualization.flixium-1.1.2-android-arm64-v8a.zip</path>
+      <path>android-v1.2.0/visualization.flixium-1.2.0-android-arm64-v8a.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
-      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/android-v1.2.0/visualization.flixium-1.2.0-android-source.zip</source>
     </extension>
   </addon>
-  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.1.2" provider-name="Jack Davison">
+  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.2.0" provider-name="Jack Davison">
     <requires>
       <import addon="kodi.binary.global.main" version="2.0.2" />
       <import addon="kodi.binary.global.general" version="1.0.5" />
@@ -130,12 +130,12 @@
       <assets>
         <icon>visualization.flixium/resources/icon.png</icon>
       </assets>
-      <path>v1.0.0/visualization.flixium-1.1.2-android-armeabi-v7a.zip</path>
+      <path>android-v1.2.0/visualization.flixium-1.2.0-android-armeabi-v7a.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
-      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/android-v1.2.0/visualization.flixium-1.2.0-android-source.zip</source>
     </extension>
   </addon>
-  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.1.2" provider-name="Jack Davison">
+  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.2.0" provider-name="Jack Davison">
     <requires>
       <import addon="kodi.binary.global.main" version="2.0.2" />
       <import addon="kodi.binary.global.general" version="1.0.5" />
@@ -152,12 +152,12 @@
       <assets>
         <icon>visualization.flixium/resources/icon.png</icon>
       </assets>
-      <path>v1.0.0/visualization.flixium-1.1.2-android-x86.zip</path>
+      <path>android-v1.2.0/visualization.flixium-1.2.0-android-x86.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
-      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/android-v1.2.0/visualization.flixium-1.2.0-android-source.zip</source>
     </extension>
   </addon>
-  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.1.2" provider-name="Jack Davison">
+  <addon id="visualization.flixium" name="Flixium Visualizer" version="1.2.0" provider-name="Jack Davison">
     <requires>
       <import addon="kodi.binary.global.main" version="2.0.2" />
       <import addon="kodi.binary.global.general" version="1.0.5" />
@@ -174,9 +174,9 @@
       <assets>
         <icon>visualization.flixium/resources/icon.png</icon>
       </assets>
-      <path>v1.0.0/visualization.flixium-1.1.2-android-x86_64.zip</path>
+      <path>android-v1.2.0/visualization.flixium-1.2.0-android-x86_64.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
-      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/android-v1.2.0/visualization.flixium-1.2.0-android-source.zip</source>
     </extension>
   </addon>
   <addon id="visualization.flixium" name="Flixium Visualizer" version="1.1.2" provider-name="Jack Davison">

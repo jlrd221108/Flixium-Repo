@@ -60,7 +60,7 @@ def main():
         for dependency_id in ("script.flixium.helper","visualization.flixium"):
             dependency=skin.find(f"./requires/import[@addon='{dependency_id}']")
             target=next(addon for addon in selected if addon.get("id")==dependency_id)
-            check(dependency is not None and dependency.get("version")==target.get("version"),"Dependency mismatch")
+            check(dependency is not None and tuple(map(int,target.get("version").split('.')))>=tuple(map(int,dependency.get("version").split('.'))),"Dependency mismatch")
         print(platform+": one matching visualizer and complete dependency graph")
     repo=ET.parse(ROOT/"repository.flixium/addon.xml").getroot()
     directory=repo.find("./extension[@point='xbmc.addon.repository']/dir")

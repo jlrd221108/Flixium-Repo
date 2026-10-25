@@ -1,5 +1,5 @@
 {
-  "release": "v1.0.0",
+  "release": "android-v1.2.0",
   "index": "index/omega/addons.xml",
   "packages": [
     {
@@ -30,40 +30,40 @@
       "sha256": "1d756b7e079b99eedf37172f87b1a271c1ca32ea8057162d8ee7518d8cf9908f"
     },
     {
-      "file": "visualization.flixium-1.1.2-android-arm64-v8a.zip",
+      "file": "visualization.flixium-1.2.0-android-arm64-v8a.zip",
       "id": "visualization.flixium",
-      "version": "1.1.2",
+      "version": "1.2.0",
       "platform": "android-aarch64",
-      "path": "v1.0.0/visualization.flixium-1.1.2-android-arm64-v8a.zip",
-      "bytes": 521851,
-      "sha256": "0d4b7f4ce7bc3e5dcb18841b83e332953ac8aa836a24548f06d8c86dd6221f6b"
+      "path": "android-v1.2.0/visualization.flixium-1.2.0-android-arm64-v8a.zip",
+      "bytes": 539730,
+      "sha256": "a999b9d8ab5b51cdd2350ade300dd259e78c5c984b8e5d9da4584d824ff16815"
     },
     {
-      "file": "visualization.flixium-1.1.2-android-armeabi-v7a.zip",
+      "file": "visualization.flixium-1.2.0-android-armeabi-v7a.zip",
       "id": "visualization.flixium",
-      "version": "1.1.2",
+      "version": "1.2.0",
       "platform": "android-armv7",
-      "path": "v1.0.0/visualization.flixium-1.1.2-android-armeabi-v7a.zip",
-      "bytes": 490354,
-      "sha256": "e36531344577286413a395fd49ac29c622a231658cf19b61f503c686621ad460"
+      "path": "android-v1.2.0/visualization.flixium-1.2.0-android-armeabi-v7a.zip",
+      "bytes": 508018,
+      "sha256": "c86e2c042f048f62b1518b4193f3a86942c44dc6be36a2dfce97d04d58eb9d71"
     },
     {
-      "file": "visualization.flixium-1.1.2-android-x86.zip",
+      "file": "visualization.flixium-1.2.0-android-x86.zip",
       "id": "visualization.flixium",
-      "version": "1.1.2",
+      "version": "1.2.0",
       "platform": "android-i686",
-      "path": "v1.0.0/visualization.flixium-1.1.2-android-x86.zip",
-      "bytes": 523266,
-      "sha256": "ba69a3540a3e9700a4e7f24325f90bb7c36f54abf16ce67751966d0b0839941a"
+      "path": "android-v1.2.0/visualization.flixium-1.2.0-android-x86.zip",
+      "bytes": 542724,
+      "sha256": "125ef2c314b8f0a208cc35dc6572fa93d9421b40b114b44d4c1a71659d8f23da"
     },
     {
-      "file": "visualization.flixium-1.1.2-android-x86_64.zip",
+      "file": "visualization.flixium-1.2.0-android-x86_64.zip",
       "id": "visualization.flixium",
-      "version": "1.1.2",
+      "version": "1.2.0",
       "platform": "android-x86_64",
-      "path": "v1.0.0/visualization.flixium-1.1.2-android-x86_64.zip",
-      "bytes": 522975,
-      "sha256": "3f1ce828de2a40a9130463fdea523628f5844632dc61cea1b97990f2c6f7cdcf"
+      "path": "android-v1.2.0/visualization.flixium-1.2.0-android-x86_64.zip",
+      "bytes": 541413,
+      "sha256": "8760a8d43f04be1416df4042588cc695936ae0c5dfa4765c4f5073baca694d7b"
     },
     {
       "file": "visualization.flixium-1.1.2-windows-x86_64.zip",
@@ -80,6 +80,13 @@
       "path": "v1.0.0/flixium-source-v1.0.0.zip",
       "bytes": 78031373,
       "sha256": "72860f15ac7fecd20c46441e95712dd8bf71c6aaa65c710cfdcb890eeadb2350"
+    },
+    {
+      "file": "visualization.flixium-1.2.0-android-source.zip",
+      "kind": "source",
+      "path": "android-v1.2.0/visualization.flixium-1.2.0-android-source.zip",
+      "bytes": 514035,
+      "sha256": "e48000dd1c2e3d879f9ffffd5c079414860848f8fa7a904ed47f82a788191d74"
     }
   ]
 }
