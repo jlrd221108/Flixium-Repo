@@ -19,3 +19,5 @@ jobs:
           persist-credentials: false
       - name: Validate index, checksums, artwork and architecture selection
         run: python3 tools/validate_repository.py
+      - name: Validate actual downloadable skin layouts and required files
+        run: python3 tools/validate_skin_package.py

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<onload>RunScript(special://skin/resources/lib/lyrics_service.py)</onload>
+	<onload>RunScript(special://skin/extras/flixium_visualizer.py)</onload>
+	<onload>ActivateWindow(musicosd)</onload>
+	<backgroundcolor>background</backgroundcolor>
+	<controls>
+		<!-- Opaque backing below the renderer, never an overlay on its output. -->
+		<include>GlassLegacyMusicPlane0</include>
+		<!-- Kodi routes visualiser reload/preset messages to this native control. -->
+		<control type="visualisation" id="2">
+			<include>FullScreenDimensions</include>
+			<visible>Player.HasAudio + Visualisation.Enabled + [Skin.HasSetting(FlixiumMusicVisualiserBackground) | !Skin.HasSetting(FlixiumMusicLyricsDisabled)]</visible>
+		</control>
+		<include>FlixiumMusicPlaybackScene</include>
+	</controls>
+</window>

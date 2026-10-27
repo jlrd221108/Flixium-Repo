@@ -1,0 +1,711 @@
+<?xml version='1.0' encoding='utf-8'?>
+<includes>
+	<include name="Flixium_HomeWindow">
+
+		<onload condition="String.IsEmpty(Window(home).Property(flixium.mylist.service))">RunScript(special://skin/resources/lib/my_list_service.py)</onload>
+		<onload condition="!String.IsEmpty(Skin.String(Flixium.NextEpisode.UpNextLease))">RunScript(special://skin/extras/flixium_next_episode.py,recover)</onload>
+		<onload condition="!Skin.HasSetting(Flixium.Setup.Seen) | Skin.HasSetting(Flixium.Setup.AutoResume) | Skin.HasSetting(Flixium.Setup.Pending)">RunScript(special://skin/extras/flixium_setup.py,auto)</onload>
+		<onload condition="!Skin.HasSetting(Flixium.SubtitleDefaultsApplied)">RunScript(special://skin/extras/flixium_subtitle_preset.py,initialise)</onload>
+		<onload condition="Skin.HasSetting(Flixium.Glass.Enabled) + System.AddonIsEnabled(script.flixium.helper) + [!String.IsEqual(Window(home).Property(flixium.glass.ready),true) | !String.IsEqual(Window(home).Property(flixium.glass.profile),System.ProfileName)]">RunScript(special://skin/extras/flixium_glass.py,prepare)</onload>
+		<defaultcontrol>9000</defaultcontrol>
+		<backgroundcolor>background</backgroundcolor>
+		<controls>
+			<control type="button" id="20000">
+				<include>HiddenObject</include>
+				<animation effect="fade" time="300" start="100" end="0">Focus</animation>
+				<onfocus>SetFocus(2000)</onfocus>
+				<onclick>noop</onclick>
+				<visible allowhiddenfocus="true">Control.HasFocus(20000)</visible>
+			</control>
+			<control type="button" id="20001">
+				<include>HiddenObject</include>
+				<animation effect="fade" time="300" start="100" end="0">Focus</animation>
+				<onfocus>SetFocus(2000)</onfocus>
+				<onclick>noop</onclick>
+				<visible allowhiddenfocus="true">Control.HasFocus(20001)</visible>
+			</control>
+			<include>DefaultBackground</include>
+			<include condition="!$EXP[flixium_glass]">GlassLegacyDecor1</include>
+			<include condition="!$EXP[flixium_glass]">GlassLegacyDecor2</include>
+			<control type="label" id="56000">
+				<left>-3000</left>
+				<top>-3000</top>
+				<width>1</width>
+				<height>1</height>
+				<label>$VAR[HomeFlixFocusedFanartVar]</label>
+				<visible>false</visible>
+			</control>
+			<control type="label" id="56001">
+				<left>-3000</left>
+				<top>-3000</top>
+				<width>1</width>
+				<height>1</height>
+				<label>$VAR[HomeFlixFocusedDBIDVar]</label>
+				<visible>false</visible>
+			</control>
+			<control type="label" id="56002">
+				<left>-3000</left>
+				<top>-3000</top>
+				<width>1</width>
+				<height>1</height>
+				<label>$VAR[HomeFlixFocusedDBTypeVar]</label>
+				<visible>false</visible>
+			</control>
+			<control type="label" id="56003">
+				<left>-3000</left>
+				<top>-3000</top>
+				<width>1</width>
+				<height>1</height>
+				<label>$VAR[HomeFlixFocusedGenreVar]</label>
+				<visible>false</visible>
+			</control>
+			<control type="group">
+				<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+				<control type="group" id="2000">
+					<left>370</left>
+					<top>-2</top>
+					<animation effect="slide" end="-370,0" time="500" tween="cubic" easing="inout" condition="Control.HasFocus(5800) | Control.HasFocus(5900)">Conditional</animation>
+					<animation type="Conditional" condition="Control.IsVisible(20000)" reversible="false">
+						<effect type="slide" end="0,20" time="60" tween="sine" />
+						<effect type="slide" end="0,-20" time="180" tween="sine" delay="80" />
+					</animation>
+					<animation type="Conditional" condition="Control.IsVisible(20001)" reversible="false">
+						<effect type="slide" end="0,-20" time="60" tween="sine" />
+						<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
+					</animation>
+					<include>OpenClose_Right</include>
+					<include>FlixiumConfiguredMovies</include>
+					<include>FlixiumConfiguredTV</include>
+					<include>FlixiumConfiguredMyList</include>
+					<include>FlixiumConfiguredMusic</include>
+					<include>FlixiumConfiguredPrograms</include>
+					<include>FlixiumConfiguredVideos</include>
+					<control type="group" id="12000">
+						<include>FlixiumHomeWidgetScale</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),livetv)</visible>
+						<include content="Visible_Right_Delayed">
+							<param name="id" value="livetv" />
+						</include>
+						<control type="grouplist" id="12001">
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>12010</pagecontrol>
+							<include content="WidgetListCategories" condition="System.HasPVRAddon">
+								<param name="content_path" value="pvr://tv/" />
+								<param name="widget_header" value="$LOCALIZE[31148]" />
+								<param name="list_id" value="12900" />
+							</include>
+							<include content="WidgetListPVR" condition="System.HasPVRAddon">
+								<param name="content_path" value="pvr://channels/tv/*?view=lastplayed" />
+								<param name="sortby" value="lastplayed" />
+								<param name="sortorder" value="descending" />
+								<param name="widget_header" value="$LOCALIZE[31016]" />
+								<param name="widget_target" value="tvchannels" />
+								<param name="item_limit" value="15" />
+								<param name="list_id" value="12200" />
+								<param name="info_update" value="5000" />
+							</include>
+							<include content="WidgetListPVR" condition="System.HasPVRAddon">
+								<param name="content_path" value="pvr://recordings/tv/active?view=flat" />
+								<param name="sortby" value="date" />
+								<param name="sortorder" value="descending" />
+								<param name="widget_header" value="$LOCALIZE[31015]" />
+								<param name="widget_target" value="tvrecordings" />
+								<param name="item_limit" value="15" />
+								<param name="list_id" value="12300" />
+								<param name="label" value="$INFO[ListItem.Title]$INFO[ListItem.Date, (,)]" />
+								<param name="label2" value="$VAR[SeasonEpisodeLabel]$INFO[ListItem.EpisodeName]" />
+							</include>
+							<include content="WidgetListPVR" condition="System.HasPVRAddon">
+								<param name="content_path" value="pvr://timers/tv/timers/?view=hidedisabled" />
+								<param name="sortorder" value="ascending" />
+								<param name="sortby" value="date" />
+								<param name="widget_header" value="$LOCALIZE[19040]" />
+								<param name="widget_target" value="tvtimers" />
+								<param name="item_limit" value="15" />
+								<param name="list_id" value="12400" />
+								<param name="label" value="$INFO[ListItem.Title]$INFO[ListItem.Date, (,)]" />
+								<param name="label2" value="$VAR[SeasonEpisodeLabel]$INFO[ListItem.EpisodeName]" />
+							</include>
+							<include content="WidgetListPVR" condition="System.HasPVRAddon">
+								<param name="content_path" value="pvr://channels/tv" />
+								<param name="widget_header" value="$LOCALIZE[19173]" />
+								<param name="widget_target" value="tvguide" />
+								<param name="list_id" value="12500" />
+								<param name="item_treshold" value="1" />
+							</include>
+							<include content="WidgetListPVR" condition="System.HasPVRAddon">
+								<param name="content_path" value="pvr://search/tv/savedsearches" />
+								<param name="sortorder" value="descending" />
+								<param name="sortby" value="date" />
+								<param name="widget_header" value="$LOCALIZE[19337]" />
+								<param name="widget_target" value="tvsearch" />
+								<param name="list_id" value="12600" />
+							</include>
+						</control>
+						<include content="ImageWidget" condition="!System.HasPVRAddon">
+							<param name="restore_full_size" value="true" />
+							<param name="text_label" value="$LOCALIZE[31143]" />
+							<param name="button_label" value="$LOCALIZE[31144]" />
+							<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://default_binary_addons_source/kodi.pvrclient,return)" />
+							<param name="button_id" value="12400" />
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoTVButton)" />
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="12010" />
+						</include>
+					</control>
+					<control type="group" id="13000">
+						<include>FlixiumHomeWidgetScale</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),radio)</visible>
+						<include content="Visible_Right_Delayed">
+							<param name="id" value="radio" />
+						</include>
+						<control type="grouplist" id="13001">
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>13010</pagecontrol>
+							<include content="WidgetListCategories" condition="System.HasPVRAddon">
+								<param name="content_path" value="pvr://radio/" />
+								<param name="widget_header" value="$LOCALIZE[31148]" />
+								<param name="list_id" value="13900" />
+							</include>
+							<include content="WidgetListPVR" condition="System.HasPVRAddon">
+								<param name="content_path" value="pvr://channels/radio/*?view=lastplayed" />
+								<param name="sortby" value="lastplayed" />
+								<param name="sortorder" value="descending" />
+								<param name="widget_header" value="$LOCALIZE[31018]" />
+								<param name="widget_target" value="radiochannels" />
+								<param name="item_limit" value="15" />
+								<param name="list_id" value="13200" />
+								<param name="info_update" value="5000" />
+							</include>
+							<include content="WidgetListPVR" condition="System.HasPVRAddon">
+								<param name="content_path" value="pvr://recordings/radio/active?view=flat" />
+								<param name="sortby" value="date" />
+								<param name="sortorder" value="descending" />
+								<param name="widget_header" value="$LOCALIZE[31015]" />
+								<param name="widget_target" value="radiorecordings" />
+								<param name="item_limit" value="15" />
+								<param name="list_id" value="13300" />
+								<param name="label" value="$INFO[ListItem.Title]$INFO[ListItem.Date, (,)]" />
+								<param name="label2" value="$VAR[SeasonEpisodeLabel]$INFO[ListItem.EpisodeName]" />
+							</include>
+							<include content="WidgetListPVR" condition="System.HasPVRAddon">
+								<param name="content_path" value="pvr://timers/radio/timers/?view=hidedisabled" />
+								<param name="sortorder" value="ascending" />
+								<param name="sortby" value="date" />
+								<param name="widget_header" value="$LOCALIZE[19040]" />
+								<param name="widget_target" value="radiotimers" />
+								<param name="item_limit" value="15" />
+								<param name="list_id" value="13400" />
+								<param name="label" value="$INFO[ListItem.Title]$INFO[ListItem.Date, (,)]" />
+								<param name="label2" value="$VAR[SeasonEpisodeLabel]$INFO[ListItem.EpisodeName]" />
+							</include>
+							<include content="WidgetListPVR" condition="System.HasPVRAddon">
+								<param name="content_path" value="pvr://channels/radio" />
+								<param name="widget_header" value="$LOCALIZE[19174]" />
+								<param name="widget_target" value="radioguide" />
+								<param name="list_id" value="13500" />
+								<param name="item_treshold" value="1" />
+							</include>
+							<include content="WidgetListPVR" condition="System.HasPVRAddon">
+								<param name="content_path" value="pvr://search/radio/savedsearches" />
+								<param name="sortorder" value="descending" />
+								<param name="sortby" value="date" />
+								<param name="widget_header" value="$LOCALIZE[19337]" />
+								<param name="widget_target" value="radiosearch" />
+								<param name="list_id" value="13600" />
+							</include>
+						</control>
+						<include content="ImageWidget" condition="!System.HasPVRAddon">
+							<param name="restore_full_size" value="true" />
+							<param name="text_label" value="$LOCALIZE[31143]" />
+							<param name="button_label" value="$LOCALIZE[31144]" />
+							<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://default_binary_addons_source/kodi.pvrclient,return)" />
+							<param name="button_id" value="13400" />
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoRadioButton)" />
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="13010" />
+						</include>
+					</control>
+					<control type="group" id="14000">
+						<include>FlixiumHomeWidgetScale</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),favorites)</visible>
+						<include content="Visible_Right_Delayed">
+							<param name="id" value="favorites" />
+						</include>
+						<control type="panel" id="14100">
+							<left>65</left>
+							<top>0</top>
+							<right>0</right>
+							<bottom>0</bottom>
+							<onleft>9000</onleft>
+							<onright>9000</onright>
+							<onup>14100</onup>
+							<ondown>14100</ondown>
+							<preloaditems>2</preloaditems>
+							<scrolltime tween="cubic" easing="out">500</scrolltime>
+							<orientation>vertical</orientation>
+							<pagecontrol>14010</pagecontrol>
+							<visible>Integer.IsGreater(Container(14100).NumItems,0) | Container(14100).IsUpdating</visible>
+							<itemlayout width="330" height="401">
+								<control type="group">
+									<top>130</top>
+									<include content="MediaTileMusicLayout">
+										<param name="fallback_image" value="DefaultFavourites.png" />
+										<param name="focused" value="false" />
+									</include>
+								</control>
+							</itemlayout>
+							<focusedlayout width="330" height="401">
+								<control type="group">
+									<depth>DepthContentPopout</depth>
+									<top>130</top>
+									<animation effect="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="170,320">Focus</animation>
+									<animation effect="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="170,320">UnFocus</animation>
+									<include content="MediaTileMusicLayout">
+										<param name="fallback_image" value="DefaultFavourites.png" />
+										<param name="focused" value="true" />
+									</include>
+								</control>
+							</focusedlayout>
+							<content>favourites://</content>
+						</control>
+						<include content="ImageWidget">
+							<param name="restore_full_size" value="true" />
+							<param name="text_label" value="$LOCALIZE[31025]" />
+							<param name="button_label" value="$LOCALIZE[31116]" />
+							<param name="button_onclick" value="" />
+							<param name="button_id" value="5500" />
+							<param name="visible" value="!Integer.IsGreater(Container(14100).NumItems,0) + !Container(14100).IsUpdating" />
+							<param name="visible_1" value="false" />
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoFavButton)" />
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="14010" />
+						</include>
+					</control>
+					<control type="group" id="15000">
+						<include>FlixiumHomeWidgetScale</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),weather)</visible>
+						<include content="Visible_Right_Delayed">
+							<param name="id" value="weather" />
+						</include>
+						<control type="grouplist" id="15001">
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>15010</pagecontrol>
+							<control type="group" id="16678">
+								<description>Weather info</description>
+								<left>68</left>
+								<right>70</right>
+								<top>102</top>
+								<height>360</height>
+								<visible>!String.IsEmpty(Weather.plugin)</visible>
+								<control type="image">
+									<bottom>90</bottom>
+									<width>100%</width>
+									<texture border="21">dialogs/dialog-bg.png</texture>
+								</control>
+								<control type="label">
+									<left>840</left>
+									<top>60</top>
+									<aligny>center</aligny>
+									<height>24</height>
+									<right>60</right>
+									<align>right</align>
+									<font>font30_title</font>
+									<label>$INFO[Weather.Location]</label>
+								</control>
+								<control type="label">
+									<left>840</left>
+									<top>120</top>
+									<aligny>center</aligny>
+									<height>24</height>
+									<right>60</right>
+									<align>right</align>
+									<font>font14</font>
+									<label>$INFO[Weather.Conditions]</label>
+								</control>
+								<control type="label">
+									<left>840</left>
+									<top>180</top>
+									<aligny>center</aligny>
+									<height>24</height>
+									<right>60</right>
+									<align>right</align>
+									<font>font14</font>
+									<label>$INFO[Weather.Temperature]</label>
+								</control>
+								<control type="grouplist">
+									<top>50</top>
+									<left>50</left>
+									<right>20</right>
+									<orientation>horizontal</orientation>
+									<align>left</align>
+									<itemgap>-110</itemgap>
+									<include content="WeatherIconHome" condition="!String.IsEmpty(Weather.Plugin)">
+										<param name="label" value="Window(weather).Property(Current.Wind)" />
+										<param name="texture" value="icons/weather/wind.png" />
+										<param name="header" value="404" />
+									</include>
+									<include content="WeatherIconHome" condition="!String.IsEmpty(Weather.Plugin)">
+										<param name="label" value="Window(weather).Property(Current.Humidity)" />
+										<param name="texture" value="icons/weather/humidity.png" />
+										<param name="header" value="406" />
+									</include>
+									<include content="WeatherIconHome" condition="!String.IsEmpty(Weather.Plugin)">
+										<param name="label" value="Window(weather).Property(Current.Precipitation)" />
+										<param name="texture" value="icons/weather/rain.png" />
+										<param name="header" value="33021" />
+									</include>
+									<include content="WeatherIconHome" condition="!String.IsEmpty(Weather.Plugin)">
+										<param name="label" value="Window(weather).Property(Today.Sunrise)" />
+										<param name="texture" value="icons/weather/sunrise.png" />
+										<param name="header" value="405" />
+									</include>
+									<include content="WeatherIconHome" condition="!String.IsEmpty(Weather.Plugin)">
+										<param name="label" value="Window(weather).Property(Today.Sunset)" />
+										<param name="texture" value="icons/weather/sunset.png" />
+										<param name="header" value="403" />
+									</include>
+								</control>
+							</control>
+							<include content="WeatherWidget" condition="!String.IsEmpty(Weather.Plugin)">
+								<param name="content_include" value="DailyItems" />
+								<param name="list_id" value="15200" />
+								<param name="widget_header" value="$LOCALIZE[31019]" />
+								<param name="visible" value="!String.IsEmpty(Window(weather).Property(Daily.IsFetched))" />
+							</include>
+							<include content="WeatherWidget" condition="!String.IsEmpty(Weather.Plugin)">
+								<param name="content_include" value="HourlyItems" />
+								<param name="list_id" value="15100" />
+								<param name="widget_header" value="$LOCALIZE[33036]" />
+								<param name="visible" value="!String.IsEmpty(Window(weather).Property(Hourly.IsFetched))" />
+							</include>
+						</control>
+						<include content="ImageWidget" condition="String.IsEmpty(Weather.plugin)">
+							<param name="restore_full_size" value="true" />
+							<param name="text_label" value="$LOCALIZE[31120]" />
+							<param name="button_label" value="$LOCALIZE[31121]" />
+							<param name="button_onclick" value="ActivateWindow(servicesettings,weather)" />
+							<param name="button_id" value="15300" />
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoWeatherButton)" />
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="15010" />
+						</include>
+					</control>
+					<control type="group" id="16000">
+						<include>FlixiumHomeWidgetScale</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),musicvideos)</visible>
+						<include content="Visible_Right_Delayed">
+							<param name="id" value="musicvideos" />
+						</include>
+						<control type="grouplist" id="16001">
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>16010</pagecontrol>
+							<include content="WidgetListCategories" condition="Library.HasContent(musicvideos) + !Skin.HasSetting(home_no_categories_widget)">
+								<param name="content_path" value="library://video/musicvideos/" />
+								<param name="widget_header" value="$LOCALIZE[31148]" />
+								<param name="widget_target" value="videos" />
+								<param name="list_id" value="16900" />
+							</include>
+							<include content="WidgetListEpisodes" condition="Library.HasContent(musicvideos) + !Skin.HasSetting(show_musicvideoposter)">
+								<param name="content_path" value="videodb://recentlyaddedmusicvideos/" />
+								<param name="widget_header" value="$LOCALIZE[20390]" />
+								<param name="widget_target" value="videos" />
+								<param name="main_label" value="$INFO[ListItem.Label]" />
+								<param name="sub_label" value="$INFO[ListItem.Artist]" />
+								<param name="thumb_label" value="$INFO[ListItem.Year]" />
+								<param name="fallback_image" value="DefaultMusicSongs.png" />
+								<param name="list_id" value="16300" />
+							</include>
+							<include content="WidgetListPoster" condition="Library.HasContent(musicvideos) + Skin.HasSetting(show_musicvideoposter)">
+								<param name="content_path" value="videodb://recentlyaddedmusicvideos/" />
+								<param name="widget_header" value="$LOCALIZE[20390]" />
+								<param name="widget_target" value="videos" />
+								<param name="fallback_image" value="DefaultMusicSongs.png" />
+								<param name="list_id" value="16300" />
+							</include>
+							<include content="WidgetListEpisodes" condition="Library.HasContent(musicvideos) + !Skin.HasSetting(show_musicvideoposter)">
+								<param name="content_path" value="special://skin/playlists/unwatched_musicvideos.xsp" />
+								<param name="widget_header" value="$LOCALIZE[31151]" />
+								<param name="widget_target" value="videos" />
+								<param name="main_label" value="$INFO[ListItem.Label]" />
+								<param name="sub_label" value="$INFO[ListItem.Artist]" />
+								<param name="thumb_label" value="$INFO[ListItem.Year]" />
+								<param name="fallback_image" value="DefaultMusicSongs.png" />
+								<param name="list_id" value="16400" />
+							</include>
+							<include content="WidgetListPoster" condition="Library.HasContent(musicvideos) + Skin.HasSetting(show_musicvideoposter)">
+								<param name="content_path" value="special://skin/playlists/unwatched_musicvideos.xsp" />
+								<param name="widget_header" value="$LOCALIZE[31151]" />
+								<param name="widget_target" value="videos" />
+								<param name="fallback_image" value="DefaultMusicSongs.png" />
+								<param name="list_id" value="16400" />
+							</include>
+							<include content="WidgetListSquare" condition="Library.HasContent(musicvideos)">
+								<param name="content_path" value="special://skin/playlists/random_musicvideo_artists.xsp" />
+								<param name="widget_header" value="$LOCALIZE[31013]" />
+								<param name="widget_target" value="music" />
+								<param name="browse_mode" value="never" />
+								<param name="list_id" value="16200" />
+								<param name="widget_limit" value="10" />
+							</include>
+							<include content="WidgetListEpisodes" condition="Library.HasContent(musicvideos) + !Skin.HasSetting(show_musicvideoposter)">
+								<param name="content_path" value="special://skin/playlists/random_musicvideos.xsp" />
+								<param name="widget_header" value="$LOCALIZE[31152]" />
+								<param name="widget_target" value="videos" />
+								<param name="main_label" value="$INFO[ListItem.Label]" />
+								<param name="sub_label" value="$INFO[ListItem.Artist]" />
+								<param name="thumb_label" value="$INFO[ListItem.Year]" />
+								<param name="fallback_image" value="DefaultMusicSongs.png" />
+								<param name="list_id" value="16500" />
+							</include>
+							<include content="WidgetListPoster" condition="Library.HasContent(musicvideos) + Skin.HasSetting(show_musicvideoposter)">
+								<param name="content_path" value="special://skin/playlists/random_musicvideos.xsp" />
+								<param name="widget_header" value="$LOCALIZE[31152]" />
+								<param name="widget_target" value="videos" />
+								<param name="browse_mode" value="never" />
+								<param name="fallback_image" value="DefaultMusicSongs.png" />
+								<param name="list_id" value="16500" />
+							</include>
+							<include content="WidgetListCategories" condition="Library.HasContent(musicvideos)">
+								<param name="content_path" value="videodb://musicvideos/studios/" />
+								<param name="widget_header" value="$LOCALIZE[20388]" />
+								<param name="widget_target" value="music" />
+								<param name="list_id" value="16600" />
+								<param name="icon" value="$VAR[WidgetStudioIconVar]" />
+								<param name="icon_height" value="70" />
+							</include>
+						</control>
+						<include content="ImageWidget" condition="!Library.HasContent(musicvideos)">
+							<param name="restore_full_size" value="true" />
+							<param name="text_label" value="$LOCALIZE[31104]" />
+							<param name="message_height" value="48" />
+							<param name="block_height" value="136" />
+							<param name="buttons_top" value="72" />
+							<param name="button_label" value="$LOCALIZE[31110]" />
+							<param name="button_onclick" value="ActivateWindow(videos,files,return)" />
+							<param name="button_id" value="16800" />
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoMusicVideoButton)" />
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="16010" />
+						</include>
+					</control>
+					<control type="group" id="4000">
+						<include>FlixiumHomeWidgetScale</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),pictures)</visible>
+						<include content="Visible_Right_Delayed">
+							<param name="id" value="pictures" />
+						</include>
+						<control type="grouplist" id="4001">
+							<include>WidgetGroupListCommon</include>
+							<include content="WidgetListCategories" condition="!Skin.HasSetting(HomeMenuNoPicturesButton)">
+								<param name="content_path" value="sources://pictures/" />
+								<param name="widget_header" value="$LOCALIZE[20094]" />
+								<param name="widget_target" value="pictures" />
+								<param name="list_id" value="4100" />
+								<param name="icon_height" value="110" />
+							</include>
+						</control>
+					</control>
+					<control type="group" id="17000">
+						<include>FlixiumHomeWidgetScale</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),games)</visible>
+						<include content="Visible_Right_Delayed">
+							<param name="id" value="games" />
+						</include>
+						<control type="grouplist" id="17001">
+							<include>WidgetGroupListCommon</include>
+							<pagecontrol>17010</pagecontrol>
+							<include content="WidgetListSquare">
+								<param name="content_path" value="addons://sources/game/" />
+								<param name="widget_header" value="$LOCALIZE[35049]" />
+								<param name="widget_target" value="games" />
+								<param name="sortby" value="lastused" />
+								<param name="sortorder" value="descending" />
+								<param name="list_id" value="17200" />
+								<param name="fallback_icon" value="DefaultAddonGame.png" />
+							</include>
+						</control>
+						<include content="ImageWidget">
+							<param name="restore_full_size" value="true" />
+							<param name="text_label" value="$LOCALIZE[31162]" />
+							<param name="button_label" value="$LOCALIZE[31144]" />
+							<param name="button_onclick" value="ActivateWindow(addonbrowser,addons://default_binary_addons_source/category.gameaddons,return)" />
+							<param name="button_id" value="17100" />
+							<param name="visible" value="!Integer.IsGreater(Container(17001).NumItems,0)" />
+							<param name="button2_onclick" value="Skin.SetBool(HomeMenuNoGamesButton)" />
+						</include>
+						<include content="WidgetScrollbar" condition="Skin.HasSetting(touchmode)">
+							<param name="scrollbar_id" value="17010" />
+						</include>
+					</control>
+					<control type="group" id="21000">
+						<include>FlixiumHomeWidgetScale</include>
+						<visible>String.IsEqual(Container(9000).ListItem.Property(id),disc)</visible>
+						<include content="Visible_Right_Delayed">
+							<param name="id" value="disc" />
+						</include>
+						<include content="ImageWidget">
+							<param name="restore_full_size" value="true" />
+							<param name="text_label" value="$INFO[System.DVDLabel]" />
+							<param name="message_height" value="48" />
+							<param name="block_height" value="136" />
+							<param name="buttons_top" value="72" />
+							<param name="button_label" value="$LOCALIZE[341]" />
+							<param name="button_onclick" value="PlayDisc" />
+							<param name="button_id" value="21100" />
+							<param name="visible" value="true" />
+							<param name="button2_label" value="$LOCALIZE[13391]" />
+							<param name="button2_onclick" value="EjectTray()" />
+							<param name="button3_label" value="$LOCALIZE[600]" />
+							<param name="button3_onclick" value="RipCD" />
+							<param name="visible_3" value="System.HasMediaAudioCD" />
+						</include>
+					</control>
+				</control>
+				<control type="group">
+					<depth>DepthContentPanel</depth>
+					<include>OpenClose_Left</include>
+					<animation effect="slide" end="-370,0" time="500" tween="cubic" easing="inout" condition="Control.HasFocus(5800) | Control.HasFocus(5900)">Conditional</animation>
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>370</width>
+						<height>1080</height>
+						<texture border="32" colordiffuse="$VAR[GlassHomeSidebarTintVar]">$VAR[GlassHomeSidebarTextureVar]</texture>
+					</control>
+					<control type="group">
+						<description>Home sidebar divider</description>
+						<left>365</left>
+						<top>187.25</top>
+						<width>18</width>
+						<height>705.5</height>
+						<include condition="!$EXP[flixium_glass]">GlassLegacyDecor3</include>
+						<include condition="!$EXP[flixium_glass]">GlassLegacyDecor4</include>
+						<visible>!Skin.HasSetting(Flixium.HideHomeSidebarDivider)</visible>
+					</control>
+					<control type="fixedlist" id="9000">
+						<animation effect="slide" end="0,-285" time="0" condition="Integer.IsGreater(Container(9000).NumItems,0) + Integer.IsLess(Container(9000).NumItems,3)">Conditional</animation>
+						<animation effect="slide" end="0,-190" time="0" condition="Integer.IsGreater(Container(9000).NumItems,2) + Integer.IsLess(Container(9000).NumItems,5)">Conditional</animation>
+						<animation effect="slide" end="0,-95" time="0" condition="Integer.IsGreater(Container(9000).NumItems,4) + Integer.IsLess(Container(9000).NumItems,7)">Conditional</animation>
+						<left>0</left>
+						<top>246</top>
+						<width>370</width>
+						<height>665</height>
+						<focusposition>3</focusposition>
+						<movement>3</movement>
+						<onfocus>ClearProperty(listposition,home)</onfocus>
+						<onright>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright>
+						<onup>700</onup>
+						<ondown>700</ondown>
+						<scrolltime tween="cubic" easing="out">500</scrolltime>
+						<focusedlayout height="95">
+							<control type="label">
+								<visible>Control.HasFocus(9000)</visible>
+								<include condition="!$EXP[flixium_glass]">FlixiumHomeMenuLegacyPosition</include>
+								<include condition="$EXP[flixium_glass]">FlixiumHomeMenuGlassPosition</include>
+								<top>0</top>
+								<height>95</height>
+								<animation effect="zoom" start="100" end="115" center="257,47" time="200" tween="sine" easing="out">Focus</animation>
+								<animation effect="zoom" start="115" end="100" center="257,47" time="160" tween="sine" easing="out">UnFocus</animation>
+								<aligny>center</aligny>
+								<include>FlixiumHomeMenuFont</include>
+								<textcolor>white</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+								<shadowcolor>text_shadow</shadowcolor>
+							</control>
+							<control type="label">
+								<visible>!Control.HasFocus(9000)</visible>
+								<include condition="!$EXP[flixium_glass]">FlixiumHomeMenuLegacyPosition</include>
+								<include condition="$EXP[flixium_glass]">FlixiumHomeMenuGlassPosition</include>
+								<top>0</top>
+								<height>95</height>
+								<animation effect="zoom" start="115" end="115" center="257,47" time="0" condition="true">Conditional</animation>
+								<aligny>center</aligny>
+								<include>FlixiumHomeMenuFont</include>
+								<textcolor>white</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+								<shadowcolor>text_shadow</shadowcolor>
+							</control>
+						</focusedlayout>
+						<itemlayout height="95">
+							<control type="label">
+								<include condition="!$EXP[flixium_glass]">FlixiumHomeMenuLegacyPosition</include>
+								<include condition="$EXP[flixium_glass]">FlixiumHomeMenuGlassPosition</include>
+								<top>0</top>
+								<height>95</height>
+								<aligny>center</aligny>
+								<include>FlixiumHomeMenuFont</include>
+								<textcolor>FF808080</textcolor>
+								<label>$INFO[ListItem.Label]</label>
+								<shadowcolor>text_shadow</shadowcolor>
+							</control>
+						</itemlayout>
+						<content>
+							<include condition="!Skin.HasSetting(Flixium.HomeMenu.Configured)">FlixiumLegacyMenuItems</include>
+							<include condition="Skin.HasSetting(Flixium.HomeMenu.Configured)">FlixiumSharedMenuItems</include>
+						</content>
+					</control>
+					<control type="grouplist" id="700">
+						<orientation>horizontal</orientation>
+						<itemgap>0</itemgap>
+						<left>58</left>
+						<width>254</width>
+						<height>110</height>
+						<top>100</top>
+						<onup>SetFocus(9000,99,absolute)</onup>
+						<ondown>SetFocus(9000,0,absolute)</ondown>
+						<onright>2000</onright>
+						<align>justify</align>
+						<include content="IconButton">
+							<param name="control_id" value="804" />
+							<param name="onclick" value="ActivateWindow(shutdownmenu)" />
+							<param name="icon" value="icons/power.png" />
+							<param name="label" value="$LOCALIZE[33060]" />
+						</include>
+						<include content="IconButton">
+							<param name="control_id" value="802" />
+							<param name="onclick" value="ActivateWindow(settings)" />
+							<param name="icon" value="icons/settings.png" />
+							<param name="label" value="$LOCALIZE[21417]" />
+						</include>
+					</control>
+				</control>
+				<include>BottomBar</include>
+				<include content="TopBar">
+					<param name="breadcrumbs_label" value="" />
+				</include>
+				<control type="group">
+					<depth>DepthBars</depth>
+					<animation effect="slide" end="0,-90" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
+					<animation effect="slide" end="-370,0" time="500" tween="cubic" easing="inout" condition="Control.HasFocus(5800) | Control.HasFocus(5900)">Conditional</animation>
+					<include>OpenClose_Left</include>
+					<top>30</top>
+					<left>44</left>
+					<control type="image">
+						<left>17</left>
+						<top>-6</top>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<width>248</width>
+						<height>68</height>
+						<texture>special://skin/extras/flixium-logo.png</texture>
+					</control>
+				</control>
+			</control>
+		</controls>
+	</include>
+	<include name="FlixiumHomeMenuLegacyPosition">
+		<left>49</left>
+		<width>208</width>
+		<align>right</align>
+	</include>
+	<include name="FlixiumHomeMenuGlassPosition">
+		<left>52</left>
+		<width>208</width>
+		<align>right</align>
+	</include>
+</includes>

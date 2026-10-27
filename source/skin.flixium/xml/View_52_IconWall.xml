@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<!-- Native node cards retain Kodi's artwork and activation behaviour. -->
+	<include name="FlixiumIconWallCard">
+		<param name="focused">false</param>
+		<param name="textcolor">C8FFFFFF</param>
+		<definition>
+			<control type="group">
+				<left>18</left>
+				<top>16</top>
+				<width>404</width>
+				<height>240</height>
+				<animation effect="zoom" start="100" end="104" center="202,120" time="180" tween="sine" easing="out" condition="$PARAM[focused] + Control.HasFocus(52)">Conditional</animation>
+				<control type="image">
+					<width>404</width>
+					<height>240</height>
+					<texture border="32" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+				</control>
+				<control type="image">
+					<width>404</width>
+					<height>240</height>
+					<texture border="32" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassFocusSurfaceVar]</texture>
+					<visible>$PARAM[focused] + Control.HasFocus(52)</visible>
+				</control>
+				<control type="image">
+					<left>118</left>
+					<top>26</top>
+					<width>168</width>
+					<height>130</height>
+					<texture background="true" fallback="DefaultFolder.png" colordiffuse="$PARAM[textcolor]">$VAR[IconWallThumbVar]</texture>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+				<visible>!$EXP[flixium_genre_item]</visible>
+				</control>
+				<control type="textbox">
+					<left>20</left>
+					<top>164</top>
+					<width>364</width>
+					<height>60</height>
+					<font>font12</font>
+					<textcolor>$PARAM[textcolor]</textcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<align>center</align>
+					<aligny>center</aligny>
+				<visible>!$EXP[flixium_genre_item]</visible>
+				</control>
+			<control type="group">
+ <visible>$EXP[flixium_genre_item]</visible>
+ <include content="FlixiumGenreTileContent">
+  <param name="left" value="20" /><param name="width" value="364" />
+  <param name="top" value="0" /><param name="height" value="240" />
+  <param name="horror_left" value="176" /><param name="horror_width" value="200" />
+  <param name="icon_left" value="58" /><param name="icon_top" value="40" />
+  <param name="icon_width" value="116" /><param name="icon_height" value="160" />
+ </include>
+</control>
+</control>
+		</definition>
+	</include>
+	<include name="View_52_IconWall">
+		<control type="group">
+			<visible>Control.IsVisible(52)</visible>
+			<!-- Match the solid Settings page backing, independent of Home artwork. -->
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<texture colordiffuse="$VAR[ThemeWindowVar]">colors/white.png</texture>
+			</control>
+			<control type="group">
+				<include>OpenClose_Right</include>
+				<include>Visible_Right</include>
+				<control type="panel" id="52">
+					<left>80</left>
+					<top>120</top>
+					<width>1760</width>
+					<height>840</height>
+					<onleft>9000</onleft>
+					<onright>531</onright>
+					<pagecontrol>531</pagecontrol>
+					<preloaditems>2</preloaditems>
+					<onup>52</onup>
+					<ondown>52</ondown>
+					<scrolltime tween="cubic" easing="out">350</scrolltime>
+					<visible>Container.Content() | Container.Content(files) | Container.Content(tags) | Container.Content(years) | Container.Content(roles) | Container.Content(sources) | Container.Content(genres) | Container.Content(countries) | Container.Content(studios) | Container.Content(playlists) | Container.Content(favourites) | Container.Content(unknown)</visible>
+					<viewtype label="31099">icon</viewtype>
+					<itemlayout height="280" width="440">
+						<include content="FlixiumIconWallCard" />
+					</itemlayout>
+					<focusedlayout height="280" width="440">
+						<include content="FlixiumIconWallCard">
+							<param name="focused" value="true" />
+							<param name="textcolor" value="FFFFFFFF" />
+						</include>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

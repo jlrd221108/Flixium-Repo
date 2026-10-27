@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">52</defaultcontrol>
+	<controls>
+		<include>DefaultBackground</include>
+		<control type="group">
+			<animation effect="fade" start="0" end="100" time="250">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="180">WindowClose</animation>
+			<control type="label">
+				<left>0</left><top>396</top><width>1920</width><height>48</height>
+				<align>center</align><aligny>center</aligny>
+				<font>FlixiumProfileHeading</font><textcolor>FFFFFFFF</textcolor>
+				<label>$LOCALIZE[31098]</label>
+			</control>
+			<!-- Nine slots fit on screen. Shorter rows are centered; longer rows scroll. -->
+			<control type="list" id="52">
+				<left>204</left><top>462</top><width>1512</width><height>200</height>
+				<onleft>52</onleft><onright>52</onright><onup>52</onup><ondown>52</ondown>
+				<orientation>horizontal</orientation>
+				<scrolltime tween="cubic" easing="out">250</scrolltime>
+				<animation effect="slide" end="672,0" time="0" condition="Integer.IsEqual(Container(52).NumItems,1)">Conditional</animation>
+				<animation effect="slide" end="588,0" time="0" condition="Integer.IsEqual(Container(52).NumItems,2)">Conditional</animation>
+				<animation effect="slide" end="504,0" time="0" condition="Integer.IsEqual(Container(52).NumItems,3)">Conditional</animation>
+				<animation effect="slide" end="420,0" time="0" condition="Integer.IsEqual(Container(52).NumItems,4)">Conditional</animation>
+				<animation effect="slide" end="336,0" time="0" condition="Integer.IsEqual(Container(52).NumItems,5)">Conditional</animation>
+				<animation effect="slide" end="252,0" time="0" condition="Integer.IsEqual(Container(52).NumItems,6)">Conditional</animation>
+				<animation effect="slide" end="168,0" time="0" condition="Integer.IsEqual(Container(52).NumItems,7)">Conditional</animation>
+				<animation effect="slide" end="84,0" time="0" condition="Integer.IsEqual(Container(52).NumItems,8)">Conditional</animation>
+				<itemlayout width="168" height="200">
+
+					<control type="image">
+						<left>20</left><top>8</top><width>128</width><height>128</height>
+						<texture diffuse="flixium/profile-mask.png" fallback="flixium/profile-default.png">$INFO[ListItem.Art(thumb)]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="label">
+						<left>4</left><top>154</top><width>160</width><height>34</height>
+						<font>FlixiumProfileName</font>
+						<align>center</align><aligny>center</aligny>
+						<textcolor>FFB3B3B3</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout width="168" height="200">
+					<control type="image">
+						<left>16</left><top>4</top><width>136</width><height>136</height>
+						<texture>flixium/profile-focus.png</texture>
+						<visible>Control.HasFocus(52)</visible>
+					</control>
+					<control type="image">
+						<left>20</left><top>8</top><width>128</width><height>128</height>
+						<texture diffuse="flixium/profile-mask.png" fallback="flixium/profile-default.png">$INFO[ListItem.Art(thumb)]</texture>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+					</control>
+					<control type="label">
+						<left>4</left><top>154</top><width>160</width><height>34</height>
+						<font>FlixiumProfileName</font>
+						<align>center</align><aligny>center</aligny>
+						<textcolor>FFFFFFFF</textcolor>
+						<scroll>true</scroll>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>
+

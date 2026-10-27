@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+  <zorder>3</zorder>
+  <controls>
+    <control type="group">
+      <depth>DepthMax</depth>
+      <top>48</top>
+      <right>40</right>
+      <width>620</width>
+      <height>144</height>
+      <animation effect="fade" start="0" end="100" time="180">WindowOpen</animation>
+      <animation effect="fade" start="100" end="0" time="140">WindowClose</animation>
+      <animation effect="slide" start="24,0" end="0,0" time="220" tween="cubic" easing="out" condition="!Skin.HasSetting(no_slide_animations)">WindowOpen</animation>
+      <visible>String.IsEmpty(Window(Home).Property(script.cinemavision.running))</visible>
+      <control type="image">
+        <width>620</width>
+        <height>144</height>
+        <texture border="24" colordiffuse="$VAR[GlassThemePanelTintVar]">$VAR[GlassDialogSurfaceVar]</texture>
+      </control>
+      <control type="image">
+        <left>24</left>
+        <top>18</top>
+        <width>108</width>
+        <height>108</height>
+        <texture border="16" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+      </control>
+      <control type="image" id="400">
+        <description>Notification icon or artwork supplied by Kodi</description>
+        <left>28</left>
+        <top>22</top>
+        <width>100</width>
+        <height>100</height>
+        <aspectratio>keep</aspectratio>
+        <texture diffuse="special://skin/extras/home-album-cover-mask.png" />
+      </control>
+      <control type="fadelabel" id="401">
+        <description>Notification heading supplied by Kodi</description>
+        <left>156</left>
+        <top>29</top>
+        <width>432</width>
+        <height>40</height>
+        <include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+        <textcolor>FFFFFFFF</textcolor>
+        <shadowcolor>00000000</shadowcolor>
+        <aligny>center</aligny>
+        <scrollout>false</scrollout>
+        <pauseatend>2000</pauseatend>
+      </control>
+      <control type="fadelabel" id="402">
+        <description>Notification message supplied by Kodi</description>
+        <left>156</left>
+        <top>75</top>
+        <width>432</width>
+        <height>34</height>
+        <include>FlixiumGlobalFont_font12</include>
+        <textcolor>B8FFFFFF</textcolor>
+        <shadowcolor>00000000</shadowcolor>
+        <aligny>center</aligny>
+        <scrollout>false</scrollout>
+        <pauseatend>2000</pauseatend>
+      </control>
+    </control>
+  </controls>
+</window>

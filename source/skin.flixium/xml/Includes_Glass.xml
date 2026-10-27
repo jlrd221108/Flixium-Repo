@@ -1,0 +1,695 @@
+<?xml version='1.0' encoding='utf-8'?>
+<includes>
+	<expression name="flixium_glass">Skin.HasSetting(Flixium.Glass.Enabled) + System.AddonIsEnabled(script.flixium.helper)</expression>
+	<variable name="GlassGradientVar">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Gradient)]</value>
+		<value>colors/white.png</value>
+	</variable>
+	<variable name="GlassFocusSurfaceVar">
+		<value condition="$EXP[flixium_glass] + Skin.HasSetting(Flixium.Unrounded)">special://skin/extras/glass/focus-square.png</value>
+		<value condition="$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">special://skin/extras/glass/focus-rounded-compact.png</value>
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/focus-compact.png</value>
+		<value condition="Skin.HasSetting(Flixium.Unrounded)">special://skin/extras/settings-button-square.png</value>
+		<value condition="Skin.HasSetting(Flixium.ExtraRounded)">special://skin/extras/settings-button-extra-rounded.png</value>
+		<value>special://skin/extras/settings-button-mask.png</value>
+	</variable>
+	<variable name="GlassSettingsRowSurfaceVar">
+		<value condition="$EXP[flixium_glass] + Skin.HasSetting(Flixium.Unrounded)">special://skin/extras/glass/button-square.png</value>
+		<value condition="$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">special://skin/extras/glass/button-rounded-compact.png</value>
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/button-compact.png</value>
+		<value condition="Skin.HasSetting(Flixium.Unrounded)">special://skin/extras/settings-button-square.png</value>
+		<value condition="Skin.HasSetting(Flixium.ExtraRounded)">special://skin/extras/settings-button-extra-rounded.png</value>
+		<value>special://skin/extras/settings-button-mask.png</value>
+	</variable>
+	<variable name="GlassSettingsRowFocusVar">
+		<value condition="$EXP[flixium_glass] + Skin.HasSetting(Flixium.Unrounded)">special://skin/extras/glass/focus-square.png</value>
+		<value condition="$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">special://skin/extras/glass/focus-rounded-compact.png</value>
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/focus-compact.png</value>
+		<value condition="Skin.HasSetting(Flixium.Unrounded)">special://skin/extras/settings-button-square.png</value>
+		<value condition="Skin.HasSetting(Flixium.ExtraRounded)">special://skin/extras/settings-button-extra-rounded.png</value>
+		<value>special://skin/extras/settings-button-mask.png</value>
+	</variable>
+	<variable name="GlassSettingsRowTintVar">
+		<value condition="$EXP[flixium_glass]">$VAR[GlassMaterialTintVar]</value>
+		<value>$VAR[ThemeCardVar]</value>
+	</variable>
+	<variable name="GlassSurfaceVar">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Panel)]</value>
+		<value>$VAR[ThemeRoundedTextureVar]</value>
+	</variable>
+	<variable name="GlassDialogSurfaceVar">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Dialog)]</value>
+		<value>$VAR[ThemeRoundedTextureVar]</value>
+	</variable>
+	<variable name="GlassMaterialTintVar">
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Glass.Tint))">$INFO[Skin.String(Flixium.Glass.Tint)]</value>
+		<value>FFB5CCE2</value>
+	</variable>
+	<variable name="GlassButtonTintVar">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>$VAR[ThemeCardVar]</value>
+	</variable>
+	<variable name="GlassDimVar">
+		<value condition="$EXP[flixium_glass]">85FFFFFF</value>
+		<value>D9FFFFFF</value>
+	</variable>
+	<variable name="GlassThemeCardTintVar">
+		<value condition="$EXP[flixium_glass]">DFFFFFFF</value>
+		<value>$VAR[ThemeCardVar]</value>
+	</variable>
+	<variable name="GlassThemePanelTintVar">
+		<value condition="$EXP[flixium_glass]">DFFFFFFF</value>
+		<value>$VAR[ThemePanelVar]</value>
+	</variable>
+	<variable name="GlassThemeFocusTintVar">
+		<value condition="$EXP[flixium_glass]">$VAR[ThemeHighlightVar]</value>
+		<value>$VAR[ThemeFocusVar]</value>
+	</variable>
+	<variable name="GlassThemePopupTintVar">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>$VAR[ThemePopupVar]</value>
+	</variable>
+	<variable name="GlassThemePopupHeaderTintVar">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>$VAR[ThemePopupHeaderVar]</value>
+	</variable>
+	<variable name="GlassFlixiumCategoryFocusBackgroundTintVar">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>$VAR[FlixiumCategoryFocusBackgroundVar]</value>
+	</variable>
+	<variable name="GlassBaseTint11">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>$VAR[ThemeViewBaseVar]</value>
+	</variable>
+	<variable name="GlassBackdrop12Var">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Gradient)]</value>
+		<value>$INFO[Window(home).Property(flixium.helper.info_blurred)]</value>
+	</variable>
+	<variable name="GlassBackdrop12VarTint">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>FF5F5F5F</value>
+	</variable>
+	<variable name="GlassBaseTint14">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>FF08090D</value>
+	</variable>
+	<variable name="GlassBackdrop15Var">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Gradient)]</value>
+		<value>$INFO[Window(home).Property(flixium.playback.blurred)]</value>
+	</variable>
+	<variable name="GlassBackdrop15VarTint">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>FF282828</value>
+	</variable>
+	<variable name="GlassBackdrop17Var">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Gradient)]</value>
+		<value>$INFO[Window(home).Property(flixium.helper.flix_blurred)]</value>
+	</variable>
+	<variable name="GlassBackdrop17VarTint">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>FF5F5F5F</value>
+	</variable>
+	<variable name="GlassBackdrop19Var">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Gradient)]</value>
+		<value>$INFO[Window(home).Property(flixium.helper.flix_blurred)]</value>
+	</variable>
+	<variable name="GlassBackdrop19VarTint">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>FF5F5F5F</value>
+	</variable>
+	<variable name="GlassBackdrop21Var">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Gradient)]</value>
+		<value>$INFO[Window(home).Property(flixium.helper.flix_blurred)]</value>
+	</variable>
+	<variable name="GlassBackdrop21VarTint">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>FFFFFFFF</value>
+	</variable>
+	<variable name="GlassBaseTint23">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>$VAR[ThemeViewBaseVar]</value>
+	</variable>
+	<variable name="GlassBackdrop24Var">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Gradient)]</value>
+		<value>$INFO[Window(home).Property(flixium.helper.flix_blurred)]</value>
+	</variable>
+	<variable name="GlassBackdrop24VarTint">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>FF5F5F5F</value>
+	</variable>
+	<variable name="GlassBackdrop26Var">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Gradient)]</value>
+		<value>$INFO[Window(home).Property(flixium.helper.flix_blurred)]</value>
+	</variable>
+	<variable name="GlassBackdrop26VarTint">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>FF282828</value>
+	</variable>
+	<variable name="GlassBaseTint28">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>$VAR[ThemeViewBaseVar]</value>
+	</variable>
+	<variable name="GlassBackdrop29Var">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Gradient)]</value>
+		<value>$INFO[Window(home).Property(flixium.helper.flix_blurred)]</value>
+	</variable>
+	<variable name="GlassBackdrop29VarTint">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>FF5F5F5F</value>
+	</variable>
+	<variable name="GlassBackdrop31Var">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Gradient)]</value>
+		<value>$INFO[Window(home).Property(flixium.helper.flix_blurred)]</value>
+	</variable>
+	<variable name="GlassBackdrop31VarTint">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>FF282828</value>
+	</variable>
+	<variable name="GlassHomeSidebarTextureVar">
+		<value condition="$EXP[flixium_glass]">$INFO[Skin.String(Flixium.Glass.Sidebar)]</value>
+		<value>colors/black.png</value>
+	</variable>
+	<variable name="GlassHomeSidebarTintVar">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>00FFFFFF</value>
+	</variable>
+	<include name="GlassLegacyDecor0">
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<right>0</right>
+			<bottom>0</bottom>
+			<texture border="2" colordiffuse="$VAR[ThemeFocusVar]">$VAR[ThemePopupRoundedBorderVar]</texture>
+		</control>
+	</include>
+	<include name="GlassLegacyDecor1">
+		<control type="image" id="19999">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<aspectratio>scale</aspectratio>
+			<texture>$INFO[Container(9000).ListItem.Property(background)]</texture>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Configured) + !String.IsEmpty(Container(9000).ListItem.Property(background))</visible>
+		</control>
+	</include>
+	<include name="GlassLegacyDecor2">
+		<control type="multiimage">
+			<depth>DepthBackground</depth>
+			<left>185</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<aspectratio>scale</aspectratio>
+			<fadetime>600</fadetime>
+			<animation effect="zoom" center="auto" end="102,102" time="0" condition="Integer.IsGreater(System.StereoscopicMode,0)">conditional</animation>
+			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+			<animation effect="fade" time="400">VisibleChange</animation>
+			<imagepath background="true" colordiffuse="bg_overlay">$VAR[HomeFanartVar]</imagepath>
+			<visible>false</visible>
+		</control>
+	</include>
+	<include name="GlassLegacyDecor3">
+		<control type="image">
+			<visible>!Skin.HasSetting(Flixium.HideHomeSidebarDivider)</visible>
+			<left>-8.3</left>
+			<top>0</top>
+			<width>18</width>
+			<height>705.5</height>
+			<texture colordiffuse="D95A5A5E">special://skin/extras/home-sidebar-divider-glow.png</texture>
+		</control>
+	</include>
+	<include name="GlassLegacyDecor4">
+		<control type="image">
+			<visible>!Skin.HasSetting(Flixium.HideHomeSidebarDivider)</visible>
+			<left>0</left>
+			<top>0</top>
+			<width>1.4</width>
+			<height>705.5</height>
+			<texture colordiffuse="D95A5A5E">special://skin/extras/home-sidebar-divider.png</texture>
+		</control>
+	</include>
+	<include name="GlassPilltexturenofocus">
+		<texturenofocus border="12" colordiffuse="FFFFFFFF">special://skin/extras/glass/pill.png</texturenofocus>
+	</include>
+	<include name="LegacyGlassPilltexturenofocus">
+		<texturenofocus border="8">special://skin/extras/flix-movie-metadata-translucent.png</texturenofocus>
+	</include>
+	<include name="GlassPilltexturefocus">
+		<texturefocus border="12" colordiffuse="FFFFFFFF">special://skin/extras/glass/pill.png</texturefocus>
+	</include>
+	<include name="LegacyGlassPilltexturefocus">
+		<texturefocus border="8">special://skin/extras/flix-movie-metadata-translucent.png</texturefocus>
+	</include>
+	<include name="GlassBackground">
+		<control type="image">
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<aspectratio>scale</aspectratio>
+			<texture background="true">$INFO[Skin.String(Flixium.Glass.Gradient)]</texture>
+		</control>
+	</include>
+	<include name="DefaultBackground">
+		<definition>
+			<include condition="!$EXP[flixium_glass]">LegacyDefaultBackground</include>
+			<include condition="$EXP[flixium_glass]">GlassDefaultBackground</include>
+		</definition>
+	</include>
+	<include name="GlassDefaultBackground">
+		<control type="videowindow">
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<visible>Player.HasVideo</visible>
+			<visible>!Slideshow.IsActive</visible>
+		</control>
+		<control type="group">
+			<visible>![[Window.IsVisible(videos) + [Control.IsVisible(56) | Control.IsVisible(57)]] | [Window.IsVisible(music) + [Control.IsVisible(58) | Control.IsVisible(59) | Control.IsVisible(60)]]]</visible>
+			<include>GlassBackground</include>
+		</control>
+	</include>
+	<include name="ColoredBackgroundImages">
+		<include condition="!$EXP[flixium_glass]">LegacyColoredBackgroundImages</include>
+		<include condition="$EXP[flixium_glass]">GlassBackground</include>
+	</include>
+	<include name="FlixiumSettingsPageBackground">
+		<include condition="!$EXP[flixium_glass]">LegacyFlixiumSettingsPageBackground</include>
+		<include condition="$EXP[flixium_glass]">GlassBackground</include>
+	</include>
+	<include name="FlixiumSettingsFullPanel">
+		<param name="top">115</param>
+		<param name="height">865</param>
+		<definition>
+			<include condition="!$EXP[flixium_glass]">LegacyFlixiumSettingsFullPanel</include>
+		</definition>
+	</include>
+	<include name="GlassButton0">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassButton0Soft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassButton0Round</include>
+	</include>
+	<include name="GlassButton1">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassButton1Soft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassButton1Round</include>
+	</include>
+	<include name="GlassButton2">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassButton2Soft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassButton2Round</include>
+	</include>
+	<include name="GlassButton3">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassButton3Soft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassButton3Round</include>
+	</include>
+	<include name="GlassButton4">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassButton4Soft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassButton4Round</include>
+	</include>
+	<variable name="GlassBackgroundResolutionVar">
+		<value condition="String.IsEqual(Skin.String(Flixium.Glass.BackgroundResolution),720)">720p</value>
+		<value condition="String.IsEqual(Skin.String(Flixium.Glass.BackgroundResolution),1440)">1440p</value>
+		<value>1080p</value>
+	</variable>
+	<variable name="GlassPanelResolutionVar">
+		<value condition="String.IsEqual(Skin.String(Flixium.Glass.PanelResolution),720)">720p</value>
+		<value condition="String.IsEqual(Skin.String(Flixium.Glass.PanelResolution),1440)">1440p</value>
+		<value>1080p</value>
+	</variable>
+	<include name="GlassNativeFill0Legacy">
+		<texturefocus border="21" colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/button-fo.png</texturefocus>
+	</include>
+	<include name="GlassNativeFill0Glass">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill0GlassSoft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill0GlassRound</include>
+	</include>
+	<include name="GlassNativeFill1Legacy">
+		<texturenofocus border="21">buttons/button-nofo.png</texturenofocus>
+	</include>
+	<include name="GlassNativeFill1Glass">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill1GlassSoft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill1GlassRound</include>
+	</include>
+	<include name="GlassNativeFill2Legacy">
+		<alttexturefocus border="21" colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/button-fo.png</alttexturefocus>
+	</include>
+	<include name="GlassNativeFill2Glass">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill2GlassSoft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill2GlassRound</include>
+	</include>
+	<include name="GlassNativeFill3Legacy">
+		<alttexturenofocus border="21">buttons/button-nofo.png</alttexturenofocus>
+	</include>
+	<include name="GlassNativeFill3Glass">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill3GlassSoft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill3GlassRound</include>
+	</include>
+	<include name="GlassNativeFill4Legacy">
+		<texturefocus border="40" colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/button-fo.png</texturefocus>
+	</include>
+	<include name="GlassNativeFill4Glass">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill4GlassSoft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill4GlassRound</include>
+	</include>
+	<include name="GlassNativeFill5Legacy">
+		<texturenofocus border="40">buttons/button-nofo.png</texturenofocus>
+	</include>
+	<include name="GlassNativeFill5Glass">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill5GlassSoft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill5GlassRound</include>
+	</include>
+	<include name="GlassNativeFill6Legacy">
+		<alttexturefocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">lists/focus.png</alttexturefocus>
+	</include>
+	<include name="GlassNativeFill6Glass">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill6GlassSoft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill6GlassRound</include>
+	</include>
+	<include name="GlassNativeFill7Legacy">
+		<texturefocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">lists/focus.png</texturefocus>
+	</include>
+	<include name="GlassNativeFill7Glass">
+		<include condition="!Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill7GlassSoft</include>
+		<include condition="Skin.HasSetting(Flixium.ExtraRounded)">GlassNativeFill7GlassRound</include>
+	</include>
+	<include name="GlassLegacyFallback0">
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<texture colordiffuse="$VAR[ThemeViewBaseVar]">colors/white.png</texture>
+		</control>
+	</include>
+	<include name="GlassLegacyFallback1">
+		<control type="image">
+			<include>FullScreenDimensions</include>
+			<texture colordiffuse="FF080B10">colors/white.png</texture>
+		</control>
+	</include>
+	<include name="GlassLegacyFallback2">
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1920</width>
+			<height>1080</height>
+			<texture colordiffuse="$VAR[ThemeViewBaseVar]">colors/white.png</texture>
+		</control>
+	</include>
+	<include name="GlassLegacyFallback3">
+		<control type="image">
+			<include>FullScreenDimensions</include>
+			<texture colordiffuse="FF08090D">colors/white.png</texture>
+		</control>
+	</include>
+	<include name="GlassButton0Soft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassButton0SoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassButton0SoftDefault</include>
+	</include>
+	<include name="GlassButton0SoftSquare">
+		<texturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-square.png</texturenofocus>
+	</include>
+	<include name="GlassButton0SoftDefault">
+		<texturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-compact.png</texturenofocus>
+	</include>
+	<include name="GlassButton0Round">
+		<texturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-rounded-compact.png</texturenofocus>
+	</include>
+	<include name="GlassButton1Soft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassButton1SoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassButton1SoftDefault</include>
+	</include>
+	<include name="GlassButton1SoftSquare">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-square.png</texturefocus>
+	</include>
+	<include name="GlassButton1SoftDefault">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-compact.png</texturefocus>
+	</include>
+	<include name="GlassButton1Round">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-rounded-compact.png</texturefocus>
+	</include>
+	<include name="GlassButton2Soft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassButton2SoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassButton2SoftDefault</include>
+	</include>
+	<include name="GlassButton2SoftSquare">
+		<alttexturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-square.png</alttexturefocus>
+	</include>
+	<include name="GlassButton2SoftDefault">
+		<alttexturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-compact.png</alttexturefocus>
+	</include>
+	<include name="GlassButton2Round">
+		<alttexturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-rounded-compact.png</alttexturefocus>
+	</include>
+	<include name="GlassButton3Soft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassButton3SoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassButton3SoftDefault</include>
+	</include>
+	<include name="GlassButton3SoftSquare">
+		<alttexturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-square.png</alttexturenofocus>
+	</include>
+	<include name="GlassButton3SoftDefault">
+		<alttexturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-compact.png</alttexturenofocus>
+	</include>
+	<include name="GlassButton3Round">
+		<alttexturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-rounded-compact.png</alttexturenofocus>
+	</include>
+	<include name="GlassButton4Soft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassButton4SoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassButton4SoftDefault</include>
+	</include>
+	<include name="GlassButton4SoftSquare">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-square.png</texturefocus>
+	</include>
+	<include name="GlassButton4SoftDefault">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-compact.png</texturefocus>
+	</include>
+	<include name="GlassButton4Round">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-rounded-compact.png</texturefocus>
+	</include>
+	<include name="GlassNativeFill0GlassSoft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill0GlassSoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill0GlassSoftDefault</include>
+	</include>
+	<include name="GlassNativeFill0GlassSoftSquare">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-square.png</texturefocus>
+	</include>
+	<include name="GlassNativeFill0GlassSoftDefault">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-compact.png</texturefocus>
+	</include>
+	<include name="GlassNativeFill0GlassRound">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-rounded-compact.png</texturefocus>
+	</include>
+	<include name="GlassNativeFill1GlassSoft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill1GlassSoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill1GlassSoftDefault</include>
+	</include>
+	<include name="GlassNativeFill1GlassSoftSquare">
+		<texturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-square.png</texturenofocus>
+	</include>
+	<include name="GlassNativeFill1GlassSoftDefault">
+		<texturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-compact.png</texturenofocus>
+	</include>
+	<include name="GlassNativeFill1GlassRound">
+		<texturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-rounded-compact.png</texturenofocus>
+	</include>
+	<include name="GlassNativeFill2GlassSoft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill2GlassSoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill2GlassSoftDefault</include>
+	</include>
+	<include name="GlassNativeFill2GlassSoftSquare">
+		<alttexturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-square.png</alttexturefocus>
+	</include>
+	<include name="GlassNativeFill2GlassSoftDefault">
+		<alttexturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-compact.png</alttexturefocus>
+	</include>
+	<include name="GlassNativeFill2GlassRound">
+		<alttexturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-rounded-compact.png</alttexturefocus>
+	</include>
+	<include name="GlassNativeFill3GlassSoft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill3GlassSoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill3GlassSoftDefault</include>
+	</include>
+	<include name="GlassNativeFill3GlassSoftSquare">
+		<alttexturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-square.png</alttexturenofocus>
+	</include>
+	<include name="GlassNativeFill3GlassSoftDefault">
+		<alttexturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-compact.png</alttexturenofocus>
+	</include>
+	<include name="GlassNativeFill3GlassRound">
+		<alttexturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-rounded-compact.png</alttexturenofocus>
+	</include>
+	<include name="GlassNativeFill4GlassSoft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill4GlassSoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill4GlassSoftDefault</include>
+	</include>
+	<include name="GlassNativeFill4GlassSoftSquare">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-square.png</texturefocus>
+	</include>
+	<include name="GlassNativeFill4GlassSoftDefault">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-compact.png</texturefocus>
+	</include>
+	<include name="GlassNativeFill4GlassRound">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-rounded-compact.png</texturefocus>
+	</include>
+	<include name="GlassNativeFill5GlassSoft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill5GlassSoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill5GlassSoftDefault</include>
+	</include>
+	<include name="GlassNativeFill5GlassSoftSquare">
+		<texturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-square.png</texturenofocus>
+	</include>
+	<include name="GlassNativeFill5GlassSoftDefault">
+		<texturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-compact.png</texturenofocus>
+	</include>
+	<include name="GlassNativeFill5GlassRound">
+		<texturenofocus border="28" colordiffuse="$VAR[GlassMaterialTintVar]">special://skin/extras/glass/button-rounded-compact.png</texturenofocus>
+	</include>
+	<include name="GlassNativeFill6GlassSoft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill6GlassSoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill6GlassSoftDefault</include>
+	</include>
+	<include name="GlassNativeFill6GlassSoftSquare">
+		<alttexturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-square.png</alttexturefocus>
+	</include>
+	<include name="GlassNativeFill6GlassSoftDefault">
+		<alttexturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-compact.png</alttexturefocus>
+	</include>
+	<include name="GlassNativeFill6GlassRound">
+		<alttexturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-rounded-compact.png</alttexturefocus>
+	</include>
+	<include name="GlassNativeFill7GlassSoft">
+		<include condition="Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill7GlassSoftSquare</include>
+		<include condition="!Skin.HasSetting(Flixium.Unrounded)">GlassNativeFill7GlassSoftDefault</include>
+	</include>
+	<include name="GlassNativeFill7GlassSoftSquare">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-square.png</texturefocus>
+	</include>
+	<include name="GlassNativeFill7GlassSoftDefault">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-compact.png</texturefocus>
+	</include>
+	<include name="GlassNativeFill7GlassRound">
+		<texturefocus border="28" colordiffuse="$VAR[ThemeHighlightVar]">special://skin/extras/glass/focus-rounded-compact.png</texturefocus>
+	</include>
+	<include name="GlassLegacyPopupHeaderTexture">
+		<texture border="32,32,32,0" colordiffuse="$VAR[ThemePopupHeaderVar]">$VAR[ThemePopupHeadingTextureVar]</texture>
+	</include>
+	<include name="GlassPopupHeaderTexture">
+		<texture border="32,32,32,0" colordiffuse="0FFFFFFF">$VAR[ThemePopupHeadingTextureVar]</texture>
+	</include>
+	<variable name="GlassSmallSurface0">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface1">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface2">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface3">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface4">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface5">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface6">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface7">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface8">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface9">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface10">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface11">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface12">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-movie-metadata-translucent.png</value>
+	</variable>
+	<variable name="GlassSmallSurface13">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-movie-metadata-translucent.png</value>
+	</variable>
+	<variable name="GlassSmallSurface14">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-movie-metadata-translucent.png</value>
+	</variable>
+	<variable name="GlassSmallSurface15">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-movie-metadata-translucent.png</value>
+	</variable>
+	<variable name="GlassSmallSurface16">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-movie-metadata-translucent.png</value>
+	</variable>
+	<variable name="GlassSmallSurface17">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-movie-metadata-translucent.png</value>
+	</variable>
+	<variable name="GlassSmallSurface18">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-movie-metadata-translucent.png</value>
+	</variable>
+	<variable name="GlassSmallSurface19">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface19Tint">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>FF50505B</value>
+	</variable>
+	<variable name="GlassSmallSurface21">
+		<value condition="$EXP[flixium_glass]">special://skin/extras/glass/pill.png</value>
+		<value>special://skin/extras/flix-pill-background.png</value>
+	</variable>
+	<variable name="GlassSmallSurface21Tint">
+		<value condition="$EXP[flixium_glass]">FFFFFFFF</value>
+		<value>80FFFFFF</value>
+	</variable>
+	<include name="GlassLegacyMusicPlane0">
+		<control type="image">
+			<include>FullScreenDimensions</include>
+			<texture colordiffuse="FF08090D">colors/white.png</texture>
+		</control>
+	</include>
+	<include name="GlassLegacyMusicPlane1">
+		<control type="image">
+			<visible>!$EXP[flixium_glass] | Control.IsVisible(58) | Control.IsVisible(59) | Control.IsVisible(60)</visible>
+			<include>FullScreenDimensions</include>
+			<texture colordiffuse="FF08090D">colors/white.png</texture>
+			<visible>!Control.IsVisible(52) + System.AddonIsEnabled(script.flixium.helper) + !Skin.HasSetting(flix_disable_background_blur)</visible>
+		</control>
+	</include>
+	<variable name="GlassBackgroundPresetVar">
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Glass.BackgroundPresetName))">$INFO[Skin.String(Flixium.Glass.BackgroundPresetName)]</value>
+		<value>$LOCALIZE[31220]</value>
+	</variable>
+	<variable name="GlassButtonSoftTextureVar">
+		<value condition="Skin.HasSetting(Flixium.Unrounded)">special://skin/extras/glass/button-square.png</value>
+		<value>special://skin/extras/glass/button-compact.png</value>
+	</variable>
+	<variable name="GlassFocusSoftTextureVar">
+		<value condition="Skin.HasSetting(Flixium.Unrounded)">special://skin/extras/glass/focus-square.png</value>
+		<value>special://skin/extras/glass/focus-compact.png</value>
+	</variable>
+</includes>

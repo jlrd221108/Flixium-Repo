@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="FlixArtistsListLayouts">
+		<itemlayout width="305" height="460" condition="Container.Content(artists)">
+			<control type="image">
+				<left>13</left>
+				<top>55</top>
+				<width>279</width>
+				<height>279</height>
+				<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="special://skin/extras/flix-circle-mask.png" fallback="DefaultArtist.png">$VAR[FlixMusicThumbVar]</texture>
+			</control>
+			<control type="label">
+				<left>10</left>
+				<top>354</top>
+				<width>285</width>
+				<height>52</height>
+				<font>font25_narrow</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>E0F4F2F4</textcolor>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<label>$INFO[ListItem.Label]</label>
+				<scroll>false</scroll>
+			</control>
+		</itemlayout>
+		<focusedlayout width="305" height="460" condition="Container.Content(artists)">
+			<control type="group">
+				<depth>DepthContentPopout</depth>
+				<control type="image">
+					<left>-12</left>
+					<top>30</top>
+					<width>329</width>
+					<height>329</height>
+					<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/flix-circle-glow.png</texture>
+					<include>Animation_FocusTextureFade</include>
+					<animation effect="fade" start="85" end="85" time="0" condition="true">Conditional</animation>
+					<visible>Control.HasFocus(59)</visible>
+				</control>
+				<control type="image">
+					<left>11</left>
+					<top>53</top>
+					<width>283</width>
+					<height>283</height>
+					<texture diffuse="special://skin/extras/flix-circle-mask.png" colordiffuse="FF08090D">colors/white.png</texture>
+					<visible>Control.HasFocus(59)</visible>
+				</control>
+				<control type="image">
+					<left>13</left>
+					<top>55</top>
+					<width>279</width>
+					<height>279</height>
+					<aspectratio align="center" aligny="center" scalediffuse="false">scale</aspectratio>
+					<fadetime>200</fadetime>
+					<texture background="true" diffuse="special://skin/extras/flix-circle-mask.png" fallback="DefaultArtist.png">$VAR[FlixMusicThumbVar]</texture>
+				</control>
+				<control type="label">
+					<left>10</left>
+					<top>354</top>
+					<width>285</width>
+					<height>52</height>
+					<font>font25_narrow</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>E0F4F2F4</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<label>$INFO[ListItem.Label]</label>
+					<scroll>Control.HasFocus(59)</scroll>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="View_59_FlixArtists">
+		<control type="group">
+			<description>Dedicated Flix Artists view</description>
+			<visible>Control.IsVisible(59) + Container.Content(artists)</visible>
+			<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+			<animation effect="fade" time="250">VisibleChange</animation>
+			<include>GlassLegacyFallback2</include>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>1920</width>
+				<height>1080</height>
+				<aspectratio>scale</aspectratio>
+				<fadetime>450</fadetime>
+				<texture colordiffuse="FF5F5F5F">$INFO[Window(home).Property(flixium.helper.flix_blurred)]</texture>
+				<visible>[System.AddonIsEnabled(script.flixium.helper) + !String.IsEmpty(Window(home).Property(flixium.helper.flix_blurred)) + !Skin.HasSetting(flix_disable_background_blur)]</visible>
+			</control>
+			<control type="image">
+				<left>640</left>
+				<top>0</top>
+				<width>1360</width>
+				<height>720</height>
+				<aspectratio align="right" aligny="top">scale</aspectratio>
+				<fadetime>350</fadetime>
+				<texture background="true" diffuse="special://skin/extras/flix-fanart-mask.png" fallback="special://skin/extras/home-images/movie.jpg">$VAR[MediaFanartVar]</texture>
+				<visible>!Container.Content(tvshows) + !Container.Content(seasons) + !Container.Content(episodes)</visible>
+			</control>
+			
+<control type="image">
+				<centerleft>362.5</centerleft>
+				<top>52</top>
+				<width>522</width>
+				<height>180</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<fadetime>250</fadetime>
+				<texture background="true">$VAR[FlixClearLogoVar]</texture>
+				<visible>!ListItem.IsParentFolder + !String.IsEmpty(ListItem.Art(clearlogo))</visible>
+			</control>
+			<control type="label">
+				<left>-17</left>
+				<top>82</top>
+				<width>760</width>
+				<height>150</height>
+				<font>font60</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label]</label>
+				<shadowcolor>70000000</shadowcolor>
+				<visible>String.IsEmpty(ListItem.Art(clearlogo))</visible>
+				<scroll>true</scroll>
+			</control>
+			<control type="grouplist">
+				<left>53</left>
+				<top>250</top>
+				<width>930</width>
+				<height>49</height>
+				<orientation>horizontal</orientation>
+				<itemgap>12</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<visible>!ListItem.IsParentFolder</visible>
+				<include content="FlixiumInfoPill">
+					<param name="label" value="$VAR[FlixArtistAlbumCountVar]" />
+					<param name="visible" value="[String.IsEqual(ListItem.DBType,artist) | Container.Content(artists)] + [!String.IsEmpty(Window(home).Property(flixium.helper.artist_album_count)) | !String.IsEmpty(ListItem.Property(AlbumCount)) | !String.IsEmpty(ListItem.Property(Artist_AlbumCount)) | !String.IsEmpty(ListItem.Property(albums))]" />
+				</include>
+				<include content="FlixiumInfoPill">
+					<param name="label" value="$VAR[FlixArtistTrackCountVar]" />
+					<param name="visible" value="[String.IsEqual(ListItem.DBType,artist) | Container.Content(artists)] + [!String.IsEmpty(Window(home).Property(flixium.helper.artist_track_count)) | !String.IsEmpty(ListItem.Property(TrackCount)) | !String.IsEmpty(ListItem.Property(Artist_TrackCount)) | !String.IsEmpty(ListItem.Property(tracks))]" />
+				</include>
+				<include content="FlixiumInfoPill">
+					<param name="label" value="$VAR[FlixArtistStyleVar]" />
+					<param name="visible" value="[String.IsEqual(ListItem.DBType,artist) | Container.Content(artists)] + [!String.IsEmpty(ListItem.Property(Artist_Style)) | !String.IsEmpty(ListItem.Property(artist_style)) | !String.IsEmpty(ListItem.Property(style))]" />
+				</include>
+			</control>
+			<control type="textbox">
+				<left>50</left>
+				<top>316</top>
+				<width>782.608696</width>
+				<height>291.792606</height>
+				<font>font_movie_flix_plot</font>
+				<align>left</align>
+				<animation effect="zoom" start="86.02" end="86.02" center="50,316" condition="true">Conditional</animation>
+				<textcolor>FFBDBDBD</textcolor>
+				<shadowcolor>DD000000</shadowcolor>
+				<label>$VAR[FlixPlotTextBoxVar]</label>
+				<autoscroll delay="8000" time="4000" repeat="8000">Skin.HasSetting(autoscroll)</autoscroll>
+				<visible>!ListItem.IsParentFolder</visible>
+			</control>
+			<control type="fixedlist" id="59">
+				<visible>Container.Content(artists)</visible>
+				<left>51</left>
+				<top>591</top>
+				<width>1830</width>
+				<height>460</height>
+				<orientation>horizontal</orientation>
+				<fixedposition>0</fixedposition>
+				<scrolltime tween="cubic" easing="out">500</scrolltime>
+				<preloaditems>2</preloaditems>
+				<onleft>59</onleft>
+				<onright>59</onright>
+				<onup>9000</onup>
+				<ondown>59</ondown>
+				<viewtype label="Flix Artists">icon</viewtype>
+				<include>FlixArtistsListLayouts</include>
+			</control>
+		</control>
+	</include>
+</includes>

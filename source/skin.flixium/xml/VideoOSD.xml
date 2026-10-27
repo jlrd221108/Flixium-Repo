@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<onload condition="!Player.PauseEnabled">SetFocus(603)</onload>
+	<defaultcontrol always="true">602</defaultcontrol>
+	<depth>DepthOSD</depth>
+	<controls>
+		<include condition="!$EXP[flixium_video_osd]">FlixiumLegacyVideoOSDControls</include>
+		<include condition="$EXP[flixium_video_osd]">FlixiumVideoOSDControls</include>
+	</controls>
+	<onload>ClearProperty(flixium.video_osd_fading,home)</onload>
+	<onload>ClearProperty(flixium.video_osd_dismissed,home)</onload>
+	<onload condition="!Player.Paused">ClearProperty(flixium.video_logo_ready,home)</onload>
+	<onunload condition="Player.Paused + Player.HasVideo + !VideoPlayer.Content(livetv) + !VideoPlayer.Content(musicvideos)">SetProperty(flixium.video_osd_dismissed,true,home)</onunload>
+</window>

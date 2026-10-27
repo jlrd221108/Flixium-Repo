@@ -1,0 +1,1273 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+	<onload>RunScript(special://skin/extras/flixium_my_list.py,refresh)</onload>
+	<onload condition="Skin.HasSetting(Flixium.Glass.Enabled) + System.AddonIsEnabled(script.flixium.helper) + [!String.IsEqual(Window(home).Property(flixium.glass.ready),true) | !String.IsEqual(Window(home).Property(flixium.glass.profile),System.ProfileName)]">RunScript(special://skin/extras/flixium_glass.py,prepare)</onload>
+	<onload condition="!String.IsEqual(Window(home).Property(Flixium.Customisation.Restoring),true)">ClearProperty(Flixium.Customisation.Page,home)</onload>
+	<onload>ClearProperty(Flixium.Customisation.Restoring,home)</onload>
+	<defaultcontrol>9000</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<onload condition="![String.IsEqual(Skin.String(background_overlay),2) | String.IsEqual(Skin.String(background_overlay),3) | String.IsEqual(Skin.String(background_overlay),4) | String.IsEqual(Skin.String(background_overlay),6) | String.IsEqual(Skin.String(background_overlay),7) | String.IsEqual(Skin.String(background_overlay),10) | String.IsEqual(Skin.String(background_overlay),11)]">Skin.SetString(background_overlay,2)</onload>
+	<controls>
+		<include>FlixiumSettingsPageBackground</include>
+		<include>FlixiumSettingsFullPanel</include>
+		<control type="group" id="10000">
+			<control type="label">
+				<left>40</left>
+				<top>140</top>
+				<width>1300</width>
+				<height>60</height>
+				<include>FlixiumSettingsSectionName</include>
+				<label>$VAR[FlixiumSettingsPageTitleVar]</label>
+			</control>
+			<left>500</left>
+			<include>FlixiumSettingsCenteredLayout</include>
+			<control type="grouplist" id="700">
+				<top>206</top>
+				<left>0</left>
+				<width>1340</width>
+				<height>830</height>
+				<visible>Container(9000).HasFocus(1)</visible>
+				<control type="button" id="9026">
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31261]</label>
+					<label2>$VAR[FlixiumSettingsStyleLabelVar]</label2>
+					<onclick>RunScript(special://skin/extras/flixium_settings_style.py)</onclick>
+					<onup>noop</onup>
+					<ondown>9070</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="9070">
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31262]</label>
+					<onclick>RunScript(special://skin/extras/flixium_setup.py)</onclick>
+					<onup>9026</onup>
+					<ondown>702</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="radiobutton" id="702">
+					<label>$LOCALIZE[20189]</label>
+					<include>FlixiumSettingButton</include>
+					<onclick>Skin.ToggleSetting(autoscroll)</onclick>
+					<selected>Skin.HasSetting(autoscroll)</selected>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>9070</onup>
+					<ondown>703</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="radiobutton" id="703">
+					<label>$LOCALIZE[31158]</label>
+					<include>FlixiumSettingButton</include>
+					<onclick>Skin.ToggleSetting(touchmode)</onclick>
+					<selected>Skin.HasSetting(touchmode)</selected>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>702</onup>
+					<ondown>704</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="radiobutton" id="704">
+					<label>$LOCALIZE[31093]</label>
+					<include>FlixiumSettingButton</include>
+					<onclick condition="!String.IsEmpty(Weather.Plugin)">Skin.ToggleSetting(show_weatherinfo)</onclick>
+					<onclick condition="String.IsEmpty(Weather.Plugin)">ActivateWindow(servicesettings,weather)</onclick>
+					<selected>Skin.HasSetting(show_weatherinfo) + !String.IsEmpty(Weather.Plugin)</selected>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>703</onup>
+					<ondown>707</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="707">
+					<label>$LOCALIZE[31164]</label>
+					<include>FlixiumSettingButton</include>
+					<onclick>Skin.SelectBool(31164, 31165|show_profilename, 31166|show_profileavatar, 16018|show_none)</onclick>
+					<label2>$VAR[ProfileIdentificationLabel2Var]</label2>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<onup>704</onup>
+					<ondown>noop</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<itemgap>6</itemgap>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>9000</onleft>
+				<onright>noop</onright>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>250</scrolltime>
+			</control>
+			<control type="grouplist" id="660">
+				<top>206</top>
+				<left>0</left>
+				<width>1340</width>
+				<height>830</height>
+				<visible>Container(9000).HasFocus(102)</visible>
+				<itemgap>6</itemgap>
+				<control type="radiobutton" id="9030">
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31263]</label>
+					<selected>!Skin.HasSetting(Flixium.Backup.ExcludeGeneral)</selected>
+					<onclick>Skin.ToggleSetting(Flixium.Backup.ExcludeGeneral)</onclick>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>noop</onup>
+					<ondown>9031</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="radiobutton" id="9031">
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31264]</label>
+					<selected>!Skin.HasSetting(Flixium.Backup.ExcludeCustomisation)</selected>
+					<onclick>Skin.ToggleSetting(Flixium.Backup.ExcludeCustomisation)</onclick>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>9030</onup>
+					<ondown>9032</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="radiobutton" id="9032">
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31265]</label>
+					<selected>!Skin.HasSetting(Flixium.Backup.ExcludeArtwork)</selected>
+					<onclick>Skin.ToggleSetting(Flixium.Backup.ExcludeArtwork)</onclick>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>9031</onup>
+					<ondown>9033</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="radiobutton" id="9033">
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31266]</label>
+					<selected>!Skin.HasSetting(Flixium.Backup.ExcludeRatings)</selected>
+					<onclick>Skin.ToggleSetting(Flixium.Backup.ExcludeRatings)</onclick>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>9032</onup>
+					<ondown>9037</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="radiobutton" id="9037">
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31267]</label>
+					<selected>!Skin.HasSetting(Flixium.Backup.ExcludeOsd)</selected>
+					<onclick>Skin.ToggleSetting(Flixium.Backup.ExcludeOsd)</onclick>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>9033</onup>
+					<ondown>9034</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="radiobutton" id="9034">
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31268]</label>
+					<selected>Skin.HasSetting(Flixium.Backup.IncludeSensitive)</selected>
+					<onclick>Skin.ToggleSetting(Flixium.Backup.IncludeSensitive)</onclick>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>9037</onup>
+					<ondown>9027</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="9027">
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31269]</label>
+					<onclick>RunScript(special://skin/extras/flixium_backup.py,backup)</onclick>
+					<onup>9034</onup>
+					<ondown>9028</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="9028">
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31270]</label>
+					<onclick>RunScript(special://skin/extras/flixium_backup.py,restore)</onclick>
+					<onup>9027</onup>
+					<ondown>noop</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>9000</onleft>
+				<onright>noop</onright>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>250</scrolltime>
+			</control>
+			<control type="grouplist" id="630">
+				<top>206</top>
+				<left>0</left>
+				<width>1340</width>
+				<height>830</height>
+				<visible>Container(9000).HasFocus(101)</visible>
+				<control type="radiobutton" id="641">
+					<visible>Container(9000).HasFocus(101)</visible>
+					<label>$LOCALIZE[31271]</label>
+					<include>FlixiumSettingButton</include>
+					<onclick>Skin.ToggleSetting(FlixiumRatingsEnabled)</onclick>
+					<selected>Skin.HasSetting(FlixiumRatingsEnabled)</selected>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>noop</onup>
+					<ondown>634</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="634">
+					<visible>Container(9000).HasFocus(101)</visible>
+					<label>$LOCALIZE[31201]</label>
+					<label2>$VAR[FlixiumMDBListApiKeyLabelVar]</label2>
+					<include>FlixiumSettingButton</include>
+					<onclick>RunScript(special://skin/extras/flixium_mdblist_settings.py)</onclick>
+					<enable>Skin.HasSetting(FlixiumRatingsEnabled)</enable>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<onup>641</onup>
+					<ondown>635</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="635">
+					<visible>Container(9000).HasFocus(101)</visible>
+					<label>$LOCALIZE[31272]</label>
+					<enable>Skin.HasSetting(FlixiumRatingsEnabled)</enable>
+					<include>FlixiumSettingButton</include>
+					<onclick>$VAR[FlixiumRatingSlot1ToggleVar]</onclick>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<onup>634</onup>
+					<ondown>636</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="636">
+					<visible>Container(9000).HasFocus(101)</visible>
+					<label>$LOCALIZE[31273]</label>
+					<enable>Skin.HasSetting(FlixiumRatingsEnabled)</enable>
+					<include>FlixiumSettingButton</include>
+					<onclick>$VAR[FlixiumRatingSlot2ToggleVar]</onclick>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<onup>635</onup>
+					<ondown>637</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="637">
+					<visible>Container(9000).HasFocus(101)</visible>
+					<label>$LOCALIZE[31274]</label>
+					<enable>Skin.HasSetting(FlixiumRatingsEnabled)</enable>
+					<include>FlixiumSettingButton</include>
+					<onclick>$VAR[FlixiumRatingSlot3ToggleVar]</onclick>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<onup>636</onup>
+					<ondown>638</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="638">
+					<visible>Container(9000).HasFocus(101)</visible>
+					<label>$LOCALIZE[31275]</label>
+					<enable>Skin.HasSetting(FlixiumRatingsEnabled)</enable>
+					<include>FlixiumSettingButton</include>
+					<onclick>$VAR[FlixiumRatingSlot4ToggleVar]</onclick>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<onup>637</onup>
+					<ondown>639</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="639">
+					<visible>Container(9000).HasFocus(101)</visible>
+					<label>$LOCALIZE[31276]</label>
+					<enable>Skin.HasSetting(FlixiumRatingsEnabled)</enable>
+					<include>FlixiumSettingButton</include>
+					<onclick>$VAR[FlixiumRatingSlot5ToggleVar]</onclick>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<onup>638</onup>
+					<ondown>640</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="640">
+					<visible>Container(9000).HasFocus(101)</visible>
+					<label>$LOCALIZE[31277]</label>
+					<enable>Skin.HasSetting(FlixiumRatingsEnabled)</enable>
+					<include>FlixiumSettingButton</include>
+					<onclick>$VAR[FlixiumRatingSlot6ToggleVar]</onclick>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<onup>639</onup>
+					<ondown>noop</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<itemgap>6</itemgap>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>9000</onleft>
+				<onright>noop</onright>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>250</scrolltime>
+			</control>
+			<control type="label" id="661">
+				<left>750</left>
+				<top>366</top>
+				<width>460</width>
+				<height>54</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$VAR[FlixiumRatingSlot1LabelVar]</label>
+				<visible>Container(9000).HasFocus(101)</visible>
+				<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+			</control>
+			<control type="label" id="662">
+				<left>750</left>
+				<top>442</top>
+				<width>460</width>
+				<height>54</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$VAR[FlixiumRatingSlot2LabelVar]</label>
+				<visible>Container(9000).HasFocus(101)</visible>
+				<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+			</control>
+			<control type="label" id="663">
+				<left>750</left>
+				<top>518</top>
+				<width>460</width>
+				<height>54</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$VAR[FlixiumRatingSlot3LabelVar]</label>
+				<visible>Container(9000).HasFocus(101)</visible>
+				<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+			</control>
+			<control type="label" id="664">
+				<left>750</left>
+				<top>594</top>
+				<width>460</width>
+				<height>54</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$VAR[FlixiumRatingSlot4LabelVar]</label>
+				<visible>Container(9000).HasFocus(101)</visible>
+				<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+			</control>
+			<control type="label" id="665">
+				<left>750</left>
+				<top>670</top>
+				<width>460</width>
+				<height>54</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$VAR[FlixiumRatingSlot5LabelVar]</label>
+				<visible>Container(9000).HasFocus(101)</visible>
+				<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+			</control>
+			<control type="label" id="666">
+				<left>750</left>
+				<top>746</top>
+				<width>460</width>
+				<height>54</height>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$VAR[FlixiumRatingSlot6LabelVar]</label>
+				<visible>Container(9000).HasFocus(101)</visible>
+				<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+			</control>
+			<control type="image" id="651">
+				<left>1240</left>
+				<top>370</top>
+				<width>60</width>
+				<height>46</height>
+				<aspectratio align="right">keep</aspectratio>
+				<texture>$VAR[FlixiumRatingSlot1PreviewVar]</texture>
+				<visible>Container(9000).HasFocus(101) + Skin.HasSetting(FlixiumRatingsEnabled) + !String.IsEqual(Skin.String(Flixium.RatingSlot1),none)</visible>
+			</control>
+			<control type="image" id="652">
+				<left>1240</left>
+				<top>446</top>
+				<width>60</width>
+				<height>46</height>
+				<aspectratio align="right">keep</aspectratio>
+				<texture>$VAR[FlixiumRatingSlot2PreviewVar]</texture>
+				<visible>Container(9000).HasFocus(101) + Skin.HasSetting(FlixiumRatingsEnabled) + !String.IsEqual(Skin.String(Flixium.RatingSlot2),none)</visible>
+			</control>
+			<control type="image" id="653">
+				<left>1240</left>
+				<top>522</top>
+				<width>60</width>
+				<height>46</height>
+				<aspectratio align="right">keep</aspectratio>
+				<texture>$VAR[FlixiumRatingSlot3PreviewVar]</texture>
+				<visible>Container(9000).HasFocus(101) + Skin.HasSetting(FlixiumRatingsEnabled) + !String.IsEqual(Skin.String(Flixium.RatingSlot3),none)</visible>
+			</control>
+			<control type="image" id="654">
+				<left>1240</left>
+				<top>598</top>
+				<width>60</width>
+				<height>46</height>
+				<aspectratio align="right">keep</aspectratio>
+				<texture>$VAR[FlixiumRatingSlot4PreviewVar]</texture>
+				<visible>Container(9000).HasFocus(101) + Skin.HasSetting(FlixiumRatingsEnabled) + !String.IsEqual(Skin.String(Flixium.RatingSlot4),none)</visible>
+			</control>
+			<control type="image" id="655">
+				<left>1240</left>
+				<top>674</top>
+				<width>60</width>
+				<height>46</height>
+				<aspectratio align="right">keep</aspectratio>
+				<texture>$VAR[FlixiumRatingSlot5PreviewVar]</texture>
+				<visible>Container(9000).HasFocus(101) + Skin.HasSetting(FlixiumRatingsEnabled) + !String.IsEqual(Skin.String(Flixium.RatingSlot5),none)</visible>
+			</control>
+			<control type="image" id="656">
+				<left>1240</left>
+				<top>750</top>
+				<width>60</width>
+				<height>46</height>
+				<aspectratio align="right">keep</aspectratio>
+				<texture>$VAR[FlixiumRatingSlot6PreviewVar]</texture>
+				<visible>Container(9000).HasFocus(101) + Skin.HasSetting(FlixiumRatingsEnabled) + !String.IsEqual(Skin.String(Flixium.RatingSlot6),none)</visible>
+			</control>
+			<control type="grouplist" id="600">
+				<top>206</top>
+				<left>0</left>
+				<width>1340</width>
+				<height>830</height>
+				<visible>Container(9000).HasFocus(3)</visible>
+				<control type="radiobutton" id="605">
+					<label>$LOCALIZE[31002]</label>
+					<include>FlixiumSettingButton</include>
+					<onclick>Skin.ToggleSetting(no_fanart)</onclick>
+					<selected>!Skin.HasSetting(no_fanart)</selected>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>noop</onup>
+					<ondown>607</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="607">
+					<visible>!$EXP[flixium_glass]</visible>
+					<label>$LOCALIZE[31156]</label>
+					<label2>$VAR[BackgroundOverlayTypeVar]</label2>
+					<include>FlixiumSettingButton</include>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<onclick condition="String.IsEqual(Skin.String(background_overlay),11)">Skin.SetString(background_overlay,2)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(background_overlay),10)">Skin.SetString(background_overlay,11)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(background_overlay),7)">Skin.SetString(background_overlay,10)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(background_overlay),6)">Skin.SetString(background_overlay,7)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(background_overlay),4)">Skin.SetString(background_overlay,6)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(background_overlay),3)">Skin.SetString(background_overlay,4)</onclick>
+					<onclick condition="String.IsEqual(Skin.String(background_overlay),2)">Skin.SetString(background_overlay,3)</onclick>
+					<onclick condition="![String.IsEqual(Skin.String(background_overlay),2) | String.IsEqual(Skin.String(background_overlay),3) | String.IsEqual(Skin.String(background_overlay),4) | String.IsEqual(Skin.String(background_overlay),6) | String.IsEqual(Skin.String(background_overlay),7) | String.IsEqual(Skin.String(background_overlay),10) | String.IsEqual(Skin.String(background_overlay),11)]">Skin.SetString(background_overlay,2)</onclick>
+					<onup>605</onup>
+					<ondown>9036</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="radiobutton" id="9036">
+					<visible>!$EXP[flixium_glass]</visible>
+					<label>$LOCALIZE[31278]</label>
+					<include>FlixiumSettingButton</include>
+					<selected>Skin.HasSetting(Flixium.UseSelectedSettingsBackground)</selected>
+					<onclick>Skin.ToggleSetting(Flixium.UseSelectedSettingsBackground)</onclick>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>607</onup>
+					<ondown>6066</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="6066">
+					<label>$LOCALIZE[31149]</label>
+					<label2>$INFO[Skin.String(MovieGenreFanart.Name)]</label2>
+					<include>FlixiumSettingButton</include>
+					<onclick condition="System.AddonIsEnabled(script.image.resource.select)">RunScript(script.image.resource.select,property=MovieGenreFanart&amp;type=resource.images.moviegenrefanart)</onclick>
+					<onclick condition="System.HasAddon(script.image.resource.select) + !System.AddonIsEnabled(script.image.resource.select)">EnableAddon(script.image.resource.select)</onclick>
+					<onclick condition="!System.HasAddon(script.image.resource.select)">InstallAddon(script.image.resource.select)</onclick>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<onup>9036</onup>
+					<ondown>6067</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="radiobutton" id="6067">
+					<label>$LOCALIZE[31168]</label>
+					<include>FlixiumSettingButton</include>
+					<onclick>Skin.ToggleSetting(show_musicvideoposter)</onclick>
+					<selected>Skin.HasSetting(show_musicvideoposter)</selected>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>6066</onup>
+					<ondown>noop</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<itemgap>6</itemgap>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>9000</onleft>
+				<onright>noop</onright>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>250</scrolltime>
+			</control>
+			<control type="grouplist" id="622">
+				<top>206</top>
+				<left>0</left>
+				<width>1340</width>
+				<height>830</height>
+				<visible>Container(9000).HasFocus(4)</visible>
+				<control type="radiobutton" id="623">
+					<label>$LOCALIZE[31172]</label>
+					<include>FlixiumSettingButton</include>
+					<selected>Skin.HasSetting(OSDAutoClose)</selected>
+					<onclick>Skin.ToggleSetting(OSDAutoClose)</onclick>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>noop</onup>
+					<ondown>624</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="624">
+					<label>- $LOCALIZE[31173]</label>
+					<label2>$VAR[SkinSettingOSDAutoCloseTime]</label2>
+					<include>FlixiumSettingButton</include>
+					<onclick>Skin.SetNumeric(OSDAutoCloseTime)</onclick>
+					<enable>Skin.HasSetting(OSDAutoClose)</enable>
+					<left>0</left>
+					<width>1340</width>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<onup>623</onup>
+					<ondown>9470</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<itemgap>6</itemgap>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>9000</onleft>
+				<onright>noop</onright>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>250</scrolltime>
+				<control type="radiobutton" id="9470">
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31279]</label>
+					<onclick>Skin.ToggleSetting(Flixium.NextEpisode.Disabled)</onclick>
+					<selected>!Skin.HasSetting(Flixium.NextEpisode.Disabled)</selected>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>624</onup>
+					<ondown>9471</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="9471">
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31280]</label>
+					<label2>$VAR[FlixiumNextEpisodeFallbackVar]</label2>
+					<onclick>RunScript(special://skin/extras/flixium_next_episode.py,settings)</onclick>
+					<enable>!Skin.HasSetting(Flixium.NextEpisode.Disabled)</enable>
+					<onup>9470</onup>
+					<ondown>noop</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+			</control>
+			<control type="textbox">
+				<left>40</left>
+				<top>766</top>
+				<width>1260</width>
+				<height>180</height>
+				<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+				<textcolor>FFAAA7AF</textcolor>
+				<label>$VAR[FlixiumBackupHelpVar]</label>
+				<visible>Container(9000).HasFocus(102)</visible>
+			</control>
+			<control type="grouplist" id="670">
+				<top>206</top>
+				<left>0</left>
+				<width>1340</width>
+				<height>830</height>
+				<itemgap>6</itemgap>
+				<visible>Container(9000).HasFocus(103)</visible>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<onleft>9000</onleft>
+				<onright>noop</onright>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>250</scrolltime>
+				<control type="button" id="9170">
+					<height>70</height>
+					<width>1340</width>
+					<include>FlixiumSettingButton</include>
+					<label>$LOCALIZE[31281]</label>
+					<label2>›</label2>
+					<visible>String.IsEmpty(Window(home).Property(Flixium.Customisation.Page))</visible>
+					<onclick>SetProperty(Flixium.Customisation.Page,home,home)</onclick>
+					<onclick>SetFocus(9042)</onclick>
+					<onup>noop</onup>
+					<ondown>9171</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="9042">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31282]</label>
+					<onclick>RunScript(special://skin/extras/flixium_home_menu.py)</onclick>
+					<onup>noop</onup>
+					<ondown>9043</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),home)</visible>
+				</control>
+				<control type="button" id="9043">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31283]</label>
+					<onclick>RunScript(special://skin/extras/flixium_widgets.py)</onclick>
+					<onup>9042</onup>
+					<ondown>9035</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),home)</visible>
+				</control>
+				<control type="radiobutton" id="9035">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31284]</label>
+					<selected>!Skin.HasSetting(Flixium.HideHomeSidebarDivider)</selected>
+					<onclick>Skin.ToggleSetting(Flixium.HideHomeSidebarDivider)</onclick>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>9043</onup>
+					<ondown>noop</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),home)</visible>
+				</control>
+				<control type="button" id="9171">
+					<height>70</height>
+					<width>1340</width>
+					<include>FlixiumSettingButton</include>
+					<label>$LOCALIZE[31285]</label>
+					<label2>›</label2>
+					<visible>String.IsEmpty(Window(home).Property(Flixium.Customisation.Page))</visible>
+					<onclick>SetProperty(Flixium.Customisation.Page,appearance,home)</onclick>
+					<onclick>SetFocus(9050)</onclick>
+					<onup>9170</onup>
+					<ondown>9172</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="9050">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31286]</label>
+					<label2>$VAR[ThemeSchemeLabelVar]</label2>
+					<onclick>RunScript(special://skin/extras/flixium_theme.py,scheme)</onclick>
+					<onup>noop</onup>
+					<ondown>9060</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),appearance)</visible>
+				</control>
+				<control type="radiobutton" id="9060">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31287]</label>
+					<selected>Skin.HasSetting(Flixium.Glass.Enabled)</selected>
+					<onclick>RunScript(special://skin/extras/flixium_glass.py,toggle)</onclick>
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>0</radioposx>
+					<radioposy>0</radioposy>
+					<onup>9050</onup>
+					<ondown>9063</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),appearance)</visible>
+				</control>
+				<control type="button" id="9063">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31288]</label>
+					<label2>$VAR[GlassBackgroundPresetVar]</label2>
+					<onclick>RunScript(special://skin/extras/flixium_glass.py,backgroundpreset)</onclick>
+					<enable>$EXP[flixium_glass]</enable>
+					<textoffsetx>40</textoffsetx>
+					<onup>9060</onup>
+					<ondown>9055</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),appearance) + $EXP[flixium_glass]</visible>
+				</control>
+				<control type="button" id="9055">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31289]</label>
+					<label2>$VAR[ThemeCornerStyleVar]</label2>
+					<onclick>RunScript(special://skin/extras/flixium_theme.py,round)</onclick>
+					<onup>9063</onup>
+					<ondown>9144</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),appearance)</visible>
+				</control>
+				<control type="group" id="9144">
+					<width>1340</width>
+					<height>70</height>
+					<control type="button" id="9044">
+						<height>70</height>
+						<include>FlixiumSettingButton</include>
+						<width>1340</width>
+						<label>$LOCALIZE[31290]</label>
+						<onclick>RunScript(special://skin/extras/flixium_fonts.py)</onclick>
+						<onup>9055</onup>
+						<ondown>noop</ondown>
+						<onleft>9000</onleft>
+						<onright>noop</onright>
+					</control>
+					<control type="label">
+						<right>40</right>
+						<top>0</top>
+						<width>24</width>
+						<height>70</height>
+						<font>FlixiumSettingsMenuArrow</font>
+						<label>›</label>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>C8FFFFFF</textcolor>
+						<shadowcolor>00FFFFFF</shadowcolor>
+					</control>
+					<defaultcontrol>9044</defaultcontrol>
+					<onup>9055</onup>
+					<ondown>noop</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),appearance)</visible>
+				</control>
+				<control type="button" id="9172">
+					<height>70</height>
+					<width>1340</width>
+					<include>FlixiumSettingButton</include>
+					<label>$LOCALIZE[31291]</label>
+					<label2>›</label2>
+					<visible>String.IsEmpty(Window(home).Property(Flixium.Customisation.Page))</visible>
+					<onclick>SetProperty(Flixium.Customisation.Page,colours,home)</onclick>
+					<onclick>SetFocus(9151)</onclick>
+					<onup>9171</onup>
+					<ondown>9173</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="group" id="9151">
+					<height>70</height>
+					<width>1340</width>
+					<control type="button" id="9051">
+						<include>FlixiumSettingButton</include>
+						<width>1340</width>
+						<label>$LOCALIZE[31292]</label>
+						<label2>$VAR[ThemeWindowLabelVar]</label2>
+						<onclick>RunScript(special://skin/extras/flixium_theme.py,window)</onclick>
+						<onup>noop</onup>
+						<ondown>9152</ondown>
+						<onleft>9000</onleft>
+						<onright>noop</onright>
+					</control>
+					<control type="image">
+						<left>1030</left>
+						<top>23</top>
+						<width>24</width>
+						<height>24</height>
+						<texture colordiffuse="$VAR[ThemeWindowSwatchVar]">colors/white.png</texture>
+					</control>
+					<defaultcontrol>9051</defaultcontrol>
+					<onup>noop</onup>
+					<ondown>9152</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),colours)</visible>
+				</control>
+				<control type="group" id="9152">
+					<height>70</height>
+					<width>1340</width>
+					<control type="button" id="9052">
+						<include>FlixiumSettingButton</include>
+						<width>1340</width>
+						<label>$LOCALIZE[31293]</label>
+						<label2>$VAR[ThemeHighlightLabelVar]</label2>
+						<onclick>RunScript(special://skin/extras/flixium_theme.py,highlight)</onclick>
+						<onup>9151</onup>
+						<ondown>9153</ondown>
+						<onleft>9000</onleft>
+						<onright>noop</onright>
+					</control>
+					<control type="image">
+						<left>1030</left>
+						<top>23</top>
+						<width>24</width>
+						<height>24</height>
+						<texture colordiffuse="$VAR[ThemeHighlightSwatchVar]">colors/white.png</texture>
+					</control>
+					<defaultcontrol>9052</defaultcontrol>
+					<onup>9151</onup>
+					<ondown>9153</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),colours)</visible>
+				</control>
+				<control type="group" id="9153">
+					<height>70</height>
+					<width>1340</width>
+					<control type="button" id="9053">
+						<include>FlixiumSettingButton</include>
+						<width>1340</width>
+						<label>$LOCALIZE[31294]</label>
+						<label2>$VAR[ThemeDialogLabelVar]</label2>
+						<onclick>RunScript(special://skin/extras/flixium_theme.py,dialog)</onclick>
+						<onup>9152</onup>
+						<ondown>9054</ondown>
+						<onleft>9000</onleft>
+						<onright>noop</onright>
+					</control>
+					<control type="image">
+						<left>1030</left>
+						<top>23</top>
+						<width>24</width>
+						<height>24</height>
+						<texture colordiffuse="$VAR[ThemeDialogSwatchVar]">colors/white.png</texture>
+					</control>
+					<defaultcontrol>9053</defaultcontrol>
+					<onup>9152</onup>
+					<ondown>9054</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),colours)</visible>
+				</control>
+				<control type="button" id="9054">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31295]</label>
+					<onclick>RunScript(special://skin/extras/flixium_theme.py,reset)</onclick>
+					<onup>9153</onup>
+					<ondown>9184</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),colours)</visible>
+				</control>
+				<control type="button" id="9184">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31296]</label>
+					<onclick>RunScript(special://skin/extras/flixium_theme.py,save)</onclick>
+					<onup>9054</onup>
+					<ondown>9185</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),colours)</visible>
+				</control>
+				<control type="button" id="9185">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31297]</label>
+					<onclick>RunScript(special://skin/extras/flixium_theme.py,manage)</onclick>
+					<onup>9184</onup>
+					<ondown>noop</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),colours)</visible>
+				</control>
+				<control type="button" id="9173">
+					<height>70</height>
+					<width>1340</width>
+					<include>FlixiumSettingButton</include>
+					<label>$LOCALIZE[31298]</label>
+					<label2>›</label2>
+					<visible>String.IsEmpty(Window(home).Property(Flixium.Customisation.Page))</visible>
+					<onclick>SetProperty(Flixium.Customisation.Page,quality,home)</onclick>
+					<onclick>SetFocus(9061)</onclick>
+					<onup>9172</onup>
+					<ondown>noop</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="9061">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31299]</label>
+					<label2>$VAR[GlassBackgroundResolutionVar]</label2>
+					<onclick>RunScript(special://skin/extras/flixium_glass.py,background)</onclick>
+					<enable>$EXP[flixium_glass]</enable>
+					<textoffsetx>40</textoffsetx>
+					<onup>noop</onup>
+					<ondown>9062</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),quality) + $EXP[flixium_glass]</visible>
+				</control>
+				<control type="button" id="9062">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31300]</label>
+					<label2>$VAR[GlassPanelResolutionVar]</label2>
+					<onclick>RunScript(special://skin/extras/flixium_glass.py,panels)</onclick>
+					<enable>$EXP[flixium_glass]</enable>
+					<textoffsetx>40</textoffsetx>
+					<onup>9061</onup>
+					<ondown>noop</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),quality) + $EXP[flixium_glass]</visible>
+				</control>
+				<control type="label" id="9190">
+					<width>1340</width>
+					<height>70</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+					<textoffsetx>40</textoffsetx>
+					<textcolor>C8FFFFFF</textcolor>
+					<label>$LOCALIZE[31301]</label>
+					<visible>String.IsEqual(Window(home).Property(Flixium.Customisation.Page),quality) + !$EXP[flixium_glass]</visible>
+				</control>
+			</control>
+			<control type="grouplist" id="680">
+				<top>206</top>
+				<left>0</left>
+				<width>1340</width>
+				<height>830</height>
+				<visible>Container(9000).HasFocus(104)</visible>
+				<itemgap>6</itemgap>
+				<onleft>9000</onleft>
+				<onright>noop</onright>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>250</scrolltime>
+				<control type="button" id="9200">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31302]</label>
+					<label2>$INFO[Window(home).Property(flixium.mylist.setting.filter)]</label2>
+					<onclick>RunScript(special://skin/extras/flixium_my_list.py,setting,0)</onclick>
+					<onup>noop</onup>
+					<ondown>9201</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="9201">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31303]</label>
+					<label2>$INFO[Window(home).Property(flixium.mylist.setting.sort)]</label2>
+					<onclick>RunScript(special://skin/extras/flixium_my_list.py,setting,1)</onclick>
+					<onup>9200</onup>
+					<ondown>9202</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="9202">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31304]</label>
+					<label2>$INFO[Window(home).Property(flixium.mylist.setting.watched)]</label2>
+					<onclick>RunScript(special://skin/extras/flixium_my_list.py,setting,2)</onclick>
+					<onup>9201</onup>
+					<ondown>9205</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="9205">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31305]</label>
+					<label2>$INFO[Window(home).Property(flixium.mylist.setting.notifications)]</label2>
+					<onclick>RunScript(special://skin/extras/flixium_my_list.py,setting,5)</onclick>
+					<onup>9202</onup>
+					<ondown>9207</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="9207">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31306]</label>
+					<onclick>RunScript(special://skin/extras/flixium_my_list.py,setting,7)</onclick>
+					<onup>9205</onup>
+					<ondown>9208</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+				<control type="button" id="9208">
+					<height>70</height>
+					<include>FlixiumSettingButton</include>
+					<width>1340</width>
+					<label>$LOCALIZE[31307]</label>
+					<onclick>RunScript(special://skin/extras/flixium_my_list.py,setting,8)</onclick>
+					<onup>9207</onup>
+					<ondown>noop</ondown>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+				</control>
+			</control>
+		</control>
+		<control type="group">
+			<depth>DepthContentPanel</depth>
+			<left>0</left>
+			<include content="FlixiumSettingsCenteredSidebar">
+				<param name="offset" value="40" />
+			</include>
+			<include>FlixiumSettingsSidebarSize</include>
+			<include content="FlixiumSettingsSidebarHeader">
+				<param name="left" value="0" />
+				<param name="cog_left" value="-28" />
+			</include>
+			<control type="list" id="9000">
+				<animation effect="slide" end="0,112" time="0" condition="true">Conditional</animation>
+				<description>button area</description>
+				<left>0</left>
+				<top>130</top>
+				<width>470</width>
+				<height>700</height>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<itemlayout height="100" width="470">
+					<include content="FlixiumSettingsListRow">
+						<param name="list_id" value="9000" />
+						<param name="border" value="28" />
+						<param name="dim_inactive" value="!$EXP[flixium_glass]" />
+						<param name="surface" value="$VAR[GlassSettingsRowSurfaceVar]" />
+						<param name="background" value="$VAR[GlassSettingsRowTintVar]" />
+					</include>
+				</itemlayout>
+				<focusedlayout height="100" width="470">
+					<include content="FlixiumSettingsListRow">
+						<param name="list_id" value="9000" />
+						<param name="border" value="28" />
+						<param name="dim_inactive" value="!$EXP[flixium_glass]" />
+						<param name="surface" value="$VAR[GlassSettingsRowFocusVar]" />
+						<param name="background" value="$VAR[GlassThemeFocusTintVar]" />
+						<param name="textcolor" value="FFFFFFFF" />
+						<param name="inactive" value="!Control.HasFocus(9000)" />
+					</include>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>$LOCALIZE[128]</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="103">
+						<label>$LOCALIZE[31308]</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="104">
+						<label>$LOCALIZE[31241]</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="3">
+						<label>$LOCALIZE[31159]</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="101">
+						<label>$LOCALIZE[31309]</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="4">
+						<label>$LOCALIZE[31170]</label>
+						<onclick>noop</onclick>
+					</item>
+					<item id="102">
+						<label>$LOCALIZE[31310]</label>
+						<onclick>noop</onclick>
+					</item>
+				</content>
+				<scrolltime>250</scrolltime>
+				<onleft condition="Container(9000).HasFocus(1)">700</onleft>
+				<onleft condition="Container(9000).HasFocus(103)">670</onleft>
+				<onleft condition="Container(9000).HasFocus(3)">600</onleft>
+				<onleft condition="Container(9000).HasFocus(101)">630</onleft>
+				<onleft condition="Container(9000).HasFocus(4)">622</onleft>
+				<onleft condition="Container(9000).HasFocus(102)">660</onleft>
+				<onright condition="Container(9000).HasFocus(1)">700</onright>
+				<onright condition="Container(9000).HasFocus(103)">670</onright>
+				<onright condition="Container(9000).HasFocus(3)">600</onright>
+				<onright condition="Container(9000).HasFocus(101)">630</onright>
+				<onright condition="Container(9000).HasFocus(4)">622</onright>
+				<onright condition="Container(9000).HasFocus(102)">660</onright>
+				<onleft condition="Container(9000).HasFocus(104)">680</onleft>
+				<onright condition="Container(9000).HasFocus(104)">680</onright>
+			</control>
+			<include>FlixiumSettingsSidebarDateTime</include>
+		</control>
+		<control type="group">
+			<right>25</right>
+			<top>146</top>
+			<width>60</width>
+			<control type="scrollbar" id="60">
+				<right>0</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<width>6</width>
+				<orientation>vertical</orientation>
+				<texturesliderbackground />
+				<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
+				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<hitrect x="0" y="0" w="60" h="100%" />
+				<onleft condition="Container(9000).HasFocus(1)">700</onleft>
+				<onleft condition="Container(9000).HasFocus(103)">670</onleft>
+				<onleft condition="Container(9000).HasFocus(3)">600</onleft>
+				<onleft condition="Container(9000).HasFocus(101)">630</onleft>
+				<onleft condition="Container(9000).HasFocus(4)">622</onleft>
+				<onleft condition="Container(9000).HasFocus(102)">660</onleft>
+				<onright condition="Container(9000).HasFocus(1)">700</onright>
+				<onright condition="Container(9000).HasFocus(103)">670</onright>
+				<onright condition="Container(9000).HasFocus(3)">600</onright>
+				<onright condition="Container(9000).HasFocus(101)">630</onright>
+				<onright condition="Container(9000).HasFocus(4)">622</onright>
+				<onright condition="Container(9000).HasFocus(102)">660</onright>
+				<visible>[Control.IsVisible(700) + [Container(700).HasNext | Container(700).HasPrevious]] | [Control.IsVisible(670) + [Container(670).HasNext | Container(670).HasPrevious]] | [Control.IsVisible(600) + [Container(600).HasNext | Container(600).HasPrevious]] | [Control.IsVisible(630) + [Container(630).HasNext | Container(630).HasPrevious]] | [Control.IsVisible(622) + [Container(622).HasNext | Container(622).HasPrevious]] | [Control.IsVisible(660) + [Container(660).HasNext | Container(660).HasPrevious]] | [Control.IsVisible(680) + [Container(680).HasNext | Container(680).HasPrevious]]</visible>
+				<onleft condition="Container(9000).HasFocus(104)">680</onleft>
+				<onright condition="Container(9000).HasFocus(104)">680</onright>
+			</control>
+			<height>830</height>
+		</control>
+		<include content="TopBar">
+			<param name="show_clock" value="false" />
+			<param name="breadcrumbs_label" value="" />
+			<param name="sublabel" value="" />
+		</include>
+		<include>BottomBar</include>
+		<control type="textbox" id="6">
+			<include>FlixiumSettingsCenteredLayout</include>
+			<description>description area</description>
+			<visible>false</visible>
+			<left>510</left>
+			<bottom>27</bottom>
+			<width>1350</width>
+			<height>100</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabelSentence</include>
+			<align>justify</align>
+			<textcolor>button_focus</textcolor>
+			<label>$VAR[SkinSettingsHelpTextVar]</label>
+			<autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
+		</control>
+	</controls>
+	<onload>RunScript(special://skin/extras/flixium_settings_navigation.py,install)</onload>
+	<onunload>RunScript(special://skin/extras/flixium_settings_navigation.py,uninstall)</onunload>
+</window>

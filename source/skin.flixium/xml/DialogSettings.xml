@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+	<defaultcontrol>5</defaultcontrol>
+	<onload condition="Window.IsVisible(osdsubtitlesettings)">SetFocus(9001)</onload>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<top>150</top>
+			<centerleft>50%</centerleft>
+			<width>1240</width>
+			<include>Animation_DialogPopupVisible</include>
+			<visible>!Window.IsVisible(sliderdialog)</visible>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="1240" />
+				<param name="height" value="780" />
+				<param name="header_label" value="" />
+				<param name="header_id" value="2" />
+			</include>
+			<!-- The subtitle toggle remains Kodi's first generated setting (-180).
+			     Present it above the native list and forward clicks to that setting,
+			     leaving room for Appearance without replacing Kodi's setting logic. -->
+			<control type="radiobutton" id="9001">
+				<include>FlixiumSettingsButtonStyle</include>
+				<height>70</height><textoffsetx>40</textoffsetx>
+				<include>FlixiumGlobalFont_FlixiumSettingsControl</include><aligny>center</aligny>
+				<left>24</left><top>100</top><width>1192</width>
+				<label>$LOCALIZE[13397]</label>
+				<selected>VideoPlayer.SubtitlesEnabled</selected>
+				<visible>Window.IsVisible(osdsubtitlesettings)</visible>
+				<onclick>SendClick(osdsubtitlesettings,-180)</onclick>
+				<onup>9000</onup><ondown>9002</ondown>
+				<onleft>9000</onleft><onright>9000</onright>
+			</control>
+			<control type="button" id="9002">
+				<include>FlixiumSettingsButtonStyle</include>
+				<height>70</height><textoffsetx>40</textoffsetx>
+				<include>FlixiumGlobalFont_FlixiumSettingsControl</include><aligny>center</aligny>
+				<left>24</left><top>176</top><width>1192</width>
+				<label>$LOCALIZE[31207]</label>
+				<visible>Window.IsVisible(osdsubtitlesettings)</visible>
+				<onclick>Dialog.Close(osdsubtitlesettings,true)</onclick>
+				<onclick>Dialog.Close(videoosd,true)</onclick>
+				<onclick>ActivateWindow(playersettings,subtitles)</onclick>
+				<onup>9001</onup><ondown>-179</ondown>
+				<onleft>9000</onleft><onright>9000</onright>
+			</control>
+			<control type="label">
+				<left>1146</left><top>176</top><width>50</width><height>70</height>
+				<label>›</label><font>FlixiumSettingsMenuArrow</font>
+				<align>center</align><aligny>center</aligny>
+				<textcolor>C8FFFFFF</textcolor><shadowcolor>00FFFFFF</shadowcolor>
+				<visible>Window.IsVisible(osdsubtitlesettings)</visible>
+			</control>
+			<control type="grouplist" id="5">
+				<description>control area</description>
+				<left>24</left>
+				<top>100</top>
+				<width>1192</width>
+				<height>410</height>
+				<itemgap>6</itemgap>
+				<animation effect="slide" start="0,0" end="0,152" time="0" condition="Window.IsVisible(osdsubtitlesettings)">Conditional</animation>
+				<pagecontrol>60</pagecontrol>
+				<onleft>9000</onleft>
+				<onright>60</onright>
+				<onup condition="Window.IsVisible(osdsubtitlesettings)">9002</onup>
+				<onup condition="!Window.IsVisible(osdsubtitlesettings)">5</onup>
+				<ondown>9000</ondown>
+			</control>
+			<control type="button" id="7">
+				<description>Default Button</description>
+				<include>FlixiumSettingButton</include>
+			</control>
+			<control type="radiobutton" id="8">
+				<description>Default RadioButton</description>
+				<include>FlixiumSettingButton</include>
+				<visible>!Window.IsVisible(osdsubtitlesettings)</visible>
+			</control>
+			<control type="spincontrolex" id="9">
+				<description>Default SpinControlex</description>
+				<include>FlixiumSettingButton</include>
+			</control>
+			<control type="image" id="11">
+				<description>separator image</description>
+				<height>3</height>
+				<texture colordiffuse="$VAR[ThemeFocusVar]">white.png</texture>
+			</control>
+			<control type="edit" id="12">
+				<include>FlixiumSettingButton</include>
+				<include condition="!$EXP[flixium_glass] + !Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton1Normal</include><include condition="!$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton1Round</include><include condition="$EXP[flixium_glass]">GlassButton1</include>
+				<include condition="!$EXP[flixium_glass] + !Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton0Normal</include><include condition="!$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton0Round</include><include condition="$EXP[flixium_glass]">GlassButton0</include>
+				<textcolor>C8FFFFFF</textcolor>
+				<focusedcolor>FFFFFFFF</focusedcolor>
+				<disabledcolor>FF808080</disabledcolor>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<pulseonselect>false</pulseonselect>
+				<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+				<textoffsetx>24</textoffsetx>
+			</control>
+			<control type="sliderex" id="13">
+				<description>Default Slider</description>
+				<include>FlixiumSettingButton</include>
+				<textwidth>800</textwidth>
+			</control>
+			<control type="label" id="14">
+				<description>Default Label</description>
+				<include>DefaultSettingLabel</include>
+			</control>
+			<control type="grouplist" id="9000">
+				<left>24</left>
+				<top>686</top>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<width>1192</width>
+				<height>70</height>
+				<itemgap>12</itemgap>
+				<onleft>5</onleft>
+				<onright>5</onright>
+				<onup>5</onup>
+				<ondown condition="Window.IsVisible(osdsubtitlesettings)">9001</ondown>
+				<ondown condition="!Window.IsVisible(osdsubtitlesettings)">5</ondown>
+				<include content="DefaultDialogButton">
+					<param name="id" value="28" />
+					<param name="label" value="" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="29" />
+					<param name="label" value="" />
+				</include>
+				<include content="DefaultDialogButton">
+					<param name="id" value="30" />
+					<param name="label" value="" />
+				</include>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>1220</left>
+				<top>100</top>
+				<width>6</width>
+				<height>410</height>
+				<animation effect="slide" start="0,0" end="0,152" time="0" condition="Window.IsVisible(osdsubtitlesettings)">Conditional</animation>
+				<orientation>vertical</orientation>
+				<onleft>5</onleft>
+				<onright>9000</onright>
+				<animation effect="fade" start="25" end="100" time="1000" tween="sine" easing="inout">WindowOpen</animation>
+			</control>
+		</control>
+	</controls>
+</window>

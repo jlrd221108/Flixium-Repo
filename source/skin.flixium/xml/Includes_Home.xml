@@ -1,0 +1,1528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<include name="FlixiumHomeMenuStandardFont">
+		<font>font43</font>
+	</include>
+	<include name="FlixiumHomeMenuAeonFont">
+		<font>font_home_menu_aeon</font>
+	</include>
+	
+	<include name="FlixiumHomeAlbumCard">
+		<param name="focused">false</param>
+		<definition>
+			<control type="image">
+				<left>0.95</left>
+				<top>0.95</top>
+				<width>270.1</width>
+				<height>270.1</height>
+				<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/home-album-focus-glow.png</texture>
+				<visible>$PARAM[focused]</visible>
+				<include>Animation_FocusTextureFade</include>
+				<animation effect="fade" start="85" end="85" time="0" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>36</left>
+				<top>36</top>
+				<width>200</width>
+				<height>200</height>
+				<texture diffuse="special://skin/extras/home-album-cover-mask.png" colordiffuse="FF08090D">colors/white.png</texture>
+				<visible>$PARAM[focused]</visible>
+				<include>Animation_FocusTextureFade</include>
+			</control>
+			<control type="image">
+				<left>37</left>
+				<top>37</top>
+				<width>198</width>
+				<height>198</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="special://skin/extras/home-album-cover-mask.png" fallback="DefaultAlbumCover.png">$VAR[FlixMusicThumbVar]</texture>
+			</control>
+			<control type="label">
+				<left>37</left>
+				<top>243.5</top>
+				<width>198</width>
+				<height>22.5</height>
+				<font>font_home_album_title</font>
+				<textcolor>E0F4F2F4</textcolor>
+				<aligny>center</aligny>
+				<scroll>$PARAM[focused]</scroll>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+			<control type="label">
+				<left>37</left>
+				<top>267.5</top>
+				<width>198</width>
+				<height>21</height>
+				<font>font_home_album_artist</font>
+				<textcolor>B8AAA7AF</textcolor>
+				<aligny>center</aligny>
+				<scroll>$PARAM[focused]</scroll>
+				<label>$INFO[ListItem.Artist]</label>
+			</control>
+		</definition>
+	</include>
+	<include name="FlixiumHomeAlbumRow">
+		<param name="heading_top">0</param>
+		<param name="sortby" />
+		<param name="sortorder">ascending</param>
+		<param name="up_id">9000</param>
+		<param name="down_id">9000</param>
+		<param name="up_fallback">9000</param>
+		<param name="down_fallback">9000</param>
+		<definition>
+			<control type="group" id="$PARAM[list_id]900">
+				<defaultcontrol always="true">$PARAM[list_id]</defaultcontrol>
+				<height>301</height>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<control type="label">
+					<left>73</left>
+					<top>$PARAM[heading_top]</top>
+					<width>1250</width>
+					<height>28</height>
+					<font>font12</font>
+					<textcolor>B8FFFFFF</textcolor>
+					<aligny>center</aligny>
+					<label>$PARAM[widget_header]</label>
+				</control>
+				<include content="BusyListSpinner">
+					<param name="list_id" value="$PARAM[list_id]" />
+					<param name="posy" value="140" />
+				</include>
+				<control type="fixedlist" id="$PARAM[list_id]">
+					<focusposition>1</focusposition>
+					<movement>1</movement>
+					<left>36</left>
+					<width>1360.000000</width>
+					<top>5</top>
+					<height>296</height>
+					<orientation>horizontal</orientation>
+					<preloaditems>2</preloaditems>
+					<scrolltime tween="linear">250</scrolltime>
+					<onleft>9000</onleft>
+					<onright>noop</onright>
+					<onup condition="Control.IsVisible($PARAM[up_id])">$PARAM[up_id]</onup>
+					<onup condition="!Control.IsVisible($PARAM[up_id]) + Control.IsVisible($PARAM[up_fallback])">$PARAM[up_fallback]</onup>
+					<onup condition="!Control.IsVisible($PARAM[up_id]) + !Control.IsVisible($PARAM[up_fallback])">9000</onup>
+					<ondown condition="Control.IsVisible($PARAM[down_id])">$PARAM[down_id]</ondown>
+					<ondown condition="!Control.IsVisible($PARAM[down_id]) + Control.IsVisible($PARAM[down_fallback])">$PARAM[down_fallback]</ondown>
+					<ondown condition="!Control.IsVisible($PARAM[down_id]) + !Control.IsVisible($PARAM[down_fallback])">9000</ondown>
+					<onback>SetFocus(9000)</onback>
+					<onclick>$VAR[AlbumOnClickActionVar]</onclick>
+					<itemlayout width="225" height="296">
+						<control type="group">
+							<animation effect="slide" end="-225,0" time="0" condition="Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) + Integer.IsLess(Container($PARAM[list_id]).NumItems,3)">Conditional</animation>
+							<include>FlixiumHomeAlbumCard</include>
+						</control>
+					</itemlayout>
+					<focusedlayout width="225" height="296">
+						<control type="group">
+							<animation effect="slide" end="-225,0" time="0" condition="Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) + Integer.IsLess(Container($PARAM[list_id]).NumItems,3)">Conditional</animation>
+							<control type="group">
+								<depth>DepthContentPopout</depth>
+								<include content="FlixiumHomeWidgetFocusZoom">
+									<param name="center" value="112.5,148" />
+								</include>
+								<include content="FlixiumHomeAlbumCard">
+									<param name="focused" value="Control.HasFocus($PARAM[list_id])" />
+								</include>
+							</control>
+						</control>
+					</focusedlayout>
+					<content target="music" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" limit="15" browse="auto">$PARAM[content_path]</content>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="FlixiumHomeCardScale">
+		<animation effect="zoom" start="75" end="75" center="0,0" time="0" condition="true">Conditional</animation>
+	</include>
+	<include name="FlixiumHomeExpandedLayouts">
+		<param name="condition">true</param>
+		<definition>
+		
+		<itemlayout width="459.75" height="307.5" condition="$PARAM[condition]">
+			<control type="image">
+				<left>15</left>
+				<top>23.25</top>
+				<width>436.5</width>
+				<height>245.25</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="special://skin/extras/flix-episode-mask.png" fallback="DefaultTVShows.png">$VAR[FlixThumbVar]</texture>
+				<bordersize>0.75</bordersize>
+			</control>
+			<control type="image">
+				<left>15.75</left>
+				<top>178.5</top>
+				<width>435</width>
+				<height>90</height>
+				<texture colordiffuse="A8FFFFFF">special://skin/extras/flix-episode-label-fade.png</texture>
+				<visible>Container.Content(episodes)</visible>
+			</control>
+			<control type="label">
+				<left>30</left>
+				<top>225</top>
+				<width>405</width>
+				<height>34.5</height>
+				<aligny>center</aligny>
+				<font>font20_title</font>
+				<textcolor>FFD0D0D0</textcolor>
+				<shadowcolor>DD000000</shadowcolor>
+				<label>$VAR[FlixThumbLabelVar]</label>
+				<visible>Container.Content(episodes)</visible>
+			</control>
+			<control type="progress">
+				<left>21.75</left>
+				<top>265.5</top>
+				<width>423</width>
+				<height>3</height>
+				<texturebg />
+				<midtexture colordiffuse="FFFFB33C">colors/white.png</midtexture>
+				<info>ListItem.PercentPlayed</info>
+				<visible>[Integer.IsGreater(ListItem.PercentPlayed,0) + !Skin.HasSetting(flix_hide_movie_progress)] + !String.IsEmpty(ListItem.Label)</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout width="459.75" height="307.5" condition="$PARAM[condition]">
+			<control type="group">
+				<depth>DepthContentPopout</depth>
+				<include content="FlixiumHomeWidgetFocusZoom">
+					<param name="center" value="229.875,153.75" />
+				</include>
+				<control type="group">
+					<depth>DepthContentPopout</depth>
+					<control type="image">
+						<left>2.25</left>
+						<top>12.75</top>
+						<width>461.25</width>
+						<height>264</height>
+						<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/flix-episode-glow.png</texture>
+						<bordersize>-11.25</bordersize>
+						<include>Animation_FocusTextureFade</include>
+						<include content="GlowPulse">
+							<param name="pos_x" value="230.625" />
+							<param name="pos_y" value="132" />
+						</include>
+					</control>
+					<control type="image">
+						<left>15</left>
+						<top>23.25</top>
+						<width>436.5</width>
+						<height>245.25</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<fadetime>200</fadetime>
+						<texture background="true" diffuse="special://skin/extras/flix-episode-mask.png" fallback="DefaultTVShows.png">$VAR[FlixThumbVar]</texture>
+						<bordersize>0.75</bordersize>
+						<bordertexture colordiffuse="40FFFFFF" border="11.25" infill="false">special://skin/extras/flix-episode-border.png</bordertexture>
+					</control>
+					<control type="image">
+						<left>15.75</left>
+						<top>178.5</top>
+						<width>435</width>
+						<height>90</height>
+						<texture colordiffuse="A8FFFFFF">special://skin/extras/flix-episode-label-fade.png</texture>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="label">
+						<left>30</left>
+						<top>225</top>
+						<width>405</width>
+						<height>34.5</height>
+						<aligny>center</aligny>
+						<font>font20_title</font>
+						<textcolor>FFFFFFFF</textcolor>
+						<shadowcolor>DD000000</shadowcolor>
+						<label>$VAR[FlixThumbLabelVar]</label>
+						<scroll>true</scroll>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="progress">
+						<left>21.75</left>
+						<top>265.5</top>
+						<width>423</width>
+						<height>3</height>
+						<texturebg />
+						<midtexture colordiffuse="FFFFB33C">colors/white.png</midtexture>
+						<info>ListItem.PercentPlayed</info>
+						<visible>[Integer.IsGreater(ListItem.PercentPlayed,0) + !Skin.HasSetting(flix_hide_movie_progress)] + !String.IsEmpty(ListItem.Label)</visible>
+					</control>
+				</control>
+			</control>
+		</focusedlayout>
+		</definition>
+	</include>
+	
+	<include name="FlixiumHomeWidgetScale">
+		<animation effect="zoom" start="75" end="75" center="0,80" time="0" condition="true">Conditional</animation>
+	</include>
+	<include name="WidgetGroupListCommon">
+		<orientation>vertical</orientation>
+		<height>100%</height>
+		<scrolltime tween="cubic" easing="out">500</scrolltime>
+		<itemgap>-160</itemgap>
+		<onup>20000</onup>
+		<ondown>20001</ondown>
+		<usecontrolcoords>true</usecontrolcoords>
+	</include>
+	<include name="CategoryLabel">
+		<param name="visible">true</param>
+		<param name="item_treshold">0</param>
+		<definition>
+			<control type="label" id="$PARAM[list_id]666">
+				<left>55</left>
+				<top>80</top>
+				<width>900</width>
+				<height>90</height>
+				<label>$PARAM[label]</label>
+				<shadowcolor>text_shadow</shadowcolor>
+				<visible>$PARAM[visible]</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetListPoster">
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]" />
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]" />
+				<param name="posy" value="250" />
+			</include>
+			<control type="fixedlist" id="$PARAM[list_id]">
+				<focusposition>1</focusposition>
+				<movement>1</movement>
+				<scrolltime tween="linear">500</scrolltime>
+				<left>0</left>
+				<top>115</top>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<right>0</right>
+				<height>518</height>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+				<include content="WidgetListCommon">
+					<param name="list_id" value="$PARAM[list_id]" />
+				</include>
+				<itemlayout width="310" height="486">
+					<control type="group">
+						<left>68</left>
+						<top>10</top>
+						<include content="MediaTileMovieLayout">
+							<param name="focused" value="false" />
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout width="310" height="486">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<left>68</left>
+						<top>10</top>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="230,130" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="230,130" />
+						</animation>
+						<include content="MediaTileMovieLayout">
+							<param name="focused" value="true" />
+						</include>
+					</control>
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="15" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="ImageWidget">
+		<param name="visible">true</param>
+		<param name="visible_1">true</param>
+		<param name="visible_2">true</param>
+		<param name="visible_3">false</param>
+		<param name="restore_full_size">false</param>
+		<param name="content_width">1550</param>
+		<param name="message_width">1450</param>
+		<param name="message_height">96</param>
+		<param name="block_height">184</param>
+		<param name="buttons_top">120</param>
+		<param name="message_font">font14</param>
+		<param name="button_font">font13</param>
+		<param name="button2_label">$LOCALIZE[31116]</param>
+		<param name="button2_onclick">noop</param>
+		<param name="button3_label"></param>
+		<param name="button3_onclick">noop</param>
+		<definition>
+			<control type="group" id="$PARAM[button_id]889">
+				<width>$PARAM[content_width]</width><height>1080</height>
+				<visible>$PARAM[visible]</visible>
+				<animation effect="zoom" start="133.333333" end="133.333333" center="0,80" time="0" condition="$PARAM[restore_full_size]">Conditional</animation>
+				<control type="group" id="$PARAM[button_id]577">
+					<left>50</left><width>$PARAM[message_width]</width>
+					<centertop>50%</centertop><height>$PARAM[block_height]</height>
+					<control type="textbox">
+						<left>0</left><top>0</top><width>$PARAM[message_width]</width><height>$PARAM[message_height]</height>
+						<font>$PARAM[message_font]</font><align>center</align><aligny>center</aligny>
+						<label>$PARAM[text_label]</label>
+					</control>
+					<control type="grouplist" id="$PARAM[button_id]567">
+						<left>0</left><top>$PARAM[buttons_top]</top><width>$PARAM[message_width]</width><height>64</height>
+						<orientation>horizontal</orientation><align>center</align><itemgap>24</itemgap>
+						<onup>9000</onup><ondown>9000</ondown><onleft>9000</onleft>
+						<control type="button" id="$PARAM[button_id]">
+							<include>FlixiumSettingsButtonStyle</include>
+							<width>auto</width><height>64</height>
+							<font>$PARAM[button_font]</font><textoffsetx>24</textoffsetx><align>center</align><aligny>center</aligny>
+							<label>$PARAM[button_label]</label>
+							<onclick>$PARAM[button_onclick]</onclick>
+							<visible>$PARAM[visible_1]</visible>
+						</control>
+						<control type="button" id="$PARAM[button_id]568">
+							<include>FlixiumSettingsButtonStyle</include>
+							<width>auto</width><height>64</height>
+							<font>$PARAM[button_font]</font><textoffsetx>24</textoffsetx><align>center</align><aligny>center</aligny>
+							<label>$PARAM[button2_label]</label>
+							<onclick>$PARAM[button2_onclick]</onclick>
+							<onclick>SetFocus(9000)</onclick>
+							<visible>$PARAM[visible_2]</visible>
+						</control>
+						<control type="button" id="$PARAM[button_id]569">
+							<include>FlixiumSettingsButtonStyle</include>
+							<width>auto</width><height>64</height>
+							<font>$PARAM[button_font]</font><textoffsetx>24</textoffsetx><align>center</align><aligny>center</aligny>
+							<label>$PARAM[button3_label]</label>
+							<onclick>$PARAM[button3_onclick]</onclick>
+							<onclick>SetFocus(9000)</onclick>
+							<visible>$PARAM[visible_3]</visible>
+						</control>
+					</control>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetListEpisodes">
+		<param name="main_label">$INFO[ListItem.Title]</param>
+		<param name="sub_label">$INFO[ListItem.TVShowTitle]</param>
+		<param name="thumb_label">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode]</param>
+		<param name="sortby" />
+		<param name="visible">True</param>
+		<param name="sortorder">ascending</param>
+		<param name="widget_limit">15</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]" />
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]" />
+				<param name="posy" value="200" />
+			</include>
+			<control type="fixedlist" id="$PARAM[list_id]">
+				<focusposition>1</focusposition>
+				<movement>1</movement>
+				<scrolltime tween="linear">500</scrolltime>
+				<left>0</left>
+				<top>105</top>
+				<right>0</right>
+				<height>410</height>
+				<include content="WidgetListCommon">
+					<param name="list_id" value="$PARAM[list_id]" />
+				</include>
+				<visible>$PARAM[visible]</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<itemlayout width="310" height="500">
+					<control type="group">
+						<left>70</left>
+						<top>5</top>
+						<include content="MediaTileEpisodeLayout">
+							<param name="main_label" value="$PARAM[main_label]" />
+							<param name="sub_label" value="$PARAM[sub_label]" />
+							<param name="thumb_label" value="$PARAM[thumb_label]" />
+							<param name="focused" value="false" />
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout width="310" height="500">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<left>70</left>
+						<top>5</top>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="112" time="200" tween="sine" easing="inout" center="230,120" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="112" end="100" time="200" tween="sine" easing="inout" center="230,120" />
+						</animation>
+						<include content="MediaTileEpisodeLayout">
+							<param name="main_label" value="$PARAM[main_label]" />
+							<param name="sub_label" value="$PARAM[sub_label]" />
+							<param name="thumb_label" value="$PARAM[thumb_label]" />
+							<param name="focused" value="true" />
+						</include>
+					</control>
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="$PARAM[widget_limit]" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetListSquare">
+		<param name="sub_label">$INFO[ListItem.Label]</param>
+		<param name="sortby" />
+		<param name="visible">True</param>
+		<param name="sortorder">ascending</param>
+		<param name="widget_limit">15</param>
+		<param name="fallback_icon">DefaultAudio.png</param>
+		<param name="onclick_condition">false</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]" />
+				<param name="visible" value="$PARAM[visible]" />
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]" />
+				<param name="posy" value="220" />
+				<param name="visible" value="$PARAM[visible]" />
+			</include>
+			<control type="fixedlist" id="$PARAM[list_id]">
+				<focusposition>1</focusposition>
+				<movement>1</movement>
+				<scrolltime tween="linear">500</scrolltime>
+				<left>0</left>
+				<top>120</top>
+				<right>0</right>
+				<height>500</height>
+				<onclick condition="$PARAM[onclick_condition]">$PARAM[onclick_action]</onclick>
+				<include content="WidgetListCommon">
+					<param name="list_id" value="$PARAM[list_id]" />
+				</include>
+				<visible>$PARAM[visible]</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<itemlayout width="310" height="500">
+					<control type="group">
+						<left>70</left>
+						<include content="MediaTileMusicLayout">
+							<param name="main_label" value="$PARAM[main_label]" />
+							<param name="single_label" value="$PARAM[single_label]" />
+							<param name="sub_label" value="$PARAM[sub_label]" />
+							<param name="focused" value="false" />
+						</include>
+					</control>
+				</itemlayout>
+				<focusedlayout width="310" height="500">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<left>70</left>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="112" time="200" tween="sine" easing="inout" center="240,120" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="112" end="100" time="200" tween="sine" easing="inout" center="240,120" />
+						</animation>
+						<include content="MediaTileMusicLayout">
+							<param name="main_label" value="$PARAM[main_label]" />
+							<param name="single_label" value="$PARAM[single_label]" />
+							<param name="sub_label" value="$PARAM[sub_label]" />
+							<param name="focused" value="true" />
+						</include>
+					</control>
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="$PARAM[widget_limit]" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetListCategories">
+		<param name="item_limit">20</param>
+		<param name="icon">$INFO[ListItem.Icon]</param>
+		<param name="icon_height">120</param>
+		<param name="additional_movie_items">false</param>
+		<param name="additional_tvshow_items">false</param>
+		<param name="visible">true</param>
+		<param name="browse">auto</param>
+		<definition>
+			<include content="CategoryLabel">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]" />
+				<param name="visible" value="$PARAM[visible]" />
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]" />
+				<param name="visible" value="$PARAM[visible]" />
+			</include>
+			<control type="fixedlist" id="$PARAM[list_id]">
+				<focusposition>1</focusposition>
+				<movement>1</movement>
+				<scrolltime tween="linear">500</scrolltime>
+				<left>0</left>
+				<top>110</top>
+				<right>0</right>
+				<height>290</height>
+				<include content="WidgetListCommon">
+					<param name="list_id" value="$PARAM[list_id]" />
+				</include>
+				<visible>$PARAM[visible]</visible>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,0) | Container($PARAM[list_id]).IsUpdating</visible>
+				<itemlayout width="310" height="340">
+					<control type="group">
+						<left>70</left>
+						<control type="image">
+							<width>316</width>
+							<height>200</height>
+							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<centertop>74</centertop>
+							<left>58</left>
+							<width>200</width>
+							<height>$PARAM[icon_height]</height>
+							<texture background="true" fallback="DefaultFolder.png">$PARAM[icon]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="textbox">
+							<left>38</left>
+							<top>106</top>
+							<width>240</width>
+							<height>70</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font25_narrow</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="310" height="340">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<left>70</left>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="115" time="200" tween="sine" easing="inout" center="228,70" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="115" end="100" time="200" tween="sine" easing="inout" center="228,70" />
+						</animation>
+						<control type="image">
+							<width>316</width>
+							<height>200</height>
+							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<width>316</width>
+							<height>200</height>
+							<texture colordiffuse="$VAR[ThemeLegacyHighlightVar]">colors/grey.png</texture>
+							<bordersize>20</bordersize>
+							<include>Animation_FocusTextureFade</include>
+						</control>
+						<control type="image">
+							<centertop>74</centertop>
+							<left>58</left>
+							<width>200</width>
+							<height>$PARAM[icon_height]</height>
+							<texture background="true" fallback="DefaultFolder.png">$PARAM[icon]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="textbox">
+							<left>38</left>
+							<top>106</top>
+							<width>240</width>
+							<height>70</height>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font25_narrow</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<aligny>center</aligny>
+						</control>
+					</control>
+				</focusedlayout>
+				<include condition="$PARAM[additional_movie_items]" content="MovieSubmenuItems" />
+				<include condition="$PARAM[additional_tvshow_items]" content="TVShowSubmenuItems" />
+				<content target="$PARAM[widget_target]" limit="$PARAM[item_limit]" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="MovieSubmenuItems">
+		<content>
+			<item>
+				<label>$LOCALIZE[31146]</label>
+				<onclick>ActivateWindow(videos,plugin://script.embuary.info/movie/now_playing,return)</onclick>
+				<thumb>DefaultStudios.png</thumb>
+				<visible>System.AddonIsEnabled(script.embuary.info)</visible>
+			</item>
+			<item>
+				<label>$LOCALIZE[31147]</label>
+				<onclick>ActivateWindow(videos,plugin://script.embuary.info/movie/upcoming,return)</onclick>
+				<thumb>DefaultYear.png</thumb>
+				<visible>System.AddonIsEnabled(script.embuary.info)</visible>
+			</item>
+		</content>
+	</include>
+	<include name="TVShowSubmenuItems">
+		<content>
+			<item>
+				<label>$LOCALIZE[31027]</label>
+				<onclick>ActivateWindow(videos,plugin://script.embuary.info/nextaired,return)</onclick>
+				<thumb>DefaultYear.png</thumb>
+				<visible>System.AddonIsEnabled(script.embuary.info)</visible>
+			</item>
+		</content>
+	</include>
+	<include name="WidgetListPVR">
+		<param name="item_treshold">0</param>
+		<param name="icon">$INFO[ListItem.Icon]</param>
+		<param name="label">$INFO[ListItem.Label]</param>
+		<param name="label2">$INFO[ListItem.Title]</param>
+		<param name="info_update">0</param>
+		<param name="browse_mode">auto</param>
+		<definition>
+			<include content="CategoryLabel">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]" />
+				<param name="item_treshold" value="$PARAM[item_treshold]" />
+			</include>
+			<include content="BusyListSpinner">
+				<param name="list_id" value="$PARAM[list_id]" />
+				<param name="posy" value="200" />
+			</include>
+			<control type="fixedlist" id="$PARAM[list_id]">
+				<focusposition>1</focusposition>
+				<movement>1</movement>
+				<scrolltime tween="linear">500</scrolltime>
+				<left>0</left>
+				<top>120</top>
+				<right>0</right>
+				<height>430</height>
+				<include content="WidgetListCommon">
+					<param name="list_id" value="$PARAM[list_id]" />
+				</include>
+				<visible>Integer.IsGreater(Container($PARAM[list_id]).NumItems,$PARAM[item_treshold]) | [Container($PARAM[list_id]).IsUpdating + Integer.IsEqual(Container($PARAM[list_id]).NumItems,0)]</visible>
+				<itemlayout width="310" height="500" infoupdate="$PARAM[info_update]">
+					<control type="group">
+						<left>70</left>
+						<control type="image">
+							<width>319</width>
+							<height>340</height>
+							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<top>43</top>
+							<left>38</left>
+							<width>245</width>
+							<height>190</height>
+							<texture background="true" fallback="DefaultTVShows.png">$PARAM[icon]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="group">
+							<visible>!String.IsEqual(ListItem.Property(node.type),target_folder)</visible>
+							<control type="label">
+								<left>42</left>
+								<top>247</top>
+								<width>245</width>
+								<height>70</height>
+								<label>$PARAM[label]</label>
+								<font>font12</font>
+								<shadowcolor>text_shadow</shadowcolor>
+								<align>center</align>
+								<aligny>top</aligny>
+							</control>
+							<control type="label">
+								<left>42</left>
+								<top>277</top>
+								<width>245</width>
+								<height>65</height>
+								<label>$PARAM[label2]</label>
+								<font>font12</font>
+								<shadowcolor>text_shadow</shadowcolor>
+								<align>center</align>
+								<aligny>top</aligny>
+							</control>
+						</control>
+						<control type="label">
+							<left>42</left>
+							<top>247</top>
+							<width>245</width>
+							<height>70</height>
+							<visible>String.IsEqual(ListItem.Property(node.type),target_folder)</visible>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font12</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<aligny>top</aligny>
+						</control>
+						<control type="image">
+							<left>260</left>
+							<top>30</top>
+							<width>32</width>
+							<height>32</height>
+							<texture>$VAR[ItemStatusIconVar]</texture>
+						</control>
+						<control type="progress">
+							<left>20</left>
+							<top>300</top>
+							<width>280</width>
+							<height>1</height>
+							<texturebg />
+							<midtexture colordiffuse="$VAR[ThemeLegacyHighlightVar]" border="3">progress/texturebg_alt_white.png</midtexture>
+							<info>ListItem.PercentPlayed</info>
+							<visible>[Integer.IsGreater(ListItem.PercentPlayed,0)] + !String.IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="progress">
+							<left>20</left>
+							<top>300</top>
+							<width>280</width>
+							<height>1</height>
+							<texturebg />
+							<midtexture colordiffuse="$VAR[ThemeLegacyHighlightVar]" border="3">progress/texturebg_alt_white.png</midtexture>
+							<info>ListItem.Progress</info>
+							<visible>!Integer.IsEqual(ListItem.Progress,0)</visible>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="310" height="500" infoupdate="$PARAM[info_update]">
+					<control type="group">
+						<depth>DepthContentPopout</depth>
+						<left>70</left>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="240,100" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="240,100" />
+						</animation>
+						<control type="image">
+							<width>319</width>
+							<height>340</height>
+							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<width>319</width>
+							<height>340</height>
+							<texture colordiffuse="$VAR[ThemeLegacyHighlightVar]">colors/grey.png</texture>
+							<bordersize>20</bordersize>
+							<include>Animation_FocusTextureFade</include>
+						</control>
+						<control type="image">
+							<top>43</top>
+							<left>38</left>
+							<width>245</width>
+							<height>190</height>
+							<texture background="true" fallback="DefaultTVShows.png">$PARAM[icon]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="group">
+							<visible>!String.IsEqual(ListItem.Property(node.type),target_folder)</visible>
+							<control type="label">
+								<left>42</left>
+								<top>247</top>
+								<width>245</width>
+								<height>70</height>
+								<label>$PARAM[label]</label>
+								<font>font12</font>
+								<shadowcolor>text_shadow</shadowcolor>
+								<align>center</align>
+								<scroll>true</scroll>
+								<aligny>top</aligny>
+							</control>
+							<control type="label">
+								<left>42</left>
+								<top>277</top>
+								<width>245</width>
+								<height>65</height>
+								<label>$PARAM[label2]</label>
+								<font>font12</font>
+								<shadowcolor>text_shadow</shadowcolor>
+								<align>center</align>
+								<scroll>true</scroll>
+								<aligny>top</aligny>
+							</control>
+						</control>
+						<control type="label">
+							<left>42</left>
+							<top>247</top>
+							<width>245</width>
+							<height>70</height>
+							<visible>String.IsEqual(ListItem.Property(node.type),target_folder)</visible>
+							<label>$INFO[ListItem.Label]</label>
+							<font>font12</font>
+							<shadowcolor>text_shadow</shadowcolor>
+							<align>center</align>
+							<scroll>true</scroll>
+							<aligny>top</aligny>
+						</control>
+						<control type="image">
+							<left>260</left>
+							<top>30</top>
+							<width>32</width>
+							<height>32</height>
+							<texture>$VAR[ItemStatusIconVar]</texture>
+						</control>
+						<control type="progress">
+							<left>20</left>
+							<top>300</top>
+							<width>280</width>
+							<height>1</height>
+							<texturebg />
+							<midtexture colordiffuse="$VAR[ThemeLegacyHighlightVar]" border="3">progress/texturebg_alt_white.png</midtexture>
+							<info>ListItem.PercentPlayed</info>
+							<visible>[Integer.IsGreater(ListItem.PercentPlayed,0)] + !String.IsEmpty(ListItem.Label)</visible>
+						</control>
+						<control type="progress">
+							<left>20</left>
+							<top>300</top>
+							<width>280</width>
+							<height>1</height>
+							<texturebg />
+							<midtexture colordiffuse="$VAR[ThemeLegacyHighlightVar]" border="3">progress/texturebg_alt_white.png</midtexture>
+							<info>ListItem.Progress</info>
+							<visible>!Integer.IsEqual(ListItem.Progress,0)</visible>
+						</control>
+					</control>
+				</focusedlayout>
+				<content sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" target="$PARAM[widget_target]" limit="$PARAM[item_limit]" browse="$PARAM[browse_mode]">$PARAM[content_path]</content>
+			</control>
+		</definition>
+	</include>
+	<include name="WeatherWidget">
+		<param name="width">266</param>
+		<definition>
+			<include content="CategoryLabel">
+				<param name="label">$PARAM[widget_header]</param>
+				<param name="list_id" value="$PARAM[list_id]" />
+				<param name="visible" value="$PARAM[visible]" />
+			</include>
+			<control type="panel" id="$PARAM[list_id]">
+				<left>0</left>
+				<top>90</top>
+				<right>0</right>
+				<height>396</height>
+				<include content="WidgetListCommon">
+					<param name="list_id" value="$PARAM[list_id]" />
+				</include>
+				<visible>$PARAM[visible]</visible>
+				<itemlayout width="$PARAM[width]" height="320">
+					<control type="group">
+						<left>70</left>
+						<control type="image">
+							<left>0</left>
+							<top>20</top>
+							<width>254</width>
+							<height>280</height>
+							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<left>60</left>
+							<top>108</top>
+							<width>130</width>
+							<height>130</height>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>45</top>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+							<width>230</width>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>78</top>
+							<align>center</align>
+							<font>font12</font>
+							<label>$INFO[ListItem.Property(ShortDate)]</label>
+							<width>230</width>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>236</top>
+							<align>center</align>
+							<label>$INFO[ListItem.Label2]</label>
+							<font>font12</font>
+							<width>230</width>
+						</control>
+					</control>
+				</itemlayout>
+				<focusedlayout width="$PARAM[width]" height="400">
+					<control type="group">
+						<left>70</left>
+						<depth>DepthContentPopout</depth>
+						<animation type="Focus">
+							<effect type="zoom" start="100" end="110" time="200" tween="sine" easing="inout" center="180,140" />
+						</animation>
+						<animation type="Unfocus">
+							<effect type="zoom" start="110" end="100" time="200" tween="sine" easing="inout" center="180,140" />
+						</animation>
+						<control type="image">
+							<left>0</left>
+							<top>20</top>
+							<width>254</width>
+							<height>280</height>
+							<texture>dialogs/dialog-bg-nobo.png</texture>
+							<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+							<bordersize>20</bordersize>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>20</top>
+							<width>254</width>
+							<height>280</height>
+							<texture colordiffuse="$VAR[ThemeLegacyHighlightVar]">colors/grey.png</texture>
+							<bordersize>20</bordersize>
+							<include>Animation_FocusTextureFade</include>
+						</control>
+						<control type="image">
+							<left>60</left>
+							<top>108</top>
+							<width>130</width>
+							<height>130</height>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>45</top>
+							<align>center</align>
+							<label>$INFO[ListItem.Label]</label>
+							<width>230</width>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>78</top>
+							<align>center</align>
+							<font>font12</font>
+							<label>$INFO[ListItem.Property(ShortDate)]</label>
+							<width>230</width>
+						</control>
+						<control type="label">
+							<left>15</left>
+							<top>236</top>
+							<align>center</align>
+							<label>$INFO[ListItem.Label2]</label>
+							<font>font12</font>
+							<width>230</width>
+						</control>
+					</control>
+				</focusedlayout>
+				<include>$PARAM[content_include]</include>
+			</control>
+		</definition>
+	</include>
+	<include name="HourlyItems">
+		<content>
+			<item>
+				<icon>resource://resource.images.weathericons.default/na.png</icon>
+				<onclick>noop</onclick>
+				<visible>String.IsEmpty(Window(weather).Property(Hourly.IsFetched))</visible>
+			</item>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="1" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="2" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="3" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="4" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="5" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="6" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="7" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="8" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="9" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="10" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="11" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="12" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="13" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="14" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="15" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="16" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="17" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="18" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="19" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="20" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="21" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="22" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="23" />
+			</include>
+			<include content="WeatherHourlyItem">
+				<param name="item_index" value="24" />
+			</include>
+		</content>
+	</include>
+	<include name="DailyItems">
+		<content>
+			<item>
+				<icon>resource://resource.images.weathericons.default/na.png</icon>
+				<onclick>noop</onclick>
+				<visible>!Weather.IsFetched</visible>
+			</item>
+			<include content="WeatherDayItem">
+				<param name="item_index" value="0" />
+			</include>
+			<include content="WeatherDayItem">
+				<param name="item_index" value="1" />
+			</include>
+			<include content="WeatherDayItem">
+				<param name="item_index" value="2" />
+			</include>
+			<include content="WeatherDayItem">
+				<param name="item_index" value="3" />
+			</include>
+			<include content="WeatherDayItem">
+				<param name="item_index" value="4" />
+			</include>
+			<include content="WeatherDayItem">
+				<param name="item_index" value="5" />
+			</include>
+			<include content="WeatherDayItem">
+				<param name="item_index" value="6" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="1" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="2" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="3" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="4" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="5" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="6" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="7" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="8" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="9" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="10" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="11" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="12" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="13" />
+			</include>
+			<include content="WeatherDailyItem">
+				<param name="item_index" value="14" />
+			</include>
+		</content>
+	</include>
+	<include name="WeatherHourlyItem">
+		<item>
+			<label>$INFO[Window(weather).Property(Hourly.$PARAM[item_index].Time)]</label>
+			<label2>$INFO[Window(weather).Property(Hourly.$PARAM[item_index].Temperature)] ∙ $INFO[Window(weather).Property(Hourly.$PARAM[item_index].Precipitation)]</label2>
+			<property name="Temperature">$INFO[Window(weather).Property(Hourly.$PARAM[item_index].Temperature)]</property>
+			<property name="Outlook">$INFO[Window(weather).Property(Hourly.$PARAM[item_id].Outlook)]</property>
+			<property name="Cloudiness">$INFO[Window(weather).Property(Hourly.$PARAM[item_index].Cloudiness)]</property>
+			<property name="ShortDate">$INFO[Window(weather).Property(Hourly.$PARAM[item_index].ShortDate)]</property>
+			<property name="FanartCode">$INFO[Window(weather).Property(Hourly.$PARAM[item_index].FanartCode)]</property>
+			<thumb>resource://resource.images.weathericons.default/$INFO[Window(weather).Property(Hourly.$PARAM[item_index].OutlookIcon)]</thumb>
+			<onclick>noop</onclick>
+			<visible>!String.IsEmpty(Window(weather).Property(Hourly.$PARAM[item_index].Outlook))</visible>
+		</item>
+	</include>
+	<include name="WeatherDailyItem">
+		<item>
+			<label>$INFO[Window(weather).Property(Daily.$PARAM[item_index].ShortDay)]</label>
+			<label2>[COLOR blue]$INFO[Window(weather).Property(Daily.$PARAM[item_index].LowTemperature)][/COLOR] ∙ [COLOR red]$INFO[Window(weather).Property(Daily.$PARAM[item_index].HighTemperature)][/COLOR]</label2>
+			<property name="LongDay">$INFO[Window(weather).Property(Daily.$PARAM[item_index].LongDay)]</property>
+			<property name="TempDay">$INFO[Window(weather).Property(Daily.$PARAM[item_index].TempDay)]</property>
+			<property name="Cloudiness">$INFO[Window(weather).Property(Daily.$PARAM[item_index].Cloudiness)]</property>
+			<property name="Outlook">$INFO[Window(weather).Property(Daily.$PARAM[item_index].Outlook)]</property>
+			<property name="ShortDate">$INFO[Window(weather).Property(Daily.$PARAM[item_index].ShortDate)]</property>
+			<property name="FanartCode">$INFO[Window(weather).Property(Daily.$PARAM[item_index].FanartCode)]</property>
+			<thumb>resource://resource.images.weathericons.default/$INFO[Window(weather).Property(Daily.$PARAM[item_index].OutlookIcon)]</thumb>
+			<onclick>noop</onclick>
+			<visible>!String.IsEmpty(Window(weather).Property(Daily.IsFetched)) + !String.IsEmpty(Window(weather).Property(Daily.$PARAM[item_index].Outlook))</visible>
+		</item>
+	</include>
+	<include name="WeatherDayItem">
+		<item>
+			<label>$INFO[Window(weather).Property(Day$PARAM[item_index].Title)]</label>
+			<label2>[COLOR blue]$INFO[Window(weather).Property(Day$PARAM[item_index].LowTemp)]$INFO[System.TemperatureUnits][/COLOR] ∙ [COLOR red]$INFO[Window(weather).Property(Day$PARAM[item_index].HighTemp)]$INFO[System.TemperatureUnits][/COLOR]</label2>
+			<property name="LongDay" />
+			<property name="TempDay" />
+			<property name="Cloudiness" />
+			<property name="Outlook" />
+			<property name="ShortDate" />
+			<property name="FanartCode">$INFO[Window(weather).Property(Day$PARAM[item_index].FanartCode)]</property>
+			<thumb>$INFO[Window(weather).Property(Day$PARAM[item_index].OutlookIcon)]</thumb>
+			<onclick>noop</onclick>
+			<visible>String.IsEmpty(Window(weather).Property(Daily.IsFetched)) + !String.IsEmpty(Window(weather).Property(Day$PARAM[item_index].Outlook))</visible>
+		</item>
+	</include>
+	<include name="WeatherMapItem">
+		<control type="group" id="700$PARAM[item_id]">
+			<height>1110</height>
+			<visible>Weather.IsFetched + !String.IsEmpty(Window(weather).Property(Map.$PARAM[item_id].Area)) + !String.IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
+			<centerleft>50%</centerleft>
+			<width>1920</width>
+			<control type="button" id="700$PARAM[item_id]0">
+				<left>50</left>
+				<top>100</top>
+				<width>1820</width>
+				<height>920</height>
+				<onup>$PARAM[onup_id]</onup>
+				<ondown>$PARAM[ondown_id]</ondown>
+			</control>
+			<control type="image" id="700$PARAM[item_id]1">
+				<left>50</left>
+				<top>100</top>
+				<width>1820</width>
+				<height>920</height>
+				<texture>dialogs/dialog-bg-nobo.png</texture>
+				<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+			</control>
+			<control type="image" id="700$PARAM[item_id]2">
+				<left>120</left>
+				<top>160</top>
+				<width>1680</width>
+				<height>800</height>
+				<texture>$INFO[Window(weather).Property(Map.$PARAM[item_id].Area)]</texture>
+				<aspectratio>scale</aspectratio>
+			</control>
+			<control type="image" id="700$PARAM[item_id]3">
+				<left>120</left>
+				<top>160</top>
+				<width>1680</width>
+				<height>800</height>
+				<texture>$INFO[Window(weather).Property(Map.$PARAM[item_id].Layer)]</texture>
+				<aspectratio>scale</aspectratio>
+				<colordiffuse>B0FFFFFF</colordiffuse>
+			</control>
+			<control type="image" id="700$PARAM[item_id]4">
+				<left>1000</left>
+				<top>858</top>
+				<width>340</width>
+				<height>100</height>
+				<texture border="21">buttons/button-nofo.png</texture>
+			</control>
+			<control type="image" id="700$PARAM[item_id]5">
+				<left>1340</left>
+				<top>880</top>
+				<width>350</width>
+				<height>55</height>
+				<texture>$INFO[Window(weather).Property(Map.$PARAM[item_id].Legend)]</texture>
+			</control>
+		</control>
+		<control type="label" id="700$PARAM[item_id]9">
+			<left>1000</left>
+			<top>0</top>
+			<width>340</width>
+			<height>100</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<animation effect="slide" end="0,-92" time="0" condition="true">Conditional</animation>
+			<font>font30_title</font>
+			<label>$INFO[Window(weather).Property(Map.$PARAM[item_id].Heading)]</label>
+			<visible>Weather.IsFetched + !String.IsEmpty(Window(weather).Property(Map.$PARAM[item_id].Area)) + !String.IsEmpty(Window(weather).Property(Map.IsFetched))</visible>
+		</control>
+	</include>
+	<include name="WidgetListCommon">
+		<scrolltime tween="cubic" easing="out">500</scrolltime>
+		<orientation>horizontal</orientation>
+		<onleft>9000</onleft>
+		<onright>noop</onright>
+		<onunfocus>SetProperty(listposition,$INFO[Container($PARAM[list_id]).Position],home)</onunfocus>
+		<onfocus>Control.Move($PARAM[list_id],-$INFO[Container($PARAM[list_id]).Position])</onfocus>
+		<onfocus>Control.Move($PARAM[list_id],$INFO[Window(home).Property(listposition)])</onfocus>
+		<onback>SetFocus($PARAM[list_id],0,absolute)</onback>
+		<preloaditems>2</preloaditems>
+	</include>
+	<include name="BusyListSpinner">
+		<param name="posy">160</param>
+		<param name="visible">true</param>
+		<definition>
+			<control type="group" id="$PARAM[list_id]599">
+				<height>160</height>
+				<left>180</left>
+				<visible>Container($PARAM[list_id]).IsUpdating + !Integer.IsGreater(Container($PARAM[list_id]).NumItems,0)</visible>
+				<visible>$PARAM[visible]</visible>
+				<control type="image">
+					<top>$PARAM[posy]</top>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio aligny="center">keep</aspectratio>
+					<texture colordiffuse="black">dialogs/extendedprogress/loading-back.png</texture>
+				</control>
+				<control type="image">
+					<top>$PARAM[posy]</top>
+					<width>100</width>
+					<height>100</height>
+					<aspectratio aligny="center">keep</aspectratio>
+					<texture>dialogs/extendedprogress/loading.png</texture>
+					<animation effect="rotate" center="auto" start="360" end="0" time="1500" loop="true" condition="true">Conditional</animation>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="WidgetScrollbar">
+		<control type="group">
+			<right>0</right>
+			<top>80</top>
+			<bottom>80</bottom>
+			<width>60</width>
+			<control type="scrollbar" id="$PARAM[scrollbar_id]">
+				<right>0</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<width>6</width>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<orientation>vertical</orientation>
+				<texturesliderbackground />
+				<hitrect x="0" y="0" w="60" h="100%" />
+				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus($PARAM[scrollbar_id])">conditional</animation>
+			</control>
+		</control>
+	</include>
+
+<include name="FlixiumHomeMenuFont_inter"><font>flix_user_menu_inter_titlecase</font></include>
+<include name="FlixiumHomeMenuFont_opensans"><font>flix_user_menu_opensans_titlecase</font></include>
+<include name="FlixiumHomeMenuFont_roboto"><font>flix_user_menu_roboto_titlecase</font></include>
+<include name="FlixiumHomeMenuFont_aeon"><font>font_home_menu_aeon_titlecase</font></include>
+<include name="FlixiumHomeMenuFont_default"><font>font43_titlecase</font></include>
+<include name="FlixiumHomeMenuFont"><include condition="String.IsEqual(Skin.String(Flixium.Font.Menu),inter)">FlixiumHomeMenuFont_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Menu),opensans)">FlixiumHomeMenuFont_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Menu),roboto)">FlixiumHomeMenuFont_roboto</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Menu),aeon) | [String.IsEmpty(Skin.String(Flixium.Font.Menu)) + Skin.HasSetting(Flixium.HomeMenu.AeonFont)]">FlixiumHomeMenuFont_aeon</include><include condition="!Skin.HasSetting(Flixium.HomeMenu.AeonFont) + !String.IsEqual(Skin.String(Flixium.Font.Menu),inter) + !String.IsEqual(Skin.String(Flixium.Font.Menu),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Menu),roboto) + !String.IsEqual(Skin.String(Flixium.Font.Menu),aeon)">FlixiumHomeMenuFont_default</include></include>
+
+<include name="FlixiumGlobalFont_FlixiumSettingsDetail_inter"><font>flix_global_0_inter</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsDetail_opensans"><font>flix_global_0_opensans</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsDetail_roboto"><font>flix_global_0_roboto</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsDetail_default"><font>FlixiumSettingsDetail</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsDetail"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_FlixiumSettingsDetail_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_FlixiumSettingsDetail_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsDetail_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsDetail_default</include></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsLabel_inter"><font>flix_global_1_inter_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsLabel_opensans"><font>flix_global_1_opensans_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsLabel_roboto"><font>flix_global_1_roboto_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsLabel_default"><font>FlixiumSettingsLabel</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsLabel"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_FlixiumSettingsLabel_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_FlixiumSettingsLabel_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsLabel_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsLabel_default</include></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsDateTime_inter"><font>flix_global_2_inter</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsDateTime_opensans"><font>flix_global_2_opensans</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsDateTime_roboto"><font>flix_global_2_roboto</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsDateTime_default"><font>FlixiumSettingsDateTime</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsDateTime"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_FlixiumSettingsDateTime_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_FlixiumSettingsDateTime_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsDateTime_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsDateTime_default</include></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsBody_inter"><font>flix_global_3_inter</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsBody_opensans"><font>flix_global_3_opensans</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsBody_roboto"><font>flix_global_3_roboto</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsBody_default"><font>FlixiumSettingsBody</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsBody"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_FlixiumSettingsBody_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_FlixiumSettingsBody_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsBody_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsBody_default</include></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsControl_inter"><font>flix_global_4_inter_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsControl_opensans"><font>flix_global_4_opensans_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsControl_roboto"><font>flix_global_4_roboto_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsControl_default"><font>FlixiumSettingsControl</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsControl"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_FlixiumSettingsControl_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_FlixiumSettingsControl_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsControl_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsControl_default</include></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsSubheading_inter"><font>flix_global_5_inter_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsSubheading_opensans"><font>flix_global_5_opensans_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsSubheading_roboto"><font>flix_global_5_roboto_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsSubheading_default"><font>FlixiumSettingsSubheading</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsSubheading"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_FlixiumSettingsSubheading_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_FlixiumSettingsSubheading_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsSubheading_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsSubheading_default</include></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsCategory_inter"><font>flix_global_6_inter_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsCategory_opensans"><font>flix_global_6_opensans_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsCategory_roboto"><font>flix_global_6_roboto_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsCategory_default"><font>FlixiumSettingsCategory</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsCategory"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_FlixiumSettingsCategory_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_FlixiumSettingsCategory_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsCategory_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsCategory_default</include></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsParentHeading_inter"><font>flix_global_7_inter_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsParentHeading_opensans"><font>flix_global_7_opensans_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsParentHeading_roboto"><font>flix_global_7_roboto_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsParentHeading_default"><font>FlixiumSettingsParentHeading</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsParentHeading"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_FlixiumSettingsParentHeading_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_FlixiumSettingsParentHeading_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsParentHeading_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsParentHeading_default</include></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsHeading_inter"><font>flix_global_8_inter_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsHeading_opensans"><font>flix_global_8_opensans_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsHeading_roboto"><font>flix_global_8_roboto_titlecase</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsHeading_default"><font>FlixiumSettingsHeading</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsHeading"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_FlixiumSettingsHeading_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_FlixiumSettingsHeading_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsHeading_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsHeading_default</include></include>
+<include name="FlixiumGlobalFont_font10_inter"><font>flix_global_9_inter</font></include>
+<include name="FlixiumGlobalFont_font10_opensans"><font>flix_global_9_opensans</font></include>
+<include name="FlixiumGlobalFont_font10_roboto"><font>flix_global_9_roboto</font></include>
+<include name="FlixiumGlobalFont_font10_default"><font>font10</font></include>
+<include name="FlixiumGlobalFont_font10"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_font10_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_font10_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font10_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font10_default</include></include>
+<include name="FlixiumGlobalFont_font12_inter"><font>flix_global_10_inter</font></include>
+<include name="FlixiumGlobalFont_font12_opensans"><font>flix_global_10_opensans</font></include>
+<include name="FlixiumGlobalFont_font12_roboto"><font>flix_global_10_roboto</font></include>
+<include name="FlixiumGlobalFont_font12_default"><font>font12</font></include>
+<include name="FlixiumGlobalFont_font12"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_font12_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_font12_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font12_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font12_default</include></include>
+<include name="FlixiumGlobalFont_font13_inter"><font>flix_global_11_inter</font></include>
+<include name="FlixiumGlobalFont_font13_opensans"><font>flix_global_11_opensans</font></include>
+<include name="FlixiumGlobalFont_font13_roboto"><font>flix_global_11_roboto</font></include>
+<include name="FlixiumGlobalFont_font13_default"><font>font13</font></include>
+<include name="FlixiumGlobalFont_font13"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_font13_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_font13_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font13_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font13_default</include></include>
+<include name="FlixiumGlobalFont_font14_inter"><font>flix_global_12_inter</font></include>
+<include name="FlixiumGlobalFont_font14_opensans"><font>flix_global_12_opensans</font></include>
+<include name="FlixiumGlobalFont_font14_roboto"><font>flix_global_12_roboto</font></include>
+<include name="FlixiumGlobalFont_font14_default"><font>font14</font></include>
+<include name="FlixiumGlobalFont_font14"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_font14_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_font14_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font14_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font14_default</include></include>
+<include name="FlixiumGlobalFont_font27_inter"><font>flix_global_13_inter</font></include>
+<include name="FlixiumGlobalFont_font27_opensans"><font>flix_global_13_opensans</font></include>
+<include name="FlixiumGlobalFont_font27_roboto"><font>flix_global_13_roboto</font></include>
+<include name="FlixiumGlobalFont_font27_default"><font>font27</font></include>
+<include name="FlixiumGlobalFont_font27"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_font27_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_font27_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font27_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font27_default</include></include>
+<include name="FlixiumGlobalFont_font27_narrow_inter"><font>flix_global_14_inter</font></include>
+<include name="FlixiumGlobalFont_font27_narrow_opensans"><font>flix_global_14_opensans</font></include>
+<include name="FlixiumGlobalFont_font27_narrow_roboto"><font>flix_global_14_roboto</font></include>
+<include name="FlixiumGlobalFont_font27_narrow_default"><font>font27_narrow</font></include>
+<include name="FlixiumGlobalFont_font27_narrow"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_font27_narrow_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_font27_narrow_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font27_narrow_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font27_narrow_default</include></include>
+<include name="FlixiumGlobalFont_font32_inter"><font>flix_global_15_inter</font></include>
+<include name="FlixiumGlobalFont_font32_opensans"><font>flix_global_15_opensans</font></include>
+<include name="FlixiumGlobalFont_font32_roboto"><font>flix_global_15_roboto</font></include>
+<include name="FlixiumGlobalFont_font32_default"><font>font32</font></include>
+<include name="FlixiumGlobalFont_font32"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_font32_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_font32_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font32_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font32_default</include></include>
+<include name="FlixiumGlobalFont_font37_inter"><font>flix_global_16_inter</font></include>
+<include name="FlixiumGlobalFont_font37_opensans"><font>flix_global_16_opensans</font></include>
+<include name="FlixiumGlobalFont_font37_roboto"><font>flix_global_16_roboto</font></include>
+<include name="FlixiumGlobalFont_font37_default"><font>font37</font></include>
+<include name="FlixiumGlobalFont_font37"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_font37_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_font37_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font37_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font37_default</include></include>
+<include name="FlixiumGlobalFont_font45_inter"><font>flix_global_17_inter</font></include>
+<include name="FlixiumGlobalFont_font45_opensans"><font>flix_global_17_opensans</font></include>
+<include name="FlixiumGlobalFont_font45_roboto"><font>flix_global_17_roboto</font></include>
+<include name="FlixiumGlobalFont_font45_default"><font>font45</font></include>
+<include name="FlixiumGlobalFont_font45"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_font45_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_font45_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font45_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_font45_default</include></include>
+	<include name="FlixiumHomeWidgetControlZoom">
+		<param name="center">auto</param>
+		<param name="list_id" />
+		<definition>
+			<animation effect="zoom" start="100" end="112" time="180" tween="sine" easing="inout" center="$PARAM[center]" condition="Control.HasFocus($PARAM[list_id])">Conditional</animation>
+		</definition>
+	</include>
+	<include name="FlixiumHomeWidgetFocusZoom">
+		<param name="center">auto</param>
+		<definition>
+			<animation effect="zoom" start="100" end="112" time="180" tween="sine" easing="inout" center="$PARAM[center]">Focus</animation>
+			<animation effect="zoom" start="112" end="100" time="180" tween="sine" easing="inout" center="$PARAM[center]">UnFocus</animation>
+		</definition>
+	</include>
+
+
+
+	<include name="FlixiumGenreTileContent">
+		<param name="left">24</param><param name="width">237</param>
+		<param name="top">11.25</param><param name="height">147.75</param>
+		<param name="horror_left">116</param><param name="horror_width">146</param>
+		<param name="icon_left">32</param><param name="icon_top">29</param>
+		<param name="icon_width">76</param><param name="icon_height">112</param>
+		<definition>
+			<control type="label">
+				<description>Genre name</description>
+				<left>$PARAM[left]</left><top>$PARAM[top]</top><width>$PARAM[width]</width><height>$PARAM[height]</height>
+				<font>FlixiumGenreLabel</font><align>center</align><aligny>center</aligny>
+				<label>$INFO[ListItem.Label]</label><textcolor>FFFFFFFF</textcolor>
+				<visible>![String.IsEqual(ListItem.Label,Horror) | String.IsEqual(ListItem.Label,Drama) | String.IsEqual(ListItem.Label,Romance)]</visible>
+			</control>
+			<control type="image">
+				<description>Horror Scream preview</description>
+				<left>$PARAM[icon_left]</left><top>$PARAM[icon_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="73.8" end="73.8" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>special://skin/media/genres/horror-scream.png</texture>
+				<visible>String.IsEqual(ListItem.Label,Horror)</visible>
+			</control>
+			<control type="image">
+				<description>Drama supplied icon</description>
+				<left>$PARAM[icon_left]</left><top>$PARAM[icon_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="139.8" end="139.8" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>$VAR[FlixiumGenrePreviewVar]</texture>
+				<visible>String.IsEqual(ListItem.Label,Drama)</visible>
+			</control>
+			<control type="image">
+				<description>Romance supplied icon</description>
+				<left>$PARAM[icon_left]</left><top>$PARAM[icon_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="123.1" end="123.1" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>$VAR[FlixiumGenrePreviewVar]</texture>
+				<visible>String.IsEqual(ListItem.Label,Romance)</visible>
+			</control>
+			<control type="label">
+				<description>Genre name beside icon</description>
+				<left>$PARAM[horror_left]</left><top>$PARAM[top]</top><width>$PARAM[horror_width]</width><height>$PARAM[height]</height>
+				<font>FlixiumGenreLabel</font><align>center</align><aligny>center</aligny>
+				<label>$INFO[ListItem.Label]</label><textcolor>FFFFFFFF</textcolor>
+				<visible>String.IsEqual(ListItem.Label,Horror) | String.IsEqual(ListItem.Label,Drama) | String.IsEqual(ListItem.Label,Romance)</visible>
+			</control>
+		</definition>
+	</include>
+
+	<variable name="FlixiumWidgetEpisodeCaptionVar">
+		<value condition="Integer.IsLess(ListItem.Episode,10)">$INFO[ListItem.Season]$INFO[ListItem.Episode,x0,]$INFO[ListItem.TVShowTitle, | ]</value>
+		<value>$INFO[ListItem.Season]$INFO[ListItem.Episode,x,]$INFO[ListItem.TVShowTitle, | ]</value>
+	</variable>
+	<include name="FlixiumWidgetEpisodeCaption">
+		<control type="group">
+			<visible>String.IsEqual(ListItem.DBType,episode)</visible>
+			<control type="image">
+				<left>11.25</left><top>107.25</top><width>262.5</width><height>51.75</height>
+				<texture colordiffuse="A8FFFFFF" diffuse="special://skin/extras/home-landscape-mask.png">special://skin/extras/flix-episode-label-fade.png</texture>
+			</control>
+			<control type="label">
+				<left>21.25</left><top>128</top><width>242.5</width><height>24</height>
+				<font>font20_title</font><aligny>center</aligny><scroll>false</scroll>
+				<textcolor>FFD0D0D0</textcolor><shadowcolor>DD000000</shadowcolor>
+				<label>$VAR[FlixiumWidgetEpisodeCaptionVar]</label>
+			</control>
+		</control>
+	</include>
+
+<include name="FlixiumGlobalFont_FlixiumSettingsLabelSentence_inter"><font>flix_global_1_inter</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsLabelSentence_opensans"><font>flix_global_1_opensans</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsLabelSentence_roboto"><font>flix_global_1_roboto</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsLabelSentence_default"><font>FlixiumSettingsLabelSentence</font></include>
+<include name="FlixiumGlobalFont_FlixiumSettingsLabelSentence"><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),inter)">FlixiumGlobalFont_FlixiumSettingsLabelSentence_inter</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),opensans)">FlixiumGlobalFont_FlixiumSettingsLabelSentence_opensans</include><include condition="String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsLabelSentence_roboto</include><include condition="!String.IsEqual(Skin.String(Flixium.Font.Global),inter) + !String.IsEqual(Skin.String(Flixium.Font.Global),opensans) + !String.IsEqual(Skin.String(Flixium.Font.Global),roboto)">FlixiumGlobalFont_FlixiumSettingsLabelSentence_default</include></include>
+
+</includes>
+
+

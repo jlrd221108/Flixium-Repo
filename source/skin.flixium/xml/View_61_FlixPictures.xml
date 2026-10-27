@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='utf-8'?>
+<includes>
+	<expression name="flix_picture_enriched">String.IsEqual(Window(home).Property(flixium.pictures.media.path),ListItem.FileNameAndPath)</expression>
+	<expression name="flix_picture_video">ListItem.IsVideo | String.IsEqual(ListItem.FileExtension,mp4) | String.IsEqual(ListItem.FileExtension,mov) | String.IsEqual(ListItem.FileExtension,m4v) | String.IsEqual(ListItem.FileExtension,3gp) | String.IsEqual(ListItem.FileExtension,3g2) | String.IsEqual(ListItem.FileExtension,avi) | String.IsEqual(ListItem.FileExtension,mkv) | String.IsEqual(ListItem.FileExtension,webm) | String.IsEqual(ListItem.FileExtension,mts) | String.IsEqual(ListItem.FileExtension,m2ts) | String.IsEqual(ListItem.FileExtension,ts) | String.IsEqual(ListItem.FileExtension,mpg) | String.IsEqual(ListItem.FileExtension,mpeg) | String.IsEqual(ListItem.FileExtension,wmv) | String.IsEqual(ListItem.FileExtension,flv) | String.IsEqual(ListItem.FileExtension,vob)</expression>
+	<variable name="FlixPicturesVideoExtraVar">
+		<value condition="$EXP[flix_picture_enriched] + !String.IsEmpty(Window(home).Property(flixium.pictures.media.video_details))">$INFO[Window(home).Property(flixium.pictures.media.video_details),,[CR]]</value>
+		<value>$INFO[ListItem.Duration,Duration · ,[CR]]$INFO[ListItem.VideoCodec,Video codec · ,[CR]]$INFO[ListItem.AudioCodec,Audio codec · ,[CR]]</value>
+	</variable>
+	<variable name="FlixPicturesLocationVar">
+		<value condition="$EXP[flix_picture_enriched]">$INFO[Window(home).Property(flixium.pictures.media.location),,[CR]]</value>
+		<value condition="$EXP[flix_picture_video]" />
+		<value>$INFO[ListItem.PictureCity,City · ,[CR]]$INFO[ListItem.PictureCountry,Country · ,[CR]]$INFO[ListItem.PictureGPSLat,Latitude · ,[CR]]$INFO[ListItem.PictureGPSLon,Longitude · ,[CR]]$INFO[ListItem.PictureGPSAlt,Altitude · ,[CR]]</value>
+	</variable>
+	<variable name="FlixPicturesThumbVar">
+		<value condition="ListItem.IsParentFolder">DefaultFolderBack.png</value>
+		<value condition="ListItem.IsFolder + !String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="ListItem.IsFolder">DefaultFolder.png</value>
+		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value>$INFO[ListItem.Icon]</value>
+	</variable>
+	<variable name="FlixPicturesPreviewVar">
+		<value condition="ListItem.IsFolder">$VAR[FlixPicturesThumbVar]</value>
+		<value condition="$EXP[flix_picture_video]">$VAR[FlixPicturesThumbVar]</value>
+		<value condition="!String.IsEmpty(ListItem.PicturePath)">$INFO[ListItem.PicturePath]</value>
+		<value condition="!ListItem.IsVideo">$INFO[ListItem.FileNameAndPath]</value>
+		<value>$VAR[FlixPicturesThumbVar]</value>
+	</variable>
+	<variable name="FlixPicturesTitleVar">
+		<value condition="ListItem.IsParentFolder">$LOCALIZE[31365]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	<variable name="FlixPicturesSubtitleVar">
+		<value condition="ListItem.IsParentFolder">$LOCALIZE[31366]</value>
+		<value condition="ListItem.IsFolder">$LOCALIZE[191]</value>
+		<value condition="$EXP[flix_picture_video]">$LOCALIZE[31367]$INFO[ListItem.Duration, · ,]$INFO[ListItem.Size, · ,]</value>
+		<value condition="!String.IsEmpty(ListItem.PictureDateTime)">$INFO[ListItem.PictureDateTime]$INFO[ListItem.PictureResolution, · ,]</value>
+		<value>$INFO[ListItem.FileExtension]$INFO[ListItem.Size, · ,]$INFO[ListItem.PictureResolution, · ,]</value>
+	</variable>
+	<variable name="FlixPicturesCaptureExtrasVar">
+		<value condition="!String.IsEmpty(ListItem.PictureCamMake) | !String.IsEmpty(ListItem.PictureCamModel) | !String.IsEmpty(ListItem.PictureAperture) | !String.IsEmpty(ListItem.PictureExpTime) | !String.IsEmpty(ListItem.PictureISO)">$INFO[ListItem.PictureFlashUsed,Flash · ,[CR]]$INFO[ListItem.PictureWhiteBalance,White balance · ,[CR]]</value>
+		<value />
+	</variable>
+	<variable name="FlixPicturesDetailsVar">
+		<value condition="ListItem.IsParentFolder">$LOCALIZE[31368]</value>
+		<value condition="ListItem.IsFolder">$LOCALIZE[31369]$INFO[ListItem.FolderPath,$LOCALIZE[31370] ,]</value>
+		<value condition="$EXP[flix_picture_video]">$VAR[FlixPicturesVideoExtraVar]$INFO[ListItem.Size,$LOCALIZE[31371] ,[CR]]$INFO[ListItem.FileExtension,$LOCALIZE[31372] ,[CR]]$INFO[ListItem.Date,$LOCALIZE[31373] ,[CR]]</value>
+		<value>$INFO[ListItem.PictureResolution,$LOCALIZE[31374] ,[CR]]$INFO[ListItem.Size,$LOCALIZE[31371] ,[CR]]$INFO[ListItem.FileExtension,$LOCALIZE[31372] ,[CR]]$INFO[ListItem.Date,$LOCALIZE[31373] ,[CR]]$INFO[ListItem.PictureDateTime,$LOCALIZE[31375] ,[CR]]$INFO[ListItem.PictureColour,$LOCALIZE[31376] ,[CR]]$INFO[ListItem.PictureByline,$LOCALIZE[31377] ,[CR]]$INFO[ListItem.PictureCopyrightNotice,$LOCALIZE[31378] ,[CR]]</value>
+	</variable>
+	<variable name="FlixPicturesCameraDetailsVar">
+		<value condition="ListItem.IsFolder" />
+		<value condition="$EXP[flix_picture_video]">$VAR[FlixPicturesLocationVar]</value>
+		<value>$VAR[FlixPicturesLocationVar]$INFO[ListItem.PictureCamMake,Camera make · ,[CR]]$INFO[ListItem.PictureCamModel,Camera model · ,[CR]]$INFO[ListItem.PictureAperture,Aperture · ,[CR]]$INFO[ListItem.PictureExpTime,Shutter · ,[CR]]$INFO[ListItem.PictureISO,ISO · ,[CR]]$INFO[ListItem.PictureFocalLen,Focal length · ,[CR]]$INFO[ListItem.PictureExposure,Exposure program · ,[CR]]$INFO[ListItem.PictureExposureBias,Exposure bias · ,[CR]]$VAR[FlixPicturesCaptureExtrasVar]$INFO[ListItem.PictureCaption,Caption · ,[CR]]$INFO[ListItem.PictureComment,Comment · ,[CR]]$INFO[ListItem.PictureDesc,Description · ,[CR]]$INFO[ListItem.PictureKeywords,Keywords · ,[CR]]</value>
+	</variable>
+	<include name="FlixPicturesRow">
+		<param name="scroll">false</param>
+		<definition>
+			<control type="image">
+				<left>20</left>
+				<top>13</top>
+				<width>62</width>
+				<height>58</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true" fallback="DefaultPicture.png">$VAR[FlixPicturesThumbVar]</texture>
+			</control>
+			<control type="label">
+				<left>100</left>
+				<top>12</top>
+				<width>488</width>
+				<height>32</height>
+				<font>font25_title</font>
+				<textcolor>FFF4F2F4</textcolor>
+				<selectedcolor>FFF4F2F4</selectedcolor>
+				<label>$VAR[FlixPicturesTitleVar]</label>
+				<scroll>$PARAM[scroll]</scroll>
+			</control>
+			<control type="label">
+				<left>100</left>
+				<top>47</top>
+				<width>488</width>
+				<height>25</height>
+				<font>font_home_album_artist</font>
+				<textcolor>B8DCD9DF</textcolor>
+				<selectedcolor>B8DCD9DF</selectedcolor>
+				<label>$VAR[FlixPicturesSubtitleVar]</label>
+			</control>
+		</definition>
+	</include>
+	<include name="View_61_FlixPictures">
+		<control type="group">
+			<description>Flix Pictures: file list, uncropped preview and native EXIF/IPTC details</description>
+			<visible>Control.IsVisible(61)</visible>
+			<animation effect="fade" start="0" end="100" time="250">Visible</animation>
+			<include>GlassLegacyFallback1</include>
+			<include condition="$EXP[flixium_glass]">GlassBackground</include>
+			<control type="label">
+				<left>106</left>
+				<top>32</top>
+				<width>600</width>
+				<height>64</height>
+				<font>font40_title</font>
+				<textcolor>FFF4F2F4</textcolor>
+				<label>$LOCALIZE[31379]</label>
+			</control>
+			<control type="list" id="61">
+				<left>100</left>
+				<top>110</top>
+				<width>620</width>
+				<height>935</height>
+				<viewtype label="Flix Pictures">list</viewtype>
+				<orientation>vertical</orientation>
+				<scrolltime tween="cubic" easing="out">220</scrolltime>
+				<preloaditems>2</preloaditems>
+				<onleft>9000</onleft>
+				<onup>61</onup>
+				<ondown>61</ondown>
+				<pagecontrol>6101</pagecontrol>
+				<itemlayout width="620" height="85">
+					<control type="image">
+						<left>0</left>
+						<top>3</top>
+						<width>610</width>
+						<height>79</height>
+						<texture border="13" colordiffuse="$VAR[GlassSettingsRowTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+					</control>
+					<include>FlixPicturesRow</include>
+				</itemlayout>
+				<focusedlayout width="620" height="85">
+					<control type="image">
+						<left>0</left>
+						<top>3</top>
+						<width>610</width>
+						<height>79</height>
+						<texture border="13" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassSettingsRowFocusVar]</texture>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>18</top>
+						<width>4</width>
+						<height>49</height>
+						<texture colordiffuse="$VAR[ThemeHighlightVar]">colors/white.png</texture>
+						<visible>Control.HasFocus(61)</visible>
+					</control>
+					<include content="FlixPicturesRow">
+						<param name="scroll" value="true" />
+					</include>
+				</focusedlayout>
+				<onright condition="Control.IsVisible(6111)">6111</onright>
+				<onright condition="!Control.IsVisible(6111) + Control.IsVisible(6113)">6113</onright>
+				<onright condition="!Control.IsVisible(6111) + !Control.IsVisible(6113)">6101</onright>
+			</control>
+			<control type="scrollbar" id="6101">
+				<left>733</left>
+				<top>110</top>
+				<width>6</width>
+				<height>935</height>
+				<orientation>vertical</orientation>
+				<onleft>61</onleft>
+				<onright>6111</onright>
+				<showonepage>false</showonepage>
+			</control>
+			<control type="image">
+				<left>768</left>
+				<top>36</top>
+				<width>1044</width>
+				<height>526</height>
+				<texture border="20" colordiffuse="$VAR[GlassThemePanelTintVar]">$VAR[GlassSurfaceVar]</texture>
+			</control>
+			<control type="image">
+				<left>792</left>
+				<top>60</top>
+				<width>996</width>
+				<height>478</height>
+				<aspectratio align="center" aligny="center">keep</aspectratio>
+				<fadetime>180</fadetime>
+				<texture background="true" fallback="DefaultPicture.png">$VAR[FlixPicturesPreviewVar]</texture>
+				<visible>Integer.IsGreater(Container(61).NumItems,0)</visible>
+			</control>
+			<control type="label">
+				<left>792</left>
+				<top>253</top>
+				<width>996</width>
+				<height>60</height>
+				<align>center</align>
+				<font>font25_title</font>
+				<textcolor>B8DCD9DF</textcolor>
+				<label>$LOCALIZE[31380]</label>
+				<visible>Integer.IsEqual(Container(61).NumItems,0)</visible>
+			</control>
+			<control type="label">
+				<left>780</left>
+				<top>584</top>
+				<width>480</width>
+				<height>36</height>
+				<font>font25_title</font>
+				<textcolor>FFF4F2F4</textcolor>
+				<label>$LOCALIZE[31381]</label>
+			</control>
+			<control type="textbox" id="6110">
+				<left>780</left>
+				<top>632</top>
+				<width>480</width>
+				<height>374</height>
+				<font>font12</font>
+				<textcolor>FFDCD9DF</textcolor>
+				<label>$VAR[FlixPicturesDetailsVar]</label>
+				<pagecontrol>6111</pagecontrol>
+				<visible>Integer.IsGreater(Container(61).NumItems,0)</visible>
+			</control>
+			<control type="scrollbar" id="6111">
+				<left>1272</left>
+				<top>632</top>
+				<width>8</width>
+				<height>374</height>
+				<orientation>vertical</orientation>
+				<onleft>61</onleft>
+				<onback>61</onback>
+				<showonepage>false</showonepage>
+				<onright condition="Control.IsVisible(6113)">6113</onright>
+				<onright condition="!Control.IsVisible(6113)">61</onright>
+			</control>
+			<control type="label">
+				<left>1710</left>
+				<top>1048</top>
+				<width>100</width>
+				<height>30</height>
+				<align>right</align>
+				<font>font_home_album_artist</font>
+				<textcolor>B8DCD9DF</textcolor>
+				<label>$INFO[Container(61).CurrentItem] / $INFO[Container(61).NumItems]</label>
+			</control>
+			<control type="label">
+				<left>1310</left>
+				<top>584</top>
+				<width>480</width>
+				<height>36</height>
+				<font>font25_title</font>
+				<textcolor>FFF4F2F4</textcolor>
+				<label>$LOCALIZE[31382]</label>
+				<visible>!ListItem.IsFolder + [[$EXP[flix_picture_enriched] + !String.IsEmpty(Window(home).Property(flixium.pictures.media.location))] | [!$EXP[flix_picture_video] + [[!String.IsEmpty(ListItem.PictureCamMake) | !String.IsEmpty(ListItem.PictureCamModel) | !String.IsEmpty(ListItem.PictureAperture) | !String.IsEmpty(ListItem.PictureExpTime) | !String.IsEmpty(ListItem.PictureISO) | !String.IsEmpty(ListItem.PictureFocalLen) | !String.IsEmpty(ListItem.PictureExposure) | !String.IsEmpty(ListItem.PictureExposureBias) | !String.IsEmpty(ListItem.PictureCaption) | !String.IsEmpty(ListItem.PictureComment) | !String.IsEmpty(ListItem.PictureDesc) | !String.IsEmpty(ListItem.PictureKeywords)] | !String.IsEmpty(ListItem.PictureGPSLat) | !String.IsEmpty(ListItem.PictureGPSLon) | !String.IsEmpty(ListItem.PictureCity) | !String.IsEmpty(ListItem.PictureCountry)]]]</visible>
+			</control>
+			<control type="textbox" id="6112">
+				<left>1310</left>
+				<top>632</top>
+				<width>480</width>
+				<height>374</height>
+				<font>font12</font>
+				<textcolor>FFDCD9DF</textcolor>
+				<label>$VAR[FlixPicturesCameraDetailsVar]</label>
+				<pagecontrol>6113</pagecontrol>
+				<visible>!ListItem.IsFolder + [[$EXP[flix_picture_enriched] + !String.IsEmpty(Window(home).Property(flixium.pictures.media.location))] | [!$EXP[flix_picture_video] + [[!String.IsEmpty(ListItem.PictureCamMake) | !String.IsEmpty(ListItem.PictureCamModel) | !String.IsEmpty(ListItem.PictureAperture) | !String.IsEmpty(ListItem.PictureExpTime) | !String.IsEmpty(ListItem.PictureISO) | !String.IsEmpty(ListItem.PictureFocalLen) | !String.IsEmpty(ListItem.PictureExposure) | !String.IsEmpty(ListItem.PictureExposureBias) | !String.IsEmpty(ListItem.PictureCaption) | !String.IsEmpty(ListItem.PictureComment) | !String.IsEmpty(ListItem.PictureDesc) | !String.IsEmpty(ListItem.PictureKeywords)] | !String.IsEmpty(ListItem.PictureGPSLat) | !String.IsEmpty(ListItem.PictureGPSLon) | !String.IsEmpty(ListItem.PictureCity) | !String.IsEmpty(ListItem.PictureCountry)]]]</visible>
+			</control>
+			<control type="scrollbar" id="6113">
+				<left>1800</left>
+				<top>632</top>
+				<width>8</width>
+				<height>374</height>
+				<orientation>vertical</orientation>
+				<onright>61</onright>
+				<onback>61</onback>
+				<showonepage>false</showonepage>
+				<onleft condition="Control.IsVisible(6111)">6111</onleft>
+				<onleft condition="!Control.IsVisible(6111)">61</onleft>
+				<visible>!ListItem.IsFolder + [[$EXP[flix_picture_enriched] + !String.IsEmpty(Window(home).Property(flixium.pictures.media.location))] | [!$EXP[flix_picture_video] + [[!String.IsEmpty(ListItem.PictureCamMake) | !String.IsEmpty(ListItem.PictureCamModel) | !String.IsEmpty(ListItem.PictureAperture) | !String.IsEmpty(ListItem.PictureExpTime) | !String.IsEmpty(ListItem.PictureISO) | !String.IsEmpty(ListItem.PictureFocalLen) | !String.IsEmpty(ListItem.PictureExposure) | !String.IsEmpty(ListItem.PictureExposureBias) | !String.IsEmpty(ListItem.PictureCaption) | !String.IsEmpty(ListItem.PictureComment) | !String.IsEmpty(ListItem.PictureDesc) | !String.IsEmpty(ListItem.PictureKeywords)] | !String.IsEmpty(ListItem.PictureGPSLat) | !String.IsEmpty(ListItem.PictureGPSLon) | !String.IsEmpty(ListItem.PictureCity) | !String.IsEmpty(ListItem.PictureCountry)]]]</visible>
+			</control>
+			<control type="label">
+				<left>780</left>
+				<top>1012</top>
+				<width>1010</width>
+				<height>30</height>
+				<font>font_home_album_artist</font>
+				<textcolor>B8DCD9DF</textcolor>
+				<label>$INFO[ListItem.FileNameAndPath,$LOCALIZE[31383] ,]</label>
+				<visible>!ListItem.IsFolder + Integer.IsGreater(Container(61).NumItems,0)</visible>
+			</control>
+		</control>
+	</include>
+</includes>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<onload condition="Window.IsActive(interfacesettings)">RunScript(special://skin/extras/flixium_interface.py)</onload><defaultcontrol>3</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<controls>
+		<include>FlixiumSettingsPageBackground</include>
+		<include>FlixiumSettingsFullPanel</include>
+		<control type="group">
+			<include>FlixiumSettingsCenteredLayout</include>
+
+			<control type="grouplist" id="5">
+				<description>control area</description>
+				<scrolltime tween="sine" easing="inout">250</scrolltime>
+				<itemgap>6</itemgap>
+				<include condition="!Window.IsActive(gamesettings) + !Window.IsActive(playersettings)">FlixiumPanelOptionsGeometry</include>
+				<include condition="Window.IsActive(playersettings)">FlixiumPlayerPanelOptionsGeometry</include>
+				<left>500</left>
+				<pagecontrol>60</pagecontrol>
+				<width>1340</width>
+				<onleft>3</onleft>
+				<onright condition="Control.IsVisible(9015)">9015</onright>
+				<onright condition="!Control.IsVisible(9015)">noop</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+				<include condition="Window.IsActive(gamesettings)">FlixiumGamesOptionsGeometry</include>
+			</control>
+			
+		</control>
+		<control type="button" id="7">
+			<description>Default Button</description>
+			<include>FlixiumSettingButton</include>
+		</control>
+		<control type="radiobutton" id="8">
+			<description>Default RadioButton</description>
+			<include>FlixiumSettingButton</include>
+		</control>
+		<control type="spincontrolex" id="9">
+			<description>Default SpinControlex</description>
+			<include>FlixiumSettingButton</include>
+			<aligny>center</aligny>
+		</control>
+		<control type="sliderex" id="13">
+			<description>Default Slider</description>
+			<include>FlixiumSettingButton</include>
+			<aligny>center</aligny>
+		</control>
+		<control type="image" id="11">
+			<height>0</height>
+			<texture />
+			<visible>false</visible>
+		</control>
+		<control type="label" id="14">
+			<description>Default Label</description>
+			<width>1340</width>
+			<textoffsetx>40</textoffsetx>
+			<top>0</top>
+			<height>70</height>
+			<label />
+			<align>left</align>
+			<aligny>center</aligny>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<textcolor>grey</textcolor>
+			<shadowcolor>00FFFFFF</shadowcolor>
+		</control>
+		<control type="colorbutton" id="15">
+			<description>Default ColorButton</description>
+			<include>FlixiumSettingButton</include>
+		</control>
+		<control type="group">
+			<depth>DepthContentPanel</depth>
+			<include>FlixiumSettingsCenteredSidebar</include>
+			<include>FlixiumSettingsSidebarSize</include>
+			<include content="FlixiumSettingsSidebarHeader">
+				<param name="label_width" value="234" />
+			</include>
+			<control type="group" id="9010">
+				<include>FlixiumSettingsSidebarGeometry</include>
+				<animation effect="slide" end="0,112" time="0" condition="true">Conditional</animation>
+				<left>0</left>
+				<width>470</width>
+				<onleft>5</onleft>
+				<onright>5</onright>
+				<control type="grouplist" id="3">
+					<description>button area</description>
+					<itemgap>10</itemgap>
+					<scrolltime tween="sine" easing="inout">250</scrolltime>
+					<width>470</width>
+					<usecontrolcoords>true</usecontrolcoords>
+					<left>0</left>
+					<top>0</top>
+					<onright>5</onright>
+					<ondown>3</ondown>
+					<onleft>20</onleft>
+					<height max="690">auto</height>
+					<onup>20</onup>
+				</control>
+			</control>
+			<include>FlixiumSettingsSidebarDateTime</include>
+			<control type="button" id="10">
+				<description>Default Category Button</description>
+				<left>0</left>
+				<height>90</height>
+				<width>470</width>
+				<textoffsetx>40</textoffsetx>
+				<aligny>center</aligny>
+				<include>FlixiumGlobalFont_FlixiumSettingsCategory</include>
+				<include condition="!$EXP[flixium_glass] + !Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton4Normal</include><include condition="!$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton4Round</include><include condition="$EXP[flixium_glass]">GlassButton4</include>
+				<include condition="!$EXP[flixium_glass] + !Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton0Normal</include><include condition="!$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton0Round</include><include condition="$EXP[flixium_glass]">GlassButton0</include>
+				<textcolor>C8FFFFFF</textcolor>
+				<focusedcolor>$VAR[FlixiumCategoryFocusTextVar]</focusedcolor>
+				<selectedcolor>$VAR[FlixiumCategoryFocusTextVar]</selectedcolor>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<pulseonselect>false</pulseonselect>
+			</control>
+			<control type="button" id="20">
+				<description>Native settings level beside the parent heading</description>
+				<left>320</left>
+				<top>140</top>
+				<width>150</width>
+				<height>60</height>
+				<include>FlixiumGlobalFont_FlixiumSettingsDateTime</include>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textoffsetx>0</textoffsetx>
+				<textoffsety>0</textoffsety>
+				<onclick>Action(SettingsLevelChange)</onclick>
+				<onleft>3</onleft>
+				<onright>5</onright>
+				<onup>20</onup>
+				<ondown>-200</ondown>
+				<include>FlixiumSettingsButtonStyle</include>
+			</control>
+			
+		</control>
+		<control type="group">
+			<right>25</right>
+			<animation effect="slide" end="0,-60" time="0" condition="true">Conditional</animation>
+			<include condition="!Window.IsActive(gamesettings) + !Window.IsActive(playersettings)">FlixiumPanelScrollbarGeometry</include>
+			<include condition="Window.IsActive(playersettings)">FlixiumPlayerPanelOptionsGeometry</include>
+			<width>60</width>
+			<control type="scrollbar" id="60">
+				<right>0</right>
+				<top>0</top>
+				<bottom>0</bottom>
+				<width>6</width>
+				<orientation>vertical</orientation>
+				<texturesliderbackground />
+				<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
+				<onleft>5</onleft>
+				<onright>5</onright>
+				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<hitrect x="0" y="0" w="60" h="100%" />
+			</control>
+			<include condition="Window.IsActive(gamesettings)">FlixiumGamesScrollbarGeometry</include>
+			
+		</control>
+		<include content="TopBar">
+			<param name="show_clock" value="false" />
+			<param name="breadcrumbs_label" value="" />
+		</include>
+		<include>BottomBar</include>
+		<control type="group">
+			<include>FlixiumSettingsCenteredLayout</include>
+			<control type="textbox" id="6">
+				<visible>false</visible>
+				<description>description area</description>
+				<left>510</left>
+				<bottom>25</bottom>
+				<right>160</right>
+				<height>104</height>
+				<include>FlixiumGlobalFont_FlixiumSettingsLabelSentence</include>
+				<align>justify</align>
+				<textcolor>button_focus</textcolor>
+				<autoscroll time="3000" delay="5000" repeat="5000">true</autoscroll>
+			</control>
+		</control>
+		<control type="label" id="2">
+			<description>breadcrumbs label</description>
+			<visible>False</visible>
+		</control>
+		<control type="button" id="9015">
+			<description>Apply the Netflix preset to Kodi's native subtitle appearance settings</description>
+			<right>40</right><top>80</top><width>400</width><height>54</height>
+			<include>FlixiumSettingsButtonStyle</include>
+			<include>FlixiumGlobalFont_FlixiumSettingsControl</include><align>center</align><aligny>center</aligny>
+			<textoffsetx>20</textoffsetx>
+			<label>$LOCALIZE[31259]</label>
+			<visible>Window.IsActive(playersettings) + Container(3).Position(5) + !Container(5).HasPrevious</visible>
+			<onclick>RunScript(special://skin/extras/flixium_subtitle_preset.py)</onclick>
+			<onleft>3</onleft><onright>5</onright><onup>5</onup><ondown>5</ondown>
+		</control>
+		<control type="group">
+			<description>Media source arrows in the native skin layout</description>
+			<include>FlixiumSettingsCenteredLayout</include>
+			<visible>Window.IsActive(mediasettings) + Container(3).Position(0) + !String.IsEqual(Control.GetLabel(20),$LOCALIZE[593]) + !Container(5).HasPrevious</visible>
+			<control type="label">
+				<left>1792</left>
+				<top>206</top>
+				<width>24</width>
+				<height>70</height>
+				<font>FlixiumSettingsMenuArrow</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>C8FFFFFF</textcolor>
+				<label>›</label>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<visible>!ControlGroup(5).HasFocus(-179)</visible>
+			</control>
+			<control type="label">
+				<left>1792</left>
+				<top>206</top>
+				<width>24</width>
+				<height>70</height>
+				<font>FlixiumSettingsMenuArrow</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>FFFFFFFF</textcolor>
+				<label>›</label>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<visible>ControlGroup(5).HasFocus(-179)</visible>
+			</control>
+			<control type="label">
+				<left>1792</left>
+				<top>282</top>
+				<width>24</width>
+				<height>70</height>
+				<font>FlixiumSettingsMenuArrow</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>C8FFFFFF</textcolor>
+				<label>›</label>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<visible>!ControlGroup(5).HasFocus(-178)</visible>
+			</control>
+			<control type="label">
+				<left>1792</left>
+				<top>282</top>
+				<width>24</width>
+				<height>70</height>
+				<font>FlixiumSettingsMenuArrow</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>FFFFFFFF</textcolor>
+				<label>›</label>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<visible>ControlGroup(5).HasFocus(-178)</visible>
+			</control>
+			<control type="label">
+				<left>1792</left>
+				<top>358</top>
+				<width>24</width>
+				<height>70</height>
+				<font>FlixiumSettingsMenuArrow</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>C8FFFFFF</textcolor>
+				<label>›</label>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<visible>!ControlGroup(5).HasFocus(-177)</visible>
+			</control>
+			<control type="label">
+				<left>1792</left>
+				<top>358</top>
+				<width>24</width>
+				<height>70</height>
+				<font>FlixiumSettingsMenuArrow</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>FFFFFFFF</textcolor>
+				<label>›</label>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<visible>ControlGroup(5).HasFocus(-177)</visible>
+			</control>
+		</control>
+	<control type="group"><include>FlixiumSettingsCenteredLayout</include><visible>Window.IsActive(interfacesettings) + Container(3).Position(0) + !Container(5).HasPrevious</visible><control type="label"><left>1792</left><top>282</top><width>24</width><height>70</height><font>FlixiumSettingsMenuArrow</font><label>›</label><align>center</align><aligny>center</aligny><textcolor>C8FFFFFF</textcolor><shadowcolor>00FFFFFF</shadowcolor></control></control></controls>
+	<onload>SetProperty(flixium.sidebar.closing,true)</onload>
+	<onload>ClearProperty(flixium.sidebar.generation)</onload>
+</window>

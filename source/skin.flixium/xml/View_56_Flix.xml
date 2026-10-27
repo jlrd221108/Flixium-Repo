@@ -1,0 +1,1114 @@
+<?xml version='1.0' encoding='utf-8'?>
+<includes>
+	<expression name="flix_tv_ratings_visible">Skin.HasSetting(FlixiumRatingsEnabled) + String.IsEqual(ListItem.DBType,tvshow) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.available)) + $EXP[flix_selected_ratings_available]</expression>
+	<expression name="flix_movie_metadata">String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | ListItem.IsCollection</expression>
+	<expression name="flix_movie_ratings_visible">Skin.HasSetting(FlixiumRatingsEnabled) + String.IsEqual(ListItem.DBType,movie) + !ListItem.IsCollection + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.available)) + $EXP[flix_selected_ratings_available]</expression>
+	<include name="FlixiumInfoPill">
+		<param name="label" />
+		<param name="visible">true</param>
+		<definition>
+			<control type="togglebutton">
+				<top>2.5</top>
+				<width>auto</width>
+				<height>44</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>15</textoffsetx>
+				<font>font_movie_flix_pill</font>
+				<textcolor>FFF0F0F0</textcolor>
+				<include>GlassPilltexturenofocus</include>
+				<include>GlassPilltexturefocus</include>
+				<label>[UPPERCASE]$PARAM[label][/UPPERCASE]</label>
+				<visible>$PARAM[visible]</visible>
+			</control>
+		</definition>
+	</include>
+	<include name="FlixiumMovieInfoPill">
+		<param name="label" />
+		<param name="visible">true</param>
+		<definition>
+			<control type="togglebutton">
+				<top>2.5</top>
+				<width>auto</width>
+				<height>44</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>15</textoffsetx>
+				<font>font_movie_flix_pill</font>
+				<textcolor>FFF0F0F0</textcolor>
+				<include>GlassPilltexturenofocus</include>
+				<include>GlassPilltexturefocus</include>
+				<label>[UPPERCASE]$PARAM[label][/UPPERCASE]</label>
+				<visible>$PARAM[visible]</visible>
+			</control>
+		</definition>
+	</include>
+	<include name="FlixCentredAgeRatingControl">
+		<definition>
+			<control type="group">
+				<width>97</width>
+				<visible>$PARAM[visible]</visible>
+				<control type="group">
+					<visible>String.IsEmpty(Skin.String(Flixium.AgeRatingStyle)) | String.IsEqual(Skin.String(Flixium.AgeRatingStyle),Pill) | [String.IsEqual(Skin.String(Flixium.AgeRatingStyle),New) + !$EXP[flix_age_rating_new_available]] | [String.IsEqual(Skin.String(Flixium.AgeRatingStyle),Legacy) + !$EXP[flix_age_rating_legacy_available]]</visible>
+					<control type="image">
+						<width>97</width>
+						<height>49</height>
+						<texture border="8">$VAR[GlassSmallSurface12]</texture>
+					</control>
+					<control type="label">
+						<left>8</left>
+						<width>81</width>
+						<height>49</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font_movie_flix_pill</font>
+						<label>$INFO[ListItem.MPAA]</label>
+					</control>
+				</control>
+				<control type="image">
+					<left>8</left>
+					<top>0</top>
+					<width>49</width>
+					<height>49</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture>$VAR[FlixAgeRatingNewIconVar]</texture>
+					<visible>String.IsEqual(Skin.String(Flixium.AgeRatingStyle),New) + $EXP[flix_age_rating_new_available]</visible>
+				</control>
+				<control type="image">
+					<left>-26</left>
+					<top>-15</top>
+					<width>116</width>
+					<height>79</height>
+					<aspectratio align="center" aligny="center">keep</aspectratio>
+					<texture>$VAR[FlixAgeRatingLegacyIconVar]</texture>
+					<visible>String.IsEqual(Skin.String(Flixium.AgeRatingStyle),Legacy) + $EXP[flix_age_rating_legacy_available]</visible>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="FlixPosterRailGeometry">
+		<width>1809.5</width>
+		<focusposition>0</focusposition>
+		<movement>6</movement>
+	</include>
+	<include name="FlixMovieLandscapeRailGeometry">
+		<width>1814</width>
+		<focusposition>0</focusposition>
+		<movement>3</movement>
+	</include>
+	<include name="FlixLandscapeRailGeometry">
+		<width>1814</width>
+		<focusposition>0</focusposition>
+		<movement>3</movement>
+	</include>
+	<include name="FlixLargePosterRailGeometry">
+		<width>1809.5</width>
+		<focusposition>0</focusposition>
+		<movement>5</movement>
+	</include>
+	<include name="FlixExpandedListLayouts">
+		<itemlayout width="258.5" height="414" condition="[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !$EXP[flix_use_thumbs_current]] + ![Container.Content(movies) + Skin.HasSetting(Flixium.HideMovieMediaFlags)] + ![[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(Flixium.LargeTVPosters)]">
+			<control type="image">
+				<left>15</left>
+				<top>32</top>
+				<width>236.7</width>
+				<height>356.4</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="special://skin/extras/flix-poster-mask.png" fallback="DefaultMovies.png">$VAR[FlixPosterThumbVar]</texture>
+			</control>
+			<control type="progress">
+				<left>15</left>
+				<top>377.6</top>
+				<width>236.7</width>
+				<height>10.8</height>
+				<texturebg border="0" colordiffuse="00FFFFFF">special://skin/extras/poster-progress-edge.png</texturebg>
+				<midtexture colordiffuse="FFFFB33C" border="0">special://skin/extras/poster-progress-edge.png</midtexture>
+				<info>ListItem.PercentPlayed</info>
+				<visible>[Integer.IsGreater(ListItem.PercentPlayed,0) + !Skin.HasSetting(flix_hide_movie_progress)] + !String.IsEmpty(ListItem.Label)</visible>
+				<reveal>true</reveal>
+			</control>
+		</itemlayout>
+		<focusedlayout width="258.5" height="414" condition="[[Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !$EXP[flix_use_thumbs_current]] + ![Container.Content(movies) + Skin.HasSetting(Flixium.HideMovieMediaFlags)] + ![[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(Flixium.LargeTVPosters)]">
+			<control type="group">
+				<depth>DepthContentPopout</depth>
+				<control type="image">
+					<left>-15</left>
+					<top>2</top>
+					<width>296.7</width>
+					<height>416.4</height>
+					<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/flix-poster-glow.png</texture>
+					<visible>!Skin.HasSetting(Flixium.StaticPosterOutline)</visible>
+					<include>Animation_FocusTextureFade</include>
+					<animation type="Conditional" condition="!Skin.HasSetting(Flixium.StaticPosterOutline)" pulse="true">
+						<effect type="zoom" time="1733" start="97" end="100" center="133.35,210.2" tween="cubic" easing="in" />
+					</animation>
+				</control>
+				<control type="image">
+					<left>-1.2</left>
+					<top>14</top>
+					<width>269.1</width>
+					<height>391.5</height>
+					<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/flix-poster-outline-native.png</texture>
+					<visible>Skin.HasSetting(Flixium.StaticPosterOutline)</visible>
+					<animation effect="fade" start="100" end="100" time="0">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+				</control>
+				<control type="image">
+					<left>15</left>
+					<top>32</top>
+					<width>236.7</width>
+					<height>356.4</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true" diffuse="special://skin/extras/flix-poster-mask.png" fallback="DefaultMovies.png">$VAR[FlixPosterThumbVar]</texture>
+				</control>
+				<control type="progress">
+					<left>15</left>
+					<top>377.6</top>
+					<width>236.7</width>
+					<height>10.8</height>
+					<texturebg border="0" colordiffuse="00FFFFFF">special://skin/extras/poster-progress-edge.png</texturebg>
+					<midtexture colordiffuse="FFFFB33C" border="0">special://skin/extras/poster-progress-edge.png</midtexture>
+					<info>ListItem.PercentPlayed</info>
+					<visible>[Integer.IsGreater(ListItem.PercentPlayed,0) + !Skin.HasSetting(flix_hide_movie_progress)] + !String.IsEmpty(ListItem.Label)</visible>
+					<reveal>true</reveal>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="FlixLargeMoviePosterLayouts">
+		<itemlayout width="301.583333" height="478" condition="Container.Content(movies) + Skin.HasSetting(Flixium.HideMovieMediaFlags) + !$EXP[flix_use_thumbs_current]">
+			<control type="image">
+				<left>15</left>
+				<top>32</top>
+				<width>278.938889</width>
+				<height>420</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="special://skin/extras/flix-poster-mask.png" fallback="DefaultMovies.png">$VAR[FlixPosterThumbVar]</texture>
+			</control>
+			<control type="progress">
+				<left>15</left>
+				<top>441.2</top>
+				<width>278.938889</width>
+				<height>10.8</height>
+				<texturebg border="0" colordiffuse="00FFFFFF">special://skin/extras/poster-progress-edge.png</texturebg>
+				<midtexture colordiffuse="FFFFB33C" border="0">special://skin/extras/poster-progress-edge.png</midtexture>
+				<info>ListItem.PercentPlayed</info>
+				<visible>[Integer.IsGreater(ListItem.PercentPlayed,0) + !Skin.HasSetting(flix_hide_movie_progress)] + !String.IsEmpty(ListItem.Label)</visible>
+				<reveal>true</reveal>
+			</control>
+		</itemlayout>
+		<focusedlayout width="301.583333" height="478" condition="Container.Content(movies) + Skin.HasSetting(Flixium.HideMovieMediaFlags) + !$EXP[flix_use_thumbs_current]">
+			<control type="group">
+				<depth>DepthContentPopout</depth>
+				<control type="image">
+					<left>-15</left>
+					<top>2</top>
+					<width>338.938889</width>
+					<height>480</height>
+					<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/flix-poster-glow.png</texture>
+					<visible>!Skin.HasSetting(Flixium.StaticPosterOutline)</visible>
+					<include>Animation_FocusTextureFade</include>
+					<animation type="Conditional" condition="!Skin.HasSetting(Flixium.StaticPosterOutline)" pulse="true">
+						<effect type="zoom" time="1733" start="97" end="100" center="154.469444,242" tween="cubic" easing="in" />
+					</animation>
+				</control>
+				<control type="image">
+					<left>-1.2</left>
+					<top>14</top>
+					<width>311.338889</width>
+					<height>455.1</height>
+					<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/flix-poster-outline-native.png</texture>
+					<visible>Skin.HasSetting(Flixium.StaticPosterOutline)</visible>
+					<animation effect="fade" start="100" end="100" time="0">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+				</control>
+				<control type="image">
+					<left>15</left>
+					<top>32</top>
+					<width>278.938889</width>
+					<height>420</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true" diffuse="special://skin/extras/flix-poster-mask.png" fallback="DefaultMovies.png">$VAR[FlixPosterThumbVar]</texture>
+				</control>
+				<control type="progress">
+					<left>15</left>
+					<top>441.2</top>
+					<width>278.938889</width>
+					<height>10.8</height>
+					<texturebg border="0" colordiffuse="00FFFFFF">special://skin/extras/poster-progress-edge.png</texturebg>
+					<midtexture colordiffuse="FFFFB33C" border="0">special://skin/extras/poster-progress-edge.png</midtexture>
+					<info>ListItem.PercentPlayed</info>
+					<visible>[Integer.IsGreater(ListItem.PercentPlayed,0) + !Skin.HasSetting(flix_hide_movie_progress)] + !String.IsEmpty(ListItem.Label)</visible>
+					<reveal>true</reveal>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+	<include name="FlixEpisodeNormalListLayouts">
+		<param name="condition">true</param>
+		<definition>
+			<itemlayout width="613" height="410" condition="$PARAM[condition]">
+				<control type="image">
+					<left>20</left>
+					<top>31</top>
+					<width>582</width>
+					<height>327</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true" diffuse="special://skin/extras/flix-episode-mask.png" fallback="DefaultTVShows.png">$VAR[FlixThumbVar]</texture>
+					<bordersize>1</bordersize>
+				</control>
+				<control type="image">
+					<left>21</left>
+					<top>238</top>
+					<width>580</width>
+					<height>120</height>
+					<texture colordiffuse="A8FFFFFF">special://skin/extras/flix-episode-label-fade.png</texture>
+					<visible>Container.Content(episodes)</visible>
+				</control>
+				<control type="label">
+					<left>40</left>
+					<top>300</top>
+					<width>540</width>
+					<height>46</height>
+					<aligny>center</aligny>
+					<font>font20_title</font>
+					<textcolor>FFD0D0D0</textcolor>
+					<shadowcolor>DD000000</shadowcolor>
+					<label>$VAR[FlixThumbLabelVar]</label>
+					<visible>Container.Content(episodes)</visible>
+				</control>
+				<control type="progress">
+					<left>29</left>
+					<top>354</top>
+					<width>564</width>
+					<height>4</height>
+					<texturebg />
+					<midtexture colordiffuse="FFFFB33C">colors/white.png</midtexture>
+					<info>ListItem.PercentPlayed</info>
+					<visible>[Integer.IsGreater(ListItem.PercentPlayed,0) + !Skin.HasSetting(flix_hide_movie_progress)] + !String.IsEmpty(ListItem.Label)</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout width="613" height="410" condition="$PARAM[condition]">
+				<control type="group">
+					<depth>DepthContentPopout</depth>
+					<control type="image">
+						<left>3</left>
+						<top>17</top>
+						<width>615</width>
+						<height>352</height>
+						<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/flix-episode-glow.png</texture>
+						<bordersize>-15</bordersize>
+						<include>Animation_FocusTextureFade</include>
+						<include content="GlowPulse">
+							<param name="pos_x" value="307.5" />
+							<param name="pos_y" value="176" />
+						</include>
+					</control>
+					<control type="image">
+						<description>Opaque episode backing prevents glow showing through while artwork loads</description>
+						<left>20</left>
+						<top>31</top>
+						<width>582</width>
+						<height>327</height>
+						<texture diffuse="special://skin/extras/flix-episode-mask.png" colordiffuse="FF08090D">colors/white.png</texture>
+					</control>
+					<control type="image">
+						<left>20</left>
+						<top>31</top>
+						<width>582</width>
+						<height>327</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<fadetime>0</fadetime>
+						<texture background="false" diffuse="special://skin/extras/flix-episode-mask.png" fallback="DefaultTVShows.png">$VAR[FlixThumbVar]</texture>
+						<bordersize>1</bordersize>
+						<bordertexture colordiffuse="40FFFFFF" border="15" infill="false">special://skin/extras/flix-episode-border.png</bordertexture>
+					</control>
+					<control type="image">
+						<left>21</left>
+						<top>238</top>
+						<width>580</width>
+						<height>120</height>
+						<texture colordiffuse="A8FFFFFF">special://skin/extras/flix-episode-label-fade.png</texture>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="label">
+						<left>40</left>
+						<top>300</top>
+						<width>540</width>
+						<height>46</height>
+						<aligny>center</aligny>
+						<font>font20_title</font>
+						<textcolor>FFFFFFFF</textcolor>
+						<shadowcolor>DD000000</shadowcolor>
+						<label>$VAR[FlixThumbLabelVar]</label>
+						<scroll>true</scroll>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="progress">
+						<left>29</left>
+						<top>354</top>
+						<width>564</width>
+						<height>4</height>
+						<texturebg />
+						<midtexture colordiffuse="FFFFB33C">colors/white.png</midtexture>
+						<info>ListItem.PercentPlayed</info>
+						<visible>[Integer.IsGreater(ListItem.PercentPlayed,0) + !Skin.HasSetting(flix_hide_movie_progress)] + !String.IsEmpty(ListItem.Label)</visible>
+					</control>
+				</control>
+			</focusedlayout>
+		</definition>
+	</include>
+	<include name="FlixMovieLandscapeListLayouts">
+		<param name="condition">true</param>
+		<definition>
+			<itemlayout width="453.5" height="410" condition="$PARAM[condition]">
+				<control type="image">
+					<left>8</left>
+					<top>111.094073</top>
+					<width>437.5</width>
+					<height>245.811855</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true" diffuse="special://skin/extras/flix-episode-mask.png" fallback="DefaultTVShows.png">$VAR[FlixThumbVar]</texture>
+					<bordersize>1</bordersize>
+				</control>
+				<control type="image">
+					<left>8.751718</left>
+					<top>266.699743</top>
+					<width>435.996564</width>
+					<height>90.206186</height>
+					<texture colordiffuse="A8FFFFFF">special://skin/extras/flix-episode-label-fade.png</texture>
+					<visible>Container.Content(episodes)</visible>
+				</control>
+				<control type="label">
+					<left>23.034364</left>
+					<top>313.306272</top>
+					<width>405.927835</width>
+					<height>34.579038</height>
+					<aligny>center</aligny>
+					<font>font20_title</font>
+					<textcolor>FFD0D0D0</textcolor>
+					<shadowcolor>DD000000</shadowcolor>
+					<label>$VAR[FlixThumbLabelVar]</label>
+					<visible>Container.Content(episodes)</visible>
+				</control>
+				<control type="progress">
+					<left>14.765464</left>
+					<top>353.899056</top>
+					<width>423.969072</width>
+					<height>3.006872</height>
+					<texturebg />
+					<midtexture colordiffuse="FFFFB33C">colors/white.png</midtexture>
+					<info>ListItem.PercentPlayed</info>
+					<visible>[Integer.IsGreater(ListItem.PercentPlayed,0) + !Skin.HasSetting(flix_hide_movie_progress)] + !String.IsEmpty(ListItem.Label)</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout width="453.5" height="410" condition="$PARAM[condition]">
+				<control type="group">
+					<depth>DepthContentPopout</depth>
+					<control type="image">
+						<left>0.000000</left>
+						<top>96.094073</top>
+						<width>453.500000</width>
+						<height>275.811855</height>
+						<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/flix-episode-glow.png</texture>
+						<bordersize>0</bordersize>
+						<include>Animation_FocusTextureFade</include>
+						<include content="GlowPulse">
+							<param name="pos_x" value="226.75" />
+							<param name="pos_y" value="134.476804" />
+						</include>
+					</control>
+					<control type="image">
+						<left>8</left>
+						<top>111.094073</top>
+						<width>437.5</width>
+						<height>245.811855</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<fadetime>200</fadetime>
+						<texture background="true" diffuse="special://skin/extras/flix-episode-mask.png" fallback="DefaultTVShows.png">$VAR[FlixThumbVar]</texture>
+						<bordersize>1</bordersize>
+						<bordertexture colordiffuse="40FFFFFF" border="15" infill="false">special://skin/extras/flix-episode-border.png</bordertexture>
+					</control>
+					<control type="image">
+						<left>8.751718</left>
+						<top>266.699743</top>
+						<width>435.996564</width>
+						<height>90.206186</height>
+						<texture colordiffuse="A8FFFFFF">special://skin/extras/flix-episode-label-fade.png</texture>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="label">
+						<left>23.034364</left>
+						<top>313.306272</top>
+						<width>405.927835</width>
+						<height>34.579038</height>
+						<aligny>center</aligny>
+						<font>font20_title</font>
+						<textcolor>FFFFFFFF</textcolor>
+						<shadowcolor>DD000000</shadowcolor>
+						<label>$VAR[FlixThumbLabelVar]</label>
+						<scroll>true</scroll>
+						<visible>Container.Content(episodes)</visible>
+					</control>
+					<control type="progress">
+						<left>14.765464</left>
+						<top>353.899056</top>
+						<width>423.969072</width>
+						<height>3.006872</height>
+						<texturebg />
+						<midtexture colordiffuse="FFFFB33C">colors/white.png</midtexture>
+						<info>ListItem.PercentPlayed</info>
+						<visible>[Integer.IsGreater(ListItem.PercentPlayed,0) + !Skin.HasSetting(flix_hide_movie_progress)] + !String.IsEmpty(ListItem.Label)</visible>
+					</control>
+				</control>
+			</focusedlayout>
+		</definition>
+	</include>
+	<include name="View_56_Flix">
+		<control type="label" id="56001">
+			<left>-3000</left>
+			<top>-3000</top>
+			<width>1</width>
+			<height>1</height>
+			<label>$INFO[ListItem.DBID]</label>
+			<visible>false</visible>
+		</control>
+		<control type="label" id="56002">
+			<left>-3000</left>
+			<top>-3000</top>
+			<width>1</width>
+			<height>1</height>
+			<label>$INFO[ListItem.DBType]</label>
+			<visible>false</visible>
+		</control>
+		<control type="label" id="56003">
+			<left>-3000</left>
+			<top>-3000</top>
+			<width>1</width>
+			<height>1</height>
+			<label>$INFO[ListItem.Genre]</label>
+			<visible>false</visible>
+		</control>
+		<control type="label" id="56004">
+			<left>-3000</left>
+			<top>-3000</top>
+			<width>1</width>
+			<height>1</height>
+			<label>$INFO[ListItem.UniqueID(imdb)]</label>
+			<visible>false</visible>
+		</control>
+		<control type="label" id="56005">
+			<left>-3000</left>
+			<top>-3000</top>
+			<width>1</width>
+			<height>1</height>
+			<label>$INFO[ListItem.UniqueID(tmdb)]</label>
+			<visible>false</visible>
+		</control>
+		<control type="group">
+			<description>Flix movie, TV show and season viewtype</description>
+			<visible>[Control.IsVisible(56) | Control.IsVisible(57)] + !Container.Content(songs) + !Container.Content(albums) + !Container.Content(artists)</visible>
+			<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+			<animation effect="fade" time="250">VisibleChange</animation>
+			<include>GlassLegacyFallback0</include>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>1920</width>
+				<height>1080</height>
+				<aspectratio>scale</aspectratio>
+				<fadetime>500</fadetime>
+				<texture colordiffuse="FF5F5F5F">$INFO[Window(home).Property(flixium.helper.flix_blurred)]</texture>
+				<visible>[System.AddonIsEnabled(script.flixium.helper) + !Skin.HasSetting(flix_disable_background_blur)] + ![Container.Content(movies) + Skin.HasSetting(Flixium.Temp.MovieBlurFadeDisabled)]</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>1920</width>
+				<height>1080</height>
+				<aspectratio>scale</aspectratio>
+				<fadetime>0</fadetime>
+				<texture colordiffuse="FF5F5F5F">$INFO[Window(home).Property(flixium.helper.flix_blurred)]</texture>
+				<visible>[System.AddonIsEnabled(script.flixium.helper) + !Skin.HasSetting(flix_disable_background_blur)] + [Container.Content(movies) + Skin.HasSetting(Flixium.Temp.MovieBlurFadeDisabled)]</visible>
+			</control>
+			<control type="image">
+				<left>734.82</left>
+				<top>0</top>
+				<width>1265.18</width>
+				<height>669.8</height>
+				<aspectratio align="right" aligny="top">scale</aspectratio>
+				<fadetime>180</fadetime>
+				<texture background="true" diffuse="special://skin/extras/flix-fanart-mask.png" fallback="special://skin/extras/home-images/movie.jpg">$VAR[MediaFanartVar]</texture>
+				<visible>!Container.Content(seasons) + !Container.Content(episodes) + ![[Container.Content(movies) | Container.Content(tvshows)] + $EXP[flix_use_thumbs_current]]</visible>
+			</control>
+			<control type="image">
+				<left>734.82</left>
+				<top>0</top>
+				<width>1265.18</width>
+				<height>669.8</height>
+				<aspectratio align="right" aligny="top">scale</aspectratio>
+				<fadetime>180</fadetime>
+				<texture background="true" diffuse="special://skin/extras/flix-fanart-landscape-mask.png" fallback="special://skin/extras/home-images/movie.jpg">$VAR[MediaFanartVar]</texture>
+				<visible>[Container.Content(movies) | Container.Content(tvshows)] + $EXP[flix_use_thumbs_current]</visible>
+			</control>
+			<control type="group">
+				<animation effect="slide" start="0,0" end="0,20.5" condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">Conditional</animation>
+				<control type="image">
+					<left>66</left>
+					<top>61.725</top>
+					<animation effect="slide" start="0,0" end="0,-48" condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">Conditional</animation>
+					<width>443.7</width>
+					<height>189.55</height>
+					<aspectratio align="left" aligny="center">keep</aspectratio>
+					<fadetime>250</fadetime>
+					<texture background="true">$VAR[FlixClearLogoVar]</texture>
+					<visible>!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo)) | !String.IsEmpty(Container.Art(tvshow.clearlogo))</visible>
+				</control>
+				<control type="label">
+					<left>66</left>
+					<top>82</top>
+					<animation effect="slide" start="0,0" end="0,-48" condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">Conditional</animation>
+					<width>673.2</width>
+					<height>150</height>
+					<font>font60</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$VAR[FlixTitleVar]</label>
+					<shadowcolor>DD000000</shadowcolor>
+					<visible>!String.IsEqual(ListItem.DBType,season) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(Container.Art(tvshow.clearlogo))</visible>
+				</control>
+				<control type="label">
+					<left>66</left>
+					<top>82</top>
+					<animation effect="slide" start="0,0" end="0,-48" condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">Conditional</animation>
+					<width>673.2</width>
+					<height>150</height>
+					<font>font60</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.TVShowTitle]</label>
+					<shadowcolor>DD000000</shadowcolor>
+					<visible>String.IsEqual(ListItem.DBType,season) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(Container.Art(tvshow.clearlogo))</visible>
+				</control>
+				<control type="grouplist">
+					<left>66</left>
+					<top>255</top>
+					<animation effect="slide" start="0,0" end="0,-48" condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">Conditional</animation>
+					<width>673.2</width>
+					<height>49</height>
+					<orientation>horizontal</orientation>
+					<align>left</align>
+					<itemgap>10</itemgap>
+					<usecontrolcoords>true</usecontrolcoords>
+					<control type="group">
+						<width>73</width>
+						<visible>!String.IsEqual(ListItem.DBType,set) + !String.IsEmpty(ListItem.MPAA) + String.IsEqual(Skin.String(Flixium.AgeRatingPosition),Left)</visible>
+						<control type="group">
+							<visible>String.IsEmpty(Skin.String(Flixium.AgeRatingStyle)) | String.IsEqual(Skin.String(Flixium.AgeRatingStyle),Pill) | [String.IsEqual(Skin.String(Flixium.AgeRatingStyle),New) + !$EXP[flix_age_rating_new_available]] | [String.IsEqual(Skin.String(Flixium.AgeRatingStyle),Legacy) + !$EXP[flix_age_rating_legacy_available]]</visible>
+							<control type="image">
+								<width>73</width>
+								<height>49</height>
+								<texture border="8">$VAR[GlassSmallSurface13]</texture>
+							</control>
+							<control type="label">
+								<left>8</left>
+								<width>57</width>
+								<height>49</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>font_movie_flix_pill</font>
+								<label>$INFO[ListItem.MPAA]</label>
+							</control>
+						</control>
+						<control type="image">
+							<left>8</left>
+							<top>0</top>
+							<width>49</width>
+							<height>49</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture>$VAR[FlixAgeRatingNewIconVar]</texture>
+							<visible>String.IsEqual(Skin.String(Flixium.AgeRatingStyle),New) + $EXP[flix_age_rating_new_available]</visible>
+						</control>
+						<control type="image">
+							<left>-26</left>
+							<top>-15</top>
+							<width>116</width>
+							<height>79</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture>$VAR[FlixAgeRatingLegacyIconVar]</texture>
+							<visible>String.IsEqual(Skin.String(Flixium.AgeRatingStyle),Legacy) + $EXP[flix_age_rating_legacy_available]</visible>
+						</control>
+					</control>
+					<include content="FlixiumMovieInfoPill">
+						<param name="label" value="$INFO[ListItem.Year]" />
+						<param name="visible" value="String.IsEqual(ListItem.DBType,tvshow) + !String.IsEmpty(ListItem.Year)" />
+					</include>
+					<include content="FlixiumMovieInfoPill">
+						<param name="label" value="$INFO[ListItem.Property(TotalSeasons),, $LOCALIZE[31256]]" />
+						<param name="visible" value="String.IsEqual(ListItem.DBType,tvshow) + !String.IsEmpty(ListItem.Property(TotalSeasons))" />
+					</include>
+					<include content="FlixCentredAgeRatingControl">
+						<param name="visible" value="String.IsEqual(ListItem.DBType,tvshow) + !String.IsEmpty(ListItem.MPAA) + [String.IsEmpty(Skin.String(Flixium.AgeRatingPosition)) | String.IsEqual(Skin.String(Flixium.AgeRatingPosition),Center)]" />
+					</include>
+					<include content="FlixiumMovieInfoPill">
+						<param name="label" value="$INFO[ListItem.Status]" />
+						<param name="visible" value="String.IsEqual(ListItem.DBType,tvshow) + !String.IsEmpty(ListItem.Status)" />
+					</include>
+					<include content="FlixiumMovieInfoPill">
+						<param name="label" value="$INFO[ListItem.Season,$LOCALIZE[31363] ]" />
+						<param name="visible" value="String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.Season)" />
+					</include>
+					<include content="FlixCentredAgeRatingControl">
+						<param name="visible" value="String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.MPAA) + [String.IsEmpty(Skin.String(Flixium.AgeRatingPosition)) | String.IsEqual(Skin.String(Flixium.AgeRatingPosition),Center)]" />
+					</include>
+					<include content="FlixiumMovieInfoPill">
+						<param name="label" value="$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[31364]]" />
+						<param name="visible" value="String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.Property(TotalEpisodes))" />
+					</include>
+					<control type="group">
+						<width>150</width>
+						<visible>String.IsEqual(ListItem.DBType,set) + !String.IsEmpty(Window(home).Property(flixium.helper.set_count))</visible>
+						<control type="image">
+							<width>150</width>
+							<height>49</height>
+							<texture border="8">$VAR[GlassSmallSurface14]</texture>
+						</control>
+						<control type="label">
+							<left>8</left>
+							<width>134</width>
+							<height>49</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>font_movie_flix_pill</font>
+							<label>$INFO[Window(home).Property(flixium.helper.set_count)]</label>
+						</control>
+					</control>
+					<control type="group">
+						<width>150</width>
+						<visible>String.IsEqual(ListItem.DBType,set) + !String.IsEmpty(Window(home).Property(flixium.helper.set_years))</visible>
+						<control type="image">
+							<width>150</width>
+							<height>49</height>
+							<texture border="8">$VAR[GlassSmallSurface15]</texture>
+						</control>
+						<control type="label">
+							<left>8</left>
+							<width>134</width>
+							<height>49</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>font_movie_flix_pill</font>
+							<label>$INFO[Window(home).Property(flixium.helper.set_years)]</label>
+						</control>
+					</control>
+					<control type="group">
+						<width>180</width>
+						<visible>String.IsEqual(ListItem.DBType,set) + !String.IsEmpty(Window(home).Property(flixium.helper.set_runtime))</visible>
+						<control type="image">
+							<width>180</width>
+							<height>49</height>
+							<texture border="8">$VAR[GlassSmallSurface16]</texture>
+						</control>
+						<control type="label">
+							<left>8</left>
+							<width>164</width>
+							<height>49</height>
+							<align>center</align>
+							<aligny>center</aligny>
+							<font>font_movie_flix_pill</font>
+							<label>$INFO[Window(home).Property(flixium.helper.set_runtime)]</label>
+						</control>
+					</control>
+					<include content="FlixiumMovieInfoPill">
+						<param name="label" value="$INFO[ListItem.Year]" />
+						<param name="visible" value="[String.IsEqual(ListItem.DBType,album) | Container.Content(albums)] + !String.IsEmpty(ListItem.Year)" />
+					</include>
+					<include content="FlixiumMovieInfoPill">
+						<param name="label" value="$VAR[FlixAlbumTrackCountVar]" />
+						<param name="visible" value="[String.IsEqual(ListItem.DBType,album) | Container.Content(albums)] + [!String.IsEmpty(Window(home).Property(flixium.helper.album_track_count)) | !String.IsEmpty(ListItem.Property(Album_TrackCount)) | !String.IsEmpty(ListItem.Property(TrackCount)) | !String.IsEmpty(ListItem.Property(tracks))]" />
+					</include>
+					<include content="FlixiumMovieInfoPill">
+						<param name="label" value="$VAR[FlixAlbumRuntimeVar]" />
+						<param name="visible" value="[String.IsEqual(ListItem.DBType,album) | Container.Content(albums)] + [!String.IsEmpty(ListItem.Duration(m)) | !String.IsEmpty(ListItem.Property(Album_Duration)) | !String.IsEmpty(ListItem.Property(album_duration)) | !String.IsEmpty(ListItem.Duration)]" />
+					</include>
+					<include content="FlixiumMovieInfoPill">
+						<param name="label" value="$INFO[ListItem.Premiered]" />
+						<param name="visible" value="!String.IsEqual(ListItem.DBType,artist) + !String.IsEqual(ListItem.DBType,album) + !String.IsEqual(ListItem.DBType,set) + !String.IsEqual(ListItem.DBType,tvshow) + !String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.Premiered)" />
+					</include>
+					<control type="group">
+						<width>73</width>
+						<visible>!String.IsEqual(ListItem.DBType,artist) + !String.IsEqual(ListItem.DBType,album) + !String.IsEqual(ListItem.DBType,set) + !String.IsEqual(ListItem.DBType,tvshow) + !String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.MPAA) + [String.IsEmpty(Skin.String(Flixium.AgeRatingPosition)) | String.IsEqual(Skin.String(Flixium.AgeRatingPosition),Center)]</visible>
+						<control type="group">
+							<visible>String.IsEmpty(Skin.String(Flixium.AgeRatingStyle)) | String.IsEqual(Skin.String(Flixium.AgeRatingStyle),Pill) | [String.IsEqual(Skin.String(Flixium.AgeRatingStyle),New) + !$EXP[flix_age_rating_new_available]] | [String.IsEqual(Skin.String(Flixium.AgeRatingStyle),Legacy) + !$EXP[flix_age_rating_legacy_available]]</visible>
+							<control type="image">
+								<width>73</width>
+								<height>49</height>
+								<texture border="8">$VAR[GlassSmallSurface17]</texture>
+							</control>
+							<control type="label">
+								<left>8</left>
+								<width>57</width>
+								<height>49</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>font_movie_flix_pill</font>
+								<label>$INFO[ListItem.MPAA]</label>
+							</control>
+						</control>
+						<control type="image">
+							<left>8</left>
+							<top>0</top>
+							<width>49</width>
+							<height>49</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture>$VAR[FlixAgeRatingNewIconVar]</texture>
+							<visible>String.IsEqual(Skin.String(Flixium.AgeRatingStyle),New) + $EXP[flix_age_rating_new_available]</visible>
+						</control>
+						<control type="image">
+							<left>-26</left>
+							<top>-15</top>
+							<width>116</width>
+							<height>79</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture>$VAR[FlixAgeRatingLegacyIconVar]</texture>
+							<visible>String.IsEqual(Skin.String(Flixium.AgeRatingStyle),Legacy) + $EXP[flix_age_rating_legacy_available]</visible>
+						</control>
+					</control>
+					<include content="FlixiumMovieInfoPill">
+						<param name="label" value="$VAR[FlixRuntimeVar]" />
+						<param name="visible" value="!String.IsEqual(ListItem.DBType,artist) + !String.IsEqual(ListItem.DBType,album) + !String.IsEqual(ListItem.DBType,set) + !String.IsEqual(ListItem.DBType,tvshow) + !String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.Duration)" />
+					</include>
+					<include content="FlixiumMovieInfoPill">
+						<param name="label" value="$VAR[FlixVideoGenreVar]" />
+						<param name="visible" value="!String.IsEqual(ListItem.DBType,artist) + !String.IsEqual(ListItem.DBType,album) + !String.IsEmpty(Window(home).Property(flixium.helper.flix_genres))" />
+					</include>
+					<control type="group">
+						<width>73</width>
+						<visible>!String.IsEqual(ListItem.DBType,artist) + !String.IsEqual(ListItem.DBType,album) + !String.IsEqual(ListItem.DBType,set) + !String.IsEmpty(ListItem.MPAA) + String.IsEqual(Skin.String(Flixium.AgeRatingPosition),Right)</visible>
+						<control type="group">
+							<visible>String.IsEmpty(Skin.String(Flixium.AgeRatingStyle)) | String.IsEqual(Skin.String(Flixium.AgeRatingStyle),Pill) | [String.IsEqual(Skin.String(Flixium.AgeRatingStyle),New) + !$EXP[flix_age_rating_new_available]] | [String.IsEqual(Skin.String(Flixium.AgeRatingStyle),Legacy) + !$EXP[flix_age_rating_legacy_available]]</visible>
+							<control type="image">
+								<width>73</width>
+								<height>49</height>
+								<texture border="8">$VAR[GlassSmallSurface18]</texture>
+							</control>
+							<control type="label">
+								<left>8</left>
+								<width>57</width>
+								<height>49</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>font_movie_flix_pill</font>
+								<label>$INFO[ListItem.MPAA]</label>
+							</control>
+						</control>
+						<control type="image">
+							<left>8</left>
+							<top>0</top>
+							<width>49</width>
+							<height>49</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture>$VAR[FlixAgeRatingNewIconVar]</texture>
+							<visible>String.IsEqual(Skin.String(Flixium.AgeRatingStyle),New) + $EXP[flix_age_rating_new_available]</visible>
+						</control>
+						<control type="image">
+							<left>-26</left>
+							<top>-15</top>
+							<width>116</width>
+							<height>79</height>
+							<aspectratio align="center" aligny="center">keep</aspectratio>
+							<texture>$VAR[FlixAgeRatingLegacyIconVar]</texture>
+							<visible>String.IsEqual(Skin.String(Flixium.AgeRatingStyle),Legacy) + $EXP[flix_age_rating_legacy_available]</visible>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist" id="56020">
+					<description>Movie metadata: hidden rows take no space</description>
+					<left>66</left>
+					<top>327</top>
+					<width>880</width>
+					<height>284</height>
+					<orientation>vertical</orientation>
+					<itemgap>16</itemgap>
+					<animation effect="slide" start="0,0" end="0,-48" time="0" condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)">Conditional</animation>
+					<visible>$EXP[flix_movie_metadata]</visible>
+					<include content="HorizontalRatings">
+						<param name="left" value="0" />
+						<param name="top" value="0" />
+						<param name="align" value="left" />
+						<param name="visible" value="$EXP[flix_movie_ratings_visible]" />
+					</include>
+					<control type="label">
+						<width>645.001905</width>
+						<height>32</height>
+						<font>font_movie_flix_tagline_heavy</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>FFFFFFFF</textcolor>
+						<shadowcolor>DD000000</shadowcolor>
+						<label>$INFO[ListItem.Tagline]</label>
+						<scroll>false</scroll>
+						<visible>!String.IsEmpty(ListItem.Tagline)</visible>
+					</control>
+					<control type="group">
+						<width>770</width>
+						<height>176</height>
+						<control type="textbox">
+							<left>0</left>
+							<top>0</top>
+							<width>770</width>
+							<height>175</height>
+							<font>font_movie_flix_plot_native</font>
+							<align>left</align>
+							<textcolor>FFBDBDBD</textcolor>
+							<shadowcolor>DD000000</shadowcolor>
+							<label>$VAR[FlixPlotTextBoxVar]</label>
+							<autoscroll delay="8000" time="4000" repeat="8000">Skin.HasSetting(autoscroll)</autoscroll>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist" id="56021">
+					<description>TV metadata: hidden rows take no space</description>
+					<left>66</left>
+					<top>327</top>
+					<width>880</width>
+					<height>284</height>
+					<orientation>vertical</orientation>
+					<itemgap>16</itemgap>
+					<animation effect="slide" start="0,0" end="0,-48" time="0" condition="$EXP[flix_tv_metadata]">Conditional</animation>
+					<visible>$EXP[flix_tv_metadata]</visible>
+					<include content="HorizontalRatings">
+						<param name="left" value="0" />
+						<param name="top" value="0" />
+						<param name="align" value="left" />
+						<param name="visible" value="$EXP[flix_tv_ratings_visible]" />
+					</include>
+					<control type="label">
+						<width>645.001905</width>
+						<height>32</height>
+						<font>font_movie_flix_tagline_heavy</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>FFFFFFFF</textcolor>
+						<shadowcolor>DD000000</shadowcolor>
+						<label>$INFO[ListItem.Tagline]</label>
+						<scroll>false</scroll>
+						<visible>!String.IsEmpty(ListItem.Tagline)</visible>
+					</control>
+					<control type="group">
+						<width>770</width>
+						<height>176</height>
+						<control type="textbox">
+							<left>0</left>
+							<top>0</top>
+							<width>770</width>
+							<height>175</height>
+							<font>font_movie_flix_plot_native</font>
+							<align>left</align>
+							<textcolor>FFBDBDBD</textcolor>
+							<shadowcolor>DD000000</shadowcolor>
+							<label>$VAR[FlixPlotTextBoxVar]</label>
+							<autoscroll delay="8000" time="4000" repeat="8000">Skin.HasSetting(autoscroll)</autoscroll>
+						</control>
+						<visible>!String.IsEmpty(ListItem.Plot) | !String.IsEmpty(ListItem.PlotOutline)</visible>
+					</control>
+				</control>
+				<control type="textbox">
+					<left>66</left>
+					<top>344</top>
+					<width>782.608696</width>
+					<height>204.347826</height>
+					<font>font_movie_flix_plot</font>
+					<align>left</align>
+					<animation effect="zoom" start="86.02" end="86.02" center="66,344" condition="true">Conditional</animation>
+					<textcolor>FFBDBDBD</textcolor>
+					<shadowcolor>DD000000</shadowcolor>
+					<label>$VAR[FlixPlotTextBoxVar]</label>
+					<autoscroll delay="8000" time="4000" repeat="8000">Skin.HasSetting(autoscroll)</autoscroll>
+					<visible>!$EXP[flix_movie_metadata] + !$EXP[flix_tv_metadata]</visible>
+				</control>
+			</control>
+			<control type="group">
+				<left>51</left>
+				<top>573</top>
+				<width>1830</width>
+				<height>500</height>
+				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+				<control type="fixedlist" id="56">
+					<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)</visible>
+					<left>0</left>
+					<top>0</top>
+					<include condition="!$EXP[flix_use_thumbs_current] + ![Container.Content(movies) + Skin.HasSetting(Flixium.HideMovieMediaFlags)] + ![[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(Flixium.LargeTVPosters)]">FlixPosterRailGeometry</include>
+					<include condition="!$EXP[flix_use_thumbs_current] + [[Container.Content(movies) + Skin.HasSetting(Flixium.HideMovieMediaFlags)] | [[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(Flixium.LargeTVPosters)]]">FlixLargePosterRailGeometry</include>
+					<include condition="$EXP[flix_use_thumbs_current] + !Container.Content(movies)">FlixLandscapeRailGeometry</include>
+					<include condition="$EXP[flix_use_thumbs_current] + Container.Content(movies)">FlixMovieLandscapeRailGeometry</include>
+					<height>500</height>
+					<orientation>horizontal</orientation>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<preloaditems>2</preloaditems>
+					<onleft>56</onleft>
+					<onright>56</onright>
+					<onup>9000</onup>
+					<ondown>56</ondown>
+					<viewtype label="Flix">icon</viewtype>
+					<include>FlixExpandedListLayouts</include>
+					<include>FlixLargeMoviePosterLayouts</include>
+					<include content="FlixMovieLandscapeListLayouts">
+						<param name="condition" value="Container.Content(movies) + $EXP[flix_use_thumbs_current]" />
+					</include>
+					<include content="FlixMovieLandscapeListLayouts">
+						<param name="condition" value="[Container.Content(tvshows) | Container.Content(seasons)] + $EXP[flix_use_thumbs_current]" />
+					</include>
+					<include>FlixLargeTVPosterLayouts</include>
+				</control>
+			</control>
+			<control type="grouplist">
+				<left>66</left>
+				<top>989</top>
+				<width>1788</width>
+				<height>64</height>
+				<orientation>horizontal</orientation>
+				<align>left</align>
+				<itemgap>14</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<visible>[Container.Content(movies) + String.IsEqual(ListItem.DBType,movie) + !ListItem.IsParentFolder] + !Skin.HasSetting(Flixium.HideMovieMediaFlags)</visible>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[ListItem.VideoCodec,flags/videocodec/,.png]" />
+					<param name="width" value="122" />
+					<param name="height" value="64" />
+					<param name="visible" value="!String.IsEmpty(ListItem.VideoCodec)" />
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="$VAR[ResolutionFlagVar]" />
+					<param name="width" value="122" />
+					<param name="height" value="64" />
+					<param name="visible" value="!String.IsEmpty(ListItem.VideoResolution)" />
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[ListItem.HdrType,flags/videohdr/,.png]" />
+					<param name="width" value="122" />
+					<param name="height" value="64" />
+					<param name="visible" value="String.IsEqual(ListItem.HdrType,dolbyvision) | String.IsEqual(ListItem.HdrType,hdr10) | String.IsEqual(ListItem.HdrType,hdr10plus) | String.IsEqual(ListItem.HdrType,hlg)" />
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]" />
+					<param name="width" value="122" />
+					<param name="height" value="64" />
+					<param name="visible" value="!String.IsEmpty(ListItem.VideoAspect)" />
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[ListItem.AudioCodec,flags/audiocodec/,.png]" />
+					<param name="width" value="122" />
+					<param name="height" value="64" />
+					<param name="visible" value="!String.IsEmpty(ListItem.AudioCodec)" />
+				</include>
+				<include content="MediaFlag">
+					<param name="texture" value="$INFO[ListItem.AudioChannels,flags/audiochannel/,.png]" />
+					<param name="width" value="122" />
+					<param name="height" value="64" />
+					<param name="visible" value="!String.IsEmpty(ListItem.AudioChannels)" />
+				</include>
+			</control>
+			<control type="group">
+				<left>30</left>
+				<top>620</top>
+				<width>1839</width>
+				<height>460</height>
+				<clip>true</clip>
+				<visible>Container.Content(episodes)</visible>
+				<control type="fixedlist" id="57">
+					<visible>Container.Content(episodes)</visible>
+					<left>8</left>
+					<top>0</top>
+					<width>1839</width>
+					<height>430</height>
+					<orientation>horizontal</orientation>
+					<focusposition>0</focusposition>
+					<movement>2</movement>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<preloaditems>2</preloaditems>
+					<onleft>57</onleft>
+					<onright>57</onright>
+					<onup>9000</onup>
+					<ondown>57</ondown>
+					<viewtype label="Flix">icon</viewtype>
+					<include content="FlixEpisodeNormalListLayouts">
+						<param name="condition" value="Container.Content(episodes)" />
+					</include>
+				</control>
+			</control>
+		</control>
+	</include>
+	<expression name="flix_selected_ratings_available">[[[String.IsEqual(Skin.String(Flixium.RatingSlot1),mdblist) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.mdblist))] | [String.IsEqual(Skin.String(Flixium.RatingSlot1),imdb) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.imdb))] | [String.IsEqual(Skin.String(Flixium.RatingSlot1),metacritic) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.metacritic))] | [String.IsEqual(Skin.String(Flixium.RatingSlot1),trakt) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.trakt))] | [String.IsEqual(Skin.String(Flixium.RatingSlot1),rtc) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.tomatoes))] | [String.IsEqual(Skin.String(Flixium.RatingSlot1),rta) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.audience))] | [String.IsEqual(Skin.String(Flixium.RatingSlot1),letterboxd) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.letterboxd))] | [String.IsEqual(Skin.String(Flixium.RatingSlot1),tmdb) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.tmdb))]] | [[String.IsEqual(Skin.String(Flixium.RatingSlot2),mdblist) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.mdblist))] | [String.IsEqual(Skin.String(Flixium.RatingSlot2),imdb) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.imdb))] | [String.IsEqual(Skin.String(Flixium.RatingSlot2),metacritic) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.metacritic))] | [String.IsEqual(Skin.String(Flixium.RatingSlot2),trakt) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.trakt))] | [String.IsEqual(Skin.String(Flixium.RatingSlot2),rtc) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.tomatoes))] | [String.IsEqual(Skin.String(Flixium.RatingSlot2),rta) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.audience))] | [String.IsEqual(Skin.String(Flixium.RatingSlot2),letterboxd) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.letterboxd))] | [String.IsEqual(Skin.String(Flixium.RatingSlot2),tmdb) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.tmdb))]] | [[String.IsEqual(Skin.String(Flixium.RatingSlot3),mdblist) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.mdblist))] | [String.IsEqual(Skin.String(Flixium.RatingSlot3),imdb) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.imdb))] | [String.IsEqual(Skin.String(Flixium.RatingSlot3),metacritic) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.metacritic))] | [String.IsEqual(Skin.String(Flixium.RatingSlot3),trakt) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.trakt))] | [String.IsEqual(Skin.String(Flixium.RatingSlot3),rtc) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.tomatoes))] | [String.IsEqual(Skin.String(Flixium.RatingSlot3),rta) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.audience))] | [String.IsEqual(Skin.String(Flixium.RatingSlot3),letterboxd) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.letterboxd))] | [String.IsEqual(Skin.String(Flixium.RatingSlot3),tmdb) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.tmdb))]] | [[String.IsEqual(Skin.String(Flixium.RatingSlot4),mdblist) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.mdblist))] | [String.IsEqual(Skin.String(Flixium.RatingSlot4),imdb) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.imdb))] | [String.IsEqual(Skin.String(Flixium.RatingSlot4),metacritic) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.metacritic))] | [String.IsEqual(Skin.String(Flixium.RatingSlot4),trakt) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.trakt))] | [String.IsEqual(Skin.String(Flixium.RatingSlot4),rtc) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.tomatoes))] | [String.IsEqual(Skin.String(Flixium.RatingSlot4),rta) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.audience))] | [String.IsEqual(Skin.String(Flixium.RatingSlot4),letterboxd) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.letterboxd))] | [String.IsEqual(Skin.String(Flixium.RatingSlot4),tmdb) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.tmdb))]] | [[String.IsEqual(Skin.String(Flixium.RatingSlot5),mdblist) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.mdblist))] | [String.IsEqual(Skin.String(Flixium.RatingSlot5),imdb) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.imdb))] | [String.IsEqual(Skin.String(Flixium.RatingSlot5),metacritic) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.metacritic))] | [String.IsEqual(Skin.String(Flixium.RatingSlot5),trakt) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.trakt))] | [String.IsEqual(Skin.String(Flixium.RatingSlot5),rtc) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.tomatoes))] | [String.IsEqual(Skin.String(Flixium.RatingSlot5),rta) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.audience))] | [String.IsEqual(Skin.String(Flixium.RatingSlot5),letterboxd) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.letterboxd))] | [String.IsEqual(Skin.String(Flixium.RatingSlot5),tmdb) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.tmdb))]] | [[String.IsEqual(Skin.String(Flixium.RatingSlot6),mdblist) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.mdblist))] | [String.IsEqual(Skin.String(Flixium.RatingSlot6),imdb) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.imdb))] | [String.IsEqual(Skin.String(Flixium.RatingSlot6),metacritic) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.metacritic))] | [String.IsEqual(Skin.String(Flixium.RatingSlot6),trakt) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.trakt))] | [String.IsEqual(Skin.String(Flixium.RatingSlot6),rtc) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.tomatoes))] | [String.IsEqual(Skin.String(Flixium.RatingSlot6),rta) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.audience))] | [String.IsEqual(Skin.String(Flixium.RatingSlot6),letterboxd) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.letterboxd))] | [String.IsEqual(Skin.String(Flixium.RatingSlot6),tmdb) + !String.IsEmpty(Window(Home).Property(flixium.mdblist.rating.tmdb))]]]</expression>
+	<expression name="flix_tv_metadata">String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,episode)</expression>
+	<include name="FlixLargeTVPosterLayouts">
+		<itemlayout width="301.583333" height="478" condition="[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(Flixium.LargeTVPosters) + !$EXP[flix_use_thumbs_current]">
+			<control type="image">
+				<left>15</left>
+				<top>32</top>
+				<width>278.938889</width>
+				<height>420</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="special://skin/extras/flix-poster-mask.png" fallback="DefaultTVShows.png">$VAR[FlixPosterThumbVar]</texture>
+			</control>
+			<control type="progress">
+				<left>15</left>
+				<top>441.2</top>
+				<width>278.938889</width>
+				<height>10.8</height>
+				<texturebg border="0" colordiffuse="00FFFFFF">special://skin/extras/poster-progress-edge.png</texturebg>
+				<midtexture colordiffuse="FFFFB33C" border="0">special://skin/extras/poster-progress-edge.png</midtexture>
+				<info>ListItem.PercentPlayed</info>
+				<visible>[Integer.IsGreater(ListItem.PercentPlayed,0) + !Skin.HasSetting(flix_hide_movie_progress)] + !String.IsEmpty(ListItem.Label)</visible>
+				<reveal>true</reveal>
+			</control>
+		</itemlayout>
+		<focusedlayout width="301.583333" height="478" condition="[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(Flixium.LargeTVPosters) + !$EXP[flix_use_thumbs_current]">
+			<control type="group">
+				<depth>DepthContentPopout</depth>
+				<control type="image">
+					<left>-15</left>
+					<top>2</top>
+					<width>338.938889</width>
+					<height>480</height>
+					<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/flix-poster-glow.png</texture>
+					<visible>!Skin.HasSetting(Flixium.StaticPosterOutline)</visible>
+					<include>Animation_FocusTextureFade</include>
+					<animation type="Conditional" condition="!Skin.HasSetting(Flixium.StaticPosterOutline)" pulse="true">
+						<effect type="zoom" time="1733" start="97" end="100" center="154.469444,242" tween="cubic" easing="in" />
+					</animation>
+				</control>
+				<control type="image">
+					<left>-1.2</left>
+					<top>14</top>
+					<width>311.338889</width>
+					<height>455.1</height>
+					<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/flix-poster-outline-native.png</texture>
+					<visible>Skin.HasSetting(Flixium.StaticPosterOutline)</visible>
+					<animation effect="fade" start="100" end="100" time="0">Focus</animation>
+					<animation effect="fade" start="100" end="0" time="0">UnFocus</animation>
+				</control>
+				<control type="image">
+					<left>15</left>
+					<top>32</top>
+					<width>278.938889</width>
+					<height>420</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true" diffuse="special://skin/extras/flix-poster-mask.png" fallback="DefaultTVShows.png">$VAR[FlixPosterThumbVar]</texture>
+				</control>
+				<control type="progress">
+					<left>15</left>
+					<top>441.2</top>
+					<width>278.938889</width>
+					<height>10.8</height>
+					<texturebg border="0" colordiffuse="00FFFFFF">special://skin/extras/poster-progress-edge.png</texturebg>
+					<midtexture colordiffuse="FFFFB33C" border="0">special://skin/extras/poster-progress-edge.png</midtexture>
+					<info>ListItem.PercentPlayed</info>
+					<visible>[Integer.IsGreater(ListItem.PercentPlayed,0) + !Skin.HasSetting(flix_hide_movie_progress)] + !String.IsEmpty(ListItem.Label)</visible>
+					<reveal>true</reveal>
+				</control>
+			</control>
+		</focusedlayout>
+	</include>
+</includes>

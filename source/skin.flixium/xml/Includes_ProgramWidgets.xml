@@ -1,0 +1,1427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<variable name="Widgetsprograms1Title">
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),categories)">$LOCALIZE[31148]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),video)">$LOCALIZE[31238]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),audio)">$LOCALIZE[31239]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),programs)">$LOCALIZE[31693]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),games)">$LOCALIZE[31695]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),pictures)">$LOCALIZE[31697]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),android)">$LOCALIZE[31699]</value>
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))">$INFO[Skin.String(Flixium.Widgets.programs.1.Title)]</value>
+		<value>$LOCALIZE[31148]</value>
+	</variable>
+	<variable name="Widgetsprograms1Path">
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))">$INFO[Skin.String(Flixium.Widgets.programs.1.Path)]</value>
+		<value>addons://</value>
+	</variable>
+	<variable name="Widgetsprograms2Title">
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),categories)">$LOCALIZE[31148]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),video)">$LOCALIZE[31238]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),audio)">$LOCALIZE[31239]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),programs)">$LOCALIZE[31693]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),games)">$LOCALIZE[31695]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),pictures)">$LOCALIZE[31697]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),android)">$LOCALIZE[31699]</value>
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))">$INFO[Skin.String(Flixium.Widgets.programs.2.Title)]</value>
+		<value>$LOCALIZE[31238]</value>
+	</variable>
+	<variable name="Widgetsprograms2Path">
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))">$INFO[Skin.String(Flixium.Widgets.programs.2.Path)]</value>
+		<value>addons://sources/video/</value>
+	</variable>
+	<variable name="Widgetsprograms3Title">
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),categories)">$LOCALIZE[31148]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),video)">$LOCALIZE[31238]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),audio)">$LOCALIZE[31239]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),programs)">$LOCALIZE[31693]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),games)">$LOCALIZE[31695]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),pictures)">$LOCALIZE[31697]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),android)">$LOCALIZE[31699]</value>
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))">$INFO[Skin.String(Flixium.Widgets.programs.3.Title)]</value>
+		<value>$LOCALIZE[31239]</value>
+	</variable>
+	<variable name="Widgetsprograms3Path">
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))">$INFO[Skin.String(Flixium.Widgets.programs.3.Path)]</value>
+		<value>addons://sources/audio/</value>
+	</variable>
+	<variable name="Widgetsprograms4Title">
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),categories)">$LOCALIZE[31148]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),video)">$LOCALIZE[31238]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),audio)">$LOCALIZE[31239]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),programs)">$LOCALIZE[31693]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),games)">$LOCALIZE[31695]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),pictures)">$LOCALIZE[31697]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),android)">$LOCALIZE[31699]</value>
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))">$INFO[Skin.String(Flixium.Widgets.programs.4.Title)]</value>
+		<value />
+	</variable>
+	<variable name="Widgetsprograms4Path">
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))">$INFO[Skin.String(Flixium.Widgets.programs.4.Path)]</value>
+		<value />
+	</variable>
+	<variable name="Widgetsprograms5Title">
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),categories)">$LOCALIZE[31148]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),video)">$LOCALIZE[31238]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),audio)">$LOCALIZE[31239]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),programs)">$LOCALIZE[31693]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),games)">$LOCALIZE[31695]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),pictures)">$LOCALIZE[31697]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),android)">$LOCALIZE[31699]</value>
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))">$INFO[Skin.String(Flixium.Widgets.programs.5.Title)]</value>
+		<value />
+	</variable>
+	<variable name="Widgetsprograms5Path">
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))">$INFO[Skin.String(Flixium.Widgets.programs.5.Path)]</value>
+		<value />
+	</variable>
+	<variable name="Widgetsprograms6Title">
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),categories)">$LOCALIZE[31148]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),video)">$LOCALIZE[31238]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),audio)">$LOCALIZE[31239]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),programs)">$LOCALIZE[31693]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),games)">$LOCALIZE[31695]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),pictures)">$LOCALIZE[31697]</value>
+    <value condition="String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),android)">$LOCALIZE[31699]</value>
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))">$INFO[Skin.String(Flixium.Widgets.programs.6.Title)]</value>
+		<value />
+	</variable>
+	<variable name="Widgetsprograms6Path">
+		<value condition="!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))">$INFO[Skin.String(Flixium.Widgets.programs.6.Path)]</value>
+		<value />
+	</variable>
+	<include name="FlixiumHomeProgramCard">
+		<param name="focused">false</param>
+		<definition>
+			<control type="image">
+				<left>0.95</left>
+				<top>0.95</top>
+				<width>270.1</width>
+				<height>270.1</height>
+				<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/home-album-focus-glow.png</texture>
+				<visible>$PARAM[focused]</visible>
+				<include>Animation_FocusTextureFade</include>
+				<animation effect="fade" start="85" end="85" time="0" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>36</left>
+				<top>36</top>
+				<width>200</width>
+				<height>200</height>
+				<texture diffuse="special://skin/extras/home-album-cover-mask.png" colordiffuse="FF08090D">colors/white.png</texture>
+				<visible>$PARAM[focused]</visible>
+				<include>Animation_FocusTextureFade</include>
+			</control>
+			<control type="image">
+				<left>37</left>
+				<top>37</top>
+				<width>198</width>
+				<height>198</height>
+				<texture background="true" diffuse="special://skin/extras/home-album-cover-mask.png" colordiffuse="FF191F27">colors/white.png</texture>
+			</control>
+			<control type="image">
+				<left>37</left>
+				<top>37</top>
+				<width>198</width>
+				<height>198</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="special://skin/extras/home-album-cover-mask.png" fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+			</control>
+			<control type="label">
+				<left>37</left>
+				<top>243.5</top>
+				<width>198</width>
+				<height>22.5</height>
+				<font>font_home_album_title</font>
+				<textcolor>E0F4F2F4</textcolor>
+				<aligny>center</aligny>
+				<scroll>$PARAM[focused]</scroll>
+				<label>$INFO[ListItem.Label]</label>
+				<align>center</align>
+			</control>
+		</definition>
+	</include>
+	<include name="FlixiumConfiguredPrograms">
+		<control type="group" id="8000">
+			<visible>String.IsEqual(Container(9000).ListItem.Property(id),addons)</visible>
+			<defaultcontrol always="true">8001</defaultcontrol>
+			<include content="Visible_Right_Delayed">
+				<param name="id" value="addons" />
+			</include>
+			<control type="grouplist" id="8001">
+				<top>80</top>
+				<height>970</height>
+				<orientation>vertical</orientation>
+				<itemgap>-2</itemgap>
+				<scrolltime>250</scrolltime>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<control type="group" id="8002">
+					<height>305</height>
+					<visible>[[String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))] | Integer.IsGreater(Skin.String(Flixium.Widgets.programs.Count),0)] + [Integer.IsGreater(Container(8100).NumItems,0) | Container(8100).IsUpdating]</visible>
+					<control type="label">
+						<left>73</left>
+						<top>8</top>
+						<width>1250</width>
+						<height>36</height>
+						<font>font12</font>
+						<textcolor>B8FFFFFF</textcolor>
+						<aligny>center</aligny>
+						<label>$VAR[Widgetsprograms1Title]</label>
+					</control>
+					<control type="fixedlist" id="8100">
+						<focusposition>1</focusposition>
+						<movement>1</movement>
+						<left>36</left>
+						<top>29</top>
+						<width>1464.000000</width>
+						<height>276</height>
+						<orientation>horizontal</orientation>
+						<preloaditems>2</preloaditems>
+						<scrolltime tween="linear">250</scrolltime>
+						<onleft>9000</onleft>
+						<onright>noop</onright>
+						<onback>SetFocus(9000)</onback>
+						<onup>SetFocus(8100,0,absolute)</onup>
+						<onup>9000</onup>
+						<ondown>SetFocus(8100,0,absolute)</ondown>
+						<ondown condition="Integer.IsGreater(Container(8200).NumItems,0)">SetFocus(8200,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8200).NumItems,0) + Integer.IsGreater(Container(8300).NumItems,0)">SetFocus(8300,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8200).NumItems,0) + !Integer.IsGreater(Container(8300).NumItems,0) + Integer.IsGreater(Container(8400).NumItems,0)">SetFocus(8400,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8200).NumItems,0) + !Integer.IsGreater(Container(8300).NumItems,0) + !Integer.IsGreater(Container(8400).NumItems,0) + Integer.IsGreater(Container(8500).NumItems,0)">SetFocus(8500,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8200).NumItems,0) + !Integer.IsGreater(Container(8300).NumItems,0) + !Integer.IsGreater(Container(8400).NumItems,0) + !Integer.IsGreater(Container(8500).NumItems,0) + Integer.IsGreater(Container(8700).NumItems,0)">SetFocus(8700,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8200).NumItems,0) + !Integer.IsGreater(Container(8300).NumItems,0) + !Integer.IsGreater(Container(8400).NumItems,0) + !Integer.IsGreater(Container(8500).NumItems,0) + !Integer.IsGreater(Container(8700).NumItems,0)">9000</ondown>
+						<itemlayout width="244" height="276">
+							<control type="group">
+								<animation effect="slide" end="-244,0" time="0" condition="Integer.IsGreater(Container(8100).NumItems,0) + Integer.IsLess(Container(8100).NumItems,3)">Conditional</animation>
+								<include content="FlixiumHomeProgramCard">
+									<param name="focused" value="false" />
+								</include>
+							</control>
+						</itemlayout>
+						<focusedlayout width="244" height="276">
+							<control type="group">
+								<animation effect="slide" end="-244,0" time="0" condition="Integer.IsGreater(Container(8100).NumItems,0) + Integer.IsLess(Container(8100).NumItems,3)">Conditional</animation>
+								<control type="group">
+									<depth>DepthContentPopout</depth>
+									<include content="FlixiumHomeWidgetFocusZoom">
+										<param name="center" value="136,138" />
+									</include>
+									<include content="FlixiumHomeProgramCard">
+										<param name="focused" value="Control.HasFocus(8100)" />
+									</include>
+								</control>
+							</control>
+						</focusedlayout>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),categories)] | [String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))]] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),categories)] | [String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))]] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),categories)] | [String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))]] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),categories)] | [String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))]] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),video)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),audio)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),programs)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),games)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),pictures)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),android)] + System.Platform.Android] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),20)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.1.Limit),30)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="30" />
+						</include>
+					</control>
+				</control>
+				<control type="group" id="8003">
+					<height>305</height>
+					<visible>[[String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))] | Integer.IsGreater(Skin.String(Flixium.Widgets.programs.Count),1)] + [Integer.IsGreater(Container(8200).NumItems,0) | Container(8200).IsUpdating]</visible>
+					<control type="label">
+						<left>73</left>
+						<top>11</top>
+						<width>1250</width>
+						<height>36</height>
+						<font>font12</font>
+						<textcolor>B8FFFFFF</textcolor>
+						<aligny>center</aligny>
+						<label>$VAR[Widgetsprograms2Title]</label>
+						<visible>Control.IsVisible(8002)</visible>
+					</control>
+					<control type="label">
+						<left>73</left>
+						<top>8</top>
+						<width>1250</width>
+						<height>36</height>
+						<font>font12</font>
+						<textcolor>B8FFFFFF</textcolor>
+						<aligny>center</aligny>
+						<label>$VAR[Widgetsprograms2Title]</label>
+						<visible>![Control.IsVisible(8002)]</visible>
+					</control>
+					<control type="fixedlist" id="8200">
+						<focusposition>1</focusposition>
+						<movement>1</movement>
+						<left>36</left>
+						<top>29</top>
+						<width>1464.000000</width>
+						<height>276</height>
+						<orientation>horizontal</orientation>
+						<preloaditems>2</preloaditems>
+						<scrolltime tween="linear">250</scrolltime>
+						<onleft>9000</onleft>
+						<onright>noop</onright>
+						<onback>SetFocus(9000)</onback>
+						<onup>SetFocus(8200,0,absolute)</onup>
+						<onup condition="Integer.IsGreater(Container(8100).NumItems,0)">SetFocus(8100,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8100).NumItems,0)">9000</onup>
+						<ondown>SetFocus(8200,0,absolute)</ondown>
+						<ondown condition="Integer.IsGreater(Container(8300).NumItems,0)">SetFocus(8300,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8300).NumItems,0) + Integer.IsGreater(Container(8400).NumItems,0)">SetFocus(8400,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8300).NumItems,0) + !Integer.IsGreater(Container(8400).NumItems,0) + Integer.IsGreater(Container(8500).NumItems,0)">SetFocus(8500,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8300).NumItems,0) + !Integer.IsGreater(Container(8400).NumItems,0) + !Integer.IsGreater(Container(8500).NumItems,0) + Integer.IsGreater(Container(8700).NumItems,0)">SetFocus(8700,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8300).NumItems,0) + !Integer.IsGreater(Container(8400).NumItems,0) + !Integer.IsGreater(Container(8500).NumItems,0) + !Integer.IsGreater(Container(8700).NumItems,0)">9000</ondown>
+						<itemlayout width="244" height="276">
+							<control type="group">
+								<animation effect="slide" end="-244,0" time="0" condition="Integer.IsGreater(Container(8200).NumItems,0) + Integer.IsLess(Container(8200).NumItems,3)">Conditional</animation>
+								<include content="FlixiumHomeProgramCard">
+									<param name="focused" value="false" />
+								</include>
+							</control>
+						</itemlayout>
+						<focusedlayout width="244" height="276">
+							<control type="group">
+								<animation effect="slide" end="-244,0" time="0" condition="Integer.IsGreater(Container(8200).NumItems,0) + Integer.IsLess(Container(8200).NumItems,3)">Conditional</animation>
+								<control type="group">
+									<depth>DepthContentPopout</depth>
+									<include content="FlixiumHomeWidgetFocusZoom">
+										<param name="center" value="136,138" />
+									</include>
+									<include content="FlixiumHomeProgramCard">
+										<param name="focused" value="Control.HasFocus(8200)" />
+									</include>
+								</control>
+							</control>
+						</focusedlayout>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),categories)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),video)] | [String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))]] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),video)] | [String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))]] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),video)] | [String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))]] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),video)] | [String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))]] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),audio)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),programs)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),games)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),pictures)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),android)] + System.Platform.Android] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),20)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.2.Limit),30)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="30" />
+						</include>
+					</control>
+				</control>
+				<control type="group" id="8004">
+					<height>305</height>
+					<visible>[[String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))] | Integer.IsGreater(Skin.String(Flixium.Widgets.programs.Count),2)] + [Integer.IsGreater(Container(8300).NumItems,0) | Container(8300).IsUpdating]</visible>
+					<control type="label">
+						<left>73</left>
+						<top>11</top>
+						<width>1250</width>
+						<height>36</height>
+						<font>font12</font>
+						<textcolor>B8FFFFFF</textcolor>
+						<aligny>center</aligny>
+						<label>$VAR[Widgetsprograms3Title]</label>
+						<visible>Control.IsVisible(8002) | Control.IsVisible(8003)</visible>
+					</control>
+					<control type="label">
+						<left>73</left>
+						<top>8</top>
+						<width>1250</width>
+						<height>36</height>
+						<font>font12</font>
+						<textcolor>B8FFFFFF</textcolor>
+						<aligny>center</aligny>
+						<label>$VAR[Widgetsprograms3Title]</label>
+						<visible>![Control.IsVisible(8002) | Control.IsVisible(8003)]</visible>
+					</control>
+					<control type="fixedlist" id="8300">
+						<focusposition>1</focusposition>
+						<movement>1</movement>
+						<left>36</left>
+						<top>29</top>
+						<width>1464.000000</width>
+						<height>276</height>
+						<orientation>horizontal</orientation>
+						<preloaditems>2</preloaditems>
+						<scrolltime tween="linear">250</scrolltime>
+						<onleft>9000</onleft>
+						<onright>noop</onright>
+						<onback>SetFocus(9000)</onback>
+						<onup>SetFocus(8300,0,absolute)</onup>
+						<onup condition="Integer.IsGreater(Container(8200).NumItems,0)">SetFocus(8200,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8200).NumItems,0) + Integer.IsGreater(Container(8100).NumItems,0)">SetFocus(8100,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8200).NumItems,0) + !Integer.IsGreater(Container(8100).NumItems,0)">9000</onup>
+						<ondown>SetFocus(8300,0,absolute)</ondown>
+						<ondown condition="Integer.IsGreater(Container(8400).NumItems,0)">SetFocus(8400,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8400).NumItems,0) + Integer.IsGreater(Container(8500).NumItems,0)">SetFocus(8500,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8400).NumItems,0) + !Integer.IsGreater(Container(8500).NumItems,0) + Integer.IsGreater(Container(8700).NumItems,0)">SetFocus(8700,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8400).NumItems,0) + !Integer.IsGreater(Container(8500).NumItems,0) + !Integer.IsGreater(Container(8700).NumItems,0)">9000</ondown>
+						<itemlayout width="244" height="276">
+							<control type="group">
+								<animation effect="slide" end="-244,0" time="0" condition="Integer.IsGreater(Container(8300).NumItems,0) + Integer.IsLess(Container(8300).NumItems,3)">Conditional</animation>
+								<include content="FlixiumHomeProgramCard">
+									<param name="focused" value="false" />
+								</include>
+							</control>
+						</itemlayout>
+						<focusedlayout width="244" height="276">
+							<control type="group">
+								<animation effect="slide" end="-244,0" time="0" condition="Integer.IsGreater(Container(8300).NumItems,0) + Integer.IsLess(Container(8300).NumItems,3)">Conditional</animation>
+								<control type="group">
+									<depth>DepthContentPopout</depth>
+									<include content="FlixiumHomeWidgetFocusZoom">
+										<param name="center" value="136,138" />
+									</include>
+									<include content="FlixiumHomeProgramCard">
+										<param name="focused" value="Control.HasFocus(8300)" />
+									</include>
+								</control>
+							</control>
+						</focusedlayout>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),categories)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),video)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),audio)] | [String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))]] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),audio)] | [String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))]] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),audio)] | [String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))]] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),audio)] | [String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config))]] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),programs)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),games)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),pictures)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),android)] + System.Platform.Android] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),20)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.3.Limit),30)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="30" />
+						</include>
+					</control>
+				</control>
+				<control type="group" id="8005">
+					<height>305</height>
+					<visible>[[false] | Integer.IsGreater(Skin.String(Flixium.Widgets.programs.Count),3)] + [Integer.IsGreater(Container(8400).NumItems,0) | Container(8400).IsUpdating]</visible>
+					<control type="label">
+						<left>73</left>
+						<top>11</top>
+						<width>1250</width>
+						<height>36</height>
+						<font>font12</font>
+						<textcolor>B8FFFFFF</textcolor>
+						<aligny>center</aligny>
+						<label>$VAR[Widgetsprograms4Title]</label>
+						<visible>Control.IsVisible(8002) | Control.IsVisible(8003) | Control.IsVisible(8004)</visible>
+					</control>
+					<control type="label">
+						<left>73</left>
+						<top>8</top>
+						<width>1250</width>
+						<height>36</height>
+						<font>font12</font>
+						<textcolor>B8FFFFFF</textcolor>
+						<aligny>center</aligny>
+						<label>$VAR[Widgetsprograms4Title]</label>
+						<visible>![Control.IsVisible(8002) | Control.IsVisible(8003) | Control.IsVisible(8004)]</visible>
+					</control>
+					<control type="fixedlist" id="8400">
+						<focusposition>1</focusposition>
+						<movement>1</movement>
+						<left>36</left>
+						<top>29</top>
+						<width>1464.000000</width>
+						<height>276</height>
+						<orientation>horizontal</orientation>
+						<preloaditems>2</preloaditems>
+						<scrolltime tween="linear">250</scrolltime>
+						<onleft>9000</onleft>
+						<onright>noop</onright>
+						<onback>SetFocus(9000)</onback>
+						<onup>SetFocus(8400,0,absolute)</onup>
+						<onup condition="Integer.IsGreater(Container(8300).NumItems,0)">SetFocus(8300,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8300).NumItems,0) + Integer.IsGreater(Container(8200).NumItems,0)">SetFocus(8200,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8300).NumItems,0) + !Integer.IsGreater(Container(8200).NumItems,0) + Integer.IsGreater(Container(8100).NumItems,0)">SetFocus(8100,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8300).NumItems,0) + !Integer.IsGreater(Container(8200).NumItems,0) + !Integer.IsGreater(Container(8100).NumItems,0)">9000</onup>
+						<ondown>SetFocus(8400,0,absolute)</ondown>
+						<ondown condition="Integer.IsGreater(Container(8500).NumItems,0)">SetFocus(8500,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8500).NumItems,0) + Integer.IsGreater(Container(8700).NumItems,0)">SetFocus(8700,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8500).NumItems,0) + !Integer.IsGreater(Container(8700).NumItems,0)">9000</ondown>
+						<itemlayout width="244" height="276">
+							<control type="group">
+								<animation effect="slide" end="-244,0" time="0" condition="Integer.IsGreater(Container(8400).NumItems,0) + Integer.IsLess(Container(8400).NumItems,3)">Conditional</animation>
+								<include content="FlixiumHomeProgramCard">
+									<param name="focused" value="false" />
+								</include>
+							</control>
+						</itemlayout>
+						<focusedlayout width="244" height="276">
+							<control type="group">
+								<animation effect="slide" end="-244,0" time="0" condition="Integer.IsGreater(Container(8400).NumItems,0) + Integer.IsLess(Container(8400).NumItems,3)">Conditional</animation>
+								<control type="group">
+									<depth>DepthContentPopout</depth>
+									<include content="FlixiumHomeWidgetFocusZoom">
+										<param name="center" value="136,138" />
+									</include>
+									<include content="FlixiumHomeProgramCard">
+										<param name="focused" value="Control.HasFocus(8400)" />
+									</include>
+								</control>
+							</control>
+						</focusedlayout>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),categories)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),video)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),audio)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),programs)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),games)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),pictures)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),android)] + System.Platform.Android] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),20)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.4.Limit),30)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="30" />
+						</include>
+					</control>
+				</control>
+				<control type="group" id="8006">
+					<height>305</height>
+					<visible>[[false] | Integer.IsGreater(Skin.String(Flixium.Widgets.programs.Count),4)] + [Integer.IsGreater(Container(8500).NumItems,0) | Container(8500).IsUpdating]</visible>
+					<control type="label">
+						<left>73</left>
+						<top>11</top>
+						<width>1250</width>
+						<height>36</height>
+						<font>font12</font>
+						<textcolor>B8FFFFFF</textcolor>
+						<aligny>center</aligny>
+						<label>$VAR[Widgetsprograms5Title]</label>
+						<visible>Control.IsVisible(8002) | Control.IsVisible(8003) | Control.IsVisible(8004) | Control.IsVisible(8005)</visible>
+					</control>
+					<control type="label">
+						<left>73</left>
+						<top>8</top>
+						<width>1250</width>
+						<height>36</height>
+						<font>font12</font>
+						<textcolor>B8FFFFFF</textcolor>
+						<aligny>center</aligny>
+						<label>$VAR[Widgetsprograms5Title]</label>
+						<visible>![Control.IsVisible(8002) | Control.IsVisible(8003) | Control.IsVisible(8004) | Control.IsVisible(8005)]</visible>
+					</control>
+					<control type="fixedlist" id="8500">
+						<focusposition>1</focusposition>
+						<movement>1</movement>
+						<left>36</left>
+						<top>29</top>
+						<width>1464.000000</width>
+						<height>276</height>
+						<orientation>horizontal</orientation>
+						<preloaditems>2</preloaditems>
+						<scrolltime tween="linear">250</scrolltime>
+						<onleft>9000</onleft>
+						<onright>noop</onright>
+						<onback>SetFocus(9000)</onback>
+						<onup>SetFocus(8500,0,absolute)</onup>
+						<onup condition="Integer.IsGreater(Container(8400).NumItems,0)">SetFocus(8400,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8400).NumItems,0) + Integer.IsGreater(Container(8300).NumItems,0)">SetFocus(8300,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8400).NumItems,0) + !Integer.IsGreater(Container(8300).NumItems,0) + Integer.IsGreater(Container(8200).NumItems,0)">SetFocus(8200,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8400).NumItems,0) + !Integer.IsGreater(Container(8300).NumItems,0) + !Integer.IsGreater(Container(8200).NumItems,0) + Integer.IsGreater(Container(8100).NumItems,0)">SetFocus(8100,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8400).NumItems,0) + !Integer.IsGreater(Container(8300).NumItems,0) + !Integer.IsGreater(Container(8200).NumItems,0) + !Integer.IsGreater(Container(8100).NumItems,0)">9000</onup>
+						<ondown>SetFocus(8500,0,absolute)</ondown>
+						<ondown condition="Integer.IsGreater(Container(8700).NumItems,0)">SetFocus(8700,0,absolute)</ondown>
+						<ondown condition="!Integer.IsGreater(Container(8700).NumItems,0)">9000</ondown>
+						<itemlayout width="244" height="276">
+							<control type="group">
+								<animation effect="slide" end="-244,0" time="0" condition="Integer.IsGreater(Container(8500).NumItems,0) + Integer.IsLess(Container(8500).NumItems,3)">Conditional</animation>
+								<include content="FlixiumHomeProgramCard">
+									<param name="focused" value="false" />
+								</include>
+							</control>
+						</itemlayout>
+						<focusedlayout width="244" height="276">
+							<control type="group">
+								<animation effect="slide" end="-244,0" time="0" condition="Integer.IsGreater(Container(8500).NumItems,0) + Integer.IsLess(Container(8500).NumItems,3)">Conditional</animation>
+								<control type="group">
+									<depth>DepthContentPopout</depth>
+									<include content="FlixiumHomeWidgetFocusZoom">
+										<param name="center" value="136,138" />
+									</include>
+									<include content="FlixiumHomeProgramCard">
+										<param name="focused" value="Control.HasFocus(8500)" />
+									</include>
+								</control>
+							</control>
+						</focusedlayout>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),categories)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),video)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),audio)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),programs)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),games)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),pictures)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),android)] + System.Platform.Android] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),20)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.5.Limit),30)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="30" />
+						</include>
+					</control>
+				</control>
+				<control type="group" id="8007">
+					<height>305</height>
+					<visible>[[false] | Integer.IsGreater(Skin.String(Flixium.Widgets.programs.Count),5)] + [Integer.IsGreater(Container(8700).NumItems,0) | Container(8700).IsUpdating]</visible>
+					<control type="label">
+						<left>73</left>
+						<top>11</top>
+						<width>1250</width>
+						<height>36</height>
+						<font>font12</font>
+						<textcolor>B8FFFFFF</textcolor>
+						<aligny>center</aligny>
+						<label>$VAR[Widgetsprograms6Title]</label>
+						<visible>Control.IsVisible(8002) | Control.IsVisible(8003) | Control.IsVisible(8004) | Control.IsVisible(8005) | Control.IsVisible(8006)</visible>
+					</control>
+					<control type="label">
+						<left>73</left>
+						<top>8</top>
+						<width>1250</width>
+						<height>36</height>
+						<font>font12</font>
+						<textcolor>B8FFFFFF</textcolor>
+						<aligny>center</aligny>
+						<label>$VAR[Widgetsprograms6Title]</label>
+						<visible>![Control.IsVisible(8002) | Control.IsVisible(8003) | Control.IsVisible(8004) | Control.IsVisible(8005) | Control.IsVisible(8006)]</visible>
+					</control>
+					<control type="fixedlist" id="8700">
+						<focusposition>1</focusposition>
+						<movement>1</movement>
+						<left>36</left>
+						<top>29</top>
+						<width>1464.000000</width>
+						<height>276</height>
+						<orientation>horizontal</orientation>
+						<preloaditems>2</preloaditems>
+						<scrolltime tween="linear">250</scrolltime>
+						<onleft>9000</onleft>
+						<onright>noop</onright>
+						<onback>SetFocus(9000)</onback>
+						<onup>SetFocus(8700,0,absolute)</onup>
+						<onup condition="Integer.IsGreater(Container(8500).NumItems,0)">SetFocus(8500,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8500).NumItems,0) + Integer.IsGreater(Container(8400).NumItems,0)">SetFocus(8400,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8500).NumItems,0) + !Integer.IsGreater(Container(8400).NumItems,0) + Integer.IsGreater(Container(8300).NumItems,0)">SetFocus(8300,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8500).NumItems,0) + !Integer.IsGreater(Container(8400).NumItems,0) + !Integer.IsGreater(Container(8300).NumItems,0) + Integer.IsGreater(Container(8200).NumItems,0)">SetFocus(8200,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8500).NumItems,0) + !Integer.IsGreater(Container(8400).NumItems,0) + !Integer.IsGreater(Container(8300).NumItems,0) + !Integer.IsGreater(Container(8200).NumItems,0) + Integer.IsGreater(Container(8100).NumItems,0)">SetFocus(8100,0,absolute)</onup>
+						<onup condition="!Integer.IsGreater(Container(8500).NumItems,0) + !Integer.IsGreater(Container(8400).NumItems,0) + !Integer.IsGreater(Container(8300).NumItems,0) + !Integer.IsGreater(Container(8200).NumItems,0) + !Integer.IsGreater(Container(8100).NumItems,0)">9000</onup>
+						<ondown>SetFocus(8700,0,absolute)</ondown>
+						<ondown>9000</ondown>
+						<itemlayout width="244" height="276">
+							<control type="group">
+								<animation effect="slide" end="-244,0" time="0" condition="Integer.IsGreater(Container(8700).NumItems,0) + Integer.IsLess(Container(8700).NumItems,3)">Conditional</animation>
+								<include content="FlixiumHomeProgramCard">
+									<param name="focused" value="false" />
+								</include>
+							</control>
+						</itemlayout>
+						<focusedlayout width="244" height="276">
+							<control type="group">
+								<animation effect="slide" end="-244,0" time="0" condition="Integer.IsGreater(Container(8700).NumItems,0) + Integer.IsLess(Container(8700).NumItems,3)">Conditional</animation>
+								<control type="group">
+									<depth>DepthContentPopout</depth>
+									<include content="FlixiumHomeWidgetFocusZoom">
+										<param name="center" value="136,138" />
+									</include>
+									<include content="FlixiumHomeProgramCard">
+										<param name="focused" value="Control.HasFocus(8700)" />
+									</include>
+								</control>
+							</control>
+						</focusedlayout>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),categories)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),categories)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="addons://" />
+							<param name="target" value="addonbrowser" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),video)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),video)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="addons://sources/video/" />
+							<param name="target" value="videos" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),audio)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),audio)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="addons://sources/audio/" />
+							<param name="target" value="music" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),programs)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),programs)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="addons://sources/executable/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),games)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),games)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="addons://sources/game/" />
+							<param name="target" value="games" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),pictures)] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),pictures)] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="addons://sources/image/" />
+							<param name="target" value="pictures" />
+							<param name="limit" value="30" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="10" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),android)] + System.Platform.Android] + [!String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),10) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20) + !String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="15" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),20)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="20" />
+						</include>
+						<include content="WidgetAppearanceContent" condition="[[String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Id),android)] + System.Platform.Android] + [String.IsEqual(Skin.String(Flixium.Widgets.programs.6.Limit),30)]">
+							<param name="path" value="androidapp://sources/apps/" />
+							<param name="target" value="programs" />
+							<param name="limit" value="30" />
+						</include>
+					</control>
+				</control>
+			</control>
+			<control type="label">
+				<left>73</left>
+				<top>100</top>
+				<width>1300</width>
+				<height>70</height>
+				<font>font30_title</font>
+				<label>$LOCALIZE[31240]</label>
+				<visible>!String.IsEmpty(Skin.String(Flixium.Widgets.programs.Config)) + String.IsEqual(Skin.String(Flixium.Widgets.programs.Count),0)</visible>
+			</control>
+		</control>
+	</include>
+</includes>
+
+

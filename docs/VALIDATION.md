@@ -1,3 +1,7 @@
+# Repair validation — Skin 1.1.26
+
+The 1.1.25 package omitted its XML resolution folder. The repaired package contains all 122 main layouts, matches the committed XML source, parses every packaged XML file and resolves its include files. CI now downloads and checks the actual skin package. Helper and visualizer records are unchanged.
+
 # Release validation — Skin 1.1.25 / Helper 1.0.45
 
 Prepared on 2026-10-27. Both new runtime ZIPs were CRC-checked and their complete

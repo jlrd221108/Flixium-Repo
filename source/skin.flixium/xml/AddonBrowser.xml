@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<onload>RunScript(special://skin/extras/flixium_addon_label_fit.py)</onload>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<views>50,52,55</views>
+	<menucontrol>9000</menucontrol>
+	<controls>
+		<include>FlixiumSettingsPageBackground</include>
+		<control type="group">
+			<include>FlixiumSettingsFullPanel</include>
+			<control type="image">
+				<left>95</left>
+				<top>353.5</top>
+				<width>360</width>
+				<height>360</height>
+				<texture fallback="DefaultAddon.png" colordiffuse="FFFFFFFF">$INFO[Container(50).ListItem.Icon]</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="list" id="50">
+				<left>564</left>
+				<top>121</top>
+				<width>1116</width>
+				<height>825</height>
+				<scrolltime tween="cubic" easing="out">350</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>60</pagecontrol>
+				<onleft>50</onleft>
+				<onright>noop</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<viewtype label="$LOCALIZE[535]">list</viewtype>
+				<itemlayout height="75" width="1116">
+					<control type="image">
+						<left>0</left>
+						<top>3</top>
+						<right>0</right>
+						<height>69</height>
+						<texture border="28" colordiffuse="$VAR[GlassSettingsRowTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+					</control>
+					<control type="image">
+						<centertop>37.5</centertop>
+						<width>56</width>
+						<height>56</height>
+						<texture fallback="DefaultAddon.png" colordiffuse="C8FFFFFF">$VAR[FlixiumEqualUIIconVar]</texture>
+						<aspectratio>keep</aspectratio>
+						<centerleft>54</centerleft>
+					</control>
+					<control type="label">
+						<left>118</left>
+						<right>60</right>
+						<height>75</height>
+						<aligny>center</aligny>
+						<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="75" width="1116">
+					<control type="image">
+						<left>0</left>
+						<top>3</top>
+						<right>0</right>
+						<height>69</height>
+						<texture border="28" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassSettingsRowFocusVar]</texture>
+					</control>
+					<control type="image">
+						<centertop>37.5</centertop>
+						<width>56</width>
+						<height>56</height>
+						<texture fallback="DefaultAddon.png" colordiffuse="FFFFFFFF">$VAR[FlixiumEqualUIIconVar]</texture>
+						<aspectratio>keep</aspectratio>
+						<centerleft>54</centerleft>
+					</control>
+					<control type="label">
+						<left>118</left>
+						<right>60</right>
+						<height>75</height>
+						<aligny>center</aligny>
+						<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</focusedlayout>
+				<animation effect="slide" end="0,375" time="0" condition="Integer.IsEqual(Container(50).NumItems,1)">Conditional</animation>
+				<animation effect="slide" end="0,337.5" time="0" condition="Integer.IsEqual(Container(50).NumItems,2)">Conditional</animation>
+				<animation effect="slide" end="0,300" time="0" condition="Integer.IsEqual(Container(50).NumItems,3)">Conditional</animation>
+				<animation effect="slide" end="0,262.5" time="0" condition="Integer.IsEqual(Container(50).NumItems,4)">Conditional</animation>
+				<animation effect="slide" end="0,225" time="0" condition="Integer.IsEqual(Container(50).NumItems,5)">Conditional</animation>
+				<animation effect="slide" end="0,187.5" time="0" condition="Integer.IsEqual(Container(50).NumItems,6)">Conditional</animation>
+				<animation effect="slide" end="0,150" time="0" condition="Integer.IsEqual(Container(50).NumItems,7)">Conditional</animation>
+				<animation effect="slide" end="0,112.5" time="0" condition="Integer.IsEqual(Container(50).NumItems,8)">Conditional</animation>
+				<animation effect="slide" end="0,75" time="0" condition="Integer.IsEqual(Container(50).NumItems,9)">Conditional</animation>
+				<animation effect="slide" end="0,37.5" time="0" condition="Integer.IsEqual(Container(50).NumItems,10)">Conditional</animation>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>1689</left>
+				<top>121</top>
+				<width>6</width>
+				<height>825</height>
+				<orientation>vertical</orientation>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<texturesliderbackground />
+			</control>
+		</control>
+		<control type="image">
+			<depth>DepthBars</depth>
+			<left>0</left>
+			<top>0</top>
+			<width>110%</width>
+			<height>130</height>
+			<texture colordiffuse="$VAR[FlixiumPageShadeColorVar]">frame/InfoBar.png</texture>
+		</control>
+		<control type="image">
+			<depth>DepthBars</depth>
+			<left>0</left>
+			<bottom>0</bottom>
+			<width>110%</width>
+			<height>115</height>
+			<texture flipy="true" colordiffuse="$VAR[FlixiumPageShadeColorVar]">frame/InfoBar.png</texture>
+		</control>
+	</controls>
+</window>

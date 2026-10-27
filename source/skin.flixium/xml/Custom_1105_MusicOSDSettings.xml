@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1105">
+	<defaultcontrol>5001</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft><centertop>50%</centertop>
+			<width>820</width><height>740</height>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="820" />
+				<param name="height" value="740" />
+				<param name="header_label" value="$LOCALIZE[31793]" />
+				<param name="header_id" value="1" />
+			</include>
+			<control type="label">
+				<left>32</left><top>95</top><width>756</width><height>40</height>
+				<font>font25_title</font><textcolor>FFAAA7AF</textcolor><label>$LOCALIZE[31047]</label>
+			</control>
+			<control type="button" id="5001">
+				<left>0</left><top>140</top><width>820</width><include>FlixCustomiseSettingButton</include>
+				<label>$LOCALIZE[31049]</label><onclick>ActivateWindow(osdaudiosettings)</onclick>
+				<onup>5005</onup><ondown>5002</ondown>
+			</control>
+			<control type="label">
+				<left>32</left><top>235</top><width>756</width><height>40</height>
+				<font>font25_title</font><textcolor>FFAAA7AF</textcolor><label>$LOCALIZE[31050]</label>
+			</control>
+			<control type="radiobutton" id="5002">
+				<left>0</left><top>280</top><width>820</width><include>FlixCustomiseSettingButton</include>
+				<label>$LOCALIZE[31051]</label><selected>!Skin.HasSetting(FlixiumMusicLyricsDisabled)</selected>
+				<onclick>Skin.ToggleSetting(FlixiumMusicLyricsDisabled)</onclick>
+				<onup>5001</onup><ondown>5006</ondown>
+			</control>
+			<control type="button" id="5006">
+				<left>0</left><top>360</top><width>820</width><include>FlixCustomiseSettingButton</include>
+				<label>$LOCALIZE[31064]</label><label2>$VAR[MusicLyricsSourceVar]</label2>
+				<onclick>Skin.ToggleSetting(FlixiumMusicEmbeddedLyrics)</onclick>
+				<enable>!Skin.HasSetting(FlixiumMusicLyricsDisabled)</enable>
+				<onup>5002</onup><ondown>5007</ondown>
+			</control>
+			            <control type="button" id="5007">
+                <left>0</left><top>440</top><width>820</width><include>FlixCustomiseSettingButton</include>
+                <label>$LOCALIZE[31070]</label>
+                <onclick>RunScript(special://skin/extras/flixium_lyrics_settings.py)</onclick>
+                <enable>!Skin.HasSetting(FlixiumMusicLyricsDisabled)</enable>
+                <onup>5006</onup><ondown>5003</ondown>
+            </control>
+            <control type="radiobutton" id="5003">
+				<left>0</left><top>520</top><width>820</width><include>FlixCustomiseSettingButton</include>
+				<label>$LOCALIZE[31076]</label><selected>Skin.HasSetting(FlixiumMusicVisualiserBackground)</selected>
+				<onclick>Skin.ToggleSetting(FlixiumMusicVisualiserBackground)</onclick>
+				<onup>5007</onup><ondown>5005</ondown>
+			</control>
+			<control type="button" id="5005">
+				<left>0</left><top>600</top><width>820</width><include>FlixCustomiseSettingButton</include>
+				<label>$LOCALIZE[31077]</label>
+				<onclick>Addon.Default.OpenSettings(xbmc.player.musicviz)</onclick>
+				<enable>Visualisation.Enabled</enable>
+				<onup>5003</onup><ondown>5001</ondown>
+			</control>
+			<control type="label">
+				<left>32</left><top>690</top><width>756</width><height>32</height>
+				<font>font20_title</font><textcolor>FFAAA7AF</textcolor>
+				<label>$LOCALIZE[31078]</label>
+			</control>
+		</control>
+	</controls>
+</window>

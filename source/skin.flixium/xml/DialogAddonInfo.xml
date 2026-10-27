@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<onload condition="!ListItem.Property(addon.isinstalled) + Window.IsActive(addonbrowser)">SetFocus(6)</onload>
+	<onload>SetProperty(infobackground,$ESCINFO[ListItem.Art(fanart)],home)</onload>
+	<onunload>ClearProperty(infobackground,home)</onunload>
+	<controls>
+		<control type="image">
+			<include>FullScreenDimensions</include>
+			<texture colordiffuse="$VAR[FlixiumSettingsMenuTintVar]">$VAR[FlixiumSettingsPanelTextureVar]</texture>
+		</control>
+		<control type="group">
+			<centertop>50%</centertop>
+			<height>1080</height>
+			<centerleft>50%</centerleft>
+			<width>1920</width>
+			<control type="group">
+				<include>OpenClose_Right</include>
+				<control type="button" id="5000">
+					<left>618</left>
+					<top>180</top>
+					<width>726</width>
+					<height>500</height>
+					<label />
+					<include condition="!$EXP[flixium_glass] + !Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton0Normal</include><include condition="!$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton0Round</include><include condition="$EXP[flixium_glass]">GlassButton0</include>
+					<onup condition="Integer.IsGreater(Container(50).NumItems,0)">50</onup>
+					<onup condition="Integer.IsEqual(Container(50).NumItems,0)">9000</onup>
+					<ondown>9000</ondown>
+					<onclick>SetProperty(TextViewer_Header,$LOCALIZE[31141] $INFO[ListItem.AddonVersion],home)</onclick>
+					<onclick>SetProperty(TextViewer_Text,$ESCINFO[ListItem.AddonNews],home)</onclick>
+					<onclick>ActivateWindow(1102)</onclick>
+					<enable>!String.IsEmpty(ListItem.AddonNews)</enable>
+					<include condition="!$EXP[flixium_glass] + !Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton1Normal</include><include condition="!$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton1Round</include><include condition="$EXP[flixium_glass]">GlassButton1</include>
+				</control>
+				<control type="textbox">
+					<left>642</left>
+					<top>208</top>
+					<width>678</width>
+					<height>444</height>
+					<label>$INFO[ListItem.AddonSummary,[B],[/B][CR][CR]]$INFO[ListItem.AddonDescription][CR]$VAR[AddonNewsVar,[CR][CR],]</label>
+					<autoscroll delay="5000" repeat="7500" time="5000">true</autoscroll>
+					<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+					<textcolor>FFE6E6E6</textcolor>
+				</control>
+				<control type="panel" id="50">
+					<left>94</left>
+					<top>704</top>
+					<width>1726</width>
+					<height>140</height>
+					<ondown>5000</ondown>
+					<onup>9000</onup>
+					<orientation>horizontal</orientation>
+					<itemlayout height="140" width="288">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>268</width>
+							<height>132</height>
+							<texture border="32" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassDialogSurfaceVar]</texture>
+						</control>
+						<control type="image">
+							<left>4</left>
+							<top>4</top>
+							<width>260</width>
+							<height>124</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout height="140" width="288">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>268</width>
+							<height>132</height>
+							<texture border="32" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassDialogSurfaceVar]</texture>
+						</control>
+						<control type="image">
+							<left>4</left>
+							<top>4</top>
+							<width>260</width>
+							<height>124</height>
+							<aspectratio>keep</aspectratio>
+							<texture background="true">$INFO[ListItem.Icon]</texture>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>12</top>
+							<width>4</width>
+							<height>108</height>
+							<texture colordiffuse="FFFFFFFF">colors/white.png</texture>
+						</control>
+					</focusedlayout>
+					<visible>Integer.IsGreater(Container(50).NumItems,0)</visible>
+				</control>
+				<include content="LeftRightArrows">
+					<param name="list_id" value="50" />
+					<param name="left_posx" value="590" />
+					<param name="right_posx" value="1840" />
+					<param name="posy" value="280" />
+					<param name="visible" value="false" />
+				</include>
+				<control type="group">
+					<control type="image">
+						<left>1370</left>
+						<top>180</top>
+						<width>450</width>
+						<height>500</height>
+						<texture colordiffuse="$VAR[GlassThemeCardTintVar]" border="32">$VAR[GlassDialogSurfaceVar]</texture>
+					</control>
+					<control type="group">
+						<left>1340</left>
+						<top>208</top>
+						<control type="list">
+							<left>42</left>
+							<top>0</top>
+							<width>446</width>
+							<height>385</height>
+							<pagecontrol />
+							<itemlayout height="75">
+								<control type="label">
+									<left>10</left>
+									<top>0</top>
+									<width>410</width>
+									<height>30</height>
+									<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+									<label>$INFO[ListItem.Label]</label>
+									<textcolor>FFAAAAAA</textcolor>
+								</control>
+								<control type="label">
+									<left>10</left>
+									<top>30</top>
+									<width>380</width>
+									<height>30</height>
+									<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+									<label>$INFO[ListItem.Label2]</label>
+									<textcolor>FFF0F0F0</textcolor>
+								</control>
+								<control type="image">
+									<width>85.333333</width>
+									<height>85.333333</height>
+									<texture>$VAR[FlixiumEqualUIIconVar]</texture>
+									<centerright>41</centerright>
+									<centertop>51</centertop>
+								</control>
+							</itemlayout>
+							<focusedlayout height="75">
+								<control type="label">
+									<left>10</left>
+									<top>0</top>
+									<width>410</width>
+									<height>30</height>
+									<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+									<label>$INFO[ListItem.Label]</label>
+									<scroll>false</scroll>
+									<textcolor>FFAAAAAA</textcolor>
+								</control>
+								<control type="label">
+									<left>10</left>
+									<top>30</top>
+									<width>380</width>
+									<height>30</height>
+									<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+									<label>$INFO[ListItem.Label2]</label>
+									<scroll>false</scroll>
+									<textcolor>FFF0F0F0</textcolor>
+								</control>
+								<control type="image">
+									<width>85.333333</width>
+									<height>85.333333</height>
+									<texture>$VAR[FlixiumEqualUIIconVar]</texture>
+									<centerright>41</centerright>
+									<centertop>51</centertop>
+								</control>
+							</focusedlayout>
+							<content>
+								<item>
+									<label>$LOCALIZE[21866]:</label>
+									<label2>$INFO[ListItem.AddonType]</label2>
+									<visible>!String.IsEmpty(ListItem.AddonType)</visible>
+								</item>
+								<item>
+									<label>$LOCALIZE[31150]:</label>
+									<label2>$INFO[ListItem.AddonOrigin]</label2>
+									<icon>$VAR[AddonsOriginVar]</icon>
+									<visible>!String.IsEmpty(ListItem.AddonOrigin)</visible>
+								</item>
+								<item>
+									<label>$LOCALIZE[22031]:</label>
+									<label2>$INFO[ListItem.AddonSize]</label2>
+									<visible>!String.IsEmpty(ListItem.AddonSize)</visible>
+								</item>
+								<item>
+									<label>$LOCALIZE[467]:</label>
+									<label2>$LOCALIZE[31135]</label2>
+									<visible>ListItem.Property(Addon.IsBinary)</visible>
+								</item>
+								<item>
+									<label>$LOCALIZE[126]:</label>
+									<label2>$INFO[ListItem.Property(Addon.Status)]$INFO[ListItem.Property(Addon.ValidUpdateVersion),[CR]($LOCALIZE[19114]: ,)]</label2>
+									<visible>!String.IsEmpty(ListItem.Property(Addon.Status))</visible>
+								</item>
+							</content>
+						</control>
+					</control>
+				</control>
+				<control type="grouplist" id="9000">
+					<left>94</left>
+					<top>860</top>
+					<width>1726</width>
+					<height>112</height>
+					<onleft>9000</onleft>
+					<onright>9000</onright>
+					<onup>5000</onup>
+					<ondown>9000</ondown>
+					<align>center</align>
+					<itemgap>12</itemgap>
+					<orientation>horizontal</orientation>
+					<include content="FlixiumAddonInfoDialogButton">
+						<param name="id" value="12" />
+						<param name="icon" value="icons/equal-ui/icons_infodialogs_launch.png" />
+						<param name="label" value="$LOCALIZE[518]" />
+					</include>
+					<include content="FlixiumAddonInfoDialogButton">
+						<param name="id" value="9" />
+						<param name="icon" value="icons/equal-ui/icons_infodialogs_configure.png" />
+						<param name="label" value="$LOCALIZE[24020]" />
+					</include>
+					<control type="radiobutton" id="13">
+						<width>204</width>
+						<height>112</height>
+						<align>center</align>
+						<aligny>top</aligny>
+						<textoffsetx>10</textoffsetx>
+						<textoffsety>72</textoffsety>
+						<radioposx>59.333333</radioposx>
+						<radioposy>-6.666667</radioposy>
+						<radiowidth>85.333333</radiowidth>
+						<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+						<visible>Control.IsEnabled(13)</visible>
+						<radioheight>85.333333</radioheight>
+						<textcolor>FFE6E6E6</textcolor>
+						<include condition="!$EXP[flixium_glass] + !Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton1Normal</include><include condition="!$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton1Round</include><include condition="$EXP[flixium_glass]">GlassButton1</include>
+						<include condition="!$EXP[flixium_glass] + !Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton0Normal</include><include condition="!$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton0Round</include><include condition="$EXP[flixium_glass]">GlassButton0</include>
+						<textureradioonfocus colordiffuse="FFFFFFFF">icons/equal-ui/buttons_radio-button-on.png</textureradioonfocus>
+						<textureradioonnofocus colordiffuse="FFFFFFFF">icons/equal-ui/buttons_radio-button-on.png</textureradioonnofocus>
+						<textureradioondisabled colordiffuse="FF777777">icons/equal-ui/buttons_radio-button-on.png</textureradioondisabled>
+						<textureradioofffocus colordiffuse="FFFFFFFF">icons/equal-ui/buttons_radio-button-off.png</textureradioofffocus>
+						<textureradiooffnofocus colordiffuse="FFFFFFFF">icons/equal-ui/buttons_radio-button-off.png</textureradiooffnofocus>
+						<textureradiooffdisabled colordiffuse="FF777777">icons/equal-ui/buttons_radio-button-off.png</textureradiooffdisabled>
+					</control>
+					<include content="FlixiumAddonInfoDialogButton">
+						<param name="id" value="10" />
+						<param name="icon" value="icons/equal-ui/icons_settings_sysinfo.png" />
+						<param name="label" value="$LOCALIZE[39024]" />
+					</include>
+					<include content="FlixiumAddonInfoDialogToggleButton">
+						<param name="id" value="7" />
+						<param name="icon_on" value="icons/equal-ui/icons_infodialogs_disable.png" />
+						<param name="icon_off" value="icons/equal-ui/icons_infodialogs_enabled.png" />
+						<param name="selected" value="!String.StartsWith(Control.GetLabel(7),$LOCALIZE[24022]) | !Window.IsActive(addonbrowser)" />
+						<param name="label" value="" />
+					</include>
+					<include content="FlixiumAddonInfoDialogButton">
+						<param name="id" value="8" />
+						<param name="icon" value="icons/equal-ui/icons_infodialogs_install.png" />
+						<param name="label" value="$LOCALIZE[24138]" />
+					</include>
+					<include content="FlixiumAddonInfoDialogButton">
+						<param name="id" value="14" />
+						<param name="icon" value="icons/equal-ui/icons_infodialogs_update.png" />
+						<param name="label" value="$LOCALIZE[24069]" />
+					</include>
+					<include content="FlixiumAddonInfoDialogToggleButton">
+						<param name="id" value="6" />
+						<param name="icon_on" value="icons/equal-ui/icons_infodialogs_uninstall.png" />
+						<param name="icon_off" value="icons/equal-ui/icons_infodialogs_install.png" />
+						<param name="selected" value="ListItem.Property(addon.isinstalled) | !Window.IsActive(addonbrowser)" />
+						<param name="label" value="" />
+					</include>
+					<animation effect="slide" start="0,0" end="0,-140" time="0" reversible="true" condition="Integer.IsEqual(Container(50).NumItems,0)">Conditional</animation>
+				</control>
+			</control>
+			<control type="group">
+				<include>OpenClose_Left</include>
+				<top>180</top>
+				<left>94</left>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>500</width>
+					<height>500</height>
+					<texture border="32" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassDialogSurfaceVar]</texture>
+				</control>
+				<control type="image">
+					<left>24</left>
+					<top>24</top>
+					<width>452</width>
+					<height>452</height>
+					<aspectratio aligny="top">keep</aspectratio>
+					<fadetime>300</fadetime>
+					<texture fallback="DefaultAddon.png" background="true">$INFO[ListItem.Art(thumb)]</texture>
+				</control>
+				<control type="group">
+					<visible>String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24170]) | String.IsEqual(ListItem.AddonLifecycleType,$LOCALIZE[24171])</visible>
+					<control type="image">
+						<left>24</left>
+						<top>24</top>
+						<width>452</width>
+						<height>452</height>
+						<texture colordiffuse="AAFFFFFF">colors/black.png</texture>
+					</control>
+					<control type="textbox">
+						<left>24</left>
+						<top>24</top>
+						<width>452</width>
+						<height>452</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$VAR[AddonLifecycleType]</label>
+						<font>font32_title</font>
+					</control>
+				</control>
+			</control>
+			<control type="textbox">
+				<left>150</left>
+				<top>980</top>
+				<width>1620</width>
+				<height>82</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<animation effect="fade" start="0" end="100" time="300" delay="300">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+				<label>[I]$INFO[ListItem.AddonDisclaimer][/I]</label>
+				<textcolor>88FFFFFF</textcolor>
+				<autoscroll time="2000" delay="3000" repeat="5000">true</autoscroll>
+			</control>
+			<control type="label">
+				<left>94</left>
+				<top>40</top>
+				<width>1726</width>
+				<height>62</height>
+				<include>FlixiumGlobalFont_FlixiumSettingsHeading</include>
+				<textcolor>FFF0F0F0</textcolor>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.AddonName]</label>
+				<scroll>true</scroll>
+			</control>
+			<control type="label">
+				<left>94</left>
+				<top>108</top>
+				<width>1726</width>
+				<height>38</height>
+				<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+				<textcolor>FFAAAAAA</textcolor>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.AddonVersion]$INFO[ListItem.AddonCreator, $LOCALIZE[31071] ]</label>
+				<scroll>true</scroll>
+			</control>
+		</control>
+		<include condition="Skin.HasSetting(touchmode)">TouchBackButton</include>
+	</controls>
+</window>

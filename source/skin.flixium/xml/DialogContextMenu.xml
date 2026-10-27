@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+  <defaultcontrol>996</defaultcontrol>
+  <onload>ClearProperty(flixium.context.ready,10106)</onload>
+  <onload>RunScript(special://skin/extras/flixium_context.py)</onload>
+  <onunload>ClearProperty(flixium.context.ready,10106)</onunload>
+  <coordinates>
+    <origin x="0" y="0">true</origin>
+  </coordinates>
+  <controls>
+    <!-- 999 determines
+       native popup bounds. The explicit origin centers the compact layout. -->
+    <control type="image" id="999">
+      <width>450</width>
+      <height>900</height>
+      <texture colordiffuse="00000000"></texture>
+      <visible>false</visible>
+    </control>
+    <control type="group">
+      <!--Process layout and focus while transparent, then reveal the entire popup in one fade.-->
+      <visible allowhiddenfocus="true">String.IsEqual(Window(10106).Property(flixium.context.ready),true)</visible>
+      <animation effect="fade" start="0" end="100" time="180" reversible="false">Visible</animation>
+      <control type="image">
+        <width>1920</width>
+        <height>1080</height>
+        <texture colordiffuse="B0000000">colors/white.png</texture>
+      </control>
+      <control type="image" id="951">
+        <left>723</left>
+        <top>260</top>
+        <width>474</width>
+        <height>560</height>
+        <texture border="24" colordiffuse="$VAR[GlassThemePanelTintVar]">$VAR[GlassDialogSurfaceVar]</texture>
+      </control>
+      <control type="image" id="953">
+        <left>483</left>
+        <top>180</top>
+        <width>480</width>
+        <height>720</height>
+        <texture background="false" diffuse="special://skin/extras/flix-poster-mask.png">$INFO[Window(10106).Property(flixium.context.poster)]</texture>
+        <aspectratio>scale</aspectratio>
+        <visible>String.IsEqual(Window(10106).Property(flixium.context.posteritem),true)</visible>
+      </control>
+      <control type="grouplist" id="996">
+        <left>735</left>
+        <top>90</top>
+        <width>450</width>
+        <height>900</height>
+        <orientation>vertical</orientation>
+        <align>center</align>
+        <itemgap>4</itemgap>
+        <usecontrolcoords>false</usecontrolcoords>
+        <control type="button" id="990">
+          <width>450</width>
+          <height>64</height>
+          <label>$INFO[Window(10106).Property(flixium.context.listlabel)]</label>
+          <visible>String.IsEqual(Window(10106).Property(flixium.context.posteritem),true)</visible>
+          <align>left</align>
+          <aligny>center</aligny>
+          <textoffsetx>24</textoffsetx>
+          <include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+          <onclick>RunScript(special://skin/extras/flixium_context.py,toggle,$INFO[Window(10106).Property(flixium.context.itemid)],$INFO[Window(10106).Property(flixium.context.mediatype)])</onclick>
+          <onclick>Action(close)</onclick>
+          <include>FlixiumSettingsButtonStyle</include>
+        </control>
+        <control type="button" id="991">
+          <width>450</width>
+          <height>64</height>
+          <label>$LOCALIZE[31191]</label>
+          <visible>String.IsEqual(Window(10106).Property(flixium.context.continue),true)</visible>
+          <align>left</align>
+          <aligny>center</aligny>
+          <textoffsetx>24</textoffsetx>
+          <include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+          <onclick>RunScript(special://skin/extras/flixium_context.py,dismiss,$INFO[Window(10106).Property(flixium.context.itemid)],$INFO[Window(10106).Property(flixium.context.mediatype)])</onclick>
+          <onclick>Action(close)</onclick>
+          <include>FlixiumSettingsButtonStyle</include>
+        </control>
+        <animation effect="slide" start="0,0" end="246,0" time="0" condition="String.IsEqual(Window(10106).Property(flixium.context.posteritem),true)">Conditional</animation>
+      </control>
+    </control>
+    <!-- Kodi clones this template for each native action. -->
+    <control type="button" id="1000">
+      <width>450</width>
+      <height>64</height>
+      <disabledcolor>FF808994</disabledcolor>
+      <align>left</align>
+      <aligny>center</aligny>
+      <textoffsetx>24</textoffsetx>
+      <include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+      <include>FlixiumSettingsButtonStyle</include>
+    </control>
+  </controls>
+</window>

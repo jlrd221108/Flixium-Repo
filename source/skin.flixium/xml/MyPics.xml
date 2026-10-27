@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">61</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<views>61,50,52,55,500,599</views>
+	<menucontrol>9000</menucontrol>
+	<onload>RunScript(special://skin/extras/flixium_picture_decoders.py)</onload>
+	<onload>RunScript(special://skin/extras/flixium_picture_metadata.py)</onload>
+	<controls>
+		<control type="group">
+			<description>Normal media browser outside source management</description>
+			<visible>![String.StartsWith(Container.FolderPath,sources://) | [Window.IsActive(pictures) + String.IsEmpty(Container.FolderPath)]]</visible>
+			<include>DefaultBackground</include>
+			<control type="group">
+				<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+				<include>View_50_List</include>
+				<include>View_61_FlixPictures</include>
+				<include>View_52_IconWall</include>
+				
+				<include>View_55_WideList</include>
+				<include>View_500_Wall</include>
+				<include>CommonScrollbars</include>
+				
+				<control type="group">
+					<include>OpenClose_Left</include>
+					<visible>Control.IsVisible(50) | Control.IsVisible(55)</visible>
+					<include>Visible_Left</include>
+					<include>ListThumbInfoPanel</include>
+				</control>
+				<control type="group">
+					<visible>!Control.IsVisible(61)</visible>
+				<include content="TopBar">
+					<param name="breadcrumbs_label" value="$LOCALIZE[1213]" />
+				</include>
+				<include content="BottomBar">
+					<param name="info_visible" value="true" />
+				</include>
+				</control>
+				<include>MediaMenuMouseOverlay</include>
+				<control type="group">
+					<include>MediaMenuCommon</include>
+					<control type="grouplist" id="9000">
+						<top>50</top>
+						<include>MediaMenuListCommon</include>
+						<control type="label" id="203">
+							<description>Actions</description>
+							<include>MediaMenuLabelCommon</include>
+							<label>$LOCALIZE[31020]</label>
+						</control>
+						<control type="button" id="6">
+							<label>$LOCALIZE[13317]</label>
+							<include>MediaMenuItemsCommon</include>
+						</control>
+						<control type="button" id="7">
+							<label>$LOCALIZE[13318]</label>
+							<include>MediaMenuItemsCommon</include>
+						</control>
+						<control type="radiobutton" id="9">
+							<label>$LOCALIZE[13319]</label>
+							<include>MediaMenuItemsCommon</include>
+						</control>
+						<control type="button" id="624">
+							<include>MediaMenuItemsCommon</include>
+							<label>$LOCALIZE[10140]</label>
+							<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
+							<visible>!String.IsEmpty(Container.PluginName)</visible>
+						</control>
+						<control type="button" id="621">
+							<description>Get more</description>
+							<include>MediaMenuItemsCommon</include>
+							<label>$LOCALIZE[21452]</label>
+							<onclick>ActivateWindow(addonbrowser,addons://more/image/,return)</onclick>
+							<visible>Container.Content(addons)</visible>
+						</control>
+						<include>MediaMenuNowPlaying</include>
+					</control>
+				</control>
+			</control>
+		</control>
+		<include content="FlixiumMediaSourcesPage">
+			<param name="heading" value="$LOCALIZE[14244]" />
+			<param name="fallback" value="DefaultPicture.png" />
+		</include>
+	</controls>
+	<onload condition="[String.StartsWith(Container.FolderPath,sources://) | [Window.IsActive(pictures) + String.IsEmpty(Container.FolderPath)]]">Container.SetViewMode(599)</onload>
+	<onload condition="![String.StartsWith(Container.FolderPath,sources://) | [Window.IsActive(pictures) + String.IsEmpty(Container.FolderPath)]] + String.IsEqual(Container.Viewmode,$LOCALIZE[20094])">Container.SetViewMode(61)</onload>
+</window>

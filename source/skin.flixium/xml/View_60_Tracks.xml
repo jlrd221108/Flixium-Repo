@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='utf-8'?>
+<includes>
+	<variable name="TracksCoverVar">
+		<value condition="ListItem.IsParentFolder">DefaultFolderBack.png</value>
+		<value condition="!String.IsEmpty(ListItem.Art(album.thumb))">$INFO[ListItem.Art(album.thumb)]</value>
+		<value condition="!String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
+		<value condition="!String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
+		<value>DefaultAlbumCover.png</value>
+	</variable>
+	<variable name="MusicBlurFeedVar">
+		<value condition="Container.Content(artists)">$VAR[MediaFanartVar]</value>
+		<value condition="[Container.Content(albums) + Control.IsVisible(58)] | [Container.Content(songs) + Control.IsVisible(60)]">$VAR[TracksCoverVar]</value>
+		<value>$VAR[MusicBackgroundSourceVar]</value>
+	</variable>
+	<variable name="TracksAlbumMetadataVar">
+		<value condition="!String.IsEmpty(ListItem.Artist) + !String.IsEmpty(ListItem.Year) + !Integer.IsEqual(ListItem.Year,0)">$INFO[ListItem.Artist] · $INFO[ListItem.Year]$INFO[ListItem.Genre, · ,]</value>
+		<value condition="!String.IsEmpty(ListItem.Artist)">$INFO[ListItem.Artist]$INFO[ListItem.Genre, · ,]</value>
+		<value condition="!String.IsEmpty(ListItem.Year) + !Integer.IsEqual(ListItem.Year,0)">$INFO[ListItem.Year]$INFO[ListItem.Genre, · ,]</value>
+		<value>$INFO[ListItem.Genre]</value>
+	</variable>
+	<variable name="TracksAudioFormatIconVar">
+		<value condition="String.IsEqual(ListItem.AudioCodec,flac)">flags/audiocodec/flac.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,mp3) | String.IsEqual(ListItem.AudioCodec,mp3float)">flags/audiocodec/mp3.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,alac)">flags/audiocodec/alac.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,aac) | String.IsEqual(ListItem.AudioCodec,aac_latm)">flags/audiocodec/aac.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,aif) | String.IsEqual(ListItem.AudioCodec,aifc) | String.IsEqual(ListItem.AudioCodec,aiff)">flags/audiocodec/aiff.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,wav)">flags/audiocodec/wav.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,wavpack) | String.IsEqual(ListItem.AudioCodec,wv)">flags/audiocodec/wavpack.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,opus)">flags/audiocodec/opus.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,ogg) | String.IsEqual(ListItem.AudioCodec,vorbis)">flags/audiocodec/ogg.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,wma) | String.IsEqual(ListItem.AudioCodec,wmav2) | String.IsEqual(ListItem.AudioCodec,wmapro)">flags/audiocodec/wma.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,ape)">flags/audiocodec/ape.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,ac3)">flags/audiocodec/ac3.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,dts) | String.IsEqual(ListItem.AudioCodec,dca)">flags/audiocodec/dts.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,cdda)">flags/audiocodec/cdda.png</value>
+		<value condition="String.IsEqual(ListItem.AudioCodec,mp2)">flags/audiocodec/mp2.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,flac) | String.EndsWith(ListItem.FileName,.flac) | String.EndsWith(ListItem.FileNameAndPath,.flac)">flags/audiocodec/flac.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,mp3) | String.EndsWith(ListItem.FileName,.mp3) | String.EndsWith(ListItem.FileNameAndPath,.mp3)">flags/audiocodec/mp3.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,alac) | String.EndsWith(ListItem.FileName,.alac) | String.EndsWith(ListItem.FileNameAndPath,.alac)">flags/audiocodec/alac.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,aac) | String.EndsWith(ListItem.FileName,.aac) | String.EndsWith(ListItem.FileNameAndPath,.aac)">flags/audiocodec/aac.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,m4a) | String.EndsWith(ListItem.FileName,.m4a) | String.EndsWith(ListItem.FileNameAndPath,.m4a)">flags/audiocodec/m4a.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,aif) | String.EndsWith(ListItem.FileName,.aif) | String.EndsWith(ListItem.FileNameAndPath,.aif)">flags/audiocodec/aiff.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,aiff) | String.EndsWith(ListItem.FileName,.aiff) | String.EndsWith(ListItem.FileNameAndPath,.aiff)">flags/audiocodec/aiff.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,aifc) | String.EndsWith(ListItem.FileName,.aifc) | String.EndsWith(ListItem.FileNameAndPath,.aifc)">flags/audiocodec/aiff.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,wav) | String.EndsWith(ListItem.FileName,.wav) | String.EndsWith(ListItem.FileNameAndPath,.wav)">flags/audiocodec/wav.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,wv) | String.EndsWith(ListItem.FileName,.wv) | String.EndsWith(ListItem.FileNameAndPath,.wv)">flags/audiocodec/wavpack.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,opus) | String.EndsWith(ListItem.FileName,.opus) | String.EndsWith(ListItem.FileNameAndPath,.opus)">flags/audiocodec/opus.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,ogg) | String.EndsWith(ListItem.FileName,.ogg) | String.EndsWith(ListItem.FileNameAndPath,.ogg)">flags/audiocodec/ogg.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,wma) | String.EndsWith(ListItem.FileName,.wma) | String.EndsWith(ListItem.FileNameAndPath,.wma)">flags/audiocodec/wma.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,ape) | String.EndsWith(ListItem.FileName,.ape) | String.EndsWith(ListItem.FileNameAndPath,.ape)">flags/audiocodec/ape.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,ac3) | String.EndsWith(ListItem.FileName,.ac3) | String.EndsWith(ListItem.FileNameAndPath,.ac3)">flags/audiocodec/ac3.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,dts) | String.EndsWith(ListItem.FileName,.dts) | String.EndsWith(ListItem.FileNameAndPath,.dts)">flags/audiocodec/dts.png</value>
+		<value condition="String.IsEqual(ListItem.FileExtension,mp2) | String.EndsWith(ListItem.FileName,.mp2) | String.EndsWith(ListItem.FileNameAndPath,.mp2)">flags/audiocodec/mp2.png</value>
+		<value />
+	</variable>
+	<include name="TracksRow">
+		<param name="scroll">false</param>
+		<definition>
+			<control type="label">
+				<left>40</left>
+				<top>5</top>
+				<width>80</width>
+				<height>80</height>
+				<font>FlixPanelIcon</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>FFAAA7AF</textcolor>
+				<label>$INFO[ListItem.TrackNumber]</label>
+				<visible>[!ListItem.IsFolder + !Integer.IsEqual(ListItem.TrackNumber,0)] + !ListItem.IsPlaying</visible>
+				<selectedcolor>FFAAA7AF</selectedcolor>
+			</control>
+			<control type="label">
+				<left>40</left>
+				<top>5</top>
+				<width>80</width>
+				<height>80</height>
+				<font>FlixPanelIcon</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>FFFFA45B</textcolor>
+				<label>$INFO[ListItem.TrackNumber]</label>
+				<visible>[!ListItem.IsFolder + !Integer.IsEqual(ListItem.TrackNumber,0)] + ListItem.IsPlaying</visible>
+				<selectedcolor>FFFFA45B</selectedcolor>
+			</control>
+			<control type="label">
+				<left>168</left>
+				<top>5</top>
+				<width>548</width>
+				<height>80</height>
+				<font>font25_title</font>
+				<textcolor>FFF4F2F4</textcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<scroll>$PARAM[scroll]</scroll>
+				<label>$VAR[FlixTitleVar]</label>
+				<selectedcolor>FFF4F2F4</selectedcolor>
+				<visible>!ListItem.IsPlaying</visible>
+			</control>
+			<control type="label">
+				<left>168</left>
+				<top>5</top>
+				<width>548</width>
+				<height>80</height>
+				<font>font25_title</font>
+				<textcolor>FFFFA45B</textcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<scroll>$PARAM[scroll]</scroll>
+				<label>$VAR[FlixTitleVar]</label>
+				<selectedcolor>FFFFA45B</selectedcolor>
+				<visible>ListItem.IsPlaying</visible>
+			</control>
+			<control type="label">
+				<left>840</left>
+				<top>5</top>
+				<width>80</width>
+				<height>80</height>
+				<font>FlixPanelIcon</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>FFDCD9DF</textcolor>
+				<label>$INFO[ListItem.Duration]</label>
+				<visible>!ListItem.IsPlaying</visible>
+				<selectedcolor>FFDCD9DF</selectedcolor>
+			</control>
+			<control type="label">
+				<left>840</left>
+				<top>5</top>
+				<width>80</width>
+				<height>80</height>
+				<font>FlixPanelIcon</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<textcolor>FFFFA45B</textcolor>
+				<label>$INFO[ListItem.Duration]</label>
+				<visible>ListItem.IsPlaying</visible>
+				<selectedcolor>FFFFA45B</selectedcolor>
+			</control>
+			<control type="image">
+                <left>728</left>
+                <top>21</top>
+                <width>96</width>
+                <height>48</height>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
+                <texture colordiffuse="FFDCD9DF">$VAR[TracksAudioFormatIconVar]</texture>
+                <visible>!ListItem.IsFolder + !String.IsEmpty(ListItem.Duration)</visible>
+            </control>
+		</definition>
+	</include>
+	<include name="View_60_Tracks">
+		<control type="group">
+			<visible>Control.IsVisible(60)</visible>
+			<animation effect="fade" start="0" end="100" time="250">Visible</animation>
+			<control type="image">
+				<include>FullScreenDimensions</include>
+				<aspectratio>scale</aspectratio>
+				<fadetime>450</fadetime>
+				<texture colordiffuse="FF282828">$INFO[Window(home).Property(flixium.helper.flix_blurred)]</texture>
+				<visible>[System.AddonIsEnabled(script.flixium.helper) + !Skin.HasSetting(flix_disable_background_blur) + !String.IsEmpty(Window(home).Property(flixium.helper.flix_blurred))]</visible>
+			</control>
+			
+<control type="image">
+				<left>92</left>
+				<top>167</top>
+				<width>550</width>
+				<height>550</height>
+				<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/tracks-cover-glow.png</texture>
+			</control>
+			<control type="image">
+				<left>110</left>
+				<top>185</top>
+				<width>514</width>
+				<height>514</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<fadetime>220</fadetime>
+				<texture background="true" diffuse="$VAR[ThemePopupRoundedMaskVar]" fallback="DefaultAlbumCover.png">$VAR[TracksCoverVar]</texture>
+			</control>
+			<control type="label">
+				<left>110</left>
+				<top>730</top>
+				<width>514</width>
+				<height>66</height>
+				<font>font40_title</font>
+				<textcolor>FFFFFFFF</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<label>$INFO[ListItem.Album]</label>
+			</control>
+			<control type="label">
+				<left>110</left>
+				<top>804</top>
+				<width>514</width>
+				<height>42</height>
+				<font>font25_title</font>
+				<textcolor>FFDCD9DF</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<label>$VAR[TracksAlbumMetadataVar]</label>
+			</control>
+			<control type="group">
+				<animation effect="zoom" start="80" end="80" center="1284,165" time="0" condition="true">Conditional</animation>
+				<control type="fixedlist" id="60">
+					<left>804</left>
+					<top>185</top>
+					<width>960</width>
+					<height>855</height>
+					<visible>Container.Content(songs)</visible>
+					<orientation>vertical</orientation>
+					<aligny>top</aligny>
+					<focusposition>4</focusposition>
+					<movement>5</movement>
+					<scrolltime tween="cubic" easing="out">220</scrolltime>
+					<onleft>9000</onleft>
+					<onright>6001</onright>
+					<onup>60</onup>
+					<ondown>60</ondown>
+					<pagecontrol>6001</pagecontrol>
+					<viewtype label="Tracks">list</viewtype>
+					<itemlayout width="960" height="85">
+						<control type="image">
+							<left>8</left>
+							<top>5</top>
+							<width>944</width>
+							<height>80</height>
+							<texture border="13" colordiffuse="$VAR[GlassSmallSurface19Tint]">$VAR[GlassSmallSurface19]</texture>
+						</control>
+						<include>TracksRow</include>
+					</itemlayout>
+					<focusedlayout width="960" height="85">
+						<control type="image">
+							<left>8</left>
+							<top>5</top>
+							<width>944</width>
+							<height>80</height>
+							<texture border="13" colordiffuse="$VAR[GlassSmallSurface21Tint]">$VAR[GlassSmallSurface21]</texture>
+						</control>
+						<control type="image">
+							<left>8</left>
+							<top>17</top>
+							<width>4</width>
+							<height>56</height>
+							<texture colordiffuse="FFFFFFFF">colors/white.png</texture>
+							<visible>Control.HasFocus(60)</visible>
+						</control>
+						<include content="TracksRow">
+							<param name="scroll" value="true" />
+						</include>
+					</focusedlayout>
+				</control>
+				<control type="scrollbar" id="6001">
+					<left>1792</left>
+					<top>185</top>
+					<width>6</width>
+					<height>855</height>
+					<orientation>vertical</orientation>
+					<onleft>60</onleft>
+					<onright>9000</onright>
+					<texturesliderbackground border="2" colordiffuse="14FFFFFF">special://skin/extras/scrollbar-rounded.png</texturesliderbackground>
+					<texturesliderbar border="2" colordiffuse="75FFFFFF">special://skin/extras/scrollbar-rounded.png</texturesliderbar>
+					<texturesliderbarfocus border="2" colordiffuse="BBFFFFFF">special://skin/extras/scrollbar-rounded.png</texturesliderbarfocus>
+					<textureslidernib />
+					<textureslidernibfocus />
+					<showonepage>false</showonepage>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

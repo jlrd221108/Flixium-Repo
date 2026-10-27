@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>9000</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<width>600</width>
+			<centertop>50%</centertop>
+			<height>860</height>
+			<!-- Match the frame to the visible 70px rows, with 80px above and 10px below. -->
+			<animation effect="slide" end="0,385" time="0" condition="Integer.IsEqual(Container(9000).NumItems,0)">Conditional</animation>
+			<animation effect="slide" end="0,350" time="0" condition="Integer.IsEqual(Container(9000).NumItems,1)">Conditional</animation>
+			<animation effect="slide" end="0,315" time="0" condition="Integer.IsEqual(Container(9000).NumItems,2)">Conditional</animation>
+			<animation effect="slide" end="0,280" time="0" condition="Integer.IsEqual(Container(9000).NumItems,3)">Conditional</animation>
+			<animation effect="slide" end="0,245" time="0" condition="Integer.IsEqual(Container(9000).NumItems,4)">Conditional</animation>
+			<animation effect="slide" end="0,210" time="0" condition="Integer.IsEqual(Container(9000).NumItems,5)">Conditional</animation>
+			<animation effect="slide" end="0,175" time="0" condition="Integer.IsEqual(Container(9000).NumItems,6)">Conditional</animation>
+			<animation effect="slide" end="0,140" time="0" condition="Integer.IsEqual(Container(9000).NumItems,7)">Conditional</animation>
+			<animation effect="slide" end="0,105" time="0" condition="Integer.IsEqual(Container(9000).NumItems,8)">Conditional</animation>
+			<animation effect="slide" end="0,70" time="0" condition="Integer.IsEqual(Container(9000).NumItems,9)">Conditional</animation>
+			<animation effect="slide" end="0,35" time="0" condition="Integer.IsEqual(Container(9000).NumItems,10)">Conditional</animation>
+			<animation effect="slide" end="0,0" time="0" condition="Integer.IsEqual(Container(9000).NumItems,11)">Conditional</animation>
+			<control type="group">
+				<visible>Integer.IsEqual(Container(9000).NumItems,0)</visible>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600" />
+					<param name="height" value="90" />
+					<param name="header_label" value="$LOCALIZE[31072]" />
+					<param name="header_id" value="20000" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>Integer.IsEqual(Container(9000).NumItems,1)</visible>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600" />
+					<param name="height" value="160" />
+					<param name="header_label" value="$LOCALIZE[31072]" />
+					<param name="header_id" value="20001" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>Integer.IsEqual(Container(9000).NumItems,2)</visible>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600" />
+					<param name="height" value="230" />
+					<param name="header_label" value="$LOCALIZE[31072]" />
+					<param name="header_id" value="20002" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>Integer.IsEqual(Container(9000).NumItems,3)</visible>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600" />
+					<param name="height" value="300" />
+					<param name="header_label" value="$LOCALIZE[31072]" />
+					<param name="header_id" value="20003" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>Integer.IsEqual(Container(9000).NumItems,4)</visible>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600" />
+					<param name="height" value="370" />
+					<param name="header_label" value="$LOCALIZE[31072]" />
+					<param name="header_id" value="20004" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>Integer.IsEqual(Container(9000).NumItems,5)</visible>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600" />
+					<param name="height" value="440" />
+					<param name="header_label" value="$LOCALIZE[31072]" />
+					<param name="header_id" value="20005" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>Integer.IsEqual(Container(9000).NumItems,6)</visible>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600" />
+					<param name="height" value="510" />
+					<param name="header_label" value="$LOCALIZE[31072]" />
+					<param name="header_id" value="20006" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>Integer.IsEqual(Container(9000).NumItems,7)</visible>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600" />
+					<param name="height" value="580" />
+					<param name="header_label" value="$LOCALIZE[31072]" />
+					<param name="header_id" value="20007" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>Integer.IsEqual(Container(9000).NumItems,8)</visible>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600" />
+					<param name="height" value="650" />
+					<param name="header_label" value="$LOCALIZE[31072]" />
+					<param name="header_id" value="20008" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>Integer.IsEqual(Container(9000).NumItems,9)</visible>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600" />
+					<param name="height" value="720" />
+					<param name="header_label" value="$LOCALIZE[31072]" />
+					<param name="header_id" value="20009" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>Integer.IsEqual(Container(9000).NumItems,10)</visible>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600" />
+					<param name="height" value="790" />
+					<param name="header_label" value="$LOCALIZE[31072]" />
+					<param name="header_id" value="20010" />
+				</include>
+			</control>
+			<control type="group">
+				<visible>Integer.IsEqual(Container(9000).NumItems,11)</visible>
+				<include content="DialogBackgroundCommons">
+					<param name="width" value="600" />
+					<param name="height" value="860" />
+					<param name="header_label" value="$LOCALIZE[31072]" />
+					<param name="header_id" value="20011" />
+				</include>
+			</control>
+			<control type="panel" id="9000">
+				<include>ButtonMenuList</include>
+				<height>770</height>
+				<content>
+					<item>
+						<label>$LOCALIZE[13012]</label>
+						<onclick>Quit()</onclick>
+						<visible>System.ShowExitButton</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[13016]</label>
+						<onclick>Powerdown()</onclick>
+						<visible>System.CanPowerDown</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[20150]</label>
+						<onclick>AlarmClock(shutdowntimer,Shutdown())</onclick>
+						<visible>!System.HasAlarm(shutdowntimer) + [System.CanPowerDown | System.CanSuspend | System.CanHibernate]</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[20151] $INFO[System.AlarmPos,(,)]</label>
+						<onclick>CancelAlarm(shutdowntimer)</onclick>
+						<visible>System.HasAlarm(shutdowntimer)</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[13011]</label>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<onclick>Suspend()</onclick>
+						<visible>System.CanSuspend</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[13010]</label>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+						<onclick>Hibernate()</onclick>
+						<visible>System.CanHibernate</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[13013]</label>
+						<onclick>Reset()</onclick>
+						<visible>System.CanReboot</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[20126] $INFO[system.profilename]</label>
+						<onclick>dialog.close(all,true)</onclick>
+						<onclick>System.LogOff</onclick>
+						<visible>[System.HasLoginScreen | Integer.IsGreater(System.ProfileCount,1)] + System.Loggedon</visible>
+					</item>
+					<item>
+						<label>$VAR[MasterModeLabel]</label>
+						<onclick>mastermode</onclick>
+						<visible>System.HasLocks</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[13017]</label>
+						<onclick>InhibitIdleShutdown(true)</onclick>
+						<visible>System.HasShutdown +!System.IdleShutdownInhibited</visible>
+					</item>
+					<item>
+						<label>$LOCALIZE[13018]</label>
+						<onclick>InhibitIdleShutdown(false)</onclick>
+						<visible>System.HasShutdown + System.IdleShutdownInhibited</visible>
+					</item>
+				</content>
+			</control>
+		</control>
+	</controls>
+</window>

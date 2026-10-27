@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1112">
+	<defaultcontrol always="true">10</defaultcontrol>
+	<include>Animation_DialogPopupOpenClose</include>
+	<controls>
+		<control type="group">
+			<centerleft>50%</centerleft>
+			<centertop>50%</centertop>
+			<width>680</width>
+			<height>370</height>
+			<include content="DialogBackgroundCommons">
+				<param name="width" value="680" />
+				<param name="height" value="370" />
+				<param name="header_label" value="$LOCALIZE[31795]" />
+				<param name="header_id" value="" />
+			</include>
+			<control type="textbox">
+				<left>40</left>
+				<top>105</top>
+				<width>600</width>
+				<height>115</height>
+				<font>font25_title</font>
+				<align>center</align>
+				<label>$LOCALIZE[31188]</label>
+			</control>
+			<control type="grouplist" id="9000">
+				<orientation>horizontal</orientation>
+				<left>30</left>
+				<top>250</top>
+				<width>620</width>
+				<height>80</height>
+				<align>center</align>
+				<itemgap>20</itemgap>
+				<onback>Dialog.Close(1112)</onback>
+				<include content="DefaultDialogButton">
+					<param name="id" value="10" />
+					<param name="width" value="270" />
+					<param name="height" value="80" />
+					<param name="label" value="$LOCALIZE[31190]" />
+					<param name="onclick" value="Dialog.Close(1112)" />
+				</include>
+				<control type="button" id="11">
+					<width>270</width>
+					<height>80</height>
+					<label>$LOCALIZE[31189]</label>
+					<font>font25_title</font>
+					<align>center</align>
+					<textoffsetx>20</textoffsetx>
+					<texturefocus border="40" colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/dialogbutton-fo.png</texturefocus>
+					<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>
+					<onclick>Skin.Reset(flix_disable_background_blur)</onclick>
+                    <onclick>Skin.Reset(Flixium.Temp.MovieBlurFadeDisabled)</onclick>
+					<onclick>Skin.SetBool(flix_hide_movie_progress)</onclick>
+					<onclick>Skin.Reset(flix_adaptive_focus_glow)</onclick>
+<onclick>Skin.Reset(Flixium.StaticPosterOutline)</onclick>
+					<onclick>Skin.SetString(Flixium.BlurRadius,30)</onclick>
+					<onclick>Skin.SetString(Flixium.BlurSaturation,1.5)</onclick>
+					<onclick>Skin.SetString(Flixium.AgeRatingStyle,Legacy)</onclick>
+					<onclick>Skin.SetString(Flixium.AgeRatingPosition,Center)</onclick>
+					<onclick>Dialog.Close(1112)</onclick>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

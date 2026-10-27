@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">9003</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<onload condition="!Skin.HasSetting(Flixium.SettingsDualListV2) + [Skin.HasSetting(Flixium.SettingsSingleList) + !Skin.HasSetting(Flixium.SettingsGrid)]">SetFocus(9001)</onload>
+	<onload condition="!Skin.HasSetting(Flixium.SettingsDualListV2) + [Skin.HasSetting(Flixium.SettingsGrid)]">SetFocus(9002)</onload>
+	<onload condition="Skin.HasSetting(Flixium.SettingsDualListV2) | [!Skin.HasSetting(Flixium.SettingsSingleList) + !Skin.HasSetting(Flixium.SettingsGrid)]">SetFocus(9003)</onload>
+	<controls>
+		<control type="image">
+			<depth>DepthBackground</depth>
+			<include>FullScreenDimensions</include>
+			<texture colordiffuse="$VAR[FlixiumSettingsMenuTintVar]">$VAR[FlixiumSettingsPanelTextureVar]</texture>
+		</control>
+		<control type="group">
+			<control type="list" id="9001">
+				<left>360</left>
+				<top>72</top>
+				<width>1200</width>
+				<height>936</height>
+				<scrolltime tween="cubic" easing="out">350</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>61</pagecontrol>
+				<onleft>9001</onleft>
+				<onright>noop</onright>
+				<onup>9001</onup>
+				<ondown>9001</ondown>
+				<viewtype label="$LOCALIZE[535]">list</viewtype>
+				<itemlayout height="78" width="1200">
+					<control type="image">
+						<left>0</left>
+						<top>3</top>
+						<width>1200</width>
+						<height>72</height>
+						<texture border="32" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+					</control>
+					<control type="image">
+						<width>85.333333</width>
+						<height>85.333333</height>
+						<texture fallback="DefaultAddon.png" colordiffuse="C8FFFFFF">$VAR[FlixiumEqualUIIconVar]</texture>
+						<aspectratio>keep</aspectratio>
+						<centerleft>52</centerleft>
+						<centertop>39</centertop>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<left>146.56</left>
+						<right>68</right>
+						<height>78</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<left>1152</left>
+						<top>0</top>
+						<width>24</width>
+						<height>78</height>
+						<font>FlixiumSettingsMenuArrow</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>C8FFFFFF</textcolor>
+						<label>›</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="78" width="1200">
+					<control type="image">
+						<left>0</left>
+						<top>3</top>
+						<width>1200</width>
+						<height>72</height>
+						<texture border="32" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassFocusSurfaceVar]</texture>
+					</control>
+					<control type="image">
+						<width>85.333333</width>
+						<height>85.333333</height>
+						<texture fallback="DefaultAddon.png" colordiffuse="FFFFFFFF">$VAR[FlixiumEqualUIIconVar]</texture>
+						<aspectratio>keep</aspectratio>
+						<centerleft>52</centerleft>
+						<centertop>39</centertop>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>17.5</top>
+						<width>4</width>
+						<height>43</height>
+						<texture colordiffuse="FFFFFFFF">colors/white.png</texture>
+						<visible>Control.HasFocus(9001)</visible>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<left>146.56</left>
+						<right>68</right>
+						<height>78</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<left>1152</left>
+						<top>0</top>
+						<width>24</width>
+						<height>78</height>
+						<font>FlixiumSettingsMenuArrow</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>FFFFFFFF</textcolor>
+						<label>›</label>
+					</control>
+				</focusedlayout>
+				<include>FlixiumSettingsMenuContent</include>
+				<visible>!Skin.HasSetting(Flixium.SettingsDualListV2) + [Skin.HasSetting(Flixium.SettingsSingleList) + !Skin.HasSetting(Flixium.SettingsGrid)]</visible>
+			</control>
+			<control type="panel" id="9002">
+				<left>120</left>
+				<top>150</top>
+				<width>1680</width>
+				<height>780</height>
+				<scrolltime tween="cubic" easing="out">350</scrolltime>
+				<orientation>vertical</orientation>
+				<pagecontrol>62</pagecontrol>
+				<onleft>9002</onleft>
+				<onright>9002</onright>
+				<onup>9002</onup>
+				<ondown>9002</ondown>
+				<viewtype label="$LOCALIZE[535]">list</viewtype>
+				<itemlayout height="260" width="420">
+					<control type="image">
+						<left>18</left>
+						<top>12</top>
+						<width>384</width>
+						<height>236</height>
+						<texture border="32" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+					</control>
+					<control type="image">
+						<centerleft>210</centerleft>
+						<width>170.666667</width>
+						<height>170.666667</height>
+						<texture fallback="DefaultAddon.png" colordiffuse="C8FFFFFF">$VAR[FlixiumEqualUIIconVar]</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<centertop>102</centertop>
+					</control>
+					<control type="textbox">
+						<top>162</top>
+						<left>34</left>
+						<right>34</right>
+						<height>80</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<include>FlixiumGlobalFont_FlixiumSettingsDateTime</include>
+						<label>$VAR[FlixiumSettingsGridLabelVar]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="260" width="420">
+					<control type="image">
+						<description>Subtle neutral Tracks-style tile focus glow</description>
+						<left>4.55</left>
+						<top>3.74</top>
+						<width>410.9</width>
+						<height>252.53</height>
+						<texture colordiffuse="EBFFFFFF">special://skin/extras/tracks-cover-glow.png</texture>
+						<visible>Control.HasFocus(9002)</visible>
+						<include>Animation_FocusTextureFade</include>
+					</control>
+					<control type="image">
+						<left>18</left>
+						<top>12</top>
+						<width>384</width>
+						<height>236</height>
+						<texture border="32" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassFocusSurfaceVar]</texture>
+					</control>
+					<control type="image">
+						<centerleft>210</centerleft>
+						<width>170.666667</width>
+						<height>170.666667</height>
+						<texture fallback="DefaultAddon.png" colordiffuse="FFFFFFFF">$VAR[FlixiumEqualUIIconVar]</texture>
+						<aspectratio align="center" aligny="center">keep</aspectratio>
+						<centertop>102</centertop>
+					</control>
+					<control type="textbox">
+						<top>162</top>
+						<left>34</left>
+						<right>34</right>
+						<height>80</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<include>FlixiumGlobalFont_FlixiumSettingsDateTime</include>
+						<label>$VAR[FlixiumSettingsGridLabelVar]</label>
+					</control>
+				</focusedlayout>
+				<include>FlixiumSettingsMenuContent</include>
+				<visible>!Skin.HasSetting(Flixium.SettingsDualListV2) + [Skin.HasSetting(Flixium.SettingsGrid)]</visible>
+			</control>
+			<control type="panel" id="9003">
+				<left>100</left>
+				<top>189.3</top>
+				<width>1720</width>
+				<height>701.4</height>
+				<scrolltime tween="cubic" easing="out">350</scrolltime>
+				<orientation>horizontal</orientation>
+				<onleft>9003</onleft>
+				<onright>9003</onright>
+				<onup>9003</onup>
+				<ondown>9003</ondown>
+				<viewtype label="$LOCALIZE[535]">list</viewtype>
+				<itemlayout height="116.9" width="860">
+					<control type="image">
+						<left>10</left>
+						<top>5.8</top>
+						<width>840</width>
+						<height>105.3</height>
+						<texture border="32" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+					</control>
+					<control type="image">
+						<width>85.333333</width>
+						<height>85.333333</height>
+						<texture fallback="DefaultAddon.png" colordiffuse="C8FFFFFF">$VAR[FlixiumEqualUIIconVar]</texture>
+						<aspectratio>keep</aspectratio>
+						<centerleft>67.28</centerleft>
+						<centertop>58.45</centertop>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<left>117.248</left>
+						<right>68</right>
+						<height>116.9</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<left>802</left>
+						<top>0</top>
+						<width>24</width>
+						<height>116.9</height>
+						<font>FlixiumSettingsMenuArrow</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>C8FFFFFF</textcolor>
+						<label>›</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="116.9" width="860">
+					<control type="image">
+						<left>10</left>
+						<top>5.8</top>
+						<width>840</width>
+						<height>105.3</height>
+						<texture border="32" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassFocusSurfaceVar]</texture>
+					</control>
+					<control type="image">
+						<width>85.333333</width>
+						<height>85.333333</height>
+						<texture fallback="DefaultAddon.png" colordiffuse="FFFFFFFF">$VAR[FlixiumEqualUIIconVar]</texture>
+						<aspectratio>keep</aspectratio>
+						<centerleft>67.28</centerleft>
+						<centertop>58.45</centertop>
+					</control>
+					<control type="image">
+						<left>10</left>
+						<top>36.95</top>
+						<width>4</width>
+						<height>43</height>
+						<texture colordiffuse="FFFFFFFF">colors/white.png</texture>
+						<visible>Control.HasFocus(9003)</visible>
+					</control>
+					<control type="label">
+						<top>0</top>
+						<left>117.248</left>
+						<right>68</right>
+						<height>116.9</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<left>802</left>
+						<top>0</top>
+						<width>24</width>
+						<height>116.9</height>
+						<font>FlixiumSettingsMenuArrow</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>FFFFFFFF</textcolor>
+						<label>›</label>
+					</control>
+				</focusedlayout>
+				<include>FlixiumSettingsMenuContent</include>
+				<visible>Skin.HasSetting(Flixium.SettingsDualListV2) | [!Skin.HasSetting(Flixium.SettingsSingleList) + !Skin.HasSetting(Flixium.SettingsGrid)]</visible>
+			</control>
+			<control type="scrollbar" id="61">
+				<left>1575</left>
+				<top>72</top>
+				<width>6</width>
+				<height>936</height>
+				<orientation>vertical</orientation>
+				<onleft>9001</onleft>
+				<onright>9001</onright>
+				<texturesliderbackground />
+				<visible>!Skin.HasSetting(Flixium.SettingsDualListV2) + [!Skin.HasSetting(Flixium.SettingsGrid) + [Skin.HasSetting(Flixium.SettingsSingleList) + [Container(9001).HasNext | Container(9001).HasPrevious]]]</visible>
+			</control>
+			<control type="scrollbar" id="62">
+				<left>1810</left>
+				<top>150</top>
+				<width>6</width>
+				<height>780</height>
+				<orientation>vertical</orientation>
+				<onleft>9002</onleft>
+				<onright>9002</onright>
+				<texturesliderbackground />
+				<visible>!Skin.HasSetting(Flixium.SettingsDualListV2) + [Skin.HasSetting(Flixium.SettingsGrid) + [Container(9002).HasNext | Container(9002).HasPrevious]]</visible>
+			</control>
+		</control>
+	</controls>
+</window>

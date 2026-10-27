@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window id="1100">
+	<onload>RunScript(special://skin/extras/flixium_addon_label_fit.py)</onload>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<controls>
+		<include>FlixiumSettingsPageBackground</include>
+		<control type="group">
+			<animation effect="fade" start="100" end="0" time="200" tween="sine" condition="$EXP[infodialog_active]">Conditional</animation>
+			<control type="group" id="400">
+				<include>OpenClose_Right</include>
+				<include content="AddonLauncherPanel">
+					<param name="group_id" value="500" />
+					<param name="id" value="video" />
+					<param name="container_path" value="addons://sources/video/" />
+					<param name="container_target" value="videos" />
+					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.video,return)" />
+				</include>
+				<include content="AddonLauncherPanel">
+					<param name="group_id" value="501" />
+					<param name="id" value="music" />
+					<param name="container_path" value="addons://sources/audio/" />
+					<param name="container_target" value="music" />
+					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.audio,return)" />
+				</include>
+				<include content="AddonLauncherPanel">
+					<param name="group_id" value="509" />
+					<param name="id" value="game" />
+					<param name="container_path" value="addons://sources/game/" />
+					<param name="container_target" value="games" />
+					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/category.standalonegames,return)" />
+				</include>
+				<include content="AddonLauncherPanel">
+					<param name="group_id" value="502" />
+					<param name="id" value="addons" />
+					<param name="container_path" value="addons://sources/executable/" />
+					<param name="container_target" value="programs" />
+					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.executable,return)" />
+				</include>
+				<include content="AddonLauncherPanel" condition="System.Platform.Android">
+					<param name="group_id" value="506" />
+					<param name="id" value="android" />
+					<param name="container_path" value="androidapp://sources/apps/" />
+					<param name="container_target" value="programs" />
+				</include>
+				<include content="AddonLauncherPanel">
+					<param name="group_id" value="503" />
+					<param name="id" value="pictures" />
+					<param name="container_path" value="addons://sources/image/" />
+					<param name="container_target" value="pictures" />
+					<param name="imagewidget_onclick" value="ActivateWindow(addonbrowser,addons://all/xbmc.addon.image,return)" />
+				</include>
+				<include content="AddonLauncherPanel">
+					<param name="group_id" value="507" />
+					<param name="id" value="download" />
+					<param name="container_path" value="addons://all/" />
+					<param name="container_target" value="addonbrowser" />
+				</include>
+				<include content="AddonLauncherPanel">
+					<param name="group_id" value="508" />
+					<param name="id" value="manage" />
+					<param name="container_path" value="addons://user" />
+					<param name="container_target" value="addonbrowser" />
+				</include>
+			</control>
+			<control type="group">
+				<include>OpenClose_Left</include>
+
+				<control type="fixedlist" id="9000">
+					<left>40</left>
+					<top>252.5</top>
+					<width>430</width>
+					<height>665</height>
+					<pagecontrol>70</pagecontrol>
+					<movement>6</movement>
+					<focusposition>0</focusposition>
+					<onup>700</onup>
+					<ondown>700</ondown>
+					<onright>SetFocus($INFO[Container(9000).ListItem.Property(menu_id)])</onright>
+					<scrolltime tween="cubic" easing="out">500</scrolltime>
+					<focusedlayout height="95" width="430">
+						<control type="image">
+							<top>3</top>
+							<width>430</width>
+							<height>89</height>
+							<texture border="32" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassFocusSurfaceVar]</texture>
+						</control>
+						<control type="image">
+							<left>12</left>
+							<top>15.5</top>
+							<width>64</width>
+							<height>64</height>
+							<texture colordiffuse="FFFFFFFF">$INFO[ListItem.Art(thumb)]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="label">
+							<left>88</left>
+							<top>0</top>
+							<width>326</width>
+							<height>95</height>
+							<aligny>center</aligny>
+							<include>FlixiumGlobalFont_FlixiumSettingsCategory</include>
+							<textcolor>FFFFFFFF</textcolor>
+							<shadowcolor>00FFFFFF</shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</focusedlayout>
+					<itemlayout height="95" width="430">
+						<control type="image">
+							<top>3</top>
+							<width>430</width>
+							<height>89</height>
+							<texture border="32" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+						</control>
+						<control type="image">
+							<left>12</left>
+							<top>15.5</top>
+							<width>64</width>
+							<height>64</height>
+							<texture colordiffuse="C8FFFFFF">$INFO[ListItem.Art(thumb)]</texture>
+							<aspectratio>keep</aspectratio>
+						</control>
+						<control type="label">
+							<left>88</left>
+							<top>0</top>
+							<width>326</width>
+							<height>95</height>
+							<aligny>center</aligny>
+							<include>FlixiumGlobalFont_FlixiumSettingsCategory</include>
+							<textcolor>C8FFFFFF</textcolor>
+							<shadowcolor>00FFFFFF</shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+						</control>
+					</itemlayout>
+					<content>
+						<item id="1">
+							<label>$LOCALIZE[1037]</label>
+							<onclick>ActivateWindow(videos,addons://sources/video/,return)</onclick>
+							<thumb>icons/sidemenu/videos.png</thumb>
+							<property name="id">video</property>
+							<property name="path">addons://sources/video/</property>
+							<property name="menu_id">$NUMBER[500]</property>
+						</item>
+						<item id="2">
+							<label>$LOCALIZE[1038]</label>
+							<onclick>ActivateWindow(music,addons://sources/audio/,return)</onclick>
+							<thumb>icons/sidemenu/music.png</thumb>
+							<property name="id">music</property>
+							<property name="path">addons://sources/audio/</property>
+							<property name="menu_id">$NUMBER[501]</property>
+						</item>
+						<item id="8">
+							<label>$LOCALIZE[35049]</label>
+							<visible>System.GetBool(gamesgeneral.enable)</visible>
+							<onclick>ActivateWindow(games,addons://sources/game/,return)</onclick>
+							<thumb>icons/sidemenu/games.png</thumb>
+							<property name="id">game</property>
+							<property name="path">addons://sources/game/</property>
+							<property name="menu_id">$NUMBER[509]</property>
+						</item>
+						<item id="3">
+							<label>$LOCALIZE[1043]</label>
+							<onclick>ActivateWindow(programs,addons://sources/executable/,return)</onclick>
+							<thumb>icons/sidemenu/programs.png</thumb>
+							<property name="id">addons</property>
+							<property name="path">addons://sources/executable/</property>
+							<property name="menu_id">$NUMBER[502]</property>
+						</item>
+						<item id="4">
+							<label>$LOCALIZE[20244]</label>
+							<onclick>ActivateWindow(programs,androidapp://sources/apps/,return)</onclick>
+							<thumb>icons/sidemenu/android.png</thumb>
+							<property name="id">android</property>
+							<property name="path">androidapp://sources/apps/</property>
+							<property name="menu_id">$NUMBER[506]</property>
+							<visible>System.Platform.Android</visible>
+						</item>
+						<item id="5">
+							<label>$LOCALIZE[1039]</label>
+							<onclick>ActivateWindow(pictures,addons://sources/image/,return)</onclick>
+							<thumb>icons/sidemenu/pictures.png</thumb>
+							<property name="id">pictures</property>
+							<property name="path">addons://sources/image/</property>
+							<property name="menu_id">$NUMBER[503]</property>
+						</item>
+						<item id="7">
+							<label>$LOCALIZE[24998]</label>
+							<onclick>ActivateWindow(addonbrowser,addons://user/,return)</onclick>
+							<thumb>icons/sidemenu/manage.png</thumb>
+							<property name="id">manage</property>
+							<property name="path">addons://user/</property>
+							<property name="menu_id">$NUMBER[508]</property>
+						</item>
+						<item id="6">
+							<label>$LOCALIZE[33003]</label>
+							<onclick>ActivateWindow(addonbrowser,addons://all/,return)</onclick>
+							<thumb>icons/sidemenu/download.png</thumb>
+							<property name="id">download</property>
+							<property name="path">addons://all/</property>
+							<property name="menu_id">$NUMBER[507]</property>
+						</item>
+					</content>
+				</control>
+			</control>
+			<control type="grouplist" id="700">
+				<orientation>horizontal</orientation>
+				<left>56.5</left>
+				<top>134.5</top>
+				<height>96</height>
+				<onup>SetFocus(9000,99,absolute)</onup>
+				<ondown>SetFocus(9000,0,absolute)</ondown>
+				<include>OpenClose_Left</include>
+				<onright>400</onright>
+				<usecontrolcoords>true</usecontrolcoords>
+				<control type="radiobutton" id="801">
+					<width>120</width>
+					<height>96</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<onclick>ActivateWindow(addonbrowser,root)</onclick>
+					<font>font12</font>
+					<label/>
+					<textoffsetx>40</textoffsetx>
+					<textwidth>230</textwidth>
+					<texturefocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/roundbutton-fo.png</texturefocus>
+					<texturenofocus />
+					<radioposx>40</radioposx>
+					<radioposy>0</radioposy>
+					<radiowidth>40</radiowidth>
+					<radioheight>40</radioheight>
+					<textureradioonfocus colordiffuse="$VAR[ThemeHighlightVar]">icons/submenu/add-ons.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="$VAR[ThemeHighlightVar]">icons/submenu/add-ons.png</textureradioonnofocus>
+					<textureradioofffocus>icons/submenu/add-ons.png</textureradioofffocus>
+					<textureradiooffnofocus>icons/submenu/add-ons.png</textureradiooffnofocus>
+				</control>
+				<control type="radiobutton" id="802">
+					<top>0</top>
+					<width>157</width>
+					<height>96</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<onclick>ActivateWindow(addonbrowser,addons://outdated/,return)</onclick>
+					<font>font12</font>
+					<label/>
+					<textoffsetx>40</textoffsetx>
+					<textwidth>230</textwidth>
+					<texturefocus border="30" colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/dialogbutton-fo.png</texturefocus>
+					<texturenofocus />
+					<radioposx>35</radioposx>
+					<radioposy>0</radioposy>
+					<radiowidth>40</radiowidth>
+					<radioheight>40</radioheight>
+					<enable>Integer.IsGreater(Container(8000).NumItems,0)</enable>
+					<textureradioonfocus colordiffuse="$VAR[ThemeHighlightVar]">icons/submenu/updatelibrary.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="$VAR[ThemeHighlightVar]">icons/submenu/updatelibrary.png</textureradioonnofocus>
+					<textureradioofffocus>icons/submenu/updatelibrary.png</textureradioofffocus>
+					<textureradiooffnofocus>icons/submenu/updatelibrary.png</textureradiooffnofocus>
+					<textureradioondisabled colordiffuse="disabled">icons/submenu/updatelibrary.png</textureradioondisabled>
+					<textureradiooffdisabled colordiffuse="disabled">icons/submenu/updatelibrary.png</textureradiooffdisabled>
+				</control>
+				<control type="radiobutton" id="803">
+					<width>120</width>
+					<height>96</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<onclick>ActivateWindow(systemsettings,addons)</onclick>
+					<font>font12</font>
+					<label/>
+					<textoffsetx>40</textoffsetx>
+					<textwidth>230</textwidth>
+					<texturefocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/roundbutton-fo.png</texturefocus>
+					<texturenofocus />
+					<radioposx>40</radioposx>
+					<radioposy>0</radioposy>
+					<radiowidth>40</radiowidth>
+					<radioheight>40</radioheight>
+					<textureradioonfocus colordiffuse="$VAR[ThemeHighlightVar]">icons/settings.png</textureradioonfocus>
+					<textureradioonnofocus colordiffuse="$VAR[ThemeHighlightVar]">icons/settings.png</textureradioonnofocus>
+					<textureradioofffocus>icons/settings.png</textureradioofffocus>
+					<textureradiooffnofocus>icons/settings.png</textureradiooffnofocus>
+				</control>
+				<control type="label" id="804">
+					<left>-217</left>
+					<top>13</top>
+					<height>70</height>
+					<width>100</width>
+					<aligny>center</aligny>
+					<align>center</align>
+					<font>font32_title</font>
+					<label>$VAR[AddonCountLabel]</label>
+					<shadowcolor>text_shadow</shadowcolor>
+				</control>
+			</control>
+			<include>BottomBar</include>
+			<control type="group">
+				<left>-10000</left>
+				<include content="InfoList">
+					<param name="path" value="addons://outdated/" />
+					<param name="bottom" value="1" />
+					<param name="width" value="1" />
+					<param name="list_id" value="8000" />
+					<param name="item_label" value="" />
+				</include>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<includes>
+	<include name="MediaTilePictureLayout">
+		<param name="focused">false</param>
+		<definition>
+			<control type="image">
+				<top>-10</top>
+				<width>376</width>
+				<height>380</height>
+				<texture>dialogs/dialog-bg-nobo.png</texture>
+				<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+			</control>
+			<control type="image">
+				<top>-14</top>
+				<left>-4</left>
+				<width>384</width>
+				<height>388</height>
+				<texture colordiffuse="$VAR[ThemeLegacyHighlightVar]">colors/grey.png</texture>
+				<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<visible>$PARAM[focused]</visible>
+				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+			</control>
+			<control type="image">
+				<left>20</left>
+				<top>10</top>
+				<width>336</width>
+				<height>300</height>
+				<texture border="2" background="true">$VAR[MediaTileThumbVar]</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="label">
+				<left>20</left>
+				<top>318</top>
+				<width>338</width>
+				<textoffsetx>20</textoffsetx>
+				<height>20</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<label>$INFO[ListItem.Label]</label>
+			</control>
+		</definition>
+	</include>
+	<include name="MediaTileMusicLayout">
+		<param name="fallback_image">DefaultFolder.png</param>
+		<param name="main_label">$INFO[ListItem.Artist]</param>
+		<param name="sub_label">$INFO[ListItem.Title]</param>
+		<param name="single_label">$INFO[ListItem.Label]</param>
+		<param name="focused">false</param>
+		<definition>
+			<control type="image">
+				<top>0</top>
+				<width>316</width>
+				<height>386</height>
+				<texture>dialogs/dialog-bg-nobo.png</texture>
+				<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+			</control>
+			<control type="image">
+				<top>10</top>
+				<left>10</left>
+				<width>296</width>
+				<height>296</height>
+				<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/tracks-cover-glow.png</texture>
+				<visible>$PARAM[focused]</visible>
+				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+			</control>
+			<control type="image">
+				<left>20</left>
+				<top>20</top>
+				<width>276</width>
+				<height>276</height>
+				<texture diffuse="$VAR[ThemePopupRoundedMaskVar]" fallback="$PARAM[fallback_image]" background="true">$VAR[MediaTileThumbVar]</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+			</control>
+			<control type="textbox">
+				<left>28</left>
+				<top>289</top>
+				<width>262</width>
+				<height>80</height>
+				<font>font12</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$PARAM[single_label]</label>
+				<visible>!String.IsEqual(ListItem.DBType,album)</visible>
+			</control>
+			<control type="group">
+				<visible>String.IsEqual(ListItem.DBType,album)</visible>
+				<control type="label">
+					<left>29</left>
+					<top>300</top>
+					<width>260</width>
+					<label>$PARAM[sub_label]</label>
+					<font>font10</font>
+					<textcolor>FFCFCCD2</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+					<scroll>$PARAM[focused]</scroll>
+					<align>center</align>
+				</control>
+				<control type="label">
+					<left>29</left>
+					<top>328</top>
+					<width>260</width>
+					<label>$PARAM[main_label]</label>
+					<font>font10</font>
+					<textcolor>FFFFFFFF</textcolor>
+					<shadowcolor>text_shadow</shadowcolor>
+					<scroll>$PARAM[focused]</scroll>
+					<align>center</align>
+				</control>
+			</control>
+			<control type="group">
+				<left>133</left>
+				<top>2</top>
+				<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
+			</control>
+		</definition>
+	</include>
+	<include name="MediaTileEpisodeLayout">
+		<param name="main_label">$INFO[ListItem.Title]</param>
+		<param name="sub_label">$INFO[ListItem.TVShowTitle]</param>
+		<param name="thumb_label">$INFO[ListItem.Season,,x]$INFO[ListItem.Episode]</param>
+		<param name="fallback_image">DefaultTVShows.png</param>
+		<param name="focused">false</param>
+		<definition>
+			<control type="image">
+				<top>10</top>
+				<width>316</width>
+				<height>288</height>
+				<texture>dialogs/dialog-bg-nobo.png</texture>
+				<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+			</control>
+			<control type="image">
+				<top>6</top>
+				<left>-4</left>
+				<width>324</width>
+				<height>296</height>
+				<texture colordiffuse="$VAR[ThemeLegacyHighlightVar]">colors/grey.png</texture>
+				<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+				<bordersize>20</bordersize>
+				<visible>$PARAM[focused]</visible>
+				<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>10</top>
+				<width>316</width>
+				<height>218</height>
+				<texture fallback="$PARAM[fallback_image]" background="true">$VAR[MediaTileThumbVar]</texture>
+				<aspectratio>scale</aspectratio>
+				<bordersize>20</bordersize>
+			</control>
+			<control type="image">
+				<left>20</left>
+				<top>138</top>
+				<width>276</width>
+				<height>70</height>
+				<texture>overlays/overlayfade.png</texture>
+				<visible>!ListItem.IsParentFolder</visible>
+			</control>
+			<control type="label">
+				<left>30</left>
+				<top>178</top>
+				<width>220</width>
+				<label>$PARAM[thumb_label]</label>
+				<font>font20_title</font>
+				<shadowcolor>text_shadow</shadowcolor>
+				<align>left</align>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>175</top>
+				<width>32</width>
+				<height>32</height>
+				<align>right</align>
+				<texture>$VAR[ItemStatusIconVar]</texture>
+			</control>
+			<control type="textbox">
+				<left>28</left>
+				<top>202</top>
+				<width>262</width>
+				<height>80</height>
+				<font>font12</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[ListItem.Label]</label>
+				<visible>Window.IsActive(videos)</visible>
+			</control>
+			<control type="group">
+				<visible>!Window.IsActive(videos)</visible>
+				<control type="label">
+					<left>29</left>
+					<top>210</top>
+					<width>260</width>
+					<label>$PARAM[sub_label]</label>
+					<font>font12</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<scroll>$PARAM[focused]</scroll>
+					<align>center</align>
+				</control>
+				<control type="label">
+					<left>29</left>
+					<top>240</top>
+					<width>260</width>
+					<label>$PARAM[main_label]</label>
+					<font>font10</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<scroll>$PARAM[focused]</scroll>
+					<align>center</align>
+				</control>
+			</control>
+			<control type="progress">
+				<left>20</left>
+				<top>258</top>
+				<width>276</width>
+				<height>1</height>
+				<texturebg />
+				<midtexture colordiffuse="$VAR[ThemeLegacyHighlightVar]" border="3">progress/texturebg_alt_white.png</midtexture>
+				<info>ListItem.PercentPlayed</info>
+				<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+			</control>
+			<control type="group">
+				<left>134</left>
+				<top>8</top>
+				<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
+			</control>
+		</definition>
+	</include>
+	<include name="MediaTileMovieLayout">
+		<param name="focused">false</param>
+		<definition>
+			<control type="group">
+				<visible>String.IsEmpty(ListItem.Art(poster))</visible>
+				<control type="image">
+					<left>15</left>
+					<top>-10</top>
+					<width>290</width>
+					<height>415</height>
+					<texture>dialogs/dialog-bg-nobo.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+				<control type="image">
+					<left>15</left>
+					<top>-10</top>
+					<width>290</width>
+					<height>415</height>
+					<texture colordiffuse="$VAR[ThemeLegacyHighlightVar]">colors/grey.png</texture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				<control type="textbox">
+					<left>40</left>
+					<top>244</top>
+					<width>242</width>
+					<height>120</height>
+					<font>font27</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<label>$INFO[ListItem.Label]</label>
+					<autoscroll time="2000" delay="3000" repeat="5000">$PARAM[focused]</autoscroll>
+					<visible>!ListItem.IsParentFolder</visible>
+				</control>
+				<control type="image">
+					<left>24</left>
+					<top>-1</top>
+					<width>272</width>
+					<height>270</height>
+					<texture fallback="DefaultMovies.png" background="true">$INFO[ListItem.Icon]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordersize>20</bordersize>
+				</control>
+			</control>
+			<control type="group">
+				<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+				<control type="image">
+					<left>11</left>
+					<top>-14</top>
+					<width>298</width>
+					<height>423</height>
+					<texture colordiffuse="$VAR[ThemeLegacyHighlightVar]">colors/grey.png</texture>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+					<visible>$PARAM[focused]</visible>
+					<include condition="$PARAM[focused]">Animation_FocusTextureFade</include>
+				</control>
+				<control type="image">
+					<left>15</left>
+					<top>-10</top>
+					<width>290</width>
+					<height>415</height>
+					<texture background="true">$INFO[ListItem.Art(poster)]</texture>
+					<aspectratio>scale</aspectratio>
+					<bordertexture border="21" infill="false">overlays/shadow.png</bordertexture>
+					<bordersize>20</bordersize>
+				</control>
+			</control>
+			<control type="group">
+				<visible>String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBType,season) | ListItem.IsRecording | ListItem.HasReminder | ListItem.HasTimer | ListItem.IsCollection | ListItem.HasVideoVersions | ListItem.IsPlaying | ListItem.IsResumable | ListItem.HasVideoExtras | ListItem.HasArchive | Integer.IsGreater(ListItem.Playcount,0)</visible>
+				<control type="image">
+					<left>35</left>
+					<top>335</top>
+					<width>250</width>
+					<height>50</height>
+					<texture colordiffuse="CCFFFFFF">overlays/overlayfade.png</texture>
+					<visible>!String.IsEmpty(ListItem.Art(poster))</visible>
+				</control>
+				<control type="image">
+					<left>40</left>
+					<top>358</top>
+					<width>24</width>
+					<height>24</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<texture>$VAR[ItemTypeIconVar]</texture>
+				</control>
+				<control type="image">
+					<left>70</left>
+					<top>358</top>
+					<width>24</width>
+					<height>24</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<texture>overlays/extras.png</texture>
+					<visible>ListItem.HasVideoVersions + ListItem.HasVideoExtras</visible>
+				</control>
+				<control type="label">
+					<left>105</left>
+					<top>355</top>
+					<width>145</width>
+					<label>$VAR[WatchedStatusVar]</label>
+					<font>font20_title</font>
+					<shadowcolor>text_shadow</shadowcolor>
+					<align>right</align>
+					<visible>String.IsEqual(ListItem.DBtype,tvshow) | String.IsEqual(ListItem.DBtype,set) | String.IsEqual(ListItem.DBType,season)</visible>
+				</control>
+				<control type="image">
+					<left>254</left>
+					<top>358</top>
+					<width>24</width>
+					<height>24</height>
+					<texture>$VAR[ItemStatusIconVar]</texture>
+				</control>
+			</control>
+			<control type="group">
+				<left>135</left>
+				<top>-8</top>
+				<include condition="Skin.HasSetting(circle_rating) | Skin.HasSetting(circle_userrating)">RatingCircle</include>
+			</control>
+			<control type="progress">
+				<left>35</left>
+				<top>365</top>
+				<width>250</width>
+				<height>1</height>
+				<texturebg />
+				<midtexture colordiffuse="$VAR[ThemeLegacyHighlightVar]" border="3">progress/texturebg_alt_white.png</midtexture>
+				<info>ListItem.PercentPlayed</info>
+				<visible>!Integer.IsEqual(ListItem.PercentPlayed,0)</visible>
+			</control>
+		</definition>
+	</include>
+</includes>

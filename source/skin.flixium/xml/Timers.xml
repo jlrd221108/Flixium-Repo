@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<timers>
+	<timer>
+		<name>autoclosevideoosd</name>
+		<description>Timer to auto close the video OSD (if enabled in the skin settings)</description>
+		<start reset="true">Window.IsActive(videoosd) + !Player.Paused + Skin.HasSetting(OSDAutoClose) + !String.IsEqual(window(home).Property(settingslist_content),osd) + !Window.IsActive(osdsubtitlesettings) + !Window.IsActive(osdaudiosettings) + !Window.IsActive(osdvideosettings) + !Window.IsActive(OSDCMSSettings)</start>
+		<reset>Window.IsActive(videoosd) + !System.IdleTime(1) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(autoclosevideoosd), 1) | String.IsEqual(window(home).Property(settingslist_content),osd) | Window.IsActive(osdsubtitlesettings) | Window.IsActive(osdaudiosettings) | Window.IsActive(osdvideosettings) | Window.IsActive(OSDCMSSettings)</reset>
+		<stop>Player.Paused | !Window.IsActive(videoosd) | String.IsEmpty(Skin.String(OSDAutoCloseTime)) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(autoclosevideoosd), 4) | !String.IsEmpty(Skin.String(OSDAutoCloseTime)) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(autoclosevideoosd),Skin.Numeric(OSDAutoCloseTime))</stop>
+		<onstop condition="!Player.Paused">Dialog.Close(videoosd)</onstop>
+	</timer>
+	<timer>
+		<name>1109_topbaroverlay</name>
+		<description>A timer that is activated when the topbaroverlay is loaded and stops automatically after 5 seconds (or playback is resumed)</description>
+		<start reset="true">[Window.IsActive(videoosd) | Window.IsActive(musicosd) | Window.IsActive(playerprocessinfo)] | [Window.IsActive(1109) + [Player.Seeking | Player.Forwarding | Player.Rewinding | Player.HasPerformedSeek(1)]]</start>
+		<reset>Player.Seeking | Player.Forwarding | Player.Rewinding | Player.HasPerformedSeek(1)</reset>
+		<stop>Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(1109_topbaroverlay),5) | Player.Playing</stop>
+	</timer>
+	<timer>
+		<name>flixium_video_pause</name>
+		<description>Track the current pause for the delayed clearlogo</description>
+		<start reset="true">Player.Paused + Player.HasVideo + !VideoPlayer.Content(livetv)</start>
+		<stop>!Player.Paused | !Player.HasVideo | VideoPlayer.Content(livetv)</stop>
+		<onstop condition="Player.HasVideo + !Player.Paused + !VideoPlayer.Content(livetv) + !VideoPlayer.Content(musicvideos) + Window.IsVisible(videoosd)">SetProperty(flixium.video_osd_fading,true,home)</onstop>
+		<!-- Reopening clears Kodi's native mouse-triggered auto-close countdown. -->
+		<onstart condition="Player.HasVideo + !VideoPlayer.Content(livetv) + !VideoPlayer.Content(musicvideos) + !Player.HasGame + Window.IsActive(fullscreenvideo) + Window.IsModalDialogTopmost(videoosd)">Dialog.Close(videoosd,true)</onstart>
+		<onstart>ClearProperty(flixium.video_osd_fading,home)</onstart>
+		<onstart>ClearProperty(flixium.video_osd_dismissed,home)</onstart>
+		<onstart>ClearProperty(flixium.video_logo_ready,home)</onstart>
+		<onstart condition="Player.HasVideo + !VideoPlayer.Content(livetv) + !VideoPlayer.Content(musicvideos) + !Player.HasGame + Window.IsActive(fullscreenvideo) + !Window.IsVisible(videoosd) + !System.HasActiveModalDialog">ActivateWindow(videoosd)</onstart>
+		<onstop>ClearProperty(flixium.video_osd_dismissed,home)</onstop>
+		<onstop condition="!Window.IsVisible(videoosd)">ClearProperty(flixium.video_logo_ready,home)</onstop>
+	</timer>
+	<timer>
+		<name>flixium_video_resume_fade</name>
+		<description>Close paused playback controls after their one-second resume fade</description>
+		<start reset="true">String.IsEqual(Window(home).Property(flixium.video_osd_fading),true)</start>
+		<stop>Player.Paused | !Window.IsVisible(videoosd) | Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(flixium_video_resume_fade),1)</stop>
+		<onstop condition="!Player.Paused + String.IsEqual(Window(home).Property(flixium.video_osd_fading),true)">SetProperty(flixium.video_osd_dismissed,true,home)</onstop>
+		<onstop condition="!Player.Paused + Window.IsVisible(videoosd) + String.IsEqual(Window(home).Property(flixium.video_osd_fading),true) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(flixium_video_resume_fade),1)">Dialog.Close(videoosd)</onstop>
+		<onstop>ClearProperty(flixium.video_osd_fading,home)</onstop>
+		<onstop condition="!Player.Paused">ClearProperty(flixium.video_logo_ready,home)</onstop>
+	</timer>
+	<timer>
+		<name>flixium_video_logo_reveal</name>
+		<description>Keep the revealed pause logo visible until the resume fade is finished</description>
+		<start reset="true">Player.Paused + Skin.TimerIsRunning(flixium_video_pause) + Integer.IsGreaterOrEqual(Skin.TimerElapsedSecs(flixium_video_pause),1) + !String.IsEqual(Window(home).Property(flixium.video_logo_ready),true)</start>
+		<stop>!Player.Paused | String.IsEqual(Window(home).Property(flixium.video_logo_ready),true)</stop>
+		<onstart>SetProperty(flixium.video_logo_ready,true,home)</onstart>
+	</timer>
+</timers>

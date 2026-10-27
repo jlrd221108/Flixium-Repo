@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+    <variable name="MusicBackgroundMotionVar">
+        <value condition="String.IsEqual(Skin.String(Flixium.MusicBackgroundMotion),Static)">$LOCALIZE[31214]</value>
+        <value condition="String.IsEqual(Skin.String(Flixium.MusicBackgroundMotion),Gentle)">$LOCALIZE[31215]</value>
+        <value condition="String.IsEqual(Skin.String(Flixium.MusicBackgroundMotion),Full)">$LOCALIZE[31216]</value>
+        <value condition="String.IsEqual(Skin.String(Flixium.LyricsQuality),Low)">$LOCALIZE[31217]</value>
+        <value condition="String.IsEqual(Skin.String(Flixium.LyricsQuality),High)">$LOCALIZE[31218]</value>
+        <value>$LOCALIZE[31219]</value>
+    </variable>
+    <include name="FlixiumCoverFlowBackground">
+        <definition>
+            <control type="group">
+                <visible>String.IsEqual(Window(home).Property(flixium.playback.flow.ready),true) + !Skin.HasSetting(flix_disable_background_blur)</visible>
+                <control type="image">
+                    <include>FullScreenDimensions</include>
+                    <aspectratio>stretch</aspectratio><fadetime>1000</fadetime>
+                    <texture background="true">$INFO[Window(home).Property(flixium.playback.flow.base)]</texture>
+                </control>
+                <!-- Actual warp frames. Normal texture loading preserves APNG animation. -->
+                <control type="image">
+                    <include>FullScreenDimensions</include>
+                    <visible>!String.IsEqual(Window(home).Property(flixium.playback.flow.mode),Static) + !String.IsEmpty(Window(home).Property(flixium.playback.flow.sequence))</visible>
+                    <texture background="false">$INFO[Window(home).Property(flixium.playback.flow.sequence)]</texture>
+                    <fadetime>0</fadetime>
+                    <aspectratio>stretch</aspectratio>
+                </control>
+            </control>
+        </definition>
+    </include>
+</includes>

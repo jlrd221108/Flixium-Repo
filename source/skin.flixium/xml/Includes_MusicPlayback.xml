@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<variable name="PlaybackCoverGlowColorVar">
+		<value condition="Skin.HasSetting(flix_adaptive_focus_glow) + !String.IsEmpty(Window(home).Property(flixium.playback.cover_color))">$INFO[Window(home).Property(flixium.playback.cover_color)]</value>
+		<value>FFFFFFFF</value>
+	</variable>
+	<variable name="MusicLyricsSourceVar">
+		<value condition="Skin.HasSetting(FlixiumMusicEmbeddedLyrics)">$LOCALIZE[31227]</value>
+		<value>$LOCALIZE[31228]</value>
+	</variable>
+	<variable name="PlaybackShuffleIconVar">
+		<value condition="Playlist.IsRandom">osd/music/buttons/random-on.png</value>
+		<value>osd/music/buttons/random-off.png</value>
+	</variable>
+	<variable name="PlaybackAlbumCoverVar">
+		<value condition="!String.IsEmpty(Player.Art(album.thumb))">$INFO[Player.Art(album.thumb)]</value>
+		<value condition="!String.IsEmpty(MusicPlayer.Cover)">$INFO[MusicPlayer.Cover]</value>
+		<value>DefaultAlbumCover.png</value>
+	</variable>
+	<include name="FlixiumPlaybackArtwork">
+		<param name="left">0</param>
+		<param name="titleleft">98</param>
+		<param name="titlewidth">538</param>
+		<param name="artistleft">110</param>
+		<param name="artistwidth">514</param>
+		<param name="visible">true</param>
+		<definition>
+			<control type="group">
+				<left>$PARAM[left]</left>
+				<visible>$PARAM[visible]</visible>
+				<control type="image">
+					<left>92</left>
+					<top>167</top>
+					<width>550</width>
+					<height>550</height>
+					<texture colordiffuse="$VAR[PlaybackCoverGlowColorVar]">special://skin/extras/tracks-cover-glow.png</texture>
+				</control>
+				<control type="image">
+					<left>110</left>
+					<top>185</top>
+					<width>514</width>
+					<height>514</height>
+					<aspectratio scalediffuse="false">keep</aspectratio>
+					<fadetime>220</fadetime>
+					<texture background="true" diffuse="$VAR[ThemePopupRoundedMaskVar]" fallback="DefaultAlbumCover.png">$VAR[PlaybackAlbumCoverVar]</texture>
+				</control>
+				<control type="label">
+					<left>$PARAM[titleleft]</left>
+					<top>730</top>
+					<width>$PARAM[titlewidth]</width>
+					<height>66</height>
+					<font>font36_title</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<textcolor>FFFFFFFF</textcolor>
+					<label>$INFO[MusicPlayer.Title]</label>
+				</control>
+				<control type="label">
+					<left>$PARAM[artistleft]</left>
+					<top>804</top>
+					<width>$PARAM[artistwidth]</width>
+					<height>42</height>
+					<font>font25_title</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<textcolor>FFCDC9D1</textcolor>
+					<label>$INFO[MusicPlayer.Artist]</label>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="FlixiumMusicPlaybackScene">
+		<param name="visible">true</param>
+		<definition>
+			<control type="group">
+				<visible>$PARAM[visible]</visible>
+				<include content="FlixiumPlaybackArtwork">
+					<param name="left" value="0" />
+					<param name="titleleft" value="98" />
+					<param name="titlewidth" value="538" />
+					<param name="artistleft" value="110" />
+					<param name="artistwidth" value="514" />
+					<param name="visible" value="![Skin.HasSetting(FlixiumMusicLyricsDisabled) | String.IsEqual(Window(home).Property(flixium.lyrics.mode),missing)]" />
+				</include>
+				<include content="FlixiumPlaybackArtwork">
+					<param name="left" value="593" />
+					<param name="titleleft" value="57" />
+					<param name="titlewidth" value="620" />
+					<param name="artistleft" value="57" />
+					<param name="artistwidth" value="620" />
+					<param name="visible" value="Skin.HasSetting(FlixiumMusicLyricsDisabled) | String.IsEqual(Window(home).Property(flixium.lyrics.mode),missing)" />
+				</include>
+				<control type="textbox" id="6100">
+					<left>810</left>
+					<top>250</top>
+					<width>930</width>
+					<height>580</height>
+					<font>font30_title</font>
+					<align>center</align>
+					<textcolor>FFE4E0E8</textcolor>
+					<label>$INFO[Window(home).Property(flixium.lyrics.text)]</label>
+					<autoscroll delay="8000" time="4000" repeat="10000">!Player.Paused</autoscroll>
+					<visible>!Skin.HasSetting(FlixiumMusicLyricsDisabled) + String.IsEqual(Window(home).Property(flixium.lyrics.mode),plain)</visible>
+				</control>
+				<control type="label">
+					<left>810</left>
+					<top>475</top>
+					<width>930</width>
+					<height>90</height>
+					<font>font25_title</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>FFAAA7AF</textcolor>
+					<label>$LOCALIZE[31229]</label>
+					<visible>false</visible>
+				</control>
+				<control type="label">
+					<left>810</left>
+					<top>475</top>
+					<width>930</width>
+					<height>90</height>
+					<font>font25_title</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>FFAAA7AF</textcolor>
+					<label>$LOCALIZE[31230]</label>
+					<visible>!Skin.HasSetting(FlixiumMusicLyricsDisabled) + [String.IsEmpty(Window(home).Property(flixium.lyrics.mode)) | String.IsEqual(Window(home).Property(flixium.lyrics.mode),loading)]</visible>
+				</control>
+				<control type="progress">
+					<left>140</left>
+					<top>911</top>
+					<width>1640</width>
+					<height>4</height>
+					<info>Player.Progress</info>
+					<texturebg colordiffuse="33FFFFFF">colors/white.png</texturebg>
+					<midtexture colordiffuse="FFE5E1E8">colors/white.png</midtexture>
+					<lefttexture />
+					<righttexture />
+					<overlaytexture />
+				</control>
+				<control type="label">
+					<left>140</left>
+					<top>931</top>
+					<width>140</width>
+					<height>36</height>
+					<font>FlixPanelIcon</font>
+					<textcolor>FFAAA7AF</textcolor>
+					<label>$INFO[MusicPlayer.Time]</label>
+				</control>
+				<control type="label">
+					<left>1640</left>
+					<top>931</top>
+					<width>140</width>
+					<height>36</height>
+					<font>FlixPanelIcon</font>
+					<align>right</align>
+					<textcolor>FFAAA7AF</textcolor>
+					<label>$INFO[MusicPlayer.Duration]</label>
+				</control>
+				<control type="label">
+					<left>810</left>
+					<top>475</top>
+					<width>930</width>
+					<height>90</height>
+					<font>font25_title</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>FFAAA7AF</textcolor>
+					<label>$LOCALIZE[31231]</label>
+					<visible>!Skin.HasSetting(FlixiumMusicLyricsDisabled) + String.IsEqual(Window(home).Property(flixium.lyrics.mode),synced) + !String.IsEqual(Window(home).Property(flixium.lyrics.native.active),true)</visible>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="FlixiumMusicPlaybackButton">
+		<param name="id" />
+		<param name="left" />
+		<param name="icon" />
+		<param name="action" />
+		<param name="previous" />
+		<param name="next" />
+		<param name="label" />
+		<param name="icon_size" default="64" />
+		<param name="icon_offset" default="0" />
+		<definition>
+			<control type="group">
+				<left>$PARAM[left]</left>
+				<top>970</top>
+				<width>64</width>
+				<height>64</height>
+				<control type="button" id="$PARAM[id]">
+					<width>64</width>
+					<height>64</height>
+					<label>$PARAM[label]</label>
+					<textcolor>00FFFFFF</textcolor>
+					<focusedcolor>00FFFFFF</focusedcolor>
+					<texturefocus border="13">special://skin/extras/flix-pill-background.png</texturefocus>
+					<texturenofocus />
+					<onleft>SetFocus($PARAM[previous])</onleft>
+					<onright>SetFocus($PARAM[next])</onright>
+					<onup>SetFocus(87)</onup>
+					<ondown>SetFocus(87)</ondown>
+					<onback>Action(Back,visualisation)</onback>
+					<onclick>$PARAM[action]</onclick>
+				</control>
+				<control type="image">
+					<left>$PARAM[icon_offset]</left>
+					<top>$PARAM[icon_offset]</top>
+					<width>$PARAM[icon_size]</width>
+					<height>$PARAM[icon_size]</height>
+					<aspectratio>keep</aspectratio>
+					<texture>$PARAM[icon]</texture>
+				</control>
+			</control>
+		</definition>
+	</include>
+	<include name="FlixiumMusicPlaybackControls">
+		<include content="FlixiumMusicPlaybackButton">
+			<param name="id" value="600" />
+			<param name="left" value="808" />
+			<param name="icon" value="osd/music/buttons/previous.png" />
+			<param name="action" value="PlayerControl(Previous)" />
+			<param name="label" value="$LOCALIZE[210]" />
+			<param name="previous" value="70053" />
+			<param name="next" value="602" />
+		</include>
+		<include content="FlixiumMusicPlaybackButton">
+			<param name="id" value="602" />
+			<param name="left" value="888" />
+			<param name="icon" value="$VAR[MusicSizedPlayerControlsPlayImageVar]" />
+			<param name="action" value="PlayerControl(Play)" />
+			<param name="label" value="$LOCALIZE[208]" />
+			<param name="previous" value="600" />
+			<param name="next" value="603" />
+		</include>
+		<include content="FlixiumMusicPlaybackButton">
+			<param name="id" value="607" />
+			<param name="left" value="1048" />
+			<param name="icon" value="osd/music/buttons/next.png" />
+			<param name="action" value="PlayerControl(Next)" />
+			<param name="label" value="$LOCALIZE[209]" />
+			<param name="previous" value="603" />
+			<param name="next" value="70054" />
+		</include>
+		<include content="FlixiumMusicPlaybackButton">
+			<param name="id" value="603" />
+			<param name="left" value="968" />
+			<param name="icon" value="osd/music/buttons/stop.png" />
+			<param name="action" value="PlayerControl(Stop)" />
+			<param name="label" value="$LOCALIZE[215]" />
+			<param name="previous" value="602" />
+			<param name="next" value="607" />
+		</include>
+		<include content="FlixiumMusicPlaybackButton">
+			<param name="id" value="70053" />
+			<param name="left" value="728" />
+			<param name="icon" value="$VAR[MusicSizedPlayerControlsRepeatImageVar]" />
+			<param name="action" value="PlayerControl(Repeat)" />
+			<param name="label" value="$LOCALIZE[190]" />
+			<param name="previous" value="70048" />
+			<param name="next" value="600" />
+		</include>
+		<include content="FlixiumMusicPlaybackButton">
+			<param name="id" value="70054" />
+			<param name="left" value="1128" />
+			<param name="icon" value="$VAR[PlaybackShuffleIconVar]" />
+			<param name="action" value="PlayerControl(Random)" />
+			<param name="label" value="$LOCALIZE[590]" />
+			<param name="previous" value="607" />
+			<param name="next" value="70048" />
+		</include>
+		<include content="FlixiumMusicPlaybackButton">
+			<param name="id" value="70048" />
+			<param name="left" value="1716" />
+			<param name="icon" value="osd/music/buttons/settings.png" />
+			<param name="action" value="ActivateWindow(1105)" />
+			<param name="label" value="$LOCALIZE[5]" />
+			<param name="previous" value="70054" />
+			<param name="next" value="70053" />
+		</include>
+		<control type="slider" id="87">
+			<left>140</left>
+			<top>899</top>
+			<width>1640</width>
+			<height>28</height>
+			<info>Player.Progress</info>
+			<action>seek</action>
+			<texturesliderbar colordiffuse="00FFFFFF">colors/white.png</texturesliderbar>
+			<texturesliderbardisabled colordiffuse="00FFFFFF">colors/white.png</texturesliderbardisabled>
+			<textureslidernib colordiffuse="00FFFFFF">colors/white.png</textureslidernib>
+			<textureslidernibfocus colordiffuse="FFE5E1E8">colors/white.png</textureslidernibfocus>
+			<textureslidernibdisabled colordiffuse="00FFFFFF">colors/white.png</textureslidernibdisabled>
+			<onup>SetFocus(602)</onup>
+			<ondown>SetFocus(602)</ondown>
+			<visible>Player.HasMedia</visible>
+			<onback>Action(Back,visualisation)</onback>
+		</control>
+	</include>
+	<variable name="MusicSizedPlayerControlsPlayImageVar">
+		<value condition="Player.Playing">osd/music/buttons/pause.png</value>
+		<value>osd/music/buttons/play.png</value>
+	</variable>
+	<variable name="MusicSizedPlayerControlsRepeatImageVar">
+		<value condition="Playlist.IsRepeatOne">osd/music/buttons/repeat-one.png</value>
+		<value condition="Playlist.IsRepeat">osd/music/buttons/repeat-all.png</value>
+		<value>osd/music/buttons/repeat-off.png</value>
+	</variable>
+</includes>

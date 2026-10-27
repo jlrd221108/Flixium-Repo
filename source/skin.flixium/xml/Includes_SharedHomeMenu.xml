@@ -1,0 +1,451 @@
+<?xml version='1.0' encoding='utf-8'?>
+<includes>
+	<include name="FlixiumLegacyMenuItems">
+		<item>
+			<label>$LOCALIZE[342]</label>
+			<onclick condition="Library.HasContent(movies) + Skin.HasSetting(home_no_categories_widget) + !System.GetBool(myvideos.flatten)">ActivateWindow(Videos,videodb://movies/,return)</onclick>
+			<onclick condition="Library.HasContent(movies) + Skin.HasSetting(home_no_categories_widget) + System.GetBool(myvideos.flatten)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+			<onclick condition="Library.HasContent(movies) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+			<onclick condition="!Library.HasContent(movies)">ActivateWindow(Videos,sources://video/,return)</onclick>
+			<property name="menu_id">$NUMBER[5000]</property>
+			<property name="id">movies</property>
+			<visible>!Skin.HasSetting(HomeMenuNoMovieButton)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[20343]</label>
+			<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget) + !System.GetBool(myvideos.flatten)">ActivateWindow(Videos,videodb://tvshows/,return)</onclick>
+			<onclick condition="Library.HasContent(tvshows) + Skin.HasSetting(home_no_categories_widget) + System.GetBool(myvideos.flatten)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+			<onclick condition="Library.HasContent(tvshows) + !Skin.HasSetting(home_no_categories_widget)">ActivateWindow(Videos,videodb://tvshows/titles/,return)</onclick>
+			<onclick condition="!Library.HasContent(tvshows)">ActivateWindow(Videos,sources://video/,return)</onclick>
+			<property name="menu_id">$NUMBER[6000]</property>
+			<property name="id">tvshows</property>
+			<visible>!Skin.HasSetting(HomeMenuNoTVShowButton)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[31241]</label>
+			<onclick>RunScript(special://skin/extras/flixium_my_list.py,open,default)</onclick>
+			<property name="menu_id">$NUMBER[18000]</property>
+			<property name="id">mylist</property>
+		</item>
+		<item>
+			<label>$LOCALIZE[2]</label>
+			<onclick>ActivateWindow(Music,root,return)</onclick>
+			<property name="menu_id">$NUMBER[7000]</property>
+			<property name="id">music</property>
+			<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[427]</label>
+			<onclick>PlayDisc</onclick>
+			<property name="menu_id">$NUMBER[21000]</property>
+			<property name="id">disc</property>
+			<visible>System.HasMediaDVD</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[20389]</label>
+			<property name="menu_id">$NUMBER[16000]</property>
+			<onclick>ActivateWindow(Videos,musicvideos,return)</onclick>
+			<property name="id">musicvideos</property>
+			<visible>!Skin.HasSetting(HomeMenuNoMusicVideoButton)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[19020]</label>
+			<property name="menu_id">$NUMBER[12000]</property>
+			<onclick>ActivateWindow(TVChannels)</onclick>
+			<property name="id">livetv</property>
+			<visible>!Skin.HasSetting(HomeMenuNoTVButton)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[19021]</label>
+			<property name="menu_id">$NUMBER[13000]</property>
+			<onclick>ActivateWindow(RadioChannels)</onclick>
+			<property name="id">radio</property>
+			<visible>!Skin.HasSetting(HomeMenuNoRadioButton)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[15016]</label>
+			<property name="menu_id">$NUMBER[17000]</property>
+			<onclick>ActivateWindow(Games)</onclick>
+			<property name="id">games</property>
+			<visible>System.GetBool(gamesgeneral.enable) + !Skin.HasSetting(HomeMenuNoGamesButton)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[24001]</label>
+			<property name="menu_id">$NUMBER[8000]</property>
+			<onclick>ActivateWindow(1100)</onclick>
+			<property name="id">addons</property>
+			<visible>!Skin.HasSetting(HomeMenuNoProgramsButton)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[1]</label>
+			<onclick>ActivateWindow(Pictures)</onclick>
+			<property name="menu_id">$NUMBER[4000]</property>
+			<property name="id">pictures</property>
+			<visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[3]</label>
+			<onclick>ActivateWindow(Videos,root)</onclick>
+			<property name="menu_id">$NUMBER[11000]</property>
+			<property name="id">video</property>
+			<visible>!Skin.HasSetting(HomeMenuNoVideosButton)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[10134]</label>
+			<onclick>ActivateWindow(favouritesbrowser)</onclick>
+			<property name="menu_id">$NUMBER[14000]</property>
+			<property name="id">favorites</property>
+			<visible>!Skin.HasSetting(HomeMenuNoFavButton)</visible>
+		</item>
+		<item>
+			<label>$LOCALIZE[8]</label>
+			<onclick condition="!String.IsEmpty(Weather.Plugin)">ActivateWindow(Weather)</onclick>
+			<onclick condition="String.IsEmpty(Weather.Plugin)">ReplaceWindow(servicesettings,weather)</onclick>
+			<property name="menu_id">$NUMBER[15000]</property>
+			<property name="id">weather</property>
+			<visible>!Skin.HasSetting(HomeMenuNoWeatherButton)</visible>
+		</item>
+	</include>
+	<include name="FlixiumSharedMenuItems">
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item1.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item1.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item1.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item1.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground1]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId1]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item1.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item1.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item1.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item1.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item1.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item2.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item2.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item2.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item2.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground2]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId2]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item2.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item2.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item2.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item2.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item2.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item3.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item3.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item3.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item3.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground3]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId3]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item3.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item3.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item3.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item3.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item3.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item4.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item4.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item4.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item4.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground4]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId4]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item4.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item4.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item4.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item4.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item4.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item5.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item5.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item5.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item5.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground5]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId5]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item5.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item5.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item5.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item5.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item5.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item6.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item6.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item6.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item6.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground6]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId6]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item6.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item6.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item6.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item6.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item6.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item7.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item7.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item7.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item7.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground7]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId7]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item7.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item7.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item7.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item7.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item7.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item8.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item8.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item8.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item8.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground8]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId8]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item8.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item8.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item8.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item8.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item8.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item9.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item9.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item9.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item9.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground9]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId9]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item9.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item9.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item9.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item9.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item9.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item10.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item10.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item10.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item10.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground10]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId10]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item10.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item10.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item10.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item10.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item10.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item11.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item11.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item11.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item11.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground11]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId11]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item11.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item11.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item11.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item11.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item11.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item12.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item12.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item12.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item12.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground12]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId12]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item12.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item12.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item12.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item12.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item12.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item13.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item13.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item13.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item13.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground13]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId13]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item13.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item13.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item13.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item13.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item13.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item14.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item14.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item14.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item14.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground14]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId14]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item14.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item14.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item14.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item14.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item14.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item15.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item15.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item15.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item15.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground15]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId15]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item15.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item15.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item15.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item15.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item15.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item16.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item16.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item16.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item16.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground16]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId16]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item16.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item16.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item16.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item16.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item16.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item17.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item17.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item17.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item17.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground17]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId17]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item17.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item17.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item17.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item17.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item17.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item18.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item18.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item18.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item18.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground18]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId18]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item18.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item18.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item18.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item18.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item18.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item19.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item19.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item19.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item19.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground19]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId19]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item19.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item19.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item19.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item19.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item19.Id),settings)</visible>
+		</item>
+		<item>
+			<label>$INFO[Skin.String(Flixium.HomeMenu.Item20.Label)]</label>
+			<onclick condition="String.IsEqual(Skin.String(Flixium.HomeMenu.Item20.Id),settings)">ActivateWindow(Settings)</onclick>
+			<onclick condition="!String.IsEqual(Skin.String(Flixium.HomeMenu.Item20.Id),settings)">$INFO[Skin.String(Flixium.HomeMenu.Item20.Action)]</onclick>
+			<icon>$VAR[FlixiumHomeMenuBackground20]</icon>
+			<property name="id">$VAR[FlixiumHomeMenuId20]</property>
+			<property name="menu_id">$INFO[Skin.String(Flixium.HomeMenu.Item20.MenuId)]</property>
+			<property name="background">$INFO[Skin.String(Flixium.HomeMenu.Item20.Background)]</property>
+			<property name="action">$INFO[Skin.String(Flixium.HomeMenu.Item20.Action)]</property>
+			<visible>Skin.HasSetting(Flixium.HomeMenu.Item20.Enabled) + !String.IsEqual(Skin.String(Flixium.HomeMenu.Item20.Id),settings)</visible>
+		</item>
+	</include>
+	<variable name="FlixiumHomeMenuBackground1">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item1.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId1">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item1.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground2">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item2.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId2">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item2.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground3">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item3.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId3">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item3.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground4">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item4.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId4">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item4.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground5">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item5.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId5">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item5.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground6">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item6.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId6">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item6.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground7">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item7.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId7">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item7.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground8">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item8.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId8">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item8.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground9">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item9.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId9">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item9.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground10">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item10.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId10">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item10.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground11">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item11.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId11">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item11.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground12">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item12.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId12">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item12.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground13">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item13.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId13">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item13.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground14">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item14.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId14">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item14.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground15">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item15.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId15">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item15.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground16">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item16.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId16">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item16.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground17">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item17.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId17">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item17.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground18">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item18.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId18">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item18.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground19">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item19.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId19">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item19.Id)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuBackground20">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item20.Background)]</value>
+	</variable>
+	<variable name="FlixiumHomeMenuId20">
+		<value>$INFO[Skin.String(Flixium.HomeMenu.Item20.Id)]</value>
+	</variable>
+</includes>

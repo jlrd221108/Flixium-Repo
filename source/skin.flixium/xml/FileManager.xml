@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">20</defaultcontrol>
+	<controls>
+		<include>FlixiumSettingsPageBackground</include>
+		<include>FlixiumSettingsFullPanel</include>
+		<control type="image">
+			<description>Dialog Header image</description>
+			<centerleft>960</centerleft>
+			<centertop>558.5</centertop>
+			<width>52</width>
+			<height>52</height>
+			<texture colordiffuse="C8FFFFFF" border="2">icons/file-manager/left-right.png</texture>
+			<animation effect="fade" start="0" end="100" time="300" delay="100">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="160">WindowClose</animation>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		</control>
+		<control type="group">
+			<include content="FileManagerPanel">
+				<param name="list_id" value="20" />
+				<param name="scrollbar_id" value="60" />
+				<param name="onleft_id" value="20" />
+				<param name="onright_id" value="21" />
+				<param name="width" value="865" />
+				<param name="list_top" value="146" />
+				<param name="list_bottom" value="109" />
+				<param name="focusposition" value="2" />
+				<param name="mirror" value="false" />
+			</include>
+			<control type="scrollbar" id="60">
+				<top>146</top>
+				<left>-16</left>
+				<width>6</width>
+				<bottom>109</bottom>
+				<onleft>20</onleft>
+				<onright>20</onright>
+				<orientation>vertical</orientation>
+				<texturesliderbackground />
+				<visible>Container(20).HasNext | Container(20).HasPrevious</visible>
+			</control>
+			<left>40</left>
+			<width>865</width>
+		<animation effect="slide" end="0,375" time="0" condition="[Integer.IsEqual(Container(20).NumItems,1) + !Integer.IsGreater(Container(21).NumItems,1)] | [Integer.IsEqual(Container(21).NumItems,1) + !Integer.IsGreater(Container(20).NumItems,1)]">Conditional</animation><animation effect="slide" end="0,337.5" time="0" condition="[Integer.IsEqual(Container(20).NumItems,2) + !Integer.IsGreater(Container(21).NumItems,2)] | [Integer.IsEqual(Container(21).NumItems,2) + !Integer.IsGreater(Container(20).NumItems,2)]">Conditional</animation><animation effect="slide" end="0,300" time="0" condition="[Integer.IsEqual(Container(20).NumItems,3) + !Integer.IsGreater(Container(21).NumItems,3)] | [Integer.IsEqual(Container(21).NumItems,3) + !Integer.IsGreater(Container(20).NumItems,3)]">Conditional</animation><animation effect="slide" end="0,262.5" time="0" condition="[Integer.IsEqual(Container(20).NumItems,4) + !Integer.IsGreater(Container(21).NumItems,4)] | [Integer.IsEqual(Container(21).NumItems,4) + !Integer.IsGreater(Container(20).NumItems,4)]">Conditional</animation><animation effect="slide" end="0,225" time="0" condition="[Integer.IsEqual(Container(20).NumItems,5) + !Integer.IsGreater(Container(21).NumItems,5)] | [Integer.IsEqual(Container(21).NumItems,5) + !Integer.IsGreater(Container(20).NumItems,5)]">Conditional</animation><animation effect="slide" end="0,187.5" time="0" condition="[Integer.IsEqual(Container(20).NumItems,6) + !Integer.IsGreater(Container(21).NumItems,6)] | [Integer.IsEqual(Container(21).NumItems,6) + !Integer.IsGreater(Container(20).NumItems,6)]">Conditional</animation><animation effect="slide" end="0,150" time="0" condition="[Integer.IsEqual(Container(20).NumItems,7) + !Integer.IsGreater(Container(21).NumItems,7)] | [Integer.IsEqual(Container(21).NumItems,7) + !Integer.IsGreater(Container(20).NumItems,7)]">Conditional</animation><animation effect="slide" end="0,112.5" time="0" condition="[Integer.IsEqual(Container(20).NumItems,8) + !Integer.IsGreater(Container(21).NumItems,8)] | [Integer.IsEqual(Container(21).NumItems,8) + !Integer.IsGreater(Container(20).NumItems,8)]">Conditional</animation><animation effect="slide" end="0,75" time="0" condition="[Integer.IsEqual(Container(20).NumItems,9) + !Integer.IsGreater(Container(21).NumItems,9)] | [Integer.IsEqual(Container(21).NumItems,9) + !Integer.IsGreater(Container(20).NumItems,9)]">Conditional</animation><animation effect="slide" end="0,37.5" time="0" condition="[Integer.IsEqual(Container(20).NumItems,10) + !Integer.IsGreater(Container(21).NumItems,10)] | [Integer.IsEqual(Container(21).NumItems,10) + !Integer.IsGreater(Container(20).NumItems,10)]">Conditional</animation></control>
+		<control type="group">
+			<include content="FileManagerPanelMirror">
+				<param name="list_id" value="21" />
+				<param name="scrollbar_id" value="61" />
+				<param name="onleft_id" value="20" />
+				<param name="onright_id" value="21" />
+				<param name="width" value="865" />
+				<param name="list_top" value="146" />
+				<param name="list_bottom" value="109" />
+				<param name="focusposition" value="2" />
+				<param name="mirror" value="true" />
+			</include>
+			<control type="scrollbar" id="61">
+				<left>881</left>
+				<top>146</top>
+				<width>6</width>
+				<bottom>109</bottom>
+				<onleft>21</onleft>
+				<onright>21</onright>
+				<texturesliderbackground />
+				<orientation>vertical</orientation>
+				<visible>Container(21).HasNext | Container(21).HasPrevious</visible>
+			</control>
+			<left>1015</left>
+			<width>865</width>
+		<animation effect="slide" end="0,375" time="0" condition="[Integer.IsEqual(Container(20).NumItems,1) + !Integer.IsGreater(Container(21).NumItems,1)] | [Integer.IsEqual(Container(21).NumItems,1) + !Integer.IsGreater(Container(20).NumItems,1)]">Conditional</animation><animation effect="slide" end="0,337.5" time="0" condition="[Integer.IsEqual(Container(20).NumItems,2) + !Integer.IsGreater(Container(21).NumItems,2)] | [Integer.IsEqual(Container(21).NumItems,2) + !Integer.IsGreater(Container(20).NumItems,2)]">Conditional</animation><animation effect="slide" end="0,300" time="0" condition="[Integer.IsEqual(Container(20).NumItems,3) + !Integer.IsGreater(Container(21).NumItems,3)] | [Integer.IsEqual(Container(21).NumItems,3) + !Integer.IsGreater(Container(20).NumItems,3)]">Conditional</animation><animation effect="slide" end="0,262.5" time="0" condition="[Integer.IsEqual(Container(20).NumItems,4) + !Integer.IsGreater(Container(21).NumItems,4)] | [Integer.IsEqual(Container(21).NumItems,4) + !Integer.IsGreater(Container(20).NumItems,4)]">Conditional</animation><animation effect="slide" end="0,225" time="0" condition="[Integer.IsEqual(Container(20).NumItems,5) + !Integer.IsGreater(Container(21).NumItems,5)] | [Integer.IsEqual(Container(21).NumItems,5) + !Integer.IsGreater(Container(20).NumItems,5)]">Conditional</animation><animation effect="slide" end="0,187.5" time="0" condition="[Integer.IsEqual(Container(20).NumItems,6) + !Integer.IsGreater(Container(21).NumItems,6)] | [Integer.IsEqual(Container(21).NumItems,6) + !Integer.IsGreater(Container(20).NumItems,6)]">Conditional</animation><animation effect="slide" end="0,150" time="0" condition="[Integer.IsEqual(Container(20).NumItems,7) + !Integer.IsGreater(Container(21).NumItems,7)] | [Integer.IsEqual(Container(21).NumItems,7) + !Integer.IsGreater(Container(20).NumItems,7)]">Conditional</animation><animation effect="slide" end="0,112.5" time="0" condition="[Integer.IsEqual(Container(20).NumItems,8) + !Integer.IsGreater(Container(21).NumItems,8)] | [Integer.IsEqual(Container(21).NumItems,8) + !Integer.IsGreater(Container(20).NumItems,8)]">Conditional</animation><animation effect="slide" end="0,75" time="0" condition="[Integer.IsEqual(Container(20).NumItems,9) + !Integer.IsGreater(Container(21).NumItems,9)] | [Integer.IsEqual(Container(21).NumItems,9) + !Integer.IsGreater(Container(20).NumItems,9)]">Conditional</animation><animation effect="slide" end="0,37.5" time="0" condition="[Integer.IsEqual(Container(20).NumItems,10) + !Integer.IsGreater(Container(21).NumItems,10)] | [Integer.IsEqual(Container(21).NumItems,10) + !Integer.IsGreater(Container(20).NumItems,10)]">Conditional</animation></control>
+		<control type="group">
+			<height>60</height>
+			<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+			<control type="label">
+				<height>48</height>
+				<aligny>center</aligny>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<label>$INFO[Container(21).CurrentItem,, / ]$INFO[Container(21).NumItems]</label>
+				<include>FlixiumGlobalFont_FlixiumSettingsDateTime</include>
+				<textcolor>E4FFFFFF</textcolor>
+				<left>1688</left>
+				<width>162</width>
+				<align>right</align>
+			</control>
+			<control type="label" id="102">
+				<height>48</height>
+				<include>FlixiumGlobalFont_FlixiumSettingsDateTime</include>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$PARAM[header_label]</label>
+				<haspath>true</haspath>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<textcolor>E4FFFFFF</textcolor>
+				<left>1045</left>
+				<width>623</width>
+				<scroll>True</scroll>
+			</control>
+			<control type="label">
+				<height>48</height>
+				<aligny>center</aligny>
+				<align>right</align>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<label>$INFO[Container(20).CurrentItem,, / ]$INFO[Container(20).NumItems]</label>
+				<include>FlixiumGlobalFont_FlixiumSettingsDateTime</include>
+				<textcolor>E4FFFFFF</textcolor>
+				<left>713</left>
+				<width>162</width>
+			</control>
+			<control type="label" id="101">
+				<height>48</height>
+				<include>FlixiumGlobalFont_FlixiumSettingsDateTime</include>
+				<aligny>center</aligny>
+				<label>$PARAM[header_label]</label>
+				<haspath>true</haspath>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<textcolor>E4FFFFFF</textcolor>
+				<left>70</left>
+				<width>623</width>
+				<align>left</align>
+				<scroll>True</scroll>
+			</control>
+			<top>990</top>
+		</control>
+		<control type="group">
+			<left>40</left>
+			<top>70</top>
+			<width>1840</width>
+			<height>60</height>
+			<control type="image">
+				<left>-20</left>
+				<width>100</width>
+				<height>100</height>
+				<aspectratio>keep</aspectratio>
+				<texture colordiffuse="FFFFFFFF">icons/settings/filemanager.png</texture>
+				<centertop>30</centertop>
+			</control>
+			<control type="label">
+				<left>76</left>
+				<width>1000</width>
+				<height>60</height>
+				<include>FlixiumGlobalFont_FlixiumSettingsParentHeading</include>
+				<aligny>center</aligny>
+				<textcolor>E4FFFFFF</textcolor>
+				<shadowcolor>00FFFFFF</shadowcolor>
+				<label>$LOCALIZE[7]</label>
+				<centertop>30</centertop>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol>602</defaultcontrol>
+	<onload>RunScript(special://skin/resources/lib/lyrics_service.py)</onload>
+	<depth>DepthOSD</depth>
+	<controls>
+		<include content="FlixiumMusicPlaybackScene">
+			<param name="visible" value="!Window.IsVisible(visualisation)" />
+		</include>
+		<include>FlixiumMusicPlaybackControls</include>
+		<!-- Native selection also sends the visualisation reload message. -->
+		<control type="button" id="500">
+			<width>1</width><height>1</height><visible>false</visible>
+			<texturefocus /><texturenofocus />
+		</control>
+	</controls>
+</window>

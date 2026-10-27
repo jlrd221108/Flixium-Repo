@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<includes>
+	<variable name="FlixAlbumsCoverVar">
+		<value condition="ListItem.IsParentFolder">DefaultFolderBack.png</value>
+		<value>$VAR[FlixMusicThumbVar]</value>
+	</variable>
+	<variable name="FlixAlbumsTitleVar">
+		<value condition="ListItem.IsParentFolder">$LOCALIZE[31365]</value>
+		<value>$INFO[ListItem.Label]</value>
+	</variable>
+	<include name="FlixAlbumsCard">
+		<param name="focused">false</param>
+		<definition>
+			<!-- The halo and cover scale together, preserving the cover-sized cutout. -->
+			<control type="image">
+				<left>2.667</left><top>2.667</top><width>324.666</width><height>324.666</height>
+				<texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/extras/home-album-focus-glow.png</texture>
+				<visible>$PARAM[focused]</visible>
+				<include>Animation_FocusTextureFade</include>
+				<animation effect="fade" start="85" end="85" time="0" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>43.75</left><top>43.75</top><width>242.5</width><height>242.5</height>
+				<texture diffuse="$VAR[ThemePopupRoundedMaskVar]" colordiffuse="FF08090D">colors/white.png</texture>
+				<visible>$PARAM[focused]</visible>
+			</control>
+			<control type="image">
+				<left>46</left><top>46</top><width>238</width><height>238</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="$VAR[ThemePopupRoundedMaskVar]" fallback="DefaultAlbumCover.png">$VAR[FlixAlbumsCoverVar]</texture>
+			</control>
+			<control type="label">
+				<left>46</left><top>298</top><width>238</width><height>27</height>
+				<font>font_home_album_title</font><textcolor>E0F4F2F4</textcolor><aligny>center</aligny>
+				<label>$VAR[FlixAlbumsTitleVar]</label><scroll>$PARAM[focused]</scroll>
+			</control>
+			<control type="label">
+				<left>46</left><top>327</top><width>238</width><height>23</height>
+				<font>font_home_album_artist</font><textcolor>B8AAA7AF</textcolor><aligny>center</aligny>
+				<label>$INFO[ListItem.Artist]</label><scroll>$PARAM[focused]</scroll>
+				<visible>!ListItem.IsParentFolder</visible>
+			</control>
+		</definition>
+	</include>
+	<include name="View_58_FlixAlbums">
+		<control type="group">
+			<description>Dedicated Flix Albums library view</description>
+			<visible>Control.IsVisible(58) + Container.Content(albums)</visible>
+			<animation effect="fade" start="0" end="100" time="250">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="180">WindowClose</animation>
+			<include>GlassLegacyFallback1</include>
+			<control type="image">
+				<include>FullScreenDimensions</include><aspectratio>scale</aspectratio><fadetime>450</fadetime>
+				<texture colordiffuse="FF282828">$INFO[Window(home).Property(flixium.helper.flix_blurred)]</texture>
+				<visible>[System.AddonIsEnabled(script.flixium.helper) + !String.IsEmpty(Window(home).Property(flixium.helper.flix_blurred)) + !Skin.HasSetting(flix_disable_background_blur)]</visible>
+			</control>
+			<control type="textbox">
+				<left>106</left><top>106</top><width>1700</width><height>124</height>
+				<font>font60</font><textcolor>FFF4F2F4</textcolor><label>$VAR[FlixAlbumsTitleVar]</label>
+				<autoscroll delay="8000" time="4000" repeat="8000">Skin.HasSetting(autoscroll)</autoscroll>
+			</control>
+			<control type="grouplist">
+				<left>106</left><top>244</top><width>1700</width><height>49</height>
+				<orientation>horizontal</orientation><itemgap>12</itemgap><usecontrolcoords>true</usecontrolcoords>
+				<visible>!ListItem.IsParentFolder</visible>
+				<include content="FlixiumInfoPill">
+					<param name="label" value="$INFO[ListItem.Year]" />
+					<param name="visible" value="!String.IsEmpty(ListItem.Year) + !Integer.IsEqual(ListItem.Year,0)" />
+				</include>
+				<include content="FlixiumInfoPill">
+					<param name="label" value="$VAR[FlixAlbumTrackCountVar]" />
+					<param name="visible" value="!String.IsEmpty(Window(home).Property(flixium.helper.album_track_count)) | !String.IsEmpty(ListItem.Property(Album_TrackCount)) | !String.IsEmpty(ListItem.Property(TrackCount)) | !String.IsEmpty(ListItem.Property(tracks))" />
+				</include>
+				<include content="FlixiumInfoPill">
+					<param name="label" value="$VAR[FlixAlbumRuntimeVar]" />
+					<param name="visible" value="!String.IsEmpty(Window(home).Property(flixium.helper.album_runtime)) | Integer.IsGreater(ListItem.Duration(m),0) | [!String.IsEmpty(ListItem.Property(Album_Duration)) + !String.IsEqual(ListItem.Property(Album_Duration),0)] | [!String.IsEmpty(ListItem.Property(album_duration)) + !String.IsEqual(ListItem.Property(album_duration),0)]" />
+				</include>
+				<include content="FlixiumInfoPill">
+					<param name="label" value="$INFO[ListItem.Genre]" />
+					<param name="visible" value="!String.IsEmpty(ListItem.Genre)" />
+				</include>
+			</control>
+			<control type="textbox">
+				<left>106</left><top>316</top><width>1700</width><height>174</height>
+				<font>font12</font><textcolor>C0FFFFFF</textcolor><label>$VAR[FlixPlotTextBoxVar]</label>
+				<autoscroll delay="8000" time="4000" repeat="8000">Skin.HasSetting(autoscroll)</autoscroll>
+				<visible>!ListItem.IsParentFolder</visible>
+			</control>
+			<control type="label">
+				<right>100</right><top>516</top><width>350</width><height>32</height><align>right</align>
+				<font>font12</font><textcolor>B8FFFFFF</textcolor><label>$INFO[Container(58).CurrentItem] / $INFO[Container(58).NumItems]</label>
+			</control>
+			<control type="fixedlist" id="58">
+				<left>60</left><top>550</top><width>1800</width><height>358</height>
+				<visible>Container.Content(albums)</visible>
+				<viewtype label="Flix Albums">icon</viewtype>
+				<orientation>horizontal</orientation><fixedposition>0</fixedposition><preloaditems>2</preloaditems>
+				<scrolltime tween="cubic" easing="out">350</scrolltime>
+				<onleft>58</onleft><onright>58</onright><onup>9000</onup><ondown>58</ondown>
+				<onclick condition="ListItem.IsParentFolder">Action(ParentDir)</onclick>
+				<onclick condition="!ListItem.IsParentFolder + String.IsEqual(ListItem.DBType,album)">ActivateWindow(music,musicdb://albums/$INFO[ListItem.DBID]/,return)</onclick>
+				<onclick condition="!ListItem.IsParentFolder + !String.IsEqual(ListItem.DBType,album)">ActivateWindow(music,$INFO[ListItem.FilenameAndPath],return)</onclick>
+				<itemlayout width="330" height="358">
+					<include>FlixAlbumsCard</include>
+				</itemlayout>
+				<focusedlayout width="330" height="358">
+					<include content="FlixAlbumsCard"><param name="focused" value="Control.HasFocus(58)" /></include>
+				</focusedlayout>
+			</control>
+		</control>
+	</include>
+</includes>

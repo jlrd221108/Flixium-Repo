@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">95</defaultcontrol>
+	<controls>
+		<include>FlixiumSettingsPageBackground</include>
+		<include>FlixiumSettingsFullPanel</include>
+		<control type="group">
+			<left>40</left>
+			<top>133</top>
+			<include>FlixiumSettingsCenteredLayout</include>
+			<control type="grouplist">
+				<left>460</left><width>1340</width>
+				<top>73</top>
+				<height max="900">auto</height>
+				<orientation>vertical</orientation>
+				<control type="label" id="2"><left>0</left>
+					<height>40</height>
+					<width>1300</width>
+					<font>Mono26</font>
+					<textcolor>E4FFFFFF</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(Control.GetLabel(2))</visible>
+				<textoffsetx>40</textoffsetx></control>
+				<control type="label" id="3"><left>0</left>
+					<height>40</height>
+					<width>1300</width>
+					<font>Mono26</font>
+					<textcolor>E4FFFFFF</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(Control.GetLabel(3))</visible>
+				<textoffsetx>40</textoffsetx></control>
+				<control type="label" id="4"><left>0</left>
+					<height>40</height>
+					<width>1300</width>
+					<font>Mono26</font>
+					<textcolor>E4FFFFFF</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(Control.GetLabel(4))</visible>
+				<textoffsetx>40</textoffsetx></control>
+				<control type="label" id="5"><left>0</left>
+					<height>40</height>
+					<width>1300</width>
+					<font>Mono26</font>
+					<textcolor>E4FFFFFF</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(Control.GetLabel(5))</visible>
+				<textoffsetx>40</textoffsetx></control>
+				<control type="label" id="6"><left>0</left>
+					<height>40</height>
+					<width>1300</width>
+					<font>Mono26</font>
+					<textcolor>E4FFFFFF</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(Control.GetLabel(6))</visible>
+				<textoffsetx>40</textoffsetx></control>
+				<control type="label" id="7"><left>0</left>
+					<height>40</height>
+					<width>1300</width>
+					<font>Mono26</font>
+					<textcolor>E4FFFFFF</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(Control.GetLabel(7))</visible>
+				<textoffsetx>40</textoffsetx></control>
+				<control type="label" id="8"><left>0</left>
+					<height>40</height>
+					<width>1300</width>
+					<font>Mono26</font>
+					<textcolor>E4FFFFFF</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(Control.GetLabel(8))</visible>
+				<textoffsetx>40</textoffsetx></control>
+				<control type="label" id="9"><left>0</left>
+					<height>40</height>
+					<width>1300</width>
+					<font>Mono26</font>
+					<textcolor>E4FFFFFF</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(Control.GetLabel(9))</visible>
+				<textoffsetx>40</textoffsetx></control>
+				<control type="label" id="10"><left>0</left>
+					<height>40</height>
+					<width>1300</width>
+					<font>Mono26</font>
+					<textcolor>E4FFFFFF</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(Control.GetLabel(10))</visible>
+				<textoffsetx>40</textoffsetx></control>
+				<control type="label" id="11"><left>0</left>
+					<height>40</height>
+					<width>1300</width>
+					<font>Mono26</font>
+					<textcolor>E4FFFFFF</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(Control.GetLabel(11))</visible>
+				<textoffsetx>40</textoffsetx></control>
+				<control type="label" id="12"><left>0</left>
+					<height>40</height>
+					<width>1300</width>
+					<font>Mono26</font>
+					<textcolor>E4FFFFFF</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(Control.GetLabel(12))</visible>
+				<textoffsetx>40</textoffsetx></control>
+				<control type="label" id="13"><left>0</left>
+					<height>40</height>
+					<width>1300</width>
+					<font>Mono26</font>
+					<textcolor>E4FFFFFF</textcolor>
+					<shadowcolor>00FFFFFF</shadowcolor>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<visible>!String.IsEmpty(Control.GetLabel(13))</visible>
+				<textoffsetx>40</textoffsetx></control>
+				<control type="group" id="104">
+					<control type="image">
+						<left>0</left>
+						<top>49</top>
+						<width>1340</width>
+						<height>364</height>
+						<texture border="32" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+						<visible>System.SupportsCPUUsage</visible>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>49</top>
+						<width>1340</width>
+						<height>294</height>
+						<texture border="32" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+						<visible>!System.SupportsCPUUsage</visible>
+					</control>
+					<left>0</left>
+					<height>413</height>
+					<width>1340</width>
+					<control type="grouplist">
+						<left>40</left>
+						<orientation>vertical</orientation>
+						<control type="label">
+							<description>Memory Text</description>
+							<width>auto</width>
+							<height>42</height>
+							<label>$LOCALIZE[31030]: $INFO[system.memory(used)] [B]/[/B] $INFO[system.memory(total)] [B]-[/B] $INFO[system.memory(used.percent)]</label>
+							<aligny>center</aligny>
+							<textoffsety>0</textoffsety>
+							<shadowcolor>00FFFFFF</shadowcolor>
+							<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+							<textcolor>E4FFFFFF</textcolor>
+						</control>
+						<control type="progress">
+							<description>Memory BAR</description>
+							<width>1260</width>
+							<height>8</height>
+							<info>system.memory(used)</info>
+							<texturebg border="0" colordiffuse="$VAR[ThemeFocusVar]">colors/white.png</texturebg>
+							<midtexture border="0" colordiffuse="FF1F4069">colors/white.png</midtexture>
+							<lefttexture />
+							<righttexture />
+							<overlaytexture />
+						</control>
+						<control type="label">
+							<description>CPU Text</description>
+							<width>auto</width>
+							<height>42</height>
+							<label>$LOCALIZE[13271] $INFO[System.CPUUsage]</label>
+							<aligny>center</aligny>
+							<shadowcolor>00FFFFFF</shadowcolor>
+							<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+							<visible>System.SupportsCPUUsage</visible>
+							<textoffsety>0</textoffsety>
+							<textcolor>E4FFFFFF</textcolor>
+						</control>
+						<control type="progress">
+							<description>CPU BAR</description>
+							<width>1260</width>
+							<height>8</height>
+							<info>System.CPUUsage</info>
+							<visible>System.SupportsCPUUsage</visible>
+							<texturebg border="0" colordiffuse="$VAR[ThemeFocusVar]">colors/white.png</texturebg>
+							<midtexture border="0" colordiffuse="FF1F4069">colors/white.png</midtexture>
+							<lefttexture />
+							<righttexture />
+							<overlaytexture />
+						</control>
+						<top>69</top>
+						<width>1260</width>
+						<itemgap>10</itemgap>
+					</control>
+					<control type="group">
+						<animation effect="slide" end="0,-70" time="0" condition="!System.SupportsCPUUsage">Conditional</animation>
+						<control type="label">
+							<top>223</top>
+							<left>40</left>
+							<width>auto</width>
+							<height>34</height>
+							<aligny>center</aligny>
+							<textoffsety>0</textoffsety>
+							<label>$LOCALIZE[31031]:</label>
+							<shadowcolor>00FFFFFF</shadowcolor>
+							<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+							<textcolor>E4FFFFFF</textcolor>
+						</control>
+						<control type="grouplist">
+							<description>Kodi build version</description>
+							<itemgap>10</itemgap>
+							<top>271</top>
+							<left>40</left>
+							<width>820</width>
+							<orientation>horizontal</orientation>
+							<control type="label">
+								<description>Build label</description>
+								<width>auto</width>
+								<height>34</height>
+								<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+								<label>$LOCALIZE[144]</label>
+								<shadowcolor>00FFFFFF</shadowcolor>
+								<textcolor>E4FFFFFF</textcolor>
+							</control>
+							<control type="label">
+								<description>Kodi Build Version</description>
+								<width>auto</width>
+								<height>34</height>
+								<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+								<label>$INFO[System.BuildVersionShort]$INFO[System.BuildVersionCode, (,)]</label>
+								<textcolor>E4FFFFFF</textcolor>
+								<shadowcolor>00FFFFFF</shadowcolor>
+							</control>
+						</control>
+						<control type="grouplist">
+							<description>Git version</description>
+							<itemgap>10</itemgap>
+							<top>313</top>
+							<left>40</left>
+							<width>820</width>
+							<orientation>horizontal</orientation>
+							<control type="label">
+								<description>Git label</description>
+								<width>auto</width>
+								<height>34</height>
+								<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+								<label>$LOCALIZE[31260]</label>
+								<shadowcolor>00FFFFFF</shadowcolor>
+								<textcolor>E4FFFFFF</textcolor>
+							</control>
+							<control type="label">
+								<description>Git version</description>
+								<width>auto</width>
+								<height>34</height>
+								<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+								<label>$INFO[System.BuildVersionGit]</label>
+								<textcolor>E4FFFFFF</textcolor>
+								<shadowcolor>00FFFFFF</shadowcolor>
+							</control>
+						</control>
+						<control type="grouplist">
+							<description>Build date</description>
+							<itemgap>10</itemgap>
+							<top>355</top>
+							<left>40</left>
+							<width>820</width>
+							<orientation>horizontal</orientation>
+							<control type="label">
+								<description>kodi Compiled Text</description>
+								<width>auto</width>
+								<height>34</height>
+								<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+								<label>$LOCALIZE[174]</label>
+								<shadowcolor>00FFFFFF</shadowcolor>
+								<textcolor>E4FFFFFF</textcolor>
+							</control>
+							<control type="label" id="53">
+								<description>Kodi Build Date</description>
+								<width>auto</width>
+								<height>34</height>
+								<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+								<textcolor>E4FFFFFF</textcolor>
+								<shadowcolor>00FFFFFF</shadowcolor>
+							</control>
+						</control>
+					</control>
+					<top>0</top>
+				</control>
+			</control>
+			<control type="textbox" id="30">
+				<left>500</left>
+				<width>1300</width>
+				<top>73</top>
+				<height>480</height>
+				<pagecontrol>60</pagecontrol>
+				<autoscroll delay="5000" repeat="7500" time="5000">!Control.HasFocus(60)</autoscroll>
+				<include>FlixiumGlobalFont_FlixiumSettingsLabelSentence</include>
+				<textcolor>E4FFFFFF</textcolor>
+			</control>
+			<control type="scrollbar" id="60">
+				<top>73</top>
+				<width>6</width>
+				<height>480</height>
+				<orientation>vertical</orientation>
+				<texturesliderbackground />
+				<animation effect="slide" end="6,0" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(60)">conditional</animation>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<visible>Control.IsVisible(30)</visible>
+				<animation effect="fade" start="0" end="100" time="200" delay="300">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+				<left>1729</left>
+			</control>
+			<control type="group" id="102">
+				<description>System Info page that shows a QR code linking to https://kodi.tv/donate/</description>
+				<left>500</left>
+				<top>73</top>
+				<control type="textbox">
+					<height>110</height>
+					<label>$LOCALIZE[12397]</label>
+					<include>FlixiumGlobalFont_FlixiumSettingsLabelSentence</include>
+				</control>
+				<control type="multiimage" id="103">
+					<top>110</top>
+					<height>560</height>
+					<imagepath>special://xbmc/media/qr/kodilove/</imagepath>
+					<aspectratio>keep</aspectratio>
+					<timeperimage>5000</timeperimage>
+					<fadetime>1000</fadetime>
+					<randomize>false</randomize>
+				</control>
+				<control type="label">
+					<top>690</top>
+					<align>center</align>
+					<label>$LOCALIZE[12398]</label>
+					<height>40</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+				</control>
+				<width>1300</width>
+				<height>854</height>
+			</control>
+		</control>
+		<control type="group">
+			<left>0</left>
+			<top>0</top>
+			<depth>DepthContentPanel</depth>
+			<include>FlixiumSettingsCenteredSidebar</include>
+			<include>FlixiumSettingsSidebarSize</include>
+			<include content="FlixiumSettingsSidebarHeader">
+				<param name="left" value="0" />
+				<param name="cog_left" value="-28" />
+			</include>
+			<control type="grouplist" id="9000">
+				<animation effect="slide" end="0,112" time="0" condition="true">Conditional</animation>
+				<left>0</left>
+				<top>130</top>
+				<width>470</width>
+				<height>690</height>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onright>noop</onright>
+				<control type="button" id="95">
+					<description>Button Summary Values</description>
+					<include content="FlixiumSettingButton">
+						<param name="height" value="90" />
+					</include>
+					<width>470</width>
+					<label>$LOCALIZE[20037]</label>
+					<include>FlixiumGlobalFont_FlixiumSettingsCategory</include>
+				</control>
+				<control type="button" id="94">
+					<description>Button Storage</description>
+					<include content="FlixiumSettingButton">
+						<param name="height" value="90" />
+					</include>
+					<width>470</width>
+					<label>$LOCALIZE[13277]</label>
+					<include>FlixiumGlobalFont_FlixiumSettingsCategory</include>
+				</control>
+				<control type="button" id="96">
+					<description>Button Network</description>
+					<include content="FlixiumSettingButton">
+						<param name="height" value="90" />
+					</include>
+					<width>470</width>
+					<label>$LOCALIZE[13279]</label>
+					<include>FlixiumGlobalFont_FlixiumSettingsCategory</include>
+				</control>
+				<control type="button" id="97">
+					<description>Button Video</description>
+					<include content="FlixiumSettingButton">
+						<param name="height" value="90" />
+					</include>
+					<width>470</width>
+					<label>$LOCALIZE[13280]</label>
+					<include>FlixiumGlobalFont_FlixiumSettingsCategory</include>
+				</control>
+				<control type="button" id="98">
+					<description>Button Hardware</description>
+					<include content="FlixiumSettingButton">
+						<param name="height" value="90" />
+					</include>
+					<width>470</width>
+					<label>$LOCALIZE[13281]</label>
+					<include>FlixiumGlobalFont_FlixiumSettingsCategory</include>
+				</control>
+				<control type="button" id="99">
+					<description>Button PVR</description>
+					<include content="FlixiumSettingButton">
+						<param name="height" value="90" />
+					</include>
+					<width>470</width>
+					<label>$LOCALIZE[19191]</label>
+					<include>FlixiumGlobalFont_FlixiumSettingsCategory</include>
+				</control>
+				<itemgap>10</itemgap>
+				<scrolltime>250</scrolltime>
+			</control>
+			<include>FlixiumSettingsSidebarDateTime</include>
+		</control>
+		<include content="TopBar">
+			<param name="show_clock" value="false" />
+			<param name="breadcrumbs_label" value="" />
+			<param name="sublabel" value="" />
+		</include>
+		<include>BottomBar</include>
+	</controls>
+</window>

@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+	<defaultcontrol always="true">50</defaultcontrol>
+	<backgroundcolor>background</backgroundcolor>
+	<views>50</views>
+	<controls>
+		<include>FlixiumSettingsPageBackground</include>
+		<include>FlixiumSettingsFullPanel</include>
+		<control type="group">
+			<control type="label">
+				<left>580</left>
+				<top>80</top>
+				<width>1300</width>
+				<height>60</height>
+				<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+				<textcolor>C8FFFFFF</textcolor>
+				<aligny>center</aligny>
+				<label>$LOCALIZE[31067] · $INFO[Container(50).NumItems]</label>
+			</control>
+			<control type="list" id="50">
+				<onleft>9000</onleft>
+				<onright>noop</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<viewtype label="535">list</viewtype>
+				<pagecontrol>60</pagecontrol>
+				<itemlayout height="150" width="1340">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>1340</width>
+						<height>144</height>
+						<texture border="32" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+					</control>
+					<control type="image">
+						<left>24</left>
+						<top>28</top>
+						<width>88</width>
+						<height>88</height>
+						<aspectratio>keep</aspectratio>
+						<texture fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="label">
+						<left>140</left>
+						<top>18</top>
+						<width>660</width>
+						<height>44</height>
+						<include>FlixiumGlobalFont_FlixiumSettingsCategory</include>
+						<textcolor>E4FFFFFF</textcolor>
+						<shadowcolor>00FFFFFF</shadowcolor>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<right>30</right>
+						<top>18</top>
+						<width>400</width>
+						<height>44</height>
+						<include>FlixiumGlobalFont_FlixiumSettingsDateTime</include>
+						<textcolor>C8FFFFFF</textcolor>
+						<shadowcolor>00FFFFFF</shadowcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+					<control type="textbox">
+						<left>140</left>
+						<top>68</top>
+						<width>1090</width>
+						<height>60</height>
+						<include>FlixiumGlobalFont_FlixiumSettingsDateTime</include>
+						<textcolor>C8FFFFFF</textcolor>
+						<shadowcolor>00FFFFFF</shadowcolor>
+						<label>$INFO[ListItem.Property(Event.Description)]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="150" width="1340">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>1340</width>
+						<height>144</height>
+						<texture border="32" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassFocusSurfaceVar]</texture>
+					</control>
+					<control type="image">
+						<left>24</left>
+						<top>28</top>
+						<width>88</width>
+						<height>88</height>
+						<aspectratio>keep</aspectratio>
+						<texture fallback="DefaultAddon.png">$INFO[ListItem.Icon]</texture>
+					</control>
+					<control type="label">
+						<left>140</left>
+						<top>18</top>
+						<width>660</width>
+						<height>44</height>
+						<include>FlixiumGlobalFont_FlixiumSettingsCategory</include>
+						<textcolor>FFFFFFFF</textcolor>
+						<shadowcolor>00FFFFFF</shadowcolor>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+					<control type="label">
+						<right>30</right>
+						<top>18</top>
+						<width>400</width>
+						<height>44</height>
+						<include>FlixiumGlobalFont_FlixiumSettingsDateTime</include>
+						<textcolor>C8FFFFFF</textcolor>
+						<shadowcolor>00FFFFFF</shadowcolor>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>$INFO[ListItem.Label2]</label>
+					</control>
+					<control type="textbox">
+						<left>140</left>
+						<top>68</top>
+						<width>1090</width>
+						<height>60</height>
+						<include>FlixiumGlobalFont_FlixiumSettingsDateTime</include>
+						<textcolor>C8FFFFFF</textcolor>
+						<shadowcolor>00FFFFFF</shadowcolor>
+						<label>$INFO[ListItem.Property(Event.Description)]</label>
+					</control>
+				</focusedlayout>
+				<left>540</left>
+				<top>146</top>
+				<width>1340</width>
+				<height>854</height>
+				<scrolltime>250</scrolltime>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>1889</left>
+				<top>146</top>
+				<width>6</width>
+				<height>854</height>
+				<orientation>vertical</orientation>
+				<onleft>50</onleft>
+				<onright>9000</onright>
+				<visible>Container(50).HasNext | Container(50).HasPrevious</visible>
+			</control>
+		</control>
+		<control type="group">
+			<include>FlixiumSettingsCenteredSidebar</include>
+			<include>FlixiumSettingsSidebarSize</include>
+			<include>FlixiumSettingsSidebarHeader</include>
+			<control type="grouplist" id="9000">
+				<left>0</left>
+				<top>130</top>
+				<width>470</width>
+				<height>690</height>
+				<itemgap>10</itemgap>
+				<usecontrolcoords>true</usecontrolcoords>
+				<scrolltime>250</scrolltime>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<animation effect="slide" end="0,112" time="0" condition="true">Conditional</animation>
+				<control type="togglebutton" id="4">
+					<left>0</left>
+					<top>0</top>
+					<width>470</width>
+					<height>90</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<textoffsetx>30</textoffsetx>
+					<textoffsety>0</textoffsety>
+					<aligny>center</aligny>
+					<include>FlixiumSettingsButtonStyle</include>
+					<label>$LOCALIZE[31032]: $LOCALIZE[584]</label>
+					<altlabel>$LOCALIZE[31032]: $LOCALIZE[585]</altlabel>
+					<include condition="!$EXP[flixium_glass] + !Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton2Normal</include><include condition="!$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton2Round</include><include condition="$EXP[flixium_glass]">GlassButton2</include>
+					<include condition="!$EXP[flixium_glass] + !Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton3Normal</include><include condition="!$EXP[flixium_glass] + Skin.HasSetting(Flixium.ExtraRounded)">ThemeRoundedButton3Round</include><include condition="$EXP[flixium_glass]">GlassButton3</include>
+				</control>
+				<control type="button" id="21">
+					<left>0</left>
+					<top>0</top>
+					<width>470</width>
+					<height>90</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<textoffsetx>30</textoffsetx>
+					<textoffsety>0</textoffsety>
+					<aligny>center</aligny>
+					<include>FlixiumSettingsButtonStyle</include>
+					<label />
+				</control>
+				<control type="radiobutton" id="22">
+					<left>0</left>
+					<top>0</top>
+					<width>470</width>
+					<height>90</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<textoffsetx>30</textoffsetx>
+					<textoffsety>0</textoffsety>
+					<aligny>center</aligny>
+					<include>FlixiumSettingsButtonStyle</include>
+					<label />
+					<radiowidth>120</radiowidth>
+					<radioheight>76</radioheight>
+					<radioposx>320</radioposx>
+					<radioposy>0</radioposy>
+				</control>
+				<control type="button" id="20">
+					<left>0</left>
+					<top>0</top>
+					<width>470</width>
+					<height>90</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<textoffsetx>30</textoffsetx>
+					<textoffsety>0</textoffsety>
+					<aligny>center</aligny>
+					<include>FlixiumSettingsButtonStyle</include>
+					<label>$LOCALIZE[192]</label>
+				</control>
+				<control type="button" id="501">
+					<left>0</left>
+					<top>0</top>
+					<width>470</width>
+					<height>90</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsControl</include>
+					<textoffsetx>30</textoffsetx>
+					<textoffsety>0</textoffsety>
+					<aligny>center</aligny>
+					<include>FlixiumSettingsButtonStyle</include>
+					<label>$LOCALIZE[5]</label>
+					<onclick>ActivateWindow(systemsettings,logging)</onclick>
+				</control>
+			</control>
+			<include>FlixiumSettingsSidebarDateTime</include>
+		</control>
+		<include content="TopBar">
+			<param name="show_clock" value="false" />
+			<param name="breadcrumbs_label" value="" />
+			<param name="sublabel" value="" />
+		</include>
+		<include>BottomBar</include>
+	</controls>
+</window>

@@ -1,5 +1,12 @@
 # Release notes
 
+## Skin 1.1.26 — 2026-10-27
+
+- Fix the 1.1.25 package, which omitted the entire XML layout directory and could not load after a clean install.
+- Restore all 122 layouts with the current localization, widgets and settings.
+- Commit XML source and validate the actual downloadable package in CI.
+- Helper 1.0.45 and all visualizers remain unchanged.
+
 ## Skin 1.1.25 / Helper 1.0.45 — 2026-10-27
 
 - Publish current skin and helper runtime source and assets.
