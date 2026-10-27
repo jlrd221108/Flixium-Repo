@@ -30,12 +30,14 @@
       <path>v1.1.24-repo-fix/repository.flixium-1.0.0.zip</path>
     </extension>
   </addon>
-  <addon id="script.flixium.helper" name="Flixium Helper" version="1.0.44" provider-name="Jack Davison">
+  <addon id="script.flixium.helper" name="Flixium Helper" version="1.0.45" provider-name="Jack Davison">
     <requires>
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.pil" version="5.1.0" />
     </requires>
-    <extension point="xbmc.python.library" library="resources/lib/default.py" />
+    <extension point="xbmc.python.library" library="resources/lib/default.py">
+      <provides>executable</provides>
+    </extension>
     <extension point="xbmc.python.pluginsource" library="resources/lib/default.py">
       <provides>audio video</provides>
     </extension>
@@ -48,17 +50,17 @@
       </assets>
       <platform>all</platform>
       <license>GPL-2.0-only, CC BY-SA 3.0 (MQ5 translations)</license>
-      <path>v1.1.24-repo-fix/script.flixium.helper-1.0.44.zip</path>
+      <path>v1.1.25/script.flixium.helper-1.0.45.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
-      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/flixium-source-v1.0.0.zip</source>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.1.25/script.flixium.helper-1.0.45.zip</source>
     </extension>
   </addon>
-  <addon id="skin.flixium" version="1.1.24" name="Flixium" provider-name="Jack Davison">
+  <addon id="skin.flixium" version="1.1.25" name="Flixium" provider-name="Jack Davison">
     <requires>
       <import addon="xbmc.gui" version="5.17.0" />
       <import addon="xbmc.python" version="3.0.0" />
       <import addon="script.module.pil" version="5.1.0" />
-      <import addon="script.flixium.helper" version="1.0.44" />
+      <import addon="script.flixium.helper" version="1.0.45" />
       <import addon="visualization.flixium" version="1.1.2" />
     </requires>
     <extension point="xbmc.gui.skin" debugging="false">
@@ -66,8 +68,9 @@
     </extension>
     <extension point="xbmc.service" library="resources/lib/setstats_service.py" start="startup" />
     <extension point="xbmc.service" library="resources/lib/mdblist_service.py" start="startup" />
+    <extension point="xbmc.service" library="resources/lib/my_list_service.py" start="startup" />
     <extension point="xbmc.python.pluginsource" library="extras/flixium_widgets.py">
-      <provides>video</provides>
+      <provides>video audio</provides>
     </extension>
     <extension point="xbmc.addon.metadata">
       <platform>android-aarch64 android-armv7 android-i686 android-x86_64 windx</platform>
@@ -86,9 +89,9 @@
       </assets>
       <summary lang="en_GB">A cinematic, customisable Kodi skin.</summary>
       <description lang="en_GB">A cinematic Kodi skin with artwork-led views and customisable home widgets. Flixium Home with an optional Aeon menu font.</description>
-      <path>v1.1.24-repo-fix/flixium-1.1.24.zip</path>
+      <path>v1.1.25/skin.flixium-1.1.25.zip</path>
       <website>https://github.com/jlrd221108/Flixium-Repo</website>
-      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.1.24-repo-fix/flixium-1.1.24.zip</source>
+      <source>https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.1.25/skin.flixium-1.1.25.zip</source>
     </extension>
   </addon>
   <addon id="visualization.flixium" name="Flixium Visualizer" version="1.2.0" provider-name="Jack Davison">

@@ -8,7 +8,7 @@ A cinematic home for your media. Install the Flixium skin, its companion helper 
 [![Kodi 21 Omega](https://img.shields.io/badge/Kodi-21%20Omega-00b8e6)](https://kodi.tv/)
 [![Download](https://img.shields.io/github/v/release/jlrd221108/Flixium-Repo?label=repository)](https://github.com/jlrd221108/Flixium-Repo/releases/latest)
 
-**[Download Flixium Repo](https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/repository.flixium-1.0.0.zip)** · **[Installation guide](docs/INSTALL.md)** · **[Report an issue](https://github.com/jlrd221108/Flixium-Repo/issues/new/choose)**
+**[Download Flixium Repo](https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.1.24-repo-fix/repository.flixium-1.0.0.zip)** · **[Installation guide](docs/INSTALL.md)** · **[Report an issue](https://github.com/jlrd221108/Flixium-Repo/issues/new/choose)**
 
 ## Install
 
@@ -26,9 +26,9 @@ Prefer Kodi's File Manager? Add **`https://jlrd221108.github.io/Flixium-Repo/`**
 
 | Add-on | Version | Purpose |
 | --- | --- | --- |
-| Flixium | 1.1.24 | Cinematic views, artwork-led browsing and customisable home screens |
-| Flixium Helper | 1.0.44 | Artwork processing, colours and caching |
-| Flixium Visualizer | 1.1.2 | Animated cover backgrounds and GPU-rendered timed lyrics |
+| Flixium | 1.1.25 | Cinematic views, artwork-led browsing and customisable home screens |
+| Flixium Helper | 1.0.45 | Artwork processing, colours and caching |
+| Flixium Visualizer | Windows 1.1.2 / Android 1.2.0 | Animated cover backgrounds and GPU-rendered timed lyrics |
 | Flixium Repo | 1.0.0 | Dependency installation and updates |
 
 The music OSD includes word highlighting, held-letter emphasis, line transitions, instrumental dots, TTML duet/backing-vocal layout and an optional Simple Lyrics mode. Individual effects and background quality can be adjusted for lower-powered devices. Lyric files need suitable timing data for word-level effects.

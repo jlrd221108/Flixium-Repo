@@ -9,7 +9,7 @@
 - `tools/`: standard-library Python build/validation tools. Large binaries and source archives are release assets, not Git objects.
 - `docs/`: GitHub Pages installation source and documentation.
 
-Each native manifest retains `visualization.flixium`, version 1.1.2, and declares exactly one platform: `windx`, `android-aarch64`, `android-armv7`, `android-i686` or `android-x86_64`. Kodi filters the index by platform before resolving dependencies. Index-only `<path>` elements point at versioned GitHub Release assets; they do not rename the add-on or alter its package manifest. The skin has one visualizer dependency.
+Each native manifest retains `visualization.flixium` (Windows 1.1.2; Android 1.2.0), and declares exactly one platform: `windx`, `android-aarch64`, `android-armv7`, `android-i686` or `android-x86_64`. Kodi filters the index by platform before resolving dependencies. Index-only `<path>` elements point at versioned GitHub Release assets; they do not rename the add-on or alter its package manifest. The skin has one visualizer dependency.
 
 The index restricts skin availability to the native platforms we ship. The repository feed is gated to Kodi 21. Do not remove either restriction without compatible binaries and ABI verification.
 
@@ -36,3 +36,5 @@ The first release includes [flixium-source-v1.0.0.zip](https://github.com/jlrd22
 - [Kodi 21 platform filtering and repository paths](https://github.com/xbmc/xbmc/blob/Omega/xbmc/addons/addoninfo/AddonInfoBuilder.cpp)
 - [Repository index parsing](https://github.com/xbmc/xbmc/blob/Omega/xbmc/addons/AddonManager.cpp)
 - [Package checksum resolution](https://github.com/xbmc/xbmc/blob/Omega/xbmc/addons/Repository.cpp)
+
+The 1.1.25 skin and 1.0.45 helper packages contain their current Python/XML source. Their source links point to those exact packages; native corresponding-source archives remain unchanged.

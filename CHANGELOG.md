@@ -1,5 +1,13 @@
 # Release notes
 
+## Skin 1.1.25 / Helper 1.0.45 — 2026-10-27
+
+- Publish current skin and helper runtime source and assets.
+- Localise settings, setup, dialogs, widgets and library labels.
+- Correct offline cached widget artwork, poster row sizing and hover markers.
+- Preserve the existing Windows 1.1.2 and Android 1.2.0 visualizer assets and platform routing.
+- Retain SHA-256 verification and update package metadata, artwork and download references.
+
 ## 1.0.0 — 2026-10-24
 
 - Initial public Flixium repository for Kodi 21 Omega.

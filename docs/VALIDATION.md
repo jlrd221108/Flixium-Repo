@@ -1,4 +1,21 @@
-# Release validation — 1.0.0
+# Release validation — Skin 1.1.25 / Helper 1.0.45
+
+Prepared on 2026-10-27. Both new runtime ZIPs were CRC-checked and their complete
+payloads compared byte for byte with the local release files. Packaged Python
+and XML were syntax-checked. Versions, dependencies, index artwork paths and
+SHA-256/gzip metadata were validated. Platform selection still resolves one
+visualizer for Windows x64 and each of the four Android architectures.
+
+Existing native ZIPs and their package hashes were retained unchanged. Missing
+artwork paths in the preceding index were restored from hash-verified existing
+release packages. Current Python/XML runtime source is included in each new
+skin/helper ZIP. Native source archives retain their existing links.
+
+Publication downloads both new ZIPs from their public release URLs and checks
+SHA-256 before advancing the live repository feed. No full UI test suite or new
+Android device playback testing was performed for this packaging update.
+
+## Historical initial-release validation
 
 Prepared on 2026-10-24 for Kodi 21 Omega.
 

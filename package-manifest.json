@@ -1,5 +1,5 @@
 {
-  "release": "v1.1.24",
+  "release": "v1.1.25",
   "index": "index/omega/addons.xml",
   "packages": [
     {
@@ -12,22 +12,22 @@
       "sha256": "5e95a94432bd806f4c2852f4c901131f543fc30d9a0577a08679d43b601d543f"
     },
     {
-      "file": "script.flixium.helper-1.0.44.zip",
+      "file": "script.flixium.helper-1.0.45.zip",
       "id": "script.flixium.helper",
-      "version": "1.0.44",
+      "version": "1.0.45",
       "platform": "all",
-      "path": "v1.1.24-repo-fix/script.flixium.helper-1.0.44.zip",
-      "bytes": 1299594,
-      "sha256": "791599bc56a66c2b6b961dbc8e7addc851a2d48c970073da75f1304d40fc9ce0"
+      "path": "v1.1.25/script.flixium.helper-1.0.45.zip",
+      "bytes": 1313397,
+      "sha256": "8de46a38666a7c4ad1826cc012148caf6fe9ad1edaf3b59d9750d0e3e4aad59c"
     },
     {
-      "file": "flixium-1.1.24.zip",
+      "file": "skin.flixium-1.1.25.zip",
       "id": "skin.flixium",
-      "version": "1.1.24",
+      "version": "1.1.25",
       "platform": "all",
-      "path": "v1.1.24-repo-fix/flixium-1.1.24.zip",
-      "bytes": 21993064,
-      "sha256": "020b4621b6bef791748d44fe31fefdd375c090e72906c0015689eaf0bd9adfb0"
+      "path": "v1.1.25/skin.flixium-1.1.25.zip",
+      "bytes": 21795077,
+      "sha256": "15ff2330ddb1e11fc866b093216992c8ba967fae7368ef226f6e25db9eef0951"
     },
     {
       "file": "visualization.flixium-1.2.0-android-arm64-v8a.zip",

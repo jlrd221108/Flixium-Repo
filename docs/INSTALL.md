@@ -4,7 +4,7 @@ Use Kodi 21 Omega on Windows x64 or a supported Android build. Keep Kodi's offic
 
 ## Repository ZIP
 
-Download [repository.flixium-1.0.0.zip](https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.0.0/repository.flixium-1.0.0.zip). In Kodi, enable Unknown sources under Settings → System → Add-ons, then open Add-ons → Install from zip file. Select the downloaded ZIP.
+Download [repository.flixium-1.0.0.zip](https://github.com/jlrd221108/Flixium-Repo/releases/download/v1.1.24-repo-fix/repository.flixium-1.0.0.zip). In Kodi, enable Unknown sources under Settings → System → Add-ons, then open Add-ons → Install from zip file. Select the downloaded ZIP.
 
 Open Install from repository → Flixium Repo → Look and feel → Skin → Flixium. Accept the dependencies and switch skin. The helper and matching visualizer install automatically; no architecture selection is needed.
 
