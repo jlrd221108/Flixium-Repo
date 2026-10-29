@@ -259,10 +259,10 @@
 				</control>
 				<control type="image">
 					<left>21</left>
-					<top>238</top>
+					<top>278</top>
 					<width>580</width>
-					<height>120</height>
-					<texture colordiffuse="A8FFFFFF">special://skin/extras/flix-episode-label-fade.png</texture>
+					<height>80</height>
+					<texture colordiffuse="66000000">colors/white.png</texture>
 					<visible>Container.Content(episodes)</visible>
 				</control>
 				<control type="label">
@@ -325,10 +325,10 @@
 					</control>
 					<control type="image">
 						<left>21</left>
-						<top>238</top>
+						<top>278</top>
 						<width>580</width>
-						<height>120</height>
-						<texture colordiffuse="A8FFFFFF">special://skin/extras/flix-episode-label-fade.png</texture>
+						<height>80</height>
+						<texture colordiffuse="66000000">colors/white.png</texture>
 						<visible>Container.Content(episodes)</visible>
 					</control>
 					<control type="label">
@@ -373,10 +373,10 @@
 				</control>
 				<control type="image">
 					<left>8.751718</left>
-					<top>266.699743</top>
+					<top>296.768</top>
 					<width>435.996564</width>
-					<height>90.206186</height>
-					<texture colordiffuse="A8FFFFFF">special://skin/extras/flix-episode-label-fade.png</texture>
+					<height>60.1375</height>
+					<texture colordiffuse="66000000">colors/white.png</texture>
 					<visible>Container.Content(episodes)</visible>
 				</control>
 				<control type="label">
@@ -431,10 +431,10 @@
 					</control>
 					<control type="image">
 						<left>8.751718</left>
-						<top>266.699743</top>
+						<top>296.768</top>
 						<width>435.996564</width>
-						<height>90.206186</height>
-						<texture colordiffuse="A8FFFFFF">special://skin/extras/flix-episode-label-fade.png</texture>
+						<height>60.1375</height>
+						<texture colordiffuse="66000000">colors/white.png</texture>
 						<visible>Container.Content(episodes)</visible>
 					</control>
 					<control type="label">

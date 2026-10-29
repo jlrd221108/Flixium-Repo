@@ -1,0 +1,361 @@
+[B]1.1.27[/B]
+- Publish current home widget, My List and Flix layout refinements.
+- Include all 122 skin layouts and current runtime files.
+- Keep Flixium Helper 1.0.45 and published native visualizer releases unchanged.
+
+[B]1.1.26[/B]
+- Restore all skin XML layouts omitted from the 1.1.25 ZIP.
+- Preserve localization and current widget/settings changes.
+
+[B]1.1.25[/B]
+- Complete translatable interface strings across settings, setup, widgets and dialogs.
+- Load cached widget artwork with disconnected media drives.
+- Refine My List animation, remove row hover markers and fit three poster rows onscreen.
+- Include current profile, picture, playback and interface updates.
+- Pair with Flixium Helper 1.0.45.
+
+[B]1.1.23[/B]
+- Bundle xzeners genre artwork and connect it to the home genre widgets.
+- Display complete genre icons in rounded landscape cards using the active colour scheme and glass appearance, without duplicate labels.
+- Refine movie Flix plot width and add a temporary fanart-blur fade comparison toggle.
+- Use a Nimbus-style 500ms blur crossfade that begins when the replacement image is ready.
+- Include the current interface, settings, playback, widget and safe skin-reload refinements.
+- Pair with Flixium Helper 1.0.44.
+
+[B]1.1.22[/B]
+
+- Package the latest glass appearance, theme and customisation updates.
+
+- Include current settings, dialogs, addon launcher, widgets and Flix view refinements.
+
+- Include the updated music playback interface, main-menu editor and MDBList integration.
+
+- Pair with Flixium Helper 1.0.43 for the current glass-cache and companion-service updates.
+
+
+
+[B]1.1.21[/B]
+
+- Package the current glass appearance, customisation, icon and Flix view improvements.
+
+- Include navigation, layout, artwork blur and playback interface fixes.
+
+- Pair with Flixium Helper 1.0.42.
+
+
+
+[B]1.1.20[/B]
+
+- Release the renamed Flixium skin as skin.flixium with the script.flixium.helper companion dependency.
+
+- Package the current Flixium branding, artwork, fonts, translations, scripts and interface refinements.
+
+- Preserve upstream attribution and licence notices; exclude development and historical release files.
+
+- Pair with Flixium Helper 1.0.41.
+
+
+
+[B]1.1.19[/B]
+
+- Add an optional Aeon font for the Flixium Home menu, with a dedicated size and automatic skin refresh.
+
+- Increase the Flixium Home focus animation while keeping the standard font at its original size.
+
+- Restyle IconWall with settings-grey backgrounds, rounded cards and matching focus/text colours.
+
+- Give the Programs addon wall a fixed background, rounded cards and a centred complete-row grid without focus zoom.
+
+- Remove the Programs addon wall header and clock without altering other wall layouts.
+
+- Restyle the Add-ons launcher sidebar and cards with the settings palette and fixed background.
+
+- Remove the launcher header/clock, bottom-align its sidebar list with the content and position the action icons above it.
+
+- Preserve native addon routes, category actions and Android visibility rules.
+
+- Pair with Flixium Helper 1.0.40; helper runtime is unchanged from 1.0.39.
+
+
+
+[B]1.1.18[/B]
+
+- Supply MQ5 library and playlist widgets through native Kodi APIs without legacy widget-provider addons.
+
+- Isolate native widget properties and service leases, and simplify the Home preparation screen.
+
+- Add configurable Programs widgets with matching cards, focus halos, headings and centred addon names.
+
+- Add a Movies Genres widget with readable genre labels.
+
+- Improve menu-editor presentation, widget-editor focus navigation, popup spacing and ratings alignment.
+
+- Rename Settings style to Settings view and move the Home widget area up 2px.
+
+- Remove obsolete backgrounds, consolidate identical assets and normalise custom asset names.
+
+- Update current Flixium branding while preserving upstream credits and licences.
+
+- Pair with Flixium Helper 1.0.39; helper Python runtime is unchanged from 1.0.38.
+
+
+
+[B]1.1.17[/B]
+
+- Add the optional original Aeon MQ5 Home style with isolated assets, fonts and preferences.
+
+- Add a shared fullscreen main-menu editor under Configure skin > Home.
+
+- Support menu renaming, custom actions, ordering and backgrounds without rewriting unchanged settings.
+
+- Keep Settings mandatory in MQ5 Home and absent from the Flixium sidebar menu.
+
+- Refine MQ5 settings navigation, live values and single-row colour/transparency selectors.
+
+- Include MQ5 provider adapters, translated labels and upstream licence notices.
+
+- Update the paired Flixium Helper to 1.0.38 for the MQ5 translation payload; helper Python runtime is unchanged.
+
+
+
+[B]1.1.16[/B]
+
+- Add portable skin settings backup and restore support.
+
+- Include selectable settings backgrounds and updated background assets.
+
+- Refine shared media layouts, navigation and settings style choices.
+
+- Include the home sidebar divider and move its menu list down 6px.
+
+- Exclude background asset-generation source from release packages.
+
+- Update the paired Flixium Helper dependency to 1.0.37; no helper runtime changes.
+
+
+
+[B]1.1.15[/B]
+
+- Add selectable dual-list, single-list, grid and dual-list v2 settings layouts.
+
+- Include settings presentation, widget configuration and subtitle control refinements.
+
+- Include the corrected complete-row settings and file-manager viewports.
+
+- Separate poster-derived adaptive focus colours from background blur colours.
+
+- Update Flixium Helper to 1.0.36 for cached poster colour extraction and improved dark-image sampling.
+
+
+
+[B]1.1.14[/B]
+
+- Add configurable home widgets, widget playlists and next-episode browsing.
+
+- Include the redesigned video OSD and native subtitle appearance controls.
+
+- Add Flix album and artist views with matching music background processing.
+
+- Refine album focus assets, progress indicators, scrollbars and dialog layouts.
+
+- Retain documented file-manager and native settings viewport clipping limitations.
+
+- Update Flixium Helper to 1.0.35 for blur support in the new music views.
+
+
+
+[B]1.1.13[/B]
+
+- Include the latest centered settings layout and shared popup styling refinements.
+
+- Include media source browsing and updated picture, music and video navigation layouts.
+
+- Refine settings sidebars, native settings-level controls and browser/dialog presentation.
+
+- Retain current UI unchanged during packaging; document file-manager and settings viewport clipping.
+
+- Update the paired Flixium Helper dependency to 1.0.34; no helper runtime changes.
+
+
+
+[B]1.1.12[/B]
+
+- Include the latest settings sidebar, heading, panel and typography refinements.
+
+- Refine the add-on browser, file manager, profiles, system information and event log styling.
+
+- Exclude development layout backups from release packages.
+
+- Known limitation: the file manager's 689px viewport can show a partial bottom row; UI retained unchanged.
+
+- Update the paired Flixium Helper dependency to 1.0.33; no helper runtime changes.
+
+
+
+[B]1.1.11[/B]
+
+- Refine settings with a consistent grey palette, Open Sans typography and improved column spacing.
+
+- Adjust settings category panels and list viewports to show complete rows.
+
+- Keep Kodi and skin settings suboption buttons at their compact-disabled dimensions.
+
+- Update the paired Flixium Helper dependency to 1.0.32; no helper runtime changes.
+
+
+
+[B]1.1.10[/B]
+
+- Resize home widgets and correct movie/TV card proportions, viewports and focus transitions.
+
+- Show five centered landscape previews and four complete focused landscapes at the original vertical position.
+
+- Correct home album clipping, center category headings and add a custom larger selection halo with a dark outline.
+
+- Center home power/settings shortcuts beneath the logo and remove the redundant now-playing shortcut.
+
+- Refine album background dimming and music playback seekbar/control positioning.
+
+- Update the paired Flixium Helper dependency to 1.0.31; no helper runtime changes.
+
+
+
+[B]1.1.9[/B]
+
+- Unify settings pages with the compact menu's dark slate background and rounded button styling.
+
+- Refine Open Sans settings typography, button spacing, page alignment and available list space.
+
+- Include the latest music, tracks and shared view refinements; remove superseded Poster and Shift views.
+
+- Bundle required font licenses and the custom font derivative notice.
+
+- Update the paired Flixium Helper dependency to 1.0.30; no helper runtime changes.
+
+
+
+[B]1.1.8[/B]
+
+- Rebuild home music rows for recently played, recently added and most played albums.
+
+- Remove categories, random albums/artists and unplayed albums from the home music widgets.
+
+- Use subtly rounded album covers, a dark selection edge and stronger soft halo without background darkening.
+
+- Fix vertical row navigation and skip empty music rows.
+
+- Refine settings typography, spacing and tracklist scaling; include font licenses and notices.
+
+- Harden ratings conversion, retry and caching; cache library statistics and resolve movie sets lazily.
+
+- Fix hidden lyrics handling, playback blur ownership and visualiser background isolation.
+
+- Reduce the oversized background texture and remove unused helper processing and forced Expert settings.
+
+- Update the paired Flixium Helper dependency to 1.0.29 for artwork cache and service fixes.
+
+
+
+[B]1.1.7[/B]
+
+- Center album artwork, glow and track details when lyrics are unavailable; remove the lyrics heading.
+
+- Keep interactive music controls in the native MusicOSD dialog with directional seekbar navigation.
+
+- Back moves focus between the seekbar and controls without dismissing the control bar.
+
+- Remove the separate fullscreen music keymap requirement.
+
+- Refine compact settings with a centered static list, slate colours, rounded buttons and icons.
+
+- Update the paired Flixium Helper release to 1.0.28.
+
+
+
+[B]1.1.6[/B]
+
+- Added the Tracks view with album artwork, metadata and padded left-aligned track titles.
+
+- Added music playback screens with local and embedded line-synchronised lyrics.
+
+- Reused cached light album blur for tracks and playback, with scoped background visibility.
+
+- Refined music playback controls and provided the required fullscreen keyboard override.
+
+- Updated the Flixium Helper dependency to 1.0.27.
+
+
+
+[B]1.1.2[/B]
+
+- Bumped the skin and helper package versions for the corrected release archives.
+
+- Ensured the helper declares its Pillow dependency and release archives use portable paths.
+
+
+
+[B]1.1.0[/B]
+
+- Added configurable MDBList ratings for movies and TV shows with per-item caching.
+
+- Added a dedicated Ratings settings section with enable/disable control and masked API-key display.
+
+- Added six Nimbus-style rating slots with configurable ordering and spacing.
+
+- Updated the Flixium Helper dependency to 1.0.11 and retained the correct script.module.pil 5.1.0 dependency.
+
+
+
+[B]1.0.9[/B]
+
+- Added optional MDBList API-key support with cached, Nimbus-style ratings in the Flix movie view and movie information.
+
+- Updated the Flixium Helper dependency to 1.0.10.
+
+- Declared Kodi's platform-provided Pillow module for Android TV compatibility.
+
+
+
+[B]1.0.6[/B]
+
+- Updated the Flixium Helper dependency to 1.0.7 for Android Pillow module access.
+
+
+
+[B]1.0.4[/B]
+
+- Removed unavailable Pillow module repository dependency and refreshed update package.
+
+
+
+[B]1.0.3[/B]
+
+- Repo update package refresh.
+
+
+
+[B]1.0.2[/B]
+
+- Refined Flixium settings, popups, file manager, add-ons, event log, and Flix music views.
+
+- Updated compact settings styling, focus assets, background handling, and navigation behaviour.
+
+
+
+[B]1.0.0[/B]
+
+- Initial Flixium release.
+
+- Added artwork-led Flix views for movies, movie sets, TV shows, seasons, and episodes.
+
+- Added the Flixium Helper dependency for adaptive blurred backgrounds.
+
+- Added configurable progress indicators, UK age-rating artwork, rating positions, and resettable Flix customisation.
+
+- Added aggregate movie-set metadata for count, release range, and total runtime.
+
+- Added the streamlined Home movie row with landscape artwork and Flix-style metadata.
+
+- Reworked the movie information screen with poster, cast, and info views.
+
+- Removed inherited and superseded Estuary assets and metadata.

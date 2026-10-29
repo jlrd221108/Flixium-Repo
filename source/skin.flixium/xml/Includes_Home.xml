@@ -152,10 +152,10 @@
 			</control>
 			<control type="image">
 				<left>15.75</left>
-				<top>178.5</top>
+				<top>208.5</top>
 				<width>435</width>
-				<height>90</height>
-				<texture colordiffuse="A8FFFFFF">special://skin/extras/flix-episode-label-fade.png</texture>
+				<height>60</height>
+				<texture colordiffuse="66000000">colors/white.png</texture>
 				<visible>Container.Content(episodes)</visible>
 			</control>
 			<control type="label">
@@ -215,10 +215,10 @@
 					</control>
 					<control type="image">
 						<left>15.75</left>
-						<top>178.5</top>
+						<top>208.5</top>
 						<width>435</width>
-						<height>90</height>
-						<texture colordiffuse="A8FFFFFF">special://skin/extras/flix-episode-label-fade.png</texture>
+						<height>60</height>
+						<texture colordiffuse="66000000">colors/white.png</texture>
 						<visible>Container.Content(episodes)</visible>
 					</control>
 					<control type="label">
@@ -1505,8 +1505,8 @@
 		<control type="group">
 			<visible>String.IsEqual(ListItem.DBType,episode)</visible>
 			<control type="image">
-				<left>11.25</left><top>107.25</top><width>262.5</width><height>51.75</height>
-				<texture colordiffuse="A8FFFFFF" diffuse="special://skin/extras/home-landscape-mask.png">special://skin/extras/flix-episode-label-fade.png</texture>
+				<left>11.25</left><top>124.5</top><width>262.5</width><height>34.5</height>
+				<texture colordiffuse="66000000">colors/white.png</texture>
 			</control>
 			<control type="label">
 				<left>21.25</left><top>128</top><width>242.5</width><height>24</height>

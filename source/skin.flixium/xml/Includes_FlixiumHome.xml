@@ -7,7 +7,8 @@
 		<onload condition="!Skin.HasSetting(Flixium.Setup.Seen) | Skin.HasSetting(Flixium.Setup.AutoResume) | Skin.HasSetting(Flixium.Setup.Pending)">RunScript(special://skin/extras/flixium_setup.py,auto)</onload>
 		<onload condition="!Skin.HasSetting(Flixium.SubtitleDefaultsApplied)">RunScript(special://skin/extras/flixium_subtitle_preset.py,initialise)</onload>
 		<onload condition="Skin.HasSetting(Flixium.Glass.Enabled) + System.AddonIsEnabled(script.flixium.helper) + [!String.IsEqual(Window(home).Property(flixium.glass.ready),true) | !String.IsEqual(Window(home).Property(flixium.glass.profile),System.ProfileName)]">RunScript(special://skin/extras/flixium_glass.py,prepare)</onload>
-		<defaultcontrol>9000</defaultcontrol>
+		<onload>SetFocus(9000,0,absolute)</onload>
+		<defaultcontrol always="true">9000</defaultcontrol>
 		<backgroundcolor>background</backgroundcolor>
 		<controls>
 			<control type="button" id="20000">
@@ -74,10 +75,10 @@
 						<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
 					</animation>
 					<include>OpenClose_Right</include>
+					<include>FlixiumConfiguredMusic</include>
 					<include>FlixiumConfiguredMovies</include>
 					<include>FlixiumConfiguredTV</include>
 					<include>FlixiumConfiguredMyList</include>
-					<include>FlixiumConfiguredMusic</include>
 					<include>FlixiumConfiguredPrograms</include>
 					<include>FlixiumConfiguredVideos</include>
 					<control type="group" id="12000">
@@ -687,11 +688,11 @@
 					<top>30</top>
 					<left>44</left>
 					<control type="image">
-						<left>17</left>
-						<top>-6</top>
+						<left>35.8635</left>
+						<top>-0.82775</top>
 						<aspectratio align="center" aligny="center">keep</aspectratio>
-						<width>248</width>
-						<height>68</height>
+						<width>210.273</width>
+						<height>57.6555</height>
 						<texture>special://skin/extras/flixium-logo.png</texture>
 					</control>
 				</control>

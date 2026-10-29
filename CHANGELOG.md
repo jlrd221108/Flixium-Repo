@@ -1,5 +1,11 @@
 # Release notes
 
+## Skin 1.1.27 — 2026-10-29
+
+- Publish current home widgets, My List and Flix layout refinements.
+- Verify every runtime file against the ZIP and include all 122 skin layouts.
+- Helper 1.0.45 and all native visualizer packages, paths and checksums remain unchanged.
+
 ## Skin 1.1.26 — 2026-10-27
 
 - Fix the 1.1.25 package, which omitted the entire XML layout directory and could not load after a clean install.

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<addon id="skin.flixium" version="1.1.27" name="Flixium" provider-name="Jack Davison">
+	<requires>
+		<import addon="xbmc.gui" version="5.17.0" />
+		<import addon="xbmc.python" version="3.0.0" />
+		<import addon="script.module.pil" version="5.1.0" />
+		<import addon="script.flixium.helper" version="1.0.45" />
+		<import addon="visualization.flixium" version="1.1.2" />
+	</requires>
+	<extension point="xbmc.gui.skin" debugging="false">
+		<res width="1920" height="1080" aspect="16:9" default="true" folder="xml" />
+	</extension>
+	<extension point="xbmc.service" library="resources/lib/setstats_service.py" start="startup" />
+	<extension point="xbmc.service" library="resources/lib/mdblist_service.py" start="startup" />
+	<extension point="xbmc.service" library="resources/lib/my_list_service.py" start="startup" />
+	<extension point="xbmc.python.pluginsource" library="extras/flixium_widgets.py">
+		<provides>video audio</provides>
+	</extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>all</platform>
+		<license>CC BY-SA 4.0, CC BY-SA 3.0 (retained assets), GNU GENERAL PUBLIC LICENSE Version 2.0, LGPL-2.1 (Gazetteer), CC BY 4.0 (geoBoundaries)</license>
+		<assets>
+			<icon>resources/icon.png</icon>
+			<fanart>resources/fanart.jpg</fanart>
+			<screenshot>resources/screenshot-01.jpg</screenshot>
+			<screenshot>resources/screenshot-02.jpg</screenshot>
+			<screenshot>resources/screenshot-03.jpg</screenshot>
+			<screenshot>resources/screenshot-04.jpg</screenshot>
+			<screenshot>resources/screenshot-05.jpg</screenshot>
+			<screenshot>resources/screenshot-06.jpg</screenshot>
+			<screenshot>resources/screenshot-07.jpg</screenshot>
+			<screenshot>resources/screenshot-08.jpg</screenshot>
+		</assets>
+		<summary lang="en_GB">A cinematic, customisable Kodi skin.</summary>
+		<description lang="en_GB">A cinematic Kodi skin with artwork-led views and customisable home widgets. Flixium Home with an optional Aeon menu font.</description>
+	</extension>
+</addon>
