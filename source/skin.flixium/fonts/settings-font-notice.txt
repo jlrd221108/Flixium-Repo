@@ -1,0 +1,7 @@
+Flixium Settings Sans Light Plus is a static Open Sans derivative at weight 325,
+normal width (100), generated from the official Open Sans variable font:
+https://github.com/googlefonts/opensans/blob/main/fonts/variable/OpenSans%5Bwdth%2Cwght%5D.ttf
+Copyright 2020 The Open Sans Project Authors.
+Distributed under the SIL Open Font License 1.1; see opensans-license.txt.
+Family names were changed to distinguish this custom instance from upstream.
+Reproduction script: tools/build_settings_font.py (requires fontTools).

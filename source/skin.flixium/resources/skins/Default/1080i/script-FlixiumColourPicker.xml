@@ -1,0 +1,301 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+	<defaultcontrol always="true">101</defaultcontrol>
+	<controls>
+		<include>FlixiumSettingsPageBackground</include>
+		<include>FlixiumSettingsFullPanel</include>
+		<control type="label">
+			<left>420</left>
+			<top>180</top>
+			<width>1080</width>
+			<height>70</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>$INFO[Window.Property(title)]</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>left</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="image">
+			<left>420</left>
+			<top>330</top>
+			<width>280</width>
+			<height>280</height>
+			<texture diffuse="special://skin/extras/settings-button-mask.png" colordiffuse="$INFO[Window.Property(colour)]" background="false">colors/white.png</texture>
+			<visible>!String.IsEmpty(Window.Property(colour))</visible>
+		</control>
+		<control type="label">
+			<left>420</left>
+			<top>620</top>
+			<width>280</width>
+			<height>50</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>$INFO[Window.Property(hex)]</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="button" id="101">
+			<left>760</left>
+			<top>330</top>
+			<width>740</width>
+			<height>100</height>
+			<include>FlixiumSettingButton</include>
+			<label />
+			<onup>noop</onup>
+			<ondown>102</ondown>
+			<onleft>noop</onleft>
+			<onright>noop</onright>
+		</control>
+		<control type="label">
+			<left>792</left>
+			<top>338</top>
+			<width>350</width>
+			<height>44</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>$LOCALIZE[31388]</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>left</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="label">
+			<left>1340</left>
+			<top>338</top>
+			<width>124</width>
+			<height>44</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>$INFO[Window.Property(red)]</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>right</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="progress" id="201">
+			<left>840</left>
+			<top>395</top>
+			<width>576</width>
+			<height>8</height>
+			<texturebg border="3" colordiffuse="35FFFFFF">special://skin/extras/scrollbar-rounded.png</texturebg>
+			<midtexture border="3" colordiffuse="FFFF7272">special://skin/extras/scrollbar-rounded.png</midtexture>
+			<lefttexture />
+			<righttexture />
+			<overlaytexture />
+		</control>
+		<control type="label">
+			<left>792</left>
+			<top>379</top>
+			<width>32</width>
+			<height>38</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>−</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="label">
+			<left>1432</left>
+			<top>379</top>
+			<width>32</width>
+			<height>38</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>+</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="button" id="102">
+			<left>760</left>
+			<top>446</top>
+			<width>740</width>
+			<height>100</height>
+			<include>FlixiumSettingButton</include>
+			<label />
+			<onup>101</onup>
+			<ondown>103</ondown>
+			<onleft>noop</onleft>
+			<onright>noop</onright>
+		</control>
+		<control type="label">
+			<left>792</left>
+			<top>454</top>
+			<width>350</width>
+			<height>44</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>$LOCALIZE[31389]</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>left</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="label">
+			<left>1340</left>
+			<top>454</top>
+			<width>124</width>
+			<height>44</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>$INFO[Window.Property(green)]</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>right</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="progress" id="202">
+			<left>840</left>
+			<top>511</top>
+			<width>576</width>
+			<height>8</height>
+			<texturebg border="3" colordiffuse="35FFFFFF">special://skin/extras/scrollbar-rounded.png</texturebg>
+			<midtexture border="3" colordiffuse="FF77DF99">special://skin/extras/scrollbar-rounded.png</midtexture>
+			<lefttexture />
+			<righttexture />
+			<overlaytexture />
+		</control>
+		<control type="label">
+			<left>792</left>
+			<top>495</top>
+			<width>32</width>
+			<height>38</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>−</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="label">
+			<left>1432</left>
+			<top>495</top>
+			<width>32</width>
+			<height>38</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>+</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="button" id="103">
+			<left>760</left>
+			<top>562</top>
+			<width>740</width>
+			<height>100</height>
+			<include>FlixiumSettingButton</include>
+			<label />
+			<onup>102</onup>
+			<ondown>113</ondown>
+			<onleft>noop</onleft>
+			<onright>noop</onright>
+		</control>
+		<control type="label">
+			<left>792</left>
+			<top>570</top>
+			<width>350</width>
+			<height>44</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>$LOCALIZE[31390]</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>left</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="label">
+			<left>1340</left>
+			<top>570</top>
+			<width>124</width>
+			<height>44</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>$INFO[Window.Property(blue)]</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>right</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="progress" id="203">
+			<left>840</left>
+			<top>627</top>
+			<width>576</width>
+			<height>8</height>
+			<texturebg border="3" colordiffuse="35FFFFFF">special://skin/extras/scrollbar-rounded.png</texturebg>
+			<midtexture border="3" colordiffuse="FF79B9FF">special://skin/extras/scrollbar-rounded.png</midtexture>
+			<lefttexture />
+			<righttexture />
+			<overlaytexture />
+		</control>
+		<control type="label">
+			<left>792</left>
+			<top>611</top>
+			<width>32</width>
+			<height>38</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>−</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="label">
+			<left>1432</left>
+			<top>611</top>
+			<width>32</width>
+			<height>38</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>+</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<align>center</align>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="button" id="110">
+			<left>420</left>
+			<top>700</top>
+			<width>280</width>
+			<height>70</height>
+			<include>FlixiumSettingButton</include>
+			<label>$LOCALIZE[31391]</label>
+			<onup>101</onup>
+			<ondown>112</ondown>
+			<onleft>noop</onleft>
+			<onright>113</onright>
+		</control>
+		<control type="button" id="113">
+			<left>760</left>
+			<top>700</top>
+			<width>740</width>
+			<height>70</height>
+			<include>FlixiumSettingButton</include>
+			<label>$LOCALIZE[31392]</label>
+			<onup>103</onup>
+			<ondown>111</ondown>
+			<onleft>110</onleft>
+			<onright>noop</onright>
+		</control>
+		<control type="button" id="112">
+			<left>880</left>
+			<top>830</top>
+			<width>290</width>
+			<height>70</height>
+			<include>FlixiumSettingButton</include>
+			<label>$LOCALIZE[31190]</label>
+			<onup>110</onup>
+			<ondown>noop</ondown>
+			<onleft>noop</onleft>
+			<onright>111</onright>
+		</control>
+		<control type="button" id="111">
+			<left>1210</left>
+			<top>830</top>
+			<width>290</width>
+			<height>70</height>
+			<include>FlixiumSettingButton</include>
+			<label>$LOCALIZE[31393]</label>
+			<onup>113</onup>
+			<ondown>noop</ondown>
+			<onleft>112</onleft>
+			<onright>noop</onright>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,86 @@
+[
+  {
+    "name": "Default",
+    "window": "202B3E",
+    "highlight": "7DABDC",
+    "dialog": "25324A",
+    "background": [
+      "0C1423",
+      "29435A",
+      "242C47"
+    ],
+    "glass": "B5CCE2"
+  },
+  {
+    "name": "Obsidian",
+    "window": "202329",
+    "highlight": "DEE6EF",
+    "dialog": "252A32",
+    "background": [
+      "101217",
+      "343E48",
+      "232A34"
+    ],
+    "glass": "C2CCD6"
+  },
+  {
+    "name": "Glacier",
+    "window": "1A303D",
+    "highlight": "71E2FA",
+    "dialog": "213B49",
+    "background": [
+      "0B192B",
+      "21565F",
+      "27374D"
+    ],
+    "glass": "B9DFE8"
+  },
+  {
+    "name": "Amethyst",
+    "window": "342B49",
+    "highlight": "CEAEFF",
+    "dialog": "3D304F",
+    "background": [
+      "171329",
+      "54365C",
+      "30304D"
+    ],
+    "glass": "D5C4EC"
+  },
+  {
+    "name": "Aurora",
+    "window": "203C39",
+    "highlight": "82E6BC",
+    "dialog": "294741",
+    "background": [
+      "0A2028",
+      "295D50",
+      "243C51"
+    ],
+    "glass": "B7DFD0"
+  },
+  {
+    "name": "Crimson Velvet",
+    "window": "432C3C",
+    "highlight": "FF91A0",
+    "dialog": "4C3043",
+    "background": [
+      "241424",
+      "633643",
+      "362C52"
+    ],
+    "glass": "E7C0CE"
+  },
+  {
+    "name": "Champagne Noir",
+    "window": "3D342B",
+    "highlight": "F2D29C",
+    "dialog": "473C30",
+    "background": [
+      "211C1A",
+      "5E4934",
+      "38333B"
+    ],
+    "glass": "E4D4B9"
+  }
+]

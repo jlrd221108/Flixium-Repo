@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+	<defaultcontrol always="true">100</defaultcontrol>
+	<controls>
+		<include>FlixiumSettingsPageBackground</include>
+		<include>FlixiumSettingsFullPanel</include>
+		<control type="label">
+			<left>320</left>
+			<top>155</top>
+			<width>1280</width>
+			<height>70</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>$LOCALIZE[31337]</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="label">
+			<left>320</left>
+			<top>220</top>
+			<width>1280</width>
+			<height>40</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+			<label>$LOCALIZE[31384]</label>
+			<textcolor>C8FFFFFF</textcolor>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="label">
+			<left>320</left>
+			<top>270</top>
+			<width>600</width>
+			<height>50</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>$LOCALIZE[31047]</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="list" id="100">
+			<left>320</left>
+			<top>334</top>
+			<width>600</width>
+			<height>504</height>
+			<onleft>noop</onleft>
+			<onright>200</onright>
+			<onup>noop</onup>
+			<ondown>301</ondown>
+			<scrolltime>150</scrolltime>
+			<itemlayout width="600" height="84">
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>600</width>
+					<height>78</height>
+					<texture border="28" colordiffuse="$VAR[GlassSettingsRowTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+				</control>
+				<control type="label">
+					<left>24</left>
+					<top>5</top>
+					<width>438</width>
+					<height>38</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>FFFFFFFF</textcolor>
+					<aligny>center</aligny>
+					<shadowcolor>00000000</shadowcolor>
+				</control>
+				<control type="label">
+					<left>24</left>
+					<top>42</top>
+					<width>552</width>
+					<height>30</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+					<label>$INFO[ListItem.Label2]</label>
+					<textcolor>C8FFFFFF</textcolor>
+					<aligny>center</aligny>
+					<shadowcolor>00000000</shadowcolor>
+				</control>
+				<control type="label">
+					<left>466</left>
+					<top>5</top>
+					<width>110</width>
+					<height>38</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+					<label>$INFO[ListItem.Property(active)]</label>
+					<textcolor>C8FFFFFF</textcolor>
+					<aligny>center</aligny>
+					<shadowcolor>00000000</shadowcolor>
+					<align>right</align>
+				</control>
+			</itemlayout>
+			<focusedlayout width="600" height="84">
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>600</width>
+					<height>78</height>
+					<texture border="28" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassSettingsRowFocusVar]</texture>
+					<animation effect="fade" start="65" end="65" condition="!Control.HasFocus(100)">Conditional</animation>
+				</control>
+				<control type="label">
+					<left>24</left>
+					<top>5</top>
+					<width>438</width>
+					<height>38</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>FFFFFFFF</textcolor>
+					<aligny>center</aligny>
+					<shadowcolor>00000000</shadowcolor>
+					<scroll>true</scroll>
+				</control>
+				<control type="label">
+					<left>24</left>
+					<top>42</top>
+					<width>552</width>
+					<height>30</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+					<label>$INFO[ListItem.Label2]</label>
+					<textcolor>C8FFFFFF</textcolor>
+					<aligny>center</aligny>
+					<shadowcolor>00000000</shadowcolor>
+				</control>
+				<control type="label">
+					<left>466</left>
+					<top>5</top>
+					<width>110</width>
+					<height>38</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+					<label>$INFO[ListItem.Property(active)]</label>
+					<textcolor>C8FFFFFF</textcolor>
+					<aligny>center</aligny>
+					<shadowcolor>00000000</shadowcolor>
+					<align>right</align>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="label">
+			<left>1000</left>
+			<top>270</top>
+			<width>600</width>
+			<height>50</height>
+			<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+			<label>$LOCALIZE[31385]</label>
+			<textcolor>FFFFFFFF</textcolor>
+			<aligny>center</aligny>
+			<shadowcolor>00000000</shadowcolor>
+		</control>
+		<control type="list" id="200">
+			<left>1000</left>
+			<top>334</top>
+			<width>600</width>
+			<height>504</height>
+			<onleft>100</onleft>
+			<onright>noop</onright>
+			<onup>noop</onup>
+			<ondown>302</ondown>
+			<scrolltime>150</scrolltime>
+			<itemlayout width="600" height="84">
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>600</width>
+					<height>78</height>
+					<texture border="28" colordiffuse="$VAR[GlassSettingsRowTintVar]">$VAR[GlassSettingsRowSurfaceVar]</texture>
+				</control>
+				<control type="label">
+					<left>24</left>
+					<top>5</top>
+					<width>438</width>
+					<height>38</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>FFFFFFFF</textcolor>
+					<aligny>center</aligny>
+					<shadowcolor>00000000</shadowcolor>
+				</control>
+				<control type="label">
+					<left>24</left>
+					<top>42</top>
+					<width>552</width>
+					<height>30</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+					<label>$INFO[ListItem.Label2]</label>
+					<textcolor>C8FFFFFF</textcolor>
+					<aligny>center</aligny>
+					<shadowcolor>00000000</shadowcolor>
+				</control>
+				<control type="label">
+					<left>466</left>
+					<top>5</top>
+					<width>110</width>
+					<height>38</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+					<label>$INFO[ListItem.Property(active)]</label>
+					<textcolor>C8FFFFFF</textcolor>
+					<aligny>center</aligny>
+					<shadowcolor>00000000</shadowcolor>
+					<align>right</align>
+				</control>
+			</itemlayout>
+			<focusedlayout width="600" height="84">
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>600</width>
+					<height>78</height>
+					<texture border="28" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassSettingsRowFocusVar]</texture>
+					<animation effect="fade" start="65" end="65" condition="!Control.HasFocus(200)">Conditional</animation>
+				</control>
+				<control type="label">
+					<left>24</left>
+					<top>5</top>
+					<width>438</width>
+					<height>38</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsLabel</include>
+					<label>$INFO[ListItem.Label]</label>
+					<textcolor>FFFFFFFF</textcolor>
+					<aligny>center</aligny>
+					<shadowcolor>00000000</shadowcolor>
+					<scroll>true</scroll>
+				</control>
+				<control type="label">
+					<left>24</left>
+					<top>42</top>
+					<width>552</width>
+					<height>30</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+					<label>$INFO[ListItem.Label2]</label>
+					<textcolor>C8FFFFFF</textcolor>
+					<aligny>center</aligny>
+					<shadowcolor>00000000</shadowcolor>
+				</control>
+				<control type="label">
+					<left>466</left>
+					<top>5</top>
+					<width>110</width>
+					<height>38</height>
+					<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+					<label>$INFO[ListItem.Property(active)]</label>
+					<textcolor>C8FFFFFF</textcolor>
+					<aligny>center</aligny>
+					<shadowcolor>00000000</shadowcolor>
+					<align>right</align>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="button" id="301">
+			<left>320</left>
+			<top>875</top>
+			<width>600</width>
+			<height>70</height>
+			<include>FlixiumSettingButton</include>
+			<label>$LOCALIZE[31049]</label>
+			<onup>100</onup>
+			<ondown>noop</ondown>
+			<onleft>noop</onleft>
+			<onright>302</onright>
+		</control>
+		<control type="button" id="302">
+			<left>1000</left>
+			<top>875</top>
+			<width>330</width>
+			<height>70</height>
+			<include>FlixiumSettingButton</include>
+			<label>$LOCALIZE[31386]</label>
+			<onup>200</onup>
+			<ondown>noop</ondown>
+			<onleft>301</onleft>
+			<onright>300</onright>
+		</control>
+		<control type="button" id="300">
+			<left>1370</left>
+			<top>875</top>
+			<width>230</width>
+			<height>70</height>
+			<include>FlixiumSettingButton</include>
+			<label>$LOCALIZE[31387]</label>
+			<onup>200</onup>
+			<ondown>noop</ondown>
+			<onleft>302</onleft>
+			<onright>noop</onright>
+		</control>
+	</controls>
+</window>

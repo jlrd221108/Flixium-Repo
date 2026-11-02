@@ -1453,46 +1453,115 @@
 
 
 	<include name="FlixiumGenreTileContent">
-		<param name="left">24</param><param name="width">237</param>
-		<param name="top">11.25</param><param name="height">147.75</param>
-		<param name="horror_left">116</param><param name="horror_width">146</param>
-		<param name="icon_left">32</param><param name="icon_top">29</param>
+		<param name="left">24</param><param name="width">294.5</param>
+		<param name="top">11.25</param><param name="height">180</param>
+		<param name="horror_left">127.25</param><param name="horror_width">180</param>
+		<param name="icon_left">35.280117</param><param name="icon_top">45.242471</param>
 		<param name="icon_width">76</param><param name="icon_height">112</param>
+		<param name="scifi_left">34.340812</param><param name="scifi_top">46.464584</param>
+		<param name="crime_left">62.042809</param><param name="crime_top">47.176798</param>
+		<param name="mystery_left">55.568495</param><param name="mystery_top">49.060928</param>
+		<param name="thriller_left">58.993234</param><param name="thriller_top">43.765515</param>
+		<param name="fantasy_left">54.803992</param><param name="fantasy_top">47.456710</param>
+		<!-- Center visible artwork between the card edge and each rendered word, accounting for canvas padding. -->
+		<param name="drama_left">57.411091</param><param name="drama_top">44.488</param>
+		<!-- Match the visible artwork diagonal to Drama (110.42px), preserving its center. -->
+		<param name="romance_left">49.631774</param><param name="romance_top">44.097128</param>
+		<param name="comedy_left">54.330221</param><param name="comedy_top">43.978089</param>
+		<param name="action_left">57.604954</param><param name="action_top">47.651239</param>
+		<param name="adventure_left">47.934515</param><param name="adventure_top">48.385060</param>
 		<definition>
 			<control type="label">
 				<description>Genre name</description>
 				<left>$PARAM[left]</left><top>$PARAM[top]</top><width>$PARAM[width]</width><height>$PARAM[height]</height>
 				<font>FlixiumGenreLabel</font><align>center</align><aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label><textcolor>FFFFFFFF</textcolor>
-				<visible>![String.IsEqual(ListItem.Label,Horror) | String.IsEqual(ListItem.Label,Drama) | String.IsEqual(ListItem.Label,Romance)]</visible>
+				<visible>![String.IsEqual(ListItem.Label,Horror) | String.IsEqual(ListItem.Label,Drama) | String.IsEqual(ListItem.Label,Romance) | String.IsEqual(ListItem.Label,Comedy) | String.IsEqual(ListItem.Label,Action) | String.IsEqual(ListItem.Label,Adventure) | String.IsEqual(ListItem.Label,Fantasy) | String.IsEqual(ListItem.Label,Thriller) | String.IsEqual(ListItem.Label,Mystery) | String.IsEqual(ListItem.Label,Crime) | String.IsEqual(ListItem.Label,Science Fiction) | String.IsEqual(ListItem.Label,Sci-Fi)]</visible>
 			</control>
 			<control type="image">
 				<description>Horror Scream preview</description>
 				<left>$PARAM[icon_left]</left><top>$PARAM[icon_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
-				<animation effect="zoom" start="73.8" end="73.8" center="auto" time="0" condition="true">Conditional</animation>
+				<animation effect="zoom" start="85.688140" end="85.688140" center="auto" time="0" condition="true">Conditional</animation>
 				<aspectratio>keep</aspectratio><texture>special://skin/media/genres/horror-scream.png</texture>
 				<visible>String.IsEqual(ListItem.Label,Horror)</visible>
 			</control>
 			<control type="image">
 				<description>Drama supplied icon</description>
-				<left>$PARAM[icon_left]</left><top>$PARAM[icon_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<left>$PARAM[drama_left]</left><top>$PARAM[drama_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
 				<animation effect="zoom" start="139.8" end="139.8" center="auto" time="0" condition="true">Conditional</animation>
 				<aspectratio>keep</aspectratio><texture>$VAR[FlixiumGenrePreviewVar]</texture>
 				<visible>String.IsEqual(ListItem.Label,Drama)</visible>
 			</control>
 			<control type="image">
 				<description>Romance supplied icon</description>
-				<left>$PARAM[icon_left]</left><top>$PARAM[icon_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
-				<animation effect="zoom" start="123.1" end="123.1" center="auto" time="0" condition="true">Conditional</animation>
+				<left>$PARAM[romance_left]</left><top>$PARAM[romance_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="123.004861" end="123.004861" center="auto" time="0" condition="true">Conditional</animation>
 				<aspectratio>keep</aspectratio><texture>$VAR[FlixiumGenrePreviewVar]</texture>
 				<visible>String.IsEqual(ListItem.Label,Romance)</visible>
+			</control>
+			<control type="image">
+				<description>Comedy jester icon</description>
+				<left>$PARAM[comedy_left]</left><top>$PARAM[comedy_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="116.329975" end="116.329975" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>special://skin/media/genres/comedy-jester.png</texture>
+				<visible>String.IsEqual(ListItem.Label,Comedy)</visible>
+			</control>
+			<control type="image">
+				<description>Action AK-47 icon</description>
+				<left>$PARAM[action_left]</left><top>$PARAM[action_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="108.637646" end="108.637646" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>special://skin/media/genres/action-ak47.png</texture>
+				<visible>String.IsEqual(ListItem.Label,Action)</visible>
+			</control>
+			<control type="image">
+				<description>Adventure fedora rope and compass icon</description>
+				<left>$PARAM[adventure_left]</left><top>$PARAM[adventure_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="110.299856" end="110.299856" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>special://skin/media/genres/adventure-fedora-rope-compass.png</texture>
+				<visible>String.IsEqual(ListItem.Label,Adventure)</visible>
+			</control>
+			<control type="image">
+				<description>Fantasy wizard hat icon</description>
+				<left>$PARAM[fantasy_left]</left><top>$PARAM[fantasy_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="107.539650" end="107.539650" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>special://skin/media/genres/fantasy-wizard-hat.png</texture>
+				<visible>String.IsEqual(ListItem.Label,Fantasy)</visible>
+			</control>
+			<control type="image">
+				<description>Thriller cleaver icon</description>
+				<left>$PARAM[thriller_left]</left><top>$PARAM[thriller_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="121.748141" end="121.748141" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>special://skin/media/genres/thriller-cleaver.png</texture>
+				<visible>String.IsEqual(ListItem.Label,Thriller)</visible>
+			</control>
+			<control type="image">
+				<description>Mystery detective magnifier icon</description>
+				<left>$PARAM[mystery_left]</left><top>$PARAM[mystery_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="108.151578" end="108.151578" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>special://skin/media/genres/mystery-detective.png</texture>
+				<visible>String.IsEqual(ListItem.Label,Mystery)</visible>
+			</control>
+			<control type="image">
+				<description>Crime handcuffs icon</description>
+				<left>$PARAM[crime_left]</left><top>$PARAM[crime_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="111.268692" end="111.268692" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>special://skin/media/genres/crime-handcuffs.png</texture>
+				<visible>String.IsEqual(ListItem.Label,Crime)</visible>
+			</control>
+			<control type="image">
+				<description>Science Fiction UFO icon</description>
+				<left>$PARAM[scifi_left]</left><top>$PARAM[scifi_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="108.765951" end="108.765951" center="auto" time="0" condition="true">Conditional</animation>
+				<animation effect="slide" start="0,0" end="26,0" time="0" condition="Window.IsActive(home) + String.IsEqual(ListItem.Label,Sci-Fi)">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>special://skin/media/genres/scifi-ufo.png</texture>
+				<visible>String.IsEqual(ListItem.Label,Science Fiction) | String.IsEqual(ListItem.Label,Sci-Fi)</visible>
 			</control>
 			<control type="label">
 				<description>Genre name beside icon</description>
 				<left>$PARAM[horror_left]</left><top>$PARAM[top]</top><width>$PARAM[horror_width]</width><height>$PARAM[height]</height>
 				<font>FlixiumGenreLabel</font><align>center</align><aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label><textcolor>FFFFFFFF</textcolor>
-				<visible>String.IsEqual(ListItem.Label,Horror) | String.IsEqual(ListItem.Label,Drama) | String.IsEqual(ListItem.Label,Romance)</visible>
+				<visible>String.IsEqual(ListItem.Label,Horror) | String.IsEqual(ListItem.Label,Drama) | String.IsEqual(ListItem.Label,Romance) | String.IsEqual(ListItem.Label,Comedy) | String.IsEqual(ListItem.Label,Action) | String.IsEqual(ListItem.Label,Adventure) | String.IsEqual(ListItem.Label,Fantasy) | String.IsEqual(ListItem.Label,Thriller) | String.IsEqual(ListItem.Label,Mystery) | String.IsEqual(ListItem.Label,Crime) | String.IsEqual(ListItem.Label,Science Fiction) | String.IsEqual(ListItem.Label,Sci-Fi)</visible>
 			</control>
 		</definition>
 	</include>
@@ -1505,11 +1574,11 @@
 		<control type="group">
 			<visible>String.IsEqual(ListItem.DBType,episode)</visible>
 			<control type="image">
-				<left>11.25</left><top>124.5</top><width>262.5</width><height>34.5</height>
+				<left>11.25</left><top>156.75</top><width>320</width><height>34.5</height>
 				<texture colordiffuse="66000000">colors/white.png</texture>
 			</control>
 			<control type="label">
-				<left>21.25</left><top>128</top><width>242.5</width><height>24</height>
+				<left>21.25</left><top>162</top><width>300</width><height>24</height>
 				<font>font20_title</font><aligny>center</aligny><scroll>false</scroll>
 				<textcolor>FFD0D0D0</textcolor><shadowcolor>DD000000</shadowcolor>
 				<label>$VAR[FlixiumWidgetEpisodeCaptionVar]</label>

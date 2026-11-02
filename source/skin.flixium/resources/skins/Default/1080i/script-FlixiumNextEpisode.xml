@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+	<defaultcontrol always="true">10</defaultcontrol>
+	<controls>
+		<control type="group">
+			<left>1216</left>
+			<top>948</top>
+			<width>640</width>
+			<height>72</height>
+			<control type="button" id="11">
+				<left>0</left>
+				<top>0</top>
+				<width>290</width>
+				<height>72</height>
+				<label>$LOCALIZE[31406]</label>
+				<font>FlixiumProfileHeading</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textoffsetx>0</textoffsetx>
+				<textcolor>FFFFFFFF</textcolor>
+				<focusedcolor>FFFFFFFF</focusedcolor>
+				<shadowcolor>00000000</shadowcolor>
+				<onleft>10</onleft>
+				<onright>10</onright>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<texturefocus border="12" colordiffuse="FF696969">special://skin/extras/settings-button-mask.png</texturefocus>
+				<texturenofocus border="12" colordiffuse="FF555555">special://skin/extras/settings-button-mask.png</texturenofocus>
+			</control>
+			<control type="progress" id="30">
+				<left>310</left>
+				<top>0</top>
+				<width>330</width>
+				<height>72</height>
+				<reveal>true</reveal>
+				<texturebg border="12" colordiffuse="FFB3B3B3">special://skin/extras/settings-button-mask.png</texturebg>
+				<midtexture border="12" colordiffuse="FFFFFFFF">special://skin/extras/settings-button-mask.png</midtexture>
+				<lefttexture />
+				<righttexture />
+				<overlaytexture />
+				<info />
+			</control>
+			<control type="button" id="10">
+				<left>310</left>
+				<top>0</top>
+				<width>330</width>
+				<height>72</height>
+				<label />
+				<font>FlixiumProfileHeading</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>0</textoffsetx>
+				<textcolor>FF000000</textcolor>
+				<focusedcolor>FF000000</focusedcolor>
+				<shadowcolor>00000000</shadowcolor>
+				<onleft>11</onleft>
+				<onright>11</onright>
+				<onup>noop</onup>
+				<ondown>noop</ondown>
+				<texturefocus />
+				<texturenofocus />
+			</control>
+			<control type="image">
+				<left>322</left>
+				<top>12</top>
+				<width>48</width>
+				<height>48</height>
+				<aspectratio>keep</aspectratio>
+				<texture colordiffuse="FF000000">osd/fullscreen/buttons/play.png</texture>
+			</control>
+			<control type="label">
+				<left>382</left>
+				<top>0</top>
+				<width>244</width>
+				<height>72</height>
+				<label>$LOCALIZE[31407]</label>
+				<font>FlixiumProfileHeading</font>
+				<textcolor>FF000000</textcolor>
+				<shadowcolor>00000000</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+			</control>
+		</control>
+	</controls>
+</window>

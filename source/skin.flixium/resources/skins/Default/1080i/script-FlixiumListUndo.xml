@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<window>
+ <defaultcontrol always="true">201</defaultcontrol>
+ <controls>
+  <control type="group">
+   <left>560</left><top>930</top>
+   <animation effect="fade" start="0" end="100" time="120">WindowOpen</animation>
+   <control type="image"><width>800</width><height>90</height><texture border="24" colordiffuse="$VAR[GlassThemePanelTintVar]">$VAR[GlassDialogSurfaceVar]</texture></control>
+   <control type="label"><left>28</left><width>490</width><height>90</height><font>font20_title</font><label>$LOCALIZE[31404]</label><textcolor>white</textcolor><aligny>center</aligny></control>
+   <control type="button" id="201"><left>540</left><top>12</top><width>170</width><height>66</height><label>$LOCALIZE[31405]</label><include>FlixiumSettingsButtonStyle</include><font>font20_title</font><align>center</align><onright>202</onright><onleft>202</onleft></control>
+   <control type="button" id="202"><left>724</left><top>12</top><width>64</width><height>66</height><label>×</label><include>FlixiumSettingsButtonStyle</include><font>font20_title</font><align>center</align><onright>201</onright><onleft>201</onleft></control>
+  </control>
+ </controls>
+</window>

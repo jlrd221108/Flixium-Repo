@@ -51,6 +51,16 @@
   <param name="horror_left" value="176" /><param name="horror_width" value="200" />
   <param name="icon_left" value="58" /><param name="icon_top" value="40" />
   <param name="icon_width" value="116" /><param name="icon_height" value="160" />
+  <param name="drama_left" value="58" /><param name="drama_top" value="40" />
+  <param name="romance_left" value="58" /><param name="romance_top" value="40" />
+  <param name="comedy_left" value="58" /><param name="comedy_top" value="40" />
+  <param name="action_left" value="58" /><param name="action_top" value="40" />
+  <param name="adventure_left" value="58" /><param name="adventure_top" value="40" />
+  <param name="fantasy_left" value="58" /><param name="fantasy_top" value="40" />
+  <param name="thriller_left" value="58" /><param name="thriller_top" value="40" />
+  <param name="mystery_left" value="58" /><param name="mystery_top" value="40" />
+  <param name="crime_left" value="58" /><param name="crime_top" value="40" />
+  <param name="scifi_left" value="58" /><param name="scifi_top" value="40" />
  </include>
 </control>
 </control>

@@ -1,5 +1,11 @@
 # Release notes
 
+## Skin 1.1.28 - 2026-11-02
+
+- Refine home widget positioning, poster focus highlights and genre icon artwork.
+- Verify every runtime file against the ZIP and include all 122 skin layouts.
+- Helper 1.0.45 and all native visualizer packages, paths and checksums remain unchanged.
+
 ## Skin 1.1.27 — 2026-10-29
 
 - Publish current home widgets, My List and Flix layout refinements.

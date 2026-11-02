@@ -1,5 +1,5 @@
 {
-  "release": "v1.1.27",
+  "release": "v1.1.28",
   "index": "index/omega/addons.xml",
   "packages": [
     {
@@ -21,13 +21,13 @@
       "sha256": "8de46a38666a7c4ad1826cc012148caf6fe9ad1edaf3b59d9750d0e3e4aad59c"
     },
     {
-      "file": "skin.flixium-1.1.27.zip",
+      "file": "skin.flixium-1.1.28.zip",
       "id": "skin.flixium",
-      "version": "1.1.27",
+      "version": "1.1.28",
       "platform": "all",
-      "path": "v1.1.27/skin.flixium-1.1.27.zip",
-      "bytes": 22039899,
-      "sha256": "fb3a12e07256ee9c20ead87ab8685cb73438d041293ae199b7a924109d4e9cfe"
+      "path": "v1.1.28/skin.flixium-1.1.28.zip",
+      "bytes": 28059317,
+      "sha256": "6a03b7d76d4bf7e92dd93f1df056e5d7c03e8b23423acf45ea80084e8ba65a60"
     },
     {
       "file": "visualization.flixium-1.2.0-android-arm64-v8a.zip",

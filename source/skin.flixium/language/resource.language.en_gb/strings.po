@@ -1,0 +1,4083 @@
+# Kodi Media Center language file
+# Addon Name: Flixium
+# Addon id: skin.flixium
+# Addon Provider: phil65, Ichabod Fletchman
+msgid ""
+msgstr ""
+"Project-Id-Version: KODI Main\n"
+"Report-Msgid-Bugs-To: https://github.com/xbmc/xbmc/issues/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: English (United Kingdom) (http://www.transifex.com/projects/p/kodi-main/language/en_GB/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en_GB\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "Addon Summary"
+msgid "A focused cinematic Kodi skin for local movie and TV libraries."
+msgstr ""
+
+msgctxt "Addon Description"
+msgid "Flixium presents local movies and TV shows with artwork-led Flix views, adaptive blurred backgrounds, configurable metadata, and a streamlined home experience."
+msgstr ""
+
+msgctxt "Addon Disclaimer"
+msgid "Flixium is an optional custom skin for Kodi."
+msgstr ""
+
+#: /xml/Home.xml /xml/DialogSeekBar.xml
+msgctxt "#31000"
+msgid "Now playing"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31001"
+msgid "Search..."
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31002"
+msgid "Show media fanart as background"
+msgstr ""
+
+#: /xml/DialogVideoInfo.xml
+msgctxt "#31003"
+msgid "Cinema mode"
+msgstr ""
+
+#: /xml/VideoOSD.xml
+msgctxt "#31004"
+msgid "Change mode"
+msgstr ""
+
+#: /xml/VideoOSD.xml
+msgctxt "#31005"
+msgid "Watch as 2D"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31006"
+msgid "Random movies"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31007"
+msgid "Unwatched movies"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31008"
+msgid "Enable category widgets"
+msgstr ""
+
+#: /xml/MyVideoNav.xml
+msgctxt "#31009"
+msgid "Download icons"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31010"
+msgid "In progress movies"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31011"
+msgid "Most played albums"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31012"
+msgid "Random albums"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31013"
+msgid "Random artists"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31014"
+msgid "Unplayed albums"
+msgstr ""
+
+#. home screen recordings widget: recent tv / radio recordings
+#: /xml/Home.xml
+msgctxt "#31015"
+msgid "Recent recordings"
+msgstr ""
+
+#. home screen channel widget: recently played tv channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+#: /xml/Home.xml
+msgctxt "#31016"
+msgid "Recently played channels"
+msgstr ""
+
+#: /xml/DialogVideoInfo.xml
+msgctxt "#31017"
+msgid "Rated"
+msgstr ""
+
+#. home screen channel widget: recently played radio channels. (please note that in some non-english languages #31018 and #31016 might not be equal)
+#: /xml/Home.xml
+msgctxt "#31018"
+msgid "Recently played channels"
+msgstr ""
+
+#: /xml/Home.xml /xml/MyWeather.xml
+msgctxt "#31019"
+msgid "Forecast"
+msgstr ""
+
+#: /xml/MyMusicNav.xml /xml/MyPics.xml /xml/MyVideoNav.xml
+msgctxt "#31020"
+msgid "Actions"
+msgstr ""
+
+#: /xml/AddonBrowser.xml /xml/DialogPVRChannelManager.xml /xml/Includes_MediaMenu.xml /xml/EventLog.xml
+msgctxt "#31021"
+msgid "Misc options"
+msgstr ""
+
+#: /xml/Includes_MediaMenu.xml /xml/Includes.xml
+msgctxt "#31022"
+msgid "Sort by"
+msgstr ""
+
+#: /xml/Includes_MediaMenu.xml
+msgctxt "#31023"
+msgid "Viewtype"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31024"
+msgid "Choose rating to display for media items"
+msgstr ""
+
+#: /xml/DialogFavourites.xml
+msgctxt "#31025"
+msgid "No favourites found. You can add any item from media views to this list by using the context menu."
+msgstr ""
+
+#: /xml/DialogSeekBar.xml
+msgctxt "#31026"
+msgid "Timeshift"
+msgstr ""
+
+msgctxt "#31027"
+msgid "Next aired"
+msgstr ""
+
+#: /xml/DialogAlbumInfo.xml /xml/DialogVideoInfo.xml
+msgctxt "#31028"
+msgid "Show fanart"
+msgstr ""
+
+#: /xml/SettingsProfile.xml
+msgctxt "#31029"
+msgid "Last logged in"
+msgstr ""
+
+#: /xml/SettingsSystemInfo.xml
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the system memory usage
+msgctxt "#31030"
+msgid "System memory usage"
+msgstr ""
+
+#: /xml/SettingsSystemInfo.xml
+msgctxt "#31031"
+msgid "Version info"
+msgstr ""
+
+#: /xml/EventLog.xml /xml/Includes_MediaMenu.xml /xml/SmartPlaylistEditor.xml
+msgctxt "#31032"
+msgid "Order"
+msgstr ""
+
+#: /xml/DialogVideoInfo.xml /xml/DialogSongInfo.xml
+msgctxt "#31033"
+msgid "Your rating"
+msgstr ""
+
+#: /xml/DialogVideoInfo.xml
+msgctxt "#31034"
+msgid "Extended info"
+msgstr ""
+
+#: /xml/DialogPVRChannelManager.xml /xml/DialogPVRChannelsOSD.xml /xml/DialogPVRGuideOSD.xml /xml/Variables.xml /xml/FileBrowser.xml
+msgctxt "#31035"
+msgid "Pages"
+msgstr ""
+
+#: /xml/FileBrowser.xml /xml/Variables.xml /xml/MyPVRRecordings.xml
+msgctxt "#31036"
+msgid "items"
+msgstr ""
+
+#: /xml/Includes.xml
+msgctxt "#31037"
+msgid "Selected track"
+msgstr ""
+
+#: /xml/Variables.xml
+msgctxt "#31038"
+msgid "Rewind"
+msgstr ""
+
+#: /xml/Variables.xml
+msgctxt "#31039"
+msgid "Fast forward"
+msgstr ""
+
+#empty string with id 31040
+
+#: /xml/Variables.xml /xml/MyPics.xml
+msgctxt "#31041"
+msgid "Camera manufacturer"
+msgstr ""
+
+#: /xml/SmartPlaylistEditor.xml
+msgctxt "#31042"
+msgid "Playlist options"
+msgstr ""
+
+#: /xml/SmartPlaylistEditor.xml
+msgctxt "#31043"
+msgid "Set the type and add rules to create a smart playlist. These playlists are dynamic and include all media items from your database which apply to your chosen rules."
+msgstr ""
+
+#: /xml/DialogPVRGroupManager.xml
+msgctxt "#31044"
+msgid "Add group"
+msgstr ""
+
+#: /xml/DialogPVRGroupManager.xml
+msgctxt "#31045"
+msgid "Rename group"
+msgstr ""
+
+#: /xml/DialogPVRGroupManager.xml
+msgctxt "#31046"
+msgid "Delete group"
+msgstr ""
+
+#empty string with id 31047
+
+#: /xml/DialogVideoInfo.xml
+msgctxt "#31048"
+msgid "Available"
+msgstr ""
+
+#empty strings from id 31049 to 31051
+
+#: /xml/Includes.xml
+msgctxt "#31052"
+msgid "filtered"
+msgstr ""
+
+#: /xml/Font.xml
+msgctxt "#31053"
+msgid "Arial based"
+msgstr ""
+
+#: /xml/Variables.xml
+msgctxt "#31054"
+msgid "Press [B]Left[/B] to step back, or [B]Right[/B] to step forward"
+msgstr ""
+
+#: /xml/Variables.xml
+msgctxt "#31055"
+msgid "Press [B]Right[/B] to frame advance"
+msgstr ""
+
+#: /xml/MyMusicNav.xml /xml/MyVideoNav.xml
+msgctxt "#31056"
+msgid "Go to playlist"
+msgstr ""
+
+#: /xml/SettingsProfile.xml
+msgctxt "#31057"
+msgid "Show login screen on startup"
+msgstr ""
+
+#: /xml/SettingsProfile.xml
+msgctxt "#31058"
+msgid "Automatic Login on startup"
+msgstr ""
+
+#empty strings from id 31059 to 31060
+
+#: /xml/SkinSettings.xml
+msgctxt "#31061"
+msgid "Main menu items"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31062"
+msgid "Choose weather fanart pack"
+msgstr ""
+
+#: /xml/Includes_MediaMenu.xml
+msgctxt "#31063"
+msgid "Sections"
+msgstr ""
+
+#empty string with id 31064
+
+#: /xml/MyVideoPlaylist.xml
+msgctxt "#31065"
+msgid "Video playlist"
+msgstr ""
+
+#: /xml/MyMusicPlaylist.xml
+msgctxt "#31066"
+msgid "Music playlist"
+msgstr ""
+
+#: /xml/EventLog.xml
+msgctxt "#31067"
+msgid "Event log"
+msgstr ""
+
+#: /xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31068"
+msgid "Choose presets"
+msgstr ""
+
+#: /xml/AddonBrowser.xml
+msgctxt "#31069"
+msgid "Last Updated"
+msgstr ""
+
+#empty string with id 31070
+
+#: /xml/DialogAddonInfo.xml
+msgctxt "#31071"
+msgid "by"
+msgstr ""
+
+#: /xml/DialogButtonMenu.xml /xml/LoginScreen.xml
+msgctxt "#31072"
+msgid "Power Options"
+msgstr ""
+
+#: /xml/MyPlaylist.xml
+msgctxt "#31073"
+msgid "Total length"
+msgstr ""
+
+#: /xml/MyPlaylist.xml
+msgctxt "#31074"
+msgid "Total duration"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31075"
+msgid "Movie sets"
+msgstr ""
+
+#empty strings from id 31076 to 31078
+
+#: /xml/DialogVideoInfo.xml
+msgctxt "#31079"
+msgid "Cast not available"
+msgstr ""
+
+#: /xml/VideoOSD.xml
+msgctxt "#31080"
+msgid "Ends at"
+msgstr ""
+
+#empty string with id 31081
+
+#: /xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31082"
+msgid "Lyrics add-on"
+msgstr ""
+
+#: /xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31083"
+msgid "Lyrics add-on settings"
+msgstr ""
+
+#: /xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31084"
+msgid "Visualisation settings"
+msgstr ""
+
+#empty strings from id 31085 to 31088
+
+#: /xml/DialogPVRGroupManager.xml
+msgctxt "#31089"
+msgid "Available groups"
+msgstr ""
+
+#empty strings from id 31090 to 31091
+
+#: /xml/VideoOSD.xml /xml/Variables.xml
+msgctxt "#31092"
+msgid "Video menu"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31093"
+msgid "Show weather info in top bar"
+msgstr ""
+
+#empty string with id 31094
+
+#: /xml/SkinSettings.xml
+msgctxt "#31095"
+msgid "Use slide animations"
+msgstr ""
+
+#: /xml/DialogSubtitles.xml
+msgctxt "#31096"
+msgid "Local subtitle available"
+msgstr ""
+
+#: /xml/DialogPVRChannelManager.xml
+msgctxt "#31097"
+msgid "Channel options"
+msgstr ""
+
+#: /xml/LoginScreen.xml
+msgctxt "#31098"
+msgid "Who's watching?"
+msgstr ""
+
+#. viewtype name
+#: /xml/View_52_IconWall.xml
+msgctxt "#31099"
+msgid "IconWall"
+msgstr ""
+
+#. viewtype name
+#: /xml/View_53_Shift.xml
+msgctxt "#31100"
+msgid "Shift"
+msgstr ""
+
+#. viewtype name
+#: /xml/View_54_InfoWall.xml
+msgctxt "#31101"
+msgid "InfoWall"
+msgstr ""
+
+#. viewtype name
+#: /xml/View_500_Wall.xml
+msgctxt "#31102"
+msgid "Wall"
+msgstr ""
+
+#: /xml/SmartPlaylistRule.xml
+msgctxt "#31103"
+msgid "Enter text here..."
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31104"
+msgid "Your library is empty. Add a media source and configure it"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31105"
+msgid "Add video sources and set the appropriate content type in order to populate your video libraries."
+msgstr ""
+
+#: /xml/Variables.xml
+msgctxt "#31106"
+msgid "Teletext"
+msgstr ""
+
+#. viewtype name
+#: /xml/View_55_WideList.xml
+msgctxt "#31107"
+msgid "WideList"
+msgstr ""
+
+#empty strings from id 31108 to 31109
+
+#: /xml/Home.xml
+msgctxt "#31110"
+msgid "Enter files section"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31111"
+msgid "View your personal pictures or download one of the many image add-ons from the official repository."
+msgstr ""
+
+#: /xml/VideoOSD.xml
+msgctxt "#31112"
+msgid "Toggle audio stream"
+msgstr ""
+
+#: /xml/Custom_1107_SearchDialog.xml
+msgctxt "#31113"
+msgid "Search local library"
+msgstr ""
+
+#: /xml/Custom_1107_SearchDialog.xml
+msgctxt "#31114"
+msgid "Search YouTube"
+msgstr ""
+
+#: /xml/VideoOSD.xml
+msgctxt "#31115"
+msgid "Toggle subtitle"
+msgstr ""
+
+#: /xml/Includes_Home.xml
+msgctxt "#31116"
+msgid "Remove this main menu item"
+msgstr ""
+
+#: /xml/MyVideoNav.xml
+msgctxt "#31117"
+msgid "Edit nodes"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31118"
+msgid "Enter add-on browser"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31119"
+msgid "You do not have any add-ons installed yet. Visit our add-on browser to browse through our collection and improve your Kodi experience."
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31120"
+msgid "You did not set up a weather provider yet. In order to view weather information, choose a weather provider and set up your location."
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31121"
+msgid "Set weather provider"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31122"
+msgid "Unwatched TV Shows"
+msgstr ""
+
+#: /xml/DialogVideoInfo.xml
+msgctxt "#31123"
+msgid "Same director"
+msgstr ""
+
+#empty string with id 31124
+
+#: /xml/DialogVideoInfo.xml
+msgctxt "#31125"
+msgid "Press up for actor info"
+msgstr ""
+
+#: /xml/DialogVideoInfo.xml
+msgctxt "#31126"
+msgid "Press OK to read plot"
+msgstr ""
+
+#: /xml/Includes_MediaMenu.xml
+msgctxt "#31127"
+msgid "Show icons"
+msgstr ""
+
+#: /xml/Variables.xml
+msgctxt "#31128"
+msgid "Contributors"
+msgstr ""
+
+#: /xml/Variables.xml
+msgctxt "#31129"
+msgid "General settings applying to all areas of the skin."
+msgstr ""
+
+#: /xml/Variables.xml
+msgctxt "#31130"
+msgid "Main menu-related settings: Configure the home screen to your likings."
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31131"
+msgid "Choose skin fanart pack"
+msgstr ""
+
+#: /xml/Custom_1101_SettingsList.xml
+msgctxt "#31132"
+msgid "Select Program"
+msgstr ""
+
+#: /xml/Custom_1101_SettingsList.xml
+msgctxt "#31133"
+msgid "Select Resolution"
+msgstr ""
+
+#: /xml/DialogSeekBar.xml
+msgctxt "#31134"
+msgid "Remaining"
+msgstr ""
+
+#: /xml/DialogAddonInfo.xml
+msgctxt "#31135"
+msgid "Binary"
+msgstr ""
+
+#: /xml/DialogAddonInfo.xml
+msgctxt "#31136"
+msgid "Click here to see latest changes..."
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show PVR info page
+msgctxt "#31137"
+msgid "PVR"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show player info page
+msgctxt "#31138"
+msgid "Player"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show video decoder name
+msgctxt "#31139"
+msgid "Video decoder"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the video pixel format
+msgctxt "#31140"
+msgid "Pixel format"
+msgstr ""
+
+#: /xml/DialogAddonInfo.xml
+msgctxt "#31141"
+msgid "Changes for version"
+msgstr ""
+
+#: /xml/Variables.xml
+msgctxt "#31142"
+msgid "Play speed"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31143"
+msgid "You did not set up PVR yet. In order to use PVR, choose a PVR client addon and configure it. Please visit http://kodi.wiki/view/PVR to learn more."
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31144"
+msgid "Enter add-on browser"
+msgstr ""
+
+#: /xml/Custom_1107_SearchDialog.xml
+msgctxt "#31145"
+msgid "Search add-ons"
+msgstr ""
+
+msgctxt "#31146"
+msgid "In cinemas"
+msgstr ""
+
+msgctxt "#31147"
+msgid "In cinemas soon"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31148"
+msgid "Categories"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31149"
+msgid "Select genre fanart pack"
+msgstr ""
+
+#: /xml/DialogAddonInfo.xml
+msgctxt "#31150"
+msgid "Origin"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31151"
+msgid "Unwatched music videos"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31152"
+msgid "Random music videos"
+msgstr ""
+
+#: /xml/Includes.xml
+msgctxt "#31153"
+msgid "You do not have any add-ons of this type installed. Enter the add-on browser to download add-ons created by our community."
+msgstr ""
+
+#: /xml/MyWeather.xml
+msgctxt "#31154"
+msgid "Press OK to switch between locations"
+msgstr ""
+
+#: /xml/VideoOSDBookmarks.xml
+msgctxt "#31155"
+msgid "No bookmarks created yet."
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31156"
+msgid "Choose background"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31157"
+msgid "Edit categories"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31158"
+msgid "Touch mode"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31159"
+msgid "Artwork"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31160"
+msgid "Show media flags"
+msgstr ""
+
+#: /xml/DialogNumeric.xml
+msgctxt "#31161"
+msgid "Numeric pad"
+msgstr ""
+
+#: /xml/Home.xml
+msgctxt "#31162"
+msgid "Play your personal games or download one of the many game add-ons from the official repository."
+msgstr ""
+
+#: /xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31163"
+msgid "Show Fanart background"
+msgstr ""
+
+#. Choose profile identifier
+#: /xml/SkinSettings.xml
+msgctxt "#31164"
+msgid "Choose kind of profile identification"
+msgstr ""
+
+#. Label for the kind of profile identification
+#: /xml/SkinSettings.xml
+msgctxt "#31165"
+msgid "Profile name"
+msgstr ""
+
+#. Label for the kind of profile identification
+#: /xml/SkinSettings.xml
+msgctxt "#31166"
+msgid "Profile avatar"
+msgstr ""
+
+#. Label of a setting
+#: /xml/SkinSettings.xml
+msgctxt "#31167"
+msgid "Animate background"
+msgstr ""
+
+#. Label of a setting
+#: /xml/SkinSettings.xml
+msgctxt "#31168"
+msgid "Show posters instead of thumbs for musicvideos"
+msgstr ""
+
+#. Description label for skin settings area
+#: /xml/Variables.xml
+msgctxt "#31169"
+msgid "Artwork related settings."
+msgstr ""
+
+#: /xml/SkinSettings.xml
+#. Label for OSD settings category
+msgctxt "#31170"
+msgid "On screen display"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+#. Helper text for the label of OSD settings category
+msgctxt "#31171"
+msgid "On screen display (OSD) related settings"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+#. Setting Automatically close video OSD
+msgctxt "#31172"
+msgid "Automatically close video OSD"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+#. Setting auto close time for video osd
+msgctxt "#31173"
+msgid "Video OSD autoclose time (seconds)"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+#. Setting to control what happens when clicking a music album on the home screen
+msgctxt "#31174"
+msgid "Default select action for albums on the home screen"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+#. Setting to control what happens when clicking a TV show on the home screen
+msgctxt "#31175"
+msgid "Default select action for TV shows on the home screen"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+#. Setting to control what happens when clicking a movie set on the home screen
+msgctxt "#31176"
+msgid "Default select action for movie sets on the home screen"
+msgstr ""
+
+#empty strings from id 31177 to 31599
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the video codec name
+msgctxt "#31600"
+msgid "Video codec"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the video resolution
+msgctxt "#31601"
+msgid "Video resolution"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the video aspect
+msgctxt "#31602"
+msgid "Video aspect"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the video bitrate
+msgctxt "#31603"
+msgid "Video bitrate"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the audio codec name
+msgctxt "#31604"
+msgid "Audio codec"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the number of audio channels
+msgctxt "#31605"
+msgid "Audio channels"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the audio bitrate
+msgctxt "#31606"
+msgid "Audio bitrate"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the screen resolution
+msgctxt "#31607"
+msgid "Screen resolution"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the system rendering speed
+msgctxt "#31608"
+msgid "System rendering speed"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the system CPU usage
+msgctxt "#31609"
+msgid "System CPU usage"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the media (metadata) info page
+msgctxt "#31610"
+msgid "Media"
+msgstr ""
+
+#: /xml/DialogPlayerProcessInfo.xml
+#. Label to show the system info page
+msgctxt "#31611"
+msgid "System"
+msgstr ""
+
+#: /xml/SkinSettings.xml
+msgctxt "#31200"
+msgid "MDBList ratings"
+msgstr ""
+
+#: /resources/settings.xml
+msgctxt "#31201"
+msgid "MDBList API key"
+msgstr ""
+
+#: /resources/settings.xml
+msgctxt "#31202"
+msgid "Enter the API key from your MDBList preferences. The key is used only to retrieve movie ratings."
+msgstr ""
+
+#: xml/Custom_1101_SettingsList.xml
+msgctxt "#31040"
+msgid "[COLOR grey]$FEATURE[select,game.controller.snes] + $FEATURE[rightstick,game.controller.default][/COLOR]"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumAudioSubtitles.xml xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31047"
+msgid "Audio"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumAudioSubtitles.xml xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31049"
+msgid "Audio settings"
+msgstr ""
+
+#: xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31050"
+msgid "OSD customisation"
+msgstr ""
+
+#: xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31051"
+msgid "Show lyrics"
+msgstr ""
+
+#: xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31064"
+msgid "Preferred lyrics source"
+msgstr ""
+
+#: xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31070"
+msgid "Lyrics animation"
+msgstr ""
+
+#: xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31076"
+msgid "Use visualiser background"
+msgstr ""
+
+#: xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31077"
+msgid "Background Settings"
+msgstr ""
+
+#: xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31078"
+msgid "If the preferred lyrics source is empty, the other source is used."
+msgstr ""
+
+#: extras/flixium_lyrics_settings.py xml/Custom_1106_LyricsSettings.xml
+msgctxt "#31081"
+msgid "Simple lyrics"
+msgstr ""
+
+#: extras/flixium_lyrics_settings.py xml/Custom_1106_LyricsSettings.xml
+msgctxt "#31085"
+msgid "Word highlighting"
+msgstr ""
+
+#: extras/flixium_lyrics_settings.py xml/Custom_1106_LyricsSettings.xml
+msgctxt "#31086"
+msgid "Lyric glow"
+msgstr ""
+
+#: extras/flixium_lyrics_settings.py xml/Custom_1106_LyricsSettings.xml
+msgctxt "#31087"
+msgid "Whole-word movement"
+msgstr ""
+
+#: extras/flixium_lyrics_settings.py xml/Custom_1106_LyricsSettings.xml
+msgctxt "#31088"
+msgid "Smooth line transitions"
+msgstr ""
+
+#: extras/flixium_lyrics_settings.py xml/Custom_1106_LyricsSettings.xml
+msgctxt "#31090"
+msgid "Held-word letter emphasis"
+msgstr ""
+
+#: extras/flixium_lyrics_settings.py xml/Custom_1106_LyricsSettings.xml
+msgctxt "#31091"
+msgid "Interlude dots"
+msgstr ""
+
+#: extras/flixium_lyrics_settings.py xml/Custom_1106_LyricsSettings.xml
+msgctxt "#31094"
+msgid "Line ripple"
+msgstr ""
+
+#: extras/flixium_lyrics_settings.py xml/Custom_1106_LyricsSettings.xml
+msgctxt "#31108"
+msgid "60 fps animation"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31109"
+msgid "Background blur"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31124"
+msgid "Blur radius"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31177"
+msgid "Saturation"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31178"
+msgid "Clear blur cache"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31179"
+msgid "Progress indicators"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31180"
+msgid "Static poster outline"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31181"
+msgid "Adaptive poster/thumb glow"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31182"
+msgid "Age rating style"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31183"
+msgid "[B]U[/B]"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31184"
+msgid "[B]PG[/B]"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31185"
+msgid "[B]12A[/B]"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31186"
+msgid "Age rating position"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31187"
+msgid "Reset Flix customisation"
+msgstr ""
+
+#: xml/Custom_1112_FlixReset.xml
+msgctxt "#31188"
+msgid "This will restore the default blur, focus glow, progress indicator and age rating options across every Flix view. This cannot be undone."
+msgstr ""
+
+#: xml/Custom_1112_FlixReset.xml
+msgctxt "#31189"
+msgid "Reset"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumColourPicker.xml xml/Custom_1112_FlixReset.xml
+msgctxt "#31190"
+msgid "Cancel"
+msgstr ""
+
+#: xml/DialogContextMenu.xml
+msgctxt "#31191"
+msgid "Remove from Continue watching"
+msgstr ""
+
+#: xml/DialogPlayerProcessInfo.xml
+msgctxt "#31192"
+msgid "kb/s"
+msgstr ""
+
+#: xml/DialogPlayerProcessInfo.xml xml/Variables.xml
+msgctxt "#31193"
+msgid "x"
+msgstr ""
+
+#: xml/DialogPlayerProcessInfo.xml
+msgctxt "#31194"
+msgid "$COMMA"
+msgstr ""
+
+#: xml/DialogPlayerProcessInfo.xml
+msgctxt "#31195"
+msgid "AR"
+msgstr ""
+
+#: xml/DialogPlayerProcessInfo.xml
+msgctxt "#31196"
+msgid "FPS"
+msgstr ""
+
+#: xml/DialogPlayerProcessInfo.xml
+msgctxt "#31197"
+msgid "bits"
+msgstr ""
+
+#: xml/DialogPlayerProcessInfo.xml
+msgctxt "#31198"
+msgid "Hz"
+msgstr ""
+
+#: xml/DialogPlayerProcessInfo.xml
+msgctxt "#31199"
+msgid "fps"
+msgstr ""
+
+#: xml/DialogPVRRadioRDSInfo.xml
+msgctxt "#31203"
+msgid "$[COLOR button_focus]LOCALIZE[19602]:[/COLOR]"
+msgstr ""
+
+#: xml/DialogSeekBar.xml xml/Includes.xml
+msgctxt "#31204"
+msgid "kHz"
+msgstr ""
+
+#: xml/DialogSeekBar.xml xml/Includes.xml
+msgctxt "#31205"
+msgid "kbps"
+msgstr ""
+
+#: xml/DialogSeekBar.xml xml/Includes.xml
+msgctxt "#31206"
+msgid "bit"
+msgstr ""
+
+#: xml/DialogSettings.xml
+msgctxt "#31207"
+msgid "Subtitle appearance"
+msgstr ""
+
+#: xml/DialogTextViewer.xml xml/Variables.xml
+msgctxt "#31208"
+msgid "[COLOR=button_focus]"
+msgstr ""
+
+#: xml/DialogVideoInfo.xml
+msgctxt "#31209"
+msgid "Info"
+msgstr ""
+
+#: xml/GameOSD.xml
+msgctxt "#31210"
+msgid "$FEATURE[select,game.controller.snes] + $FEATURE[x,game.controller.default]"
+msgstr ""
+
+#: xml/GameOSD.xml
+msgctxt "#31211"
+msgid "$FEATURE[select,game.controller.snes] + $FEATURE[start,game.controller.default]"
+msgstr ""
+
+#: xml/Includes.xml
+msgctxt "#31212"
+msgid "bpm"
+msgstr ""
+
+#: xml/Includes_Buttons.xml
+msgctxt "#31213"
+msgid "LibreELEC"
+msgstr ""
+
+#: xml/Includes_CoverFlow.xml
+msgctxt "#31214"
+msgid "Static"
+msgstr ""
+
+#: xml/Includes_CoverFlow.xml
+msgctxt "#31215"
+msgid "Gentle"
+msgstr ""
+
+#: xml/Includes_CoverFlow.xml
+msgctxt "#31216"
+msgid "Full"
+msgstr ""
+
+#: xml/Includes_CoverFlow.xml
+msgctxt "#31217"
+msgid "Static (preset)"
+msgstr ""
+
+#: xml/Includes_CoverFlow.xml
+msgctxt "#31218"
+msgid "Full (preset)"
+msgstr ""
+
+#: xml/Includes_CoverFlow.xml
+msgctxt "#31219"
+msgid "Gentle (preset)"
+msgstr ""
+
+#: extras/flixium_glass.py xml/Includes_Glass.xml
+msgctxt "#31220"
+msgid "Match colour preset"
+msgstr ""
+
+#: extras/flixium_widgets.py xml/Includes_MediaMenu.xml
+msgctxt "#31221"
+msgid "Posters"
+msgstr ""
+
+#: xml/Includes_MediaMenu.xml
+msgctxt "#31222"
+msgid "Thumbs"
+msgstr ""
+
+#: xml/Includes_MediaMenu.xml
+msgctxt "#31223"
+msgid "Hide media flags"
+msgstr ""
+
+#: xml/Includes_MediaMenu.xml
+msgctxt "#31224"
+msgid "Large posters"
+msgstr ""
+
+#: xml/Includes_MediaMenu.xml
+msgctxt "#31225"
+msgid "Customise"
+msgstr ""
+
+#: xml/Includes_MediaSources.xml
+msgctxt "#31226"
+msgid "Media Sources..."
+msgstr ""
+
+#: xml/Includes_MusicPlayback.xml
+msgctxt "#31227"
+msgid "Embedded lyrics"
+msgstr ""
+
+#: xml/Includes_MusicPlayback.xml
+msgctxt "#31228"
+msgid "Local files"
+msgstr ""
+
+#: xml/Includes_MusicPlayback.xml
+msgctxt "#31229"
+msgid "No local or embedded lyrics found"
+msgstr ""
+
+#: xml/Includes_MusicPlayback.xml
+msgctxt "#31230"
+msgid "Loading lyrics..."
+msgstr ""
+
+#: xml/Includes_MusicPlayback.xml
+msgctxt "#31231"
+msgid "Preparing lyrics renderer..."
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_MyList.xml
+msgctxt "#31232"
+msgid "Continue watching from my list"
+msgstr ""
+
+#: extras/flixium_my_list.py resources/lib/home_menu.py resources/lib/home_widgets.py resources/lib/my_list_runtime.py resources/skins/Default/1080i/script-FlixiumWidgets.xml xml/Includes_MyList.xml
+msgctxt "#31233"
+msgid "Movies"
+msgstr ""
+
+#: extras/flixium_widgets.py resources/lib/home_menu.py resources/lib/home_widgets.py resources/skins/Default/1080i/script-FlixiumWidgets.xml xml/Includes_MyList.xml
+msgctxt "#31234"
+msgid "TV shows"
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_MyList.xml
+msgctxt "#31235"
+msgid "Recently added to my list"
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_MyList.xml
+msgctxt "#31236"
+msgid "Random Pick"
+msgstr ""
+
+#: xml/Includes_MyList.xml
+msgctxt "#31237"
+msgid "Nothing to show. Add films or shows through their context menu, or change your My list filter."
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_ProgramWidgets.xml
+msgctxt "#31238"
+msgid "Video add-ons"
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_ProgramWidgets.xml
+msgctxt "#31239"
+msgid "Music add-ons"
+msgstr ""
+
+#: xml/Includes_ProgramWidgets.xml
+msgctxt "#31240"
+msgid "No widgets selected. Add widgets in Widget configuration → Programs."
+msgstr ""
+
+#: extras/flixium_context.py extras/flixium_my_list.py resources/lib/home_menu.py resources/lib/home_widgets.py resources/skins/Default/1080i/script-FlixiumWidgets.xml xml/Includes_SharedHomeMenu.xml xml/SkinSettings.xml
+msgctxt "#31241"
+msgid "My list"
+msgstr ""
+
+#: xml/Includes_VideoOSD.xml xml/Variables.xml
+msgctxt "#31242"
+msgid "S"
+msgstr ""
+
+#: xml/Includes_VideoOSD.xml xml/Variables.xml
+msgctxt "#31243"
+msgid "E"
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_VideoWidgets.xml
+msgctxt "#31244"
+msgid "Media sources"
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_VideoWidgets.xml
+msgctxt "#31245"
+msgid "Playlists"
+msgstr ""
+
+#: xml/Includes_VideoWidgets.xml
+msgctxt "#31246"
+msgid "No widgets selected. Add widgets in Configure home widgets → Videos."
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_Widgets.xml
+msgctxt "#31247"
+msgid "Continue watching"
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_Widgets.xml
+msgctxt "#31248"
+msgid "Recently added"
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_Widgets.xml
+msgctxt "#31249"
+msgid "All movies"
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_Widgets.xml
+msgctxt "#31250"
+msgid "Continue watching episodes"
+msgstr ""
+
+#: extras/flixium_next_episode.py resources/lib/home_widgets.py xml/Includes_Widgets.xml
+msgctxt "#31251"
+msgid "Next episode"
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_Widgets.xml
+msgctxt "#31252"
+msgid "Recently added episodes"
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_Widgets.xml
+msgctxt "#31253"
+msgid "Recently played albums"
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_Widgets.xml
+msgctxt "#31254"
+msgid "Recently added albums"
+msgstr ""
+
+#: xml/Includes_Widgets.xml xml/Variables.xml
+msgctxt "#31255"
+msgid "1 SEASON"
+msgstr ""
+
+#: xml/Includes_Widgets.xml xml/Variables.xml xml/View_56_Flix.xml
+msgctxt "#31256"
+msgid "SEASONS"
+msgstr ""
+
+#: resources/lib/home_widgets.py xml/Includes_Widgets.xml
+msgctxt "#31257"
+msgid "All shows"
+msgstr ""
+
+#: xml/Includes_Widgets.xml
+msgctxt "#31258"
+msgid "No widgets selected. Add widgets in Configure skin → Flixium → Home widgets."
+msgstr ""
+
+#: xml/SettingsCategory.xml
+msgctxt "#31259"
+msgid "Reset Netflix defaults"
+msgstr ""
+
+#: xml/SettingsSystemInfo.xml
+msgctxt "#31260"
+msgid "Git:"
+msgstr ""
+
+#: extras/flixium_settings_style.py xml/SkinSettings.xml
+msgctxt "#31261"
+msgid "Settings view"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31262"
+msgid "Setup wizard"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31263"
+msgid "Include General"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31264"
+msgid "Include Customisation"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31265"
+msgid "Include Artwork"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31266"
+msgid "Include Ratings"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31267"
+msgid "Include On screen display"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31268"
+msgid "Include API keys and login details"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31269"
+msgid "Create backup"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31270"
+msgid "Restore backup"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31271"
+msgid "Enable MDBList ratings"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31272"
+msgid "Rating source 1"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31273"
+msgid "Rating source 2"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31274"
+msgid "Rating source 3"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31275"
+msgid "Rating source 4"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31276"
+msgid "Rating source 5"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31277"
+msgid "Rating source 6"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31278"
+msgid "Use selected background for settings"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31279"
+msgid "Next episode button (local library)"
+msgstr ""
+
+#: extras/flixium_next_episode.py xml/SkinSettings.xml
+msgctxt "#31280"
+msgid "When credits markers are missing"
+msgstr ""
+
+#: xml/SkinSettings.xml xml/Variables.xml
+msgctxt "#31281"
+msgid "Home screen"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31282"
+msgid "Edit main menu"
+msgstr ""
+
+#: extras/flixium_setup.py xml/SkinSettings.xml
+msgctxt "#31283"
+msgid "Configure widgets"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31284"
+msgid "Show home sidebar divider"
+msgstr ""
+
+#: extras/flixium_setup.py xml/SkinSettings.xml xml/Variables.xml
+msgctxt "#31285"
+msgid "Appearance"
+msgstr ""
+
+#: extras/flixium_setup.py extras/flixium_theme.py xml/SkinSettings.xml
+msgctxt "#31286"
+msgid "Colour preset"
+msgstr ""
+
+#: extras/flixium_setup.py xml/SkinSettings.xml
+msgctxt "#31287"
+msgid "Glass appearance"
+msgstr ""
+
+#: extras/flixium_glass.py xml/SkinSettings.xml
+msgctxt "#31288"
+msgid "Background gradient"
+msgstr ""
+
+#: extras/flixium_theme.py xml/SkinSettings.xml
+msgctxt "#31289"
+msgid "Corner style"
+msgstr ""
+
+#: extras/flixium_fonts.py extras/flixium_setup.py xml/SkinSettings.xml
+msgctxt "#31290"
+msgid "Fonts"
+msgstr ""
+
+#: xml/SkinSettings.xml xml/Variables.xml
+msgctxt "#31291"
+msgid "Custom colours"
+msgstr ""
+
+#: extras/flixium_theme.py xml/SkinSettings.xml
+msgctxt "#31292"
+msgid "Window and panel tint"
+msgstr ""
+
+#: extras/flixium_theme.py xml/SkinSettings.xml
+msgctxt "#31293"
+msgid "Selection highlight colour"
+msgstr ""
+
+#: extras/flixium_theme.py xml/SkinSettings.xml
+msgctxt "#31294"
+msgid "Dialog background tint"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31295"
+msgid "Restore preset colours"
+msgstr ""
+
+#: extras/flixium_theme.py xml/SkinSettings.xml
+msgctxt "#31296"
+msgid "Save Colour Preset"
+msgstr ""
+
+#: extras/flixium_theme.py xml/SkinSettings.xml
+msgctxt "#31297"
+msgid "My Colour Presets"
+msgstr ""
+
+#: xml/SkinSettings.xml xml/Variables.xml
+msgctxt "#31298"
+msgid "Quality & performance"
+msgstr ""
+
+#: extras/flixium_glass.py xml/SkinSettings.xml
+msgctxt "#31299"
+msgid "Background image resolution"
+msgstr ""
+
+#: extras/flixium_glass.py xml/SkinSettings.xml
+msgctxt "#31300"
+msgid "Glass texture resolution"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31301"
+msgid "Enable glass appearance to adjust quality."
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31302"
+msgid "Show By Default"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31303"
+msgid "Sort order"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31304"
+msgid "Watched Titles"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31305"
+msgid "Notify When Adding or Removing Titles"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31306"
+msgid "Undo last removal"
+msgstr ""
+
+#: extras/flixium_my_list.py xml/SkinSettings.xml
+msgctxt "#31307"
+msgid "Reset My List Settings"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31308"
+msgid "Customisation"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31309"
+msgid "Ratings"
+msgstr ""
+
+#: xml/SkinSettings.xml
+msgctxt "#31310"
+msgid "Backup and restore"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31311"
+msgid "Default"
+msgstr ""
+
+#: extras/flixium_theme.py xml/Variables.xml
+msgctxt "#31312"
+msgid "Custom"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31313"
+msgid "From preset"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31314"
+msgid "General settings: settings screen layout, navigation, animations, profile display and media badges."
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31315"
+msgid "Customisation: home menus, widgets, colours, fonts, glass appearance and Flix view styling."
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31316"
+msgid "Artwork: backgrounds, fanart packs and music video poster preferences."
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31317"
+msgid "Ratings: MDBList preferences and rating source order. API keys require the separate option below."
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31318"
+msgid "On screen display: video control timing, music playback appearance and lyrics options."
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31319"
+msgid "Include API keys and login details when backing up or restoring. Off keeps existing keys unchanged."
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31320"
+msgid "Save the selected categories and their custom files to a backup ZIP."
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31321"
+msgid "Restore categories stored in a backup. Other settings stay unchanged; a recovery backup is saved first."
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31322"
+msgid "Choose which settings to back up. Highlight an option for a short description."
+msgstr ""
+
+#: extras/flixium_settings_style.py xml/Variables.xml
+msgctxt "#31323"
+msgid "Banner"
+msgstr ""
+
+#: extras/flixium_settings_style.py xml/Variables.xml
+msgctxt "#31324"
+msgid "Grid"
+msgstr ""
+
+#: extras/flixium_settings_style.py xml/Variables.xml
+msgctxt "#31325"
+msgid "List"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31326"
+msgid "System[CR]information"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31327"
+msgid "Thurs"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31328"
+msgid "Tues"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31329"
+msgid "Left"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31330"
+msgid "Right"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31331"
+msgid "Centre"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31332"
+msgid "Soft"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31333"
+msgid "Balanced"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31334"
+msgid "Extreme"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31335"
+msgid "Strong"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31336"
+msgid "- [COLOR=button_focus]"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py resources/skins/Default/1080i/script-FlixiumAudioSubtitles.xml xml/Variables.xml
+msgctxt "#31337"
+msgid "Audio & Subtitles"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31338"
+msgid "[COLOR grey]x[/COLOR]"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31339"
+msgid "[/CAPITALIZE]:[/COLOR] S"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31340"
+msgid "- S"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31341"
+msgid "[COLOR=grey]"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31342"
+msgid "Background 1"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31343"
+msgid "Background 2"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31344"
+msgid "Background 3"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31345"
+msgid "Background 4"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31346"
+msgid "Background 5"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31347"
+msgid "Background 6"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31348"
+msgid "Background 7"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31349"
+msgid "Enter key"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31350"
+msgid "None"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31351"
+msgid "MDBList"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31352"
+msgid "IMDb"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31353"
+msgid "Metacritic"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31354"
+msgid "Trakt"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31355"
+msgid "Rotten Tomatoes (Critic)"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31356"
+msgid "Rotten Tomatoes (Audience)"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31357"
+msgid "Letterboxd"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31358"
+msgid "TMDb"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31359"
+msgid "| 3D"
+msgstr ""
+
+#: extras/flixium_theme.py xml/Variables.xml
+msgctxt "#31360"
+msgid "Unrounded"
+msgstr ""
+
+#: extras/flixium_setup.py extras/flixium_theme.py xml/Variables.xml
+msgctxt "#31361"
+msgid "Rounder"
+msgstr ""
+
+#: extras/flixium_setup.py extras/flixium_theme.py xml/Variables.xml
+msgctxt "#31362"
+msgid "Rounded"
+msgstr ""
+
+#: xml/View_56_Flix.xml
+msgctxt "#31363"
+msgid "SEASON"
+msgstr ""
+
+#: xml/View_56_Flix.xml
+msgctxt "#31364"
+msgid "EPISODES"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumSetup.xml xml/View_58_FlixAlbums.xml xml/View_61_FlixPictures.xml
+msgctxt "#31365"
+msgid "Back"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31366"
+msgid "Parent folder"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31367"
+msgid "Video"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31368"
+msgid "Return to the parent folder."
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31369"
+msgid "Open this folder to browse its pictures."
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31370"
+msgid "[CR][CR]Location ·"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31371"
+msgid "File size ·"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31372"
+msgid "File type ·"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31373"
+msgid "File date ·"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31374"
+msgid "Dimensions ·"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31375"
+msgid "Captured ·"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31376"
+msgid "Colour ·"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31377"
+msgid "Photographer ·"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31378"
+msgid "Copyright ·"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31379"
+msgid "Flix Pictures"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31380"
+msgid "No pictures in this folder"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31381"
+msgid "Media details"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31382"
+msgid "Location & camera"
+msgstr ""
+
+#: xml/View_61_FlixPictures.xml
+msgctxt "#31383"
+msgid "Location ·"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumAudioSubtitles.xml
+msgctxt "#31384"
+msgid "Left/Right: switch column    Up/Down: choose track    OK: select"
+msgstr ""
+
+#: extras/flixium_subtitle_preset.py resources/skins/Default/1080i/script-FlixiumAudioSubtitles.xml
+msgctxt "#31385"
+msgid "Subtitles"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumAudioSubtitles.xml
+msgctxt "#31386"
+msgid "Subtitle settings"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumAudioSubtitles.xml
+msgctxt "#31387"
+msgid "Done"
+msgstr ""
+
+#: extras/flixium_colour_picker.py resources/skins/Default/1080i/script-FlixiumColourPicker.xml
+msgctxt "#31388"
+msgid "Red"
+msgstr ""
+
+#: extras/flixium_colour_picker.py resources/skins/Default/1080i/script-FlixiumColourPicker.xml
+msgctxt "#31389"
+msgid "Green"
+msgstr ""
+
+#: extras/flixium_colour_picker.py resources/skins/Default/1080i/script-FlixiumColourPicker.xml
+msgctxt "#31390"
+msgid "Blue"
+msgstr ""
+
+#: extras/flixium_colour_picker.py resources/skins/Default/1080i/script-FlixiumColourPicker.xml
+msgctxt "#31391"
+msgid "Hex colour"
+msgstr ""
+
+#: extras/flixium_colour_picker.py resources/skins/Default/1080i/script-FlixiumColourPicker.xml
+msgctxt "#31392"
+msgid "Presets colours"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumColourPicker.xml
+msgctxt "#31393"
+msgid "Apply"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumHomeMenu.xml
+msgctxt "#31394"
+msgid "Add menu item"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumHomeMenu.xml
+msgctxt "#31395"
+msgid "Rename"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumHomeMenu.xml
+msgctxt "#31396"
+msgid "Open"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumHomeMenu.xml
+msgctxt "#31397"
+msgid "Visible on Home"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumHomeMenu.xml
+msgctxt "#31398"
+msgid "Move up"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumHomeMenu.xml
+msgctxt "#31399"
+msgid "Move down"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumHomeMenu.xml
+msgctxt "#31400"
+msgid "Background"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumHomeMenu.xml
+msgctxt "#31401"
+msgid "Use default background"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumHomeMenu.xml
+msgctxt "#31402"
+msgid "Remove item"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumHomeMenu.xml
+msgctxt "#31403"
+msgid "Main menu"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumListUndo.xml
+msgctxt "#31404"
+msgid "Removed from My list"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumListUndo.xml
+msgctxt "#31405"
+msgid "Undo"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumNextEpisode.xml
+msgctxt "#31406"
+msgid "Watch Credits"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumNextEpisode.xml
+msgctxt "#31407"
+msgid "Next Episode"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumSetup.xml
+msgctxt "#31408"
+msgid "Welcome to"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumSetupSurface.xml
+msgctxt "#31409"
+msgid "Add Media Sources"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumSetupSurface.xml
+msgctxt "#31410"
+msgid "Video Sources"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumSetupSurface.xml
+msgctxt "#31411"
+msgid "Music Sources"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumSetupSurface.xml
+msgctxt "#31412"
+msgid "Picture Sources"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumSetupSurface.xml
+msgctxt "#31413"
+msgid "Back to Setup"
+msgstr ""
+
+#: resources/lib/home_menu.py resources/lib/home_widgets.py resources/skins/Default/1080i/script-FlixiumWidgets.xml
+msgctxt "#31414"
+msgid "Music"
+msgstr ""
+
+#: resources/lib/home_widgets.py resources/skins/Default/1080i/script-FlixiumWidgets.xml
+msgctxt "#31415"
+msgid "Programs"
+msgstr ""
+
+#: resources/lib/home_menu.py resources/lib/home_widgets.py resources/skins/Default/1080i/script-FlixiumWidgets.xml
+msgctxt "#31416"
+msgid "Videos"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumWidgets.xml
+msgctxt "#31417"
+msgid "Select a widget to change, move or remove it.[CR][CR]Empty widgets are hidden on Home.[CR][CR]Changes save automatically. Press Back to return."
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumWidgets.xml
+msgctxt "#31418"
+msgid "Use Up / Down to move this widget.[CR][CR]Press Enter / OK to confirm its position.[CR][CR]Press Back to cancel."
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumWidgets.xml
+msgctxt "#31419"
+msgid "+ Add widget"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumWidgets.xml
+msgctxt "#31420"
+msgid "Global customisation"
+msgstr ""
+
+#: resources/skins/Default/1080i/script-FlixiumWidgets.xml
+msgctxt "#31421"
+msgid "Restore section defaults"
+msgstr ""
+
+#: extras/flixium_widgets.py resources/skins/Default/1080i/script-FlixiumWidgets.xml
+msgctxt "#31422"
+msgid "Widget configuration"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31423"
+msgid "Unknown language"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31424"
+msgid "Forced"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31425"
+msgid "The playback tracks could not be loaded."
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31426"
+msgid "Audio description"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31427"
+msgid "Hearing impaired"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31428"
+msgid "Track "
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py extras/flixium_my_list.py extras/flixium_next_episode.py extras/flixium_setup.py extras/flixium_widgets.py resources/lib/my_list_runtime.py
+msgctxt "#31429"
+msgid "Off"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31430"
+msgid "Subtitles disabled"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31431"
+msgid "Selected"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31432"
+msgid "Mono"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31433"
+msgid "Stereo"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31434"
+msgid "No audio tracks available"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31435"
+msgid "Save Flixium backup"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31436"
+msgid "Backup saved to:\n"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31437"
+msgid "\n\nExternal media locations are preserved and may need reconnecting on another device."
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31438"
+msgid "Flixium backup"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31439"
+msgid "Restore Flixium backup"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31440"
+msgid "\n\nExternal media locations may need reconnecting on this device."
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31441"
+msgid "Flixium restore"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31442"
+msgid "Flixium-{}-{}.zip"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31443"
+msgid "Restore {}? Other categories and excluded sensitive data stay unchanged. A recovery backup will be saved first."
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31444"
+msgid "Restore Flixium"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31445"
+msgid "Could not create the automatic backup folder"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31446"
+msgid "Settings restored. Your previous configuration is saved at:\n"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31447"
+msgid "Could not write the backup file"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31448"
+msgid "Could not create the restored files folder"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31449"
+msgid "Could not verify a restored file"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31450"
+msgid "Flixium backup / restore"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31451"
+msgid "assets/{:04d}{}"
+msgstr ""
+
+#: extras/flixium_blur_settings.py
+msgctxt "#31452"
+msgid "Enter blur radius value"
+msgstr ""
+
+#: extras/flixium_blur_settings.py
+msgctxt "#31453"
+msgid "Enter blur saturation value"
+msgstr ""
+
+#: extras/flixium_blur_settings.py
+msgctxt "#31454"
+msgid "Flix customisation"
+msgstr ""
+
+#: extras/flixium_blur_settings.py
+msgctxt "#31455"
+msgid "Saturation must be zero or a positive number"
+msgstr ""
+
+#: extras/flixium_colour_picker.py
+msgctxt "#31456"
+msgid "Hex colour (RRGGBB)"
+msgstr ""
+
+#: extras/flixium_colour_picker.py
+msgctxt "#31457"
+msgid "Enter six hexadecimal characters, for example 4DD9FF."
+msgstr ""
+
+#: extras/flixium_context.py
+msgctxt "#31458"
+msgid "Remove from list"
+msgstr ""
+
+#: extras/flixium_context.py
+msgctxt "#31459"
+msgid "Add to list"
+msgstr ""
+
+#: extras/flixium_context.py
+msgctxt "#31460"
+msgid "Could not update your list"
+msgstr ""
+
+#: extras/flixium_fonts.py
+msgctxt "#31461"
+msgid "Home menu list"
+msgstr ""
+
+#: extras/flixium_fonts.py
+msgctxt "#31462"
+msgid "Settings / global font"
+msgstr ""
+
+#: extras/flixium_fonts.py
+msgctxt "#31463"
+msgid "Skin default"
+msgstr ""
+
+#: extras/flixium_fonts.py
+msgctxt "#31464"
+msgid "Inter"
+msgstr ""
+
+#: extras/flixium_fonts.py
+msgctxt "#31465"
+msgid "Open Sans"
+msgstr ""
+
+#: extras/flixium_fonts.py
+msgctxt "#31466"
+msgid "Roboto"
+msgstr ""
+
+#: extras/flixium_fonts.py
+msgctxt "#31467"
+msgid "Aeon"
+msgstr ""
+
+#: extras/flixium_glass.py
+msgctxt "#31468"
+msgid "Glass panels"
+msgstr ""
+
+#: extras/flixium_glass.py
+msgctxt "#31469"
+msgid "The glass textures could not be prepared. Your existing appearance is still available. Please try again."
+msgstr ""
+
+#: extras/flixium_glass.py
+msgctxt "#31470"
+msgid "Use the background paired with your colour preset"
+msgstr ""
+
+#: extras/flixium_glass.py
+msgctxt "#31471"
+msgid "Background only - keeps your panel, highlight and dialog colours"
+msgstr ""
+
+#: extras/flixium_glass.py
+msgctxt "#31472"
+msgid "720p Ã‚Â· lighter GPU memory use"
+msgstr ""
+
+#: extras/flixium_glass.py
+msgctxt "#31473"
+msgid "1080p Ã‚Â· balanced"
+msgstr ""
+
+#: extras/flixium_glass.py
+msgctxt "#31474"
+msgid "1440p Ã‚Â· highest detail"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31475"
+msgid "Add a menu item"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31476"
+msgid "Custom action"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31477"
+msgid "Hidden"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31478"
+msgid "New menu item name"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31479"
+msgid "Main menu customisation"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31480"
+msgid "Menu item name"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31481"
+msgid "Click action"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31482"
+msgid "Favourite"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31483"
+msgid "Custom Kodi action"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31484"
+msgid "Kodi click action"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31485"
+msgid "Remove menu item"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31486"
+msgid "Menu item background"
+msgstr ""
+
+#: extras/flixium_home_menu.py
+msgctxt "#31487"
+msgid "Remove '{}'?"
+msgstr ""
+
+#: extras/flixium_maturity.py
+msgctxt "#31489"
+msgid "Rated "
+msgstr ""
+
+#: extras/flixium_mdblist_settings.py
+msgctxt "#31490"
+msgid "Enter MDBList API key"
+msgstr ""
+
+#: extras/flixium_mdblist_settings.py
+msgctxt "#31491"
+msgid "MDBList API key saved"
+msgstr ""
+
+#: extras/flixium_mdblist_settings.py
+msgctxt "#31492"
+msgid "MDBList API key removed"
+msgstr ""
+
+#: extras/flixium_mdblist_settings.py
+msgctxt "#31493"
+msgid "Flixium"
+msgstr ""
+
+#: extras/flixium_mdblist_settings.py
+msgctxt "#31494"
+msgid "The MDBList API key contains invalid characters"
+msgstr ""
+
+#: extras/flixium_music_background.py
+msgctxt "#31495"
+msgid "Dynamic (Kawarp) motion"
+msgstr ""
+
+#: extras/flixium_music_background.py
+msgctxt "#31496"
+msgid "Use lyric quality preset"
+msgstr ""
+
+#: extras/flixium_music_background.py
+msgctxt "#31497"
+msgid "Static - frozen Kawarp background"
+msgstr ""
+
+#: extras/flixium_music_background.py
+msgctxt "#31498"
+msgid "Gentle - smooth motion, lower memory"
+msgstr ""
+
+#: extras/flixium_music_background.py
+msgctxt "#31499"
+msgid "Full - smoother motion, higher memory"
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31500"
+msgid "Undo Last Removal"
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31501"
+msgid "Highlight a film or show and open its context menu, then choose Add to list."
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31502"
+msgid "Your list is empty — open an item's context menu and choose Add to list"
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31503"
+msgid "Added to list"
+msgstr ""
+
+#: extras/flixium_my_list.py resources/lib/my_list_runtime.py
+msgctxt "#31504"
+msgid "Movies & TV Shows"
+msgstr ""
+
+#: extras/flixium_my_list.py resources/lib/my_list_runtime.py
+msgctxt "#31505"
+msgid "TV Shows"
+msgstr ""
+
+#: extras/flixium_my_list.py resources/lib/my_list_runtime.py
+msgctxt "#31506"
+msgid "Recently Added"
+msgstr ""
+
+#: extras/flixium_my_list.py resources/lib/my_list_runtime.py
+msgctxt "#31507"
+msgid "Alphabetical"
+msgstr ""
+
+#: extras/flixium_my_list.py resources/lib/my_list_runtime.py
+msgctxt "#31508"
+msgid "Unwatched First"
+msgstr ""
+
+#: extras/flixium_my_list.py resources/lib/my_list_runtime.py
+msgctxt "#31509"
+msgid "Keep Visible"
+msgstr ""
+
+#: extras/flixium_my_list.py resources/lib/my_list_runtime.py
+msgctxt "#31510"
+msgid "Hide"
+msgstr ""
+
+#: extras/flixium_my_list.py resources/lib/my_list_runtime.py
+msgctxt "#31511"
+msgid "Remove Automatically"
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31512"
+msgid "Show By Default: "
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31513"
+msgid "Sort Order: "
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31514"
+msgid "Watched Titles: "
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31515"
+msgid "Notify When Adding or Removing Titles: "
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31516"
+msgid "My List Settings"
+msgstr ""
+
+#: extras/flixium_my_list.py extras/flixium_setup.py extras/flixium_widgets.py resources/lib/my_list_runtime.py
+msgctxt "#31517"
+msgid "On"
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31518"
+msgid "Could not update My list. "
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31519"
+msgid "My List"
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31520"
+msgid "No recent removal to undo"
+msgstr ""
+
+#: extras/flixium_next_episode.py
+msgctxt "#31521"
+msgid "15 seconds"
+msgstr ""
+
+#: extras/flixium_next_episode.py
+msgctxt "#31522"
+msgid "30 seconds"
+msgstr ""
+
+#: extras/flixium_next_episode.py
+msgctxt "#31523"
+msgid "60 seconds"
+msgstr ""
+
+#: extras/flixium_next_episode.py
+msgctxt "#31524"
+msgid "90 seconds"
+msgstr ""
+
+#: extras/flixium_next_episode.py
+msgctxt "#31525"
+msgid "120 seconds"
+msgstr ""
+
+#: extras/flixium_next_episode.py
+msgctxt "#31526"
+msgid "S{:02d} E{:02d}  ·  {}"
+msgstr ""
+
+#: extras/flixium_next_episode.py
+msgctxt "#31527"
+msgid "The episode file is unavailable."
+msgstr ""
+
+#: extras/flixium_picture_decoders.py
+msgctxt "#31528"
+msgid "Flix Pictures - image decoders"
+msgstr ""
+
+#: extras/flixium_picture_decoders.py
+msgctxt "#31529"
+msgid "Not now"
+msgstr ""
+
+#: extras/flixium_picture_decoders.py
+msgctxt "#31530"
+msgid "View decoders"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31531"
+msgid "Welcome"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31532"
+msgid "Home menu"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31533"
+msgid "Library & widgets"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31534"
+msgid "Ready to go"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31536"
+msgid "Make it yours."
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31537"
+msgid "Choose what belongs on your home screen."
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31538"
+msgid "Bring your media home."
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31539"
+msgid "You can change everything in Skin Settings."
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31540"
+msgid "Get started"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31541"
+msgid "Skip setup"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31542"
+msgid "Skip"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31543"
+msgid "Square"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31544"
+msgid "Start using Flixium"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31545"
+msgid "Next"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31546"
+msgid "Configure Home Menu"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31547"
+msgid "Colour preset  ·  "
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31548"
+msgid "Glass appearance  ·  "
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31549"
+msgid "Corners  ·  "
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31550"
+msgid "Add media sources"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31551"
+msgid "Your library is ready."
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31552"
+msgid "No media yet? You can add it later."
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31553"
+msgid "Enable Flixium Helper to use glass."
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31554"
+msgid "Corners"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31555"
+msgid "{} menu sections  ·  Your theme  ·  Your widgets"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31556"
+msgid "Flixium setup"
+msgstr ""
+
+#: extras/flixium_setup.py
+msgctxt "#31557"
+msgid "That option could not be opened. Try again in Skin Settings."
+msgstr ""
+
+#: extras/flixium_subtitle_preset.py
+msgctxt "#31558"
+msgid "Netflix Sans"
+msgstr ""
+
+#: extras/flixium_subtitle_preset.py
+msgctxt "#31559"
+msgid "Netflix defaults restored"
+msgstr ""
+
+#: extras/flixium_subtitle_preset.py
+msgctxt "#31560"
+msgid "Netflix defaults"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31561"
+msgid "Obsidian"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31562"
+msgid "Glacier"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31563"
+msgid "Amethyst"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31564"
+msgid "Aurora"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31565"
+msgid "Crimson Velvet"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31566"
+msgid "Champagne Noir"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31567"
+msgid "Charcoal"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31568"
+msgid "Graphite"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31569"
+msgid "Midnight"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31570"
+msgid "Deep plum"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31571"
+msgid "Deep teal"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31572"
+msgid "Burgundy"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31573"
+msgid "Espresso"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31574"
+msgid "Ice white"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31575"
+msgid "Electric cyan"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31576"
+msgid "Lavender"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31577"
+msgid "Mint"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31578"
+msgid "Ruby"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31579"
+msgid "Champagne"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31580"
+msgid "Azure"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31581"
+msgid "Coral"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31582"
+msgid "Choose your colours, then use Save Colour Preset to save your first palette."
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31583"
+msgid "Load Preset"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31584"
+msgid "Rename Preset"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31585"
+msgid "Update With Current Colours"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31586"
+msgid "Delete Preset"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31587"
+msgid "Rename Colour Preset"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31588"
+msgid "My Colours"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31589"
+msgid "Colour Presets"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31590"
+msgid "Update Colour Preset"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31591"
+msgid "Window tint / highlight / dialog tint"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31592"
+msgid "Delete Colour Preset"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31593"
+msgid "Custom Colours"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31594"
+msgid "Saved Colour Preset"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31595"
+msgid "Replace the colours saved in “{}” with your current colours?"
+msgstr ""
+
+#: extras/flixium_theme.py
+msgctxt "#31596"
+msgid "Delete “{}”? Your current colours will stay as they are."
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31597"
+msgid "Browse"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31598"
+msgid "Resume"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31599"
+msgid "Play from beginning"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31616"
+msgid "Play"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31617"
+msgid "Play next"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31618"
+msgid "Queue"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31619"
+msgid "Choose smart playlist"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31620"
+msgid "Albums"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31621"
+msgid "Selection behaviour"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31622"
+msgid "Selection behaviour..."
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31623"
+msgid "Global customisation — all sections"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31624"
+msgid "{} of {} widgets"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31625"
+msgid "{} — choose widget"
+msgstr ""
+
+#: extras/flixium_widgets.py resources/lib/home_widgets.py
+msgctxt "#31626"
+msgid "Your custom smart playlist."
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31627"
+msgid "Movie / TV artwork: "
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31628"
+msgid "Continue watching progress: "
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31629"
+msgid "Changing artwork, item count or progress replaces all individual appearance settings in every section. Set individual exceptions afterwards."
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31630"
+msgid " — appearance"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31631"
+msgid "Custom smart playlist…"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31632"
+msgid "Choose an existing smart playlist for this section."
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31633"
+msgid "Landscape thumbs"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31634"
+msgid "Item count: {}"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31635"
+msgid "Item count"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31636"
+msgid "Artwork: "
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31637"
+msgid "Playback progress: "
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31638"
+msgid "Change widget"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31639"
+msgid "Remove"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31640"
+msgid "Move widget"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31641"
+msgid "Appearance…"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31642"
+msgid "Resume saved films and continue saved shows you have started."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31643"
+msgid "Your saved movies."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31644"
+msgid "Your saved TV shows."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31645"
+msgid "Movies and shows ordered by when you saved them."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31646"
+msgid "Up to five random picks from your saved list."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31647"
+msgid "Saved films you have not started."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31648"
+msgid "Your movie library, in alphabetical order."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31649"
+msgid "All movies (fullscreen)"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31650"
+msgid "The original full-library movie widget, expanding into the fullscreen artwork view."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31651"
+msgid "Movies you have started and can resume."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31652"
+msgid "The latest additions to your movie library."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31653"
+msgid "Movies you have not watched yet, newest first."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31654"
+msgid "Recently watched"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31655"
+msgid "Watched movies, ordered by when you last played them."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31656"
+msgid "Top rated"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31657"
+msgid "Movies with library ratings, highest first."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31658"
+msgid "A random selection from your library."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31659"
+msgid "Movie collections"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31660"
+msgid "Browse your movie collections."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31661"
+msgid "Genres"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31662"
+msgid "Browse your movies by genre."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31663"
+msgid "Your TV show library, in alphabetical order."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31664"
+msgid "All shows (fullscreen)"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31665"
+msgid "The original full-library TV widget, expanding into the fullscreen artwork view."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31666"
+msgid "Episodes you have started and can resume."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31667"
+msgid "The first unwatched regular episode of each show you have started. Specials are excluded."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31668"
+msgid "The latest episodes added to your library."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31669"
+msgid "Recently added shows"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31670"
+msgid "TV shows ordered by when they were added."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31671"
+msgid "Unwatched shows"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31672"
+msgid "Shows with no watched episodes."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31673"
+msgid "Recently watched episodes"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31674"
+msgid "Watched episodes, ordered by when you last played them."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31675"
+msgid "Random shows"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31676"
+msgid "A random selection of TV shows."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31677"
+msgid "Albums you have listened to recently."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31678"
+msgid "The latest additions to your music library."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31679"
+msgid "Your most played albums."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31680"
+msgid "A random selection of albums."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31681"
+msgid "Albums you have not played yet."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31682"
+msgid "Top rated albums"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31683"
+msgid "Albums with user ratings, highest first."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31684"
+msgid "Artists"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31685"
+msgid "Browse the artists in your library."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31686"
+msgid "Browse your music by genre."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31687"
+msgid "Video library, files, playlists and add-on shortcuts."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31688"
+msgid "Your configured video folders and media sources."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31689"
+msgid "Your saved video playlists."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31690"
+msgid "Installed video add-ons."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31691"
+msgid "Add-on management shortcuts, including repositories and ZIP installation."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31692"
+msgid "Installed music add-ons."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31693"
+msgid "Program add-ons"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31694"
+msgid "Installed program add-ons."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31695"
+msgid "Game add-ons"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31696"
+msgid "Installed game add-ons."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31697"
+msgid "Picture add-ons"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31698"
+msgid "Installed picture add-ons."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31699"
+msgid "Android apps"
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31700"
+msgid "Installed Android apps; available on Android devices."
+msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31701"
+msgid "Custom playlist"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31702"
+msgid "Music videos"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31703"
+msgid "Live TV"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31704"
+msgid "Radio"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31705"
+msgid "Add-ons"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31706"
+msgid "Pictures"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31707"
+msgid "Games"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31708"
+msgid "Favourites"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31709"
+msgid "Weather"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31710"
+msgid "Settings"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31711"
+msgid "My list — Movies"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31712"
+msgid "My list — TV shows"
+msgstr ""
+
+#: resources/lib/picture_decoders.py
+msgctxt "#31713"
+msgid "HEIF image decoder"
+msgstr ""
+
+#: resources/lib/picture_decoders.py
+msgctxt "#31714"
+msgid "libraw image decoder"
+msgstr ""
+
+#: resources/lib/picture_decoders.py
+msgctxt "#31715"
+msgid "RAW and HEIC/HEIF images"
+msgstr ""
+
+#: resources/lib/picture_decoders.py
+msgctxt "#31716"
+msgid "RAW images"
+msgstr ""
+
+#: resources/lib/picture_decoders.py
+msgctxt "#31717"
+msgid "HEIC/HEIF images"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31718"
+msgid "Select at least one category to back up"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31719"
+msgid "A configuration file is too large to include"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31720"
+msgid "Could not restore an add-on setting"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31721"
+msgid "This backup needs a newer version of Flixium"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31722"
+msgid "An add-on setting has an incompatible type"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31723"
+msgid "A referenced custom playlist or artwork file is missing: "
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31724"
+msgid "The custom files exceed the backup size limit"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31725"
+msgid "A playlist dependency is missing from the backup"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31726"
+msgid "Invalid smart playlist in backup"
+msgstr ""
+
+#: extras/flixium_backup.py
+msgctxt "#31727"
+msgid "A referenced playlist is not a smart playlist"
+msgstr ""
+
+#: extras/flixium_colour_picker.py
+msgctxt "#31728"
+msgid "Expected RRGGBB"
+msgstr ""
+
+#: extras/flixium_context.py
+msgctxt "#31729"
+msgid "This item is no longer in the library"
+msgstr ""
+
+#: extras/flixium_kodi_defaults.py
+msgctxt "#31730"
+msgid "This Kodi version does not expose the music fullscreen toggle"
+msgstr ""
+
+#: extras/flixium_kodi_defaults.py
+msgctxt "#31731"
+msgid "Kodi rejected the setting"
+msgstr ""
+
+#: extras/flixium_kodi_defaults.py
+msgctxt "#31732"
+msgid "Kodi could not enable fullscreen music playback"
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31733"
+msgid "Unknown list setting"
+msgstr ""
+
+#: extras/flixium_next_episode.py
+msgctxt "#31734"
+msgid "Kodi rejected "
+msgstr ""
+
+#: extras/flixium_picture_decoders.py
+msgctxt "#31735"
+msgid "Could not read configured picture sources"
+msgstr ""
+
+#: extras/flixium_subtitle_preset.py
+msgctxt "#31736"
+msgid "Could not install Netflix Sans in Kodi's subtitle font folder"
+msgstr ""
+
+#: extras/flixium_visualizer.py
+msgctxt "#31737"
+msgid "Kodi did not accept the Flixium Visualizer selection"
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31738"
+msgid "Choose a playlist for this section's media type."
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31739"
+msgid "This playlist's name or path contains unsupported characters."
+msgstr ""
+
+#: extras/flixium_widgets.py
+msgctxt "#31740"
+msgid "This playlist is already selected."
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31741"
+msgid "The Home menu needs between 1 and 20 items"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31742"
+msgid "Keep at least one menu item enabled"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31743"
+msgid "Invalid Home menu configuration"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31744"
+msgid "Invalid menu item"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31745"
+msgid "Invalid or duplicate menu item identity"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31746"
+msgid "A menu item needs a name of at most 160 characters"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31747"
+msgid "A menu item needs a click action"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31748"
+msgid "Invalid menu section"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31749"
+msgid "Invalid click action"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31750"
+msgid "Invalid action condition"
+msgstr ""
+
+#: resources/lib/home_menu.py
+msgctxt "#31751"
+msgid "Invalid background path"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31752"
+msgid "Invalid settings list"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31753"
+msgid "Backup is too large"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31754"
+msgid "Invalid setting name"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31755"
+msgid "Duplicate setting name"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31756"
+msgid "Invalid setting value"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31757"
+msgid "Invalid or duplicate archive entries"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31758"
+msgid "Unpacked backup is too large"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31759"
+msgid "Invalid or oversized archive entry"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31760"
+msgid "This is not a Flixium backup"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31761"
+msgid "This backup format is not supported"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31762"
+msgid "Invalid backup file list"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31763"
+msgid "Unexpected files in backup"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31764"
+msgid "Invalid backup selection"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31765"
+msgid "Unsafe backup file path"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31766"
+msgid "Missing or duplicate backup file"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31767"
+msgid "Backup file failed its integrity check"
+msgstr ""
+
+#: resources/lib/skin_backup.py
+msgctxt "#31768"
+msgid "A referenced file is missing from the backup"
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31769"
+msgid "A preset needs a name."
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31770"
+msgid "Use a name of 1–60 characters without double quotes, backslashes or line breaks."
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31771"
+msgid "Invalid colour preset"
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31772"
+msgid "You can save up to 50 colour presets."
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31773"
+msgid "Colour preset data is too large"
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31774"
+msgid "A preset already has that name. Choose another name or update the existing preset."
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31775"
+msgid "That preset no longer exists."
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31776"
+msgid "Invalid colour preset value"
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31777"
+msgid "Invalid preset identity"
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31778"
+msgid "Preset names must be unique."
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31779"
+msgid "Invalid preset colour"
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31780"
+msgid "Invalid colour override"
+msgstr ""
+
+#: resources/lib/colour_presets.py
+msgctxt "#31781"
+msgid "Invalid colour scheme"
+msgstr ""
+
+#: resources/lib/my_list.py
+msgctxt "#31782"
+msgid "Invalid My list data"
+msgstr ""
+
+#: resources/lib/my_list.py
+msgctxt "#31783"
+msgid "Invalid My list settings"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31784"
+msgid "{} channels"
+msgstr ""
+
+#: extras/flixium_audio_subtitles.py
+msgctxt "#31785"
+msgid "Track {}"
+msgstr ""
+
+#: resources/lib/picture_decoders.py
+msgctxt "#31786"
+msgid "{} and {}"
+msgstr ""
+
+#: resources/lib/picture_decoders.py
+msgctxt "#31787"
+msgid "{} detected in this picture source.[CR][CR]Kodi may need {} to display them. These add-ons are available in the official Kodi Add-on repository.[CR][CR]Open Image decoders to install or enable {}?"
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31788"
+msgid "Show By Default: {}"
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31789"
+msgid "Sort Order: {}"
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31790"
+msgid "Watched Titles: {}"
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31791"
+msgid "Notify When Adding or Removing Titles: {}"
+msgstr ""
+
+#: extras/flixium_my_list.py
+msgctxt "#31792"
+msgid "Sort Order"
+msgstr ""
+
+#: xml/Custom_1105_MusicOSDSettings.xml
+msgctxt "#31793"
+msgid "Music OSD settings"
+msgstr ""
+
+#: xml/Custom_1111_FlixCustomise.xml
+msgctxt "#31794"
+msgid "View customisation"
+msgstr ""
+
+#: xml/Custom_1112_FlixReset.xml
+msgctxt "#31795"
+msgid "Reset Flix customisation?"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31796"
+msgid "Muted"
+msgstr ""
+
+#: xml/Variables.xml
+msgctxt "#31797"
+msgid "Vivid"
+msgstr ""
+
+#: resources/lib/setstats_service.py
+msgctxt "#31798"
+msgid "{} MIN"
+msgstr ""
+
+#: resources/lib/setstats_service.py
+msgctxt "#31799"
+msgid "1 HR {} MIN"
+msgstr ""
+
+#: resources/lib/setstats_service.py
+msgctxt "#31800"
+msgid "{} HRS {} MIN"
+msgstr ""
+
+#: resources/lib/setstats_service.py
+msgctxt "#31801"
+msgid "{} MINS"
+msgstr ""
+
+#: resources/lib/setstats_service.py
+msgctxt "#31802"
+msgid "{} ALBUM"
+msgstr ""
+
+#: resources/lib/setstats_service.py
+msgctxt "#31803"
+msgid "{} ALBUMS"
+msgstr ""
+
+#: resources/lib/setstats_service.py
+msgctxt "#31804"
+msgid "{} TRACK"
+msgstr ""
+
+#: resources/lib/setstats_service.py
+msgctxt "#31805"
+msgid "{} TRACKS"
+msgstr ""

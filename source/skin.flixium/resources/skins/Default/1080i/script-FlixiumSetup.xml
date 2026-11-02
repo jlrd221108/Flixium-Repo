@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='utf-8'?>
+<window>
+	<defaultcontrol always="true">203</defaultcontrol>
+	<controls>
+		<control type="group">
+			<!-- A replacement must not cover its predecessor before onInit. -->
+			<visible>String.IsEqual(Window.Property(ready),true)</visible>
+		<include>FlixiumSettingsPageBackground</include>
+		<include>FlixiumSettingsFullPanel</include>
+		<control type="group">
+			<visible>String.IsEqual(Window.Property(ready),true) + !String.IsEqual(Window.Property(editing),true)</visible>
+			<control type="group">
+				<visible>String.IsEqual(Window.Property(page),0)</visible>
+				<control type="label">
+					<left>460</left>
+					<top>300</top>
+					<width>1000</width>
+					<height>65</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>C8FFFFFF</textcolor>
+					<shadowcolor>00000000</shadowcolor>
+					<label>$LOCALIZE[31408]</label>
+					<include>FlixiumGlobalFont_FlixiumSettingsParentHeading</include>
+				</control>
+				<control type="image">
+					<left>650</left>
+					<top>390</top>
+					<width>620</width>
+					<height>150</height>
+					<texture>special://skin/extras/flixium-logo.png</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</control>
+			<control type="group">
+				<visible>!String.IsEqual(Window.Property(page),0)</visible>
+				<control type="image">
+					<left>80</left>
+					<top>80</top>
+					<width>240</width>
+					<height>60</height>
+					<texture>special://skin/extras/flixium-logo.png</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>1580</left>
+					<top>85</top>
+					<width>260</width>
+					<height>50</height>
+					<textcolor>99FFFFFF</textcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$INFO[Window.Property(step)]</label>
+					<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+				</control>
+				<control type="label">
+					<left>360</left>
+					<top>215</top>
+					<width>1200</width>
+					<height>80</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>FFFFFFFF</textcolor>
+					<shadowcolor>00000000</shadowcolor>
+					<label>$INFO[Window.Property(title)]</label>
+					<include>FlixiumGlobalFont_FlixiumSettingsHeading</include>
+				</control>
+				<control type="label">
+					<left>360</left>
+					<top>295</top>
+					<width>1200</width>
+					<height>55</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>BFFFFFFF</textcolor>
+					<shadowcolor>00000000</shadowcolor>
+					<label>$INFO[Window.Property(subtitle)]</label>
+					<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+				</control>
+				<control type="grouplist" id="100">
+					<left>580</left>
+					<top>390</top>
+					<width>760</width>
+					<height>360</height>
+					<orientation>vertical</orientation>
+					<itemgap>14</itemgap>
+					<onup>203</onup>
+					<ondown>203</ondown>
+					<onleft>201</onleft>
+					<onright>203</onright>
+					<visible>!String.IsEqual(Window.Property(page),4)</visible>
+					<control type="button" id="101">
+						<width>760</width>
+						<label>$INFO[Window.Property(option1)]</label>
+						<visible>!String.IsEmpty(Window.Property(option1))</visible>
+						<include>FlixiumSettingButton</include>
+					</control>
+					<control type="button" id="102">
+						<width>760</width>
+						<label>$INFO[Window.Property(option2)]</label>
+						<visible>!String.IsEmpty(Window.Property(option2))</visible>
+						<include>FlixiumSettingButton</include>
+					</control>
+					<control type="button" id="103">
+						<width>760</width>
+						<label>$INFO[Window.Property(option3)]</label>
+						<visible>!String.IsEmpty(Window.Property(option3))</visible>
+						<include>FlixiumSettingButton</include>
+					</control>
+					<control type="button" id="104">
+						<width>760</width>
+						<label>$INFO[Window.Property(option4)]</label>
+						<visible>!String.IsEmpty(Window.Property(option4))</visible>
+						<include>FlixiumSettingButton</include>
+					</control>
+				</control>
+				<control type="textbox">
+					<left>420</left>
+					<top>760</top>
+					<width>1080</width>
+					<height>95</height>
+					<align>center</align>
+					<textcolor>BFFFFFFF</textcolor>
+					<label>$INFO[Window.Property(preview)]</label>
+					<visible>!String.IsEqual(Window.Property(page),4)</visible>
+					<include>FlixiumGlobalFont_FlixiumSettingsDetail</include>
+				</control>
+				<control type="textbox">
+					<left>420</left>
+					<top>460</top>
+					<width>1080</width>
+					<height>140</height>
+					<align>center</align>
+					<textcolor>E6FFFFFF</textcolor>
+					<label>$INFO[Window.Property(preview)]</label>
+					<visible>String.IsEqual(Window.Property(page),4)</visible>
+					<include>FlixiumGlobalFont_FlixiumSettingsSubheading</include>
+				</control>
+			</control>
+			<control type="grouplist" id="200">
+				<left>360</left>
+				<top>900</top>
+				<width>1200</width>
+				<height>75</height>
+				<orientation>horizontal</orientation>
+				<align>center</align>
+				<itemgap>20</itemgap>
+				<onleft>200</onleft>
+				<onright>200</onright>
+				<onup>100</onup>
+				<ondown>noop</ondown>
+				<animation effect="slide" end="0,-260" time="0" condition="String.IsEqual(Window.Property(page),0)">Conditional</animation>
+				<control type="button" id="201">
+					<width>180</width>
+					<label>$LOCALIZE[31365]</label>
+					<visible>!String.IsEqual(Window.Property(page),0)</visible>
+					<include>FlixiumSettingButton</include>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<onup condition="String.IsEqual(Window.Property(page),0) | String.IsEqual(Window.Property(page),4)">noop</onup>
+					<onup condition="!String.IsEqual(Window.Property(page),0) + !String.IsEqual(Window.Property(page),4)">100</onup>
+				</control>
+				<control type="button" id="202">
+					<width>220</width>
+					<label>$INFO[Window.Property(skip)]</label>
+					<visible>!String.IsEqual(Window.Property(page),4)</visible>
+					<include>FlixiumSettingButton</include>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<onup condition="String.IsEqual(Window.Property(page),0) | String.IsEqual(Window.Property(page),4)">noop</onup>
+					<onup condition="!String.IsEqual(Window.Property(page),0) + !String.IsEqual(Window.Property(page),4)">100</onup>
+				</control>
+				<control type="button" id="203">
+					<width>360</width>
+					<label>$INFO[Window.Property(next)]</label>
+					<visible>true</visible>
+					<include>FlixiumSettingButton</include>
+					<align>center</align>
+					<textoffsetx>0</textoffsetx>
+					<onup condition="String.IsEqual(Window.Property(page),0) | String.IsEqual(Window.Property(page),4)">noop</onup>
+					<onup condition="!String.IsEqual(Window.Property(page),0) + !String.IsEqual(Window.Property(page),4)">100</onup>
+				</control>
+			</control>
+		</control>
+		</control>
+	</controls>
+</window>

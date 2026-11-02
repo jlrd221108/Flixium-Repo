@@ -1,0 +1,4 @@
+Spotify Mix UI Bold
+Copyright 2024 Spotify
+Source: https://encore.scdn.co/fonts/SpotifyMixUI-Bold-4264b799009b1db5c491778b1bc8e5b7.woff2
+Original font outlines and metadata preserved; WOFF2 decompressed to SFNT/TTF for Kodi.

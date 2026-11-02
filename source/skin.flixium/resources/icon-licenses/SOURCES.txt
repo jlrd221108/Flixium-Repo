@@ -1,0 +1,8 @@
+Tabler Icons: https://github.com/tabler/tabler-icons
+Commit: a4ce1404bc6d24d3c365afe7b258d6bf6f48d62d
+Filled icons except power, volume, shuffle and repeat controls.
+Media-format artwork supplied by the skin author in Desktop/SkinIcons.
+Existing rare-format and dedicated genre artwork retains its original provenance.
+Additional requested outline exception: photo-video for the Media settings icon.
+Additional requested outlines: settings, device-tv-old for Live TV settings, and info-circle for System information and video OSD information.
+Combined Audio & Subtitles OSD: Tabler outline message-language, https://github.com/tabler/tabler-icons/blob/main/icons/outline/message-language.svg (MIT; retained in Tabler-MIT.txt). SVG source: extras/audio-subtitles.svg; Kodi raster: extras/audio-subtitles.png.

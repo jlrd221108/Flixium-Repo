@@ -1,0 +1,20 @@
+Aeon MQ5 Home port for Flixium
+
+Source: Aeon MQ 5 Omegamod, addon skin.aeonmq5.omegamod, version 13.8.2.
+Original skin authors/providers: MarcosQui / scott967, with contributions from
+the artists, font authors and translators credited in the original distribution.
+
+The optional MQ5 Home uses adapted Home XML, assets and fonts from that source.
+Flixium modifications include namespaced preferences/windows/includes/fonts,
+isolated asset paths, Flixium-themed settings and selectors, a shared main-menu
+editor and scoped provider adapters. Non-Home screens remain Flixium.
+
+Original MQ5 skin content and adaptations are provided under Creative Commons
+Attribution-ShareAlike 3.0. See LICENSE-MQ5.txt in this directory. Font-specific
+licences and notices are retained with the fonts under fonts/mq5/.
+MQ5 translations are distributed separately in Flixium Helper, with their own
+attribution and the same CC BY-SA 3.0 licence. They retain translator credits.
+
+The source runtime version and window mapping are recorded in
+runtime-manifest.json. The development source snapshot and conversion tools are
+retained in the Flixium development tree, not in the installable addon ZIP.

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<smartplaylist type="albums">
+	<name>Recently added albums</name>
+	<match>all</match>
+	<limit>30</limit>
+	<order direction="descending">dateadded</order>
+</smartplaylist>

@@ -1,3 +1,8 @@
+[B]1.1.28[/B]
+- Move home widgets up 30px and refine poster corners and focus highlights.
+- Add matching genre icons with consistent visible diagonal sizing and alignment.
+- Keep helper and native visualizer dependencies unchanged.
+
 [B]1.1.27[/B]
 - Publish current home widget, My List and Flix layout refinements.
 - Include all 122 skin layouts and current runtime files.
@@ -359,3 +364,4 @@
 - Reworked the movie information screen with poster, cast, and info views.
 
 - Removed inherited and superseded Estuary assets and metadata.
+
