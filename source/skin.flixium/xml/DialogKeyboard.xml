@@ -22,7 +22,7 @@
 				<bottom>0</bottom>
 				<width>100%</width>
 				<height>470</height>
-				<texture colordiffuse="$VAR[ThemeDialogVar]">colors/white.png</texture>
+				<texture border="32" colordiffuse="$VAR[GlassThemePopupTintVar]">$VAR[GlassDialogSurfaceVar]</texture>
 			</control>
 			<control type="label" id="311">
 				<centerleft>50%</centerleft>
@@ -34,13 +34,6 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<shadowcolor>black</shadowcolor>
-			</control>
-			<control type="image">
-				<centerleft>50%</centerleft>
-				<top>184</top>
-				<width>1542</width>
-				<height>100</height>
-				<texture colordiffuse="$VAR[ThemeDialogVar]">colors/white.png</texture>
 			</control>
 			<control type="image">
 				<centerleft>50%</centerleft>
@@ -77,91 +70,91 @@
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">304</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>120</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="101">
 						<description>(0,1) key button</description>
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">303</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>121</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="102">
 						<description>(0,2) key button</description>
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">302</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>122</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="103">
 						<description>(0,3) key button</description>
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">32</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>123</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="104">
 						<description>(0,4) key button</description>
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">32</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>124</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="105">
 						<description>(0,5) key button</description>
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">32</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>125</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="106">
 						<description>(0,6) key button</description>
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">32</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>126</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="107">
 						<description>(0,7) key button</description>
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">305</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>127</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="108">
 						<description>(0,8) key button</description>
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">306</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>128</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="109">
 						<description>(0,9) key button</description>
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">8</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>129</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="110">
 						<description>(0,10) key button</description>
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">170</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>130</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="111">
 						<description>(0,11) key button</description>
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">171</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>131</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="112">
 						<description>(0,12) key button</description>
 						<onup condition="!Integer.IsGreater(Container(9010).NumItems,0)">172</onup>
 						<onup condition="Integer.IsGreater(Container(9010).NumItems,0)">9010</onup>
 						<ondown>132</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 				</control>
 				<control type="grouplist">
@@ -174,79 +167,79 @@
 						<description>(1,0) key button</description>
 						<onup>100</onup>
 						<ondown>140</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="121">
 						<description>(1,1) key button</description>
 						<onup>101</onup>
 						<ondown>141</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="122">
 						<description>(1,2) key button</description>
 						<onup>102</onup>
 						<ondown>142</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="123">
 						<description>(1,3) key button</description>
 						<onup>103</onup>
 						<ondown>143</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="124">
 						<description>(1,4) key button</description>
 						<onup>104</onup>
 						<ondown>144</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="125">
 						<description>(1,5) key button</description>
 						<onup>105</onup>
 						<ondown>145</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="126">
 						<description>(1,6) key button</description>
 						<onup>106</onup>
 						<ondown>146</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="127">
 						<description>(1,7) key button</description>
 						<onup>107</onup>
 						<ondown>147</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="128">
 						<description>(1,8) key button</description>
 						<onup>108</onup>
 						<ondown>148</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="129">
 						<description>(1,9) key button</description>
 						<onup>109</onup>
 						<ondown>149</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="130">
 						<description>(1,10) key button</description>
 						<onup>110</onup>
 						<ondown>150</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="131">
 						<description>(1,11) key button</description>
 						<onup>111</onup>
 						<ondown>151</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="132">
 						<description>(1,12) key button</description>
 						<onup>112</onup>
 						<ondown>152</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 				</control>
 				<control type="grouplist">
@@ -259,79 +252,79 @@
 						<description>(2,0) key button</description>
 						<onup>120</onup>
 						<ondown>160</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="141">
 						<description>(2,1) key button</description>
 						<onup>121</onup>
 						<ondown>161</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="142">
 						<description>(2,2) key button</description>
 						<onup>122</onup>
 						<ondown>162</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="143">
 						<description>(2,3) key button</description>
 						<onup>123</onup>
 						<ondown>163</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="144">
 						<description>(2,4) key button</description>
 						<onup>124</onup>
 						<ondown>164</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="145">
 						<description>(2,5) key button</description>
 						<onup>125</onup>
 						<ondown>165</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="146">
 						<description>(2,6) key button</description>
 						<onup>126</onup>
 						<ondown>166</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="147">
 						<description>(2,7) key button</description>
 						<onup>127</onup>
 						<ondown>167</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="148">
 						<description>(2,8) key button</description>
 						<onup>128</onup>
 						<ondown>168</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="149">
 						<description>(2,9) key button</description>
 						<onup>129</onup>
 						<ondown>169</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="150">
 						<description>(2,10) key button</description>
 						<onup>130</onup>
 						<ondown>170</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="151">
 						<description>(2,11) key button</description>
 						<onup>131</onup>
 						<ondown>171</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="152">
 						<description>(2,12) key button</description>
 						<onup>132</onup>
 						<ondown>172</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 				</control>
 				<control type="grouplist">
@@ -344,79 +337,79 @@
 						<description>(3,0) key button</description>
 						<onup>140</onup>
 						<ondown>304</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="161">
 						<description>(3,1) key button</description>
 						<onup>141</onup>
 						<ondown>303</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="162">
 						<description>(3,2) key button</description>
 						<onup>142</onup>
 						<ondown>302</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="163">
 						<description>(3,3) key button</description>
 						<onup>143</onup>
 						<ondown>32</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="164">
 						<description>(3,4) key button</description>
 						<onup>144</onup>
 						<ondown>32</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="165">
 						<description>(3,5) key button</description>
 						<onup>145</onup>
 						<ondown>32</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="166">
 						<description>(3,6) key button</description>
 						<onup>146</onup>
 						<ondown>32</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="167">
 						<description>(3,7) key button</description>
 						<onup>147</onup>
 						<ondown>305</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="168">
 						<description>(3,8) key button</description>
 						<onup>148</onup>
 						<ondown>306</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="169">
 						<description>(3,9) key button</description>
 						<onup>149</onup>
 						<ondown>8</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="170">
 						<description>(3,10) key button</description>
 						<onup>150</onup>
 						<ondown>110</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="171">
 						<description>(3,11) key button</description>
 						<onup>151</onup>
 						<ondown>111</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 					<control type="button" id="172">
 						<description>(3,12) key button</description>
 						<onup>152</onup>
 						<ondown>112</ondown>
-						<include>KeyboardButton</include>
+						<include>FlixiumKeyboardKey</include>
 					</control>
 				</control>
 				<control type="grouplist">
@@ -431,7 +424,7 @@
 						<height>120</height>
 						<onup>160</onup>
 						<ondown>100</ondown>
-						<texturefocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/roundbutton-fo.png</texturefocus>
+						<include>FlixiumKeyboardFocus</include>
 						<texturenofocus />
 						<textureradioonfocus colordiffuse="FFFFFFFF">icons/keyboard/letters.png</textureradioonfocus>
 						<textureradioonnofocus colordiffuse="FFFFFFFF">icons/keyboard/letters.png</textureradioonnofocus>
@@ -447,10 +440,10 @@
 						<height>120</height>
 						<onup>161</onup>
 						<ondown>101</ondown>
-						<texturefocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/roundbutton-fo.png</texturefocus>
+						<include>FlixiumKeyboardFocus</include>
 						<texturenofocus />
 						<textureradioonfocus colordiffuse="FFFFFFFF">icons/keyboard/capslock.png</textureradioonfocus>
-						<textureradioonnofocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">icons/keyboard/capslock.png</textureradioonnofocus>
+						<textureradioonnofocus colordiffuse="$VAR[ThemeHighlightVar]">icons/keyboard/capslock.png</textureradioonnofocus>
 						<textureradioofffocus colordiffuse="FFFFFFFF">icons/keyboard/capslock.png</textureradioofffocus>
 						<textureradiooffnofocus colordiffuse="FFFFFFFF">icons/keyboard/capslock.png</textureradiooffnofocus>
 						<radioposx>40</radioposx>
@@ -464,10 +457,10 @@
 						<height>120</height>
 						<onup>162</onup>
 						<ondown>102</ondown>
-						<texturefocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/roundbutton-fo.png</texturefocus>
+						<include>FlixiumKeyboardFocus</include>
 						<texturenofocus />
 						<textureradioonfocus colordiffuse="FFFFFFFF">icons/keyboard/shift.png</textureradioonfocus>
-						<textureradioonnofocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">icons/keyboard/shift.png</textureradioonnofocus>
+						<textureradioonnofocus colordiffuse="$VAR[ThemeHighlightVar]">icons/keyboard/shift.png</textureradioonnofocus>
 						<textureradioofffocus colordiffuse="FFFFFFFF">icons/keyboard/shift.png</textureradioofffocus>
 						<textureradiooffnofocus colordiffuse="FFFFFFFF">icons/keyboard/shift.png</textureradiooffnofocus>
 						<radioposx>42</radioposx>
@@ -482,9 +475,9 @@
 						<ondown>104</ondown>
 						<texturefocus />
 						<texturenofocus />
-						<textureradioonfocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">icons/keyboard/spacebar.png</textureradioonfocus>
+						<textureradioonfocus colordiffuse="$VAR[ThemeHighlightVar]">icons/keyboard/spacebar.png</textureradioonfocus>
 						<textureradioonnofocus colordiffuse="FFFFFFFF">icons/keyboard/spacebar.png</textureradioonnofocus>
-						<textureradioofffocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">icons/keyboard/spacebar.png</textureradioofffocus>
+						<textureradioofffocus colordiffuse="$VAR[ThemeHighlightVar]">icons/keyboard/spacebar.png</textureradioofffocus>
 						<textureradiooffnofocus colordiffuse="FFFFFFFF">icons/keyboard/spacebar.png</textureradiooffnofocus>
 						<radioposx>34</radioposx>
 						<radiowidth>328</radiowidth>
@@ -496,7 +489,7 @@
 						<height>120</height>
 						<ondown>107</ondown>
 						<onup>167</onup>
-						<texturefocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/roundbutton-fo.png</texturefocus>
+						<include>FlixiumKeyboardFocus</include>
 						<texturenofocus />
 						<textureradioonfocus colordiffuse="FFFFFFFF">icons/keyboard/arrowleft.png</textureradioonfocus>
 						<textureradioonnofocus colordiffuse="FFFFFFFF">icons/keyboard/arrowleft.png</textureradioonnofocus>
@@ -512,7 +505,7 @@
 						<height>120</height>
 						<ondown>108</ondown>
 						<onup>168</onup>
-						<texturefocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/roundbutton-fo.png</texturefocus>
+						<include>FlixiumKeyboardFocus</include>
 						<texturenofocus />
 						<textureradioonfocus colordiffuse="FFFFFFFF">icons/keyboard/arrowright.png</textureradioonfocus>
 						<textureradioonnofocus colordiffuse="FFFFFFFF">icons/keyboard/arrowright.png</textureradioonnofocus>
@@ -528,7 +521,7 @@
 						<height>120</height>
 						<onup>169</onup>
 						<ondown>109</ondown>
-						<texturefocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/roundbutton-fo.png</texturefocus>
+						<include>FlixiumKeyboardFocus</include>
 						<texturenofocus />
 						<textureradioonfocus colordiffuse="FFFFFFFF">icons/keyboard/backspace.png</textureradioonfocus>
 						<textureradioonnofocus colordiffuse="FFFFFFFF">icons/keyboard/backspace.png</textureradioonnofocus>
@@ -594,7 +587,7 @@
 						<top>0</top>
 						<width>480</width>
 						<height>50</height>
-						<texture colordiffuse="$VAR[ThemeDialogVar]">colors/white.png</texture>
+						<texture border="24" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassDialogSurfaceVar]</texture>
 					</control>
 					<control type="label">
 						<textoffsetx>30</textoffsetx>
@@ -614,13 +607,13 @@
 							<top>0</top>
 							<width>480</width>
 							<height>50</height>
-							<texture colordiffuse="$VAR[ThemeDialogVar]">colors/white.png</texture>
+							<texture border="24" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassDialogSurfaceVar]</texture>
 						</control>
 						<control type="image">
 							<left>10</left>
 							<width>480</width>
 							<height>50</height>
-							<texture colordiffuse="$VAR[ThemeLegacyHighlightVar]">colors/grey.png</texture>
+							<texture border="24" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassFocusSurfaceVar]</texture>
 							<include>Animation_FocusTextureFade</include>
 						</control>
 						<control type="label">

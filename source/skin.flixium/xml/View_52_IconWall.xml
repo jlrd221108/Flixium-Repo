@@ -49,7 +49,8 @@
   <param name="left" value="20" /><param name="width" value="364" />
   <param name="top" value="0" /><param name="height" value="240" />
   <param name="horror_left" value="176" /><param name="horror_width" value="200" />
-  <param name="icon_left" value="58" /><param name="icon_top" value="40" />
+  <param name="icon_left" value="39.684211" /><param name="icon_top" value="66.578947" />
+  <param name="horror_icon_width" value="152.631579" /><param name="horror_icon_height" value="106.842106" />
   <param name="icon_width" value="116" /><param name="icon_height" value="160" />
   <param name="drama_left" value="58" /><param name="drama_top" value="40" />
   <param name="romance_left" value="58" /><param name="romance_top" value="40" />
@@ -61,6 +62,11 @@
   <param name="mystery_left" value="58" /><param name="mystery_top" value="40" />
   <param name="crime_left" value="58" /><param name="crime_top" value="40" />
   <param name="scifi_left" value="58" /><param name="scifi_top" value="40" />
+  <param name="animation_left" value="58" /><param name="animation_top" value="40" />
+  <param name="family_left" value="58" /><param name="family_top" value="68.815437" />
+  <param name="music_genre_left" value="58" /><param name="music_genre_top" value="40" />
+  <param name="biography_left" value="58" /><param name="biography_top" value="36.848275" />
+  <param name="family_height" value="102.4976" />
  </include>
 </control>
 </control>

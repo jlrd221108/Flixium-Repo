@@ -463,6 +463,10 @@
 		<value>DefaultAudio.png</value>
 	</variable>
 	<variable name="FlixiumGenrePreviewVar">
+		<value condition="String.IsEqual(ListItem.Label,Biography)">special://skin/media/genres/biography-book-quill.png</value>
+		<value condition="String.IsEqual(ListItem.Label,Music) | String.IsEqual(ListItem.Label,Musical)">special://skin/media/genres/music-notes.png</value>
+		<value condition="String.IsEqual(ListItem.Label,Family)">special://skin/media/genres/family-figures.png</value>
+		<value condition="String.IsEqual(ListItem.Label,Animation)">special://skin/media/genres/mickey-white-ears.png</value>
 		<value condition="String.IsEqual(ListItem.Label,Science Fiction) | String.IsEqual(ListItem.Label,Sci-Fi)">special://skin/media/genres/scifi-ufo.png</value>
 		<value condition="String.IsEqual(ListItem.Label,Crime)">special://skin/media/genres/crime-handcuffs.png</value>
 		<value condition="String.IsEqual(ListItem.Label,Mystery)">special://skin/media/genres/mystery-detective.png</value>
@@ -471,7 +475,7 @@
 		<value condition="String.IsEqual(ListItem.Label,Adventure)">special://skin/media/genres/adventure-fedora-rope-compass.png</value>
 		<value condition="String.IsEqual(ListItem.Label,Action)">special://skin/media/genres/action-ak47.png</value>
 		<value condition="String.IsEqual(ListItem.Label,Comedy)">special://skin/media/genres/comedy-jester.png</value>
-		<value condition="String.IsEqual(ListItem.Label,Horror)">special://skin/media/genres/horror-scream.png</value>
+		<value condition="String.IsEqual(ListItem.Label,Horror)">special://skin/media/genres/horror-mask-monochrome.png</value>
 		<value condition="String.IsEqual(ListItem.Label,Drama)">special://skin/media/genres/drama-masks.png</value>
 		<value condition="String.IsEqual(ListItem.Label,Romance)">special://skin/media/genres/romance-hearts.png</value>
 		<value></value>

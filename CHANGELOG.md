@@ -1,5 +1,11 @@
 # Release notes
 
+## Skin 1.1.29 (2026-11-04)
+
+- Balance home widget poster glow on all four edges.
+- Apply the active colour scheme and Glass Mode to the on-screen keyboard.
+- Add genre artwork and refine the library poster view.
+
 ## Skin 1.1.28 - 2026-11-02
 
 - Refine home widget positioning, poster focus highlights and genre icon artwork.

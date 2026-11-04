@@ -479,15 +479,25 @@
 			</control>
 		</definition>
 	</include>
-	<include name="KeyboardButton">
+	<include name="KeyboardKeyLayout">
 		<width>120</width>
 		<height>120</height>
 		<textoffsety>27</textoffsety>
-		<texturefocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/roundbutton-fo.png</texturefocus>
 		<texturenofocus />
 		<align>center</align>
 		<aligny>top</aligny>
 		<font>font45</font>
+	</include>
+	<include name="KeyboardButton">
+		<include>KeyboardKeyLayout</include>
+		<texturefocus colordiffuse="$VAR[ThemeLegacyHighlightVar]">buttons/roundbutton-fo.png</texturefocus>
+	</include>
+	<include name="FlixiumKeyboardKey">
+		<include>KeyboardKeyLayout</include>
+		<include>FlixiumKeyboardFocus</include>
+	</include>
+	<include name="FlixiumKeyboardFocus">
+		<texturefocus border="32" colordiffuse="$VAR[GlassThemeFocusTintVar]">$VAR[GlassFocusSurfaceVar]</texturefocus>
 	</include>
 	<include name="PlaylistWindowButton">
 		<param name="width">100%</param>
