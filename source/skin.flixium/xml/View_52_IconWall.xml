@@ -66,6 +66,10 @@
   <param name="family_left" value="58" /><param name="family_top" value="68.815437" />
   <param name="music_genre_left" value="58" /><param name="music_genre_top" value="40" />
   <param name="biography_left" value="58" /><param name="biography_top" value="36.848275" />
+  <param name="history_left" value="58" /><param name="history_top" value="39.943026" />
+  <param name="sport_left" value="58" /><param name="sport_top" value="42.503666" />
+  <param name="war_left" value="58" /><param name="war_top" value="39.428355" />
+  <param name="documentary_left" value="58" /><param name="documentary_top" value="34.832375" />
   <param name="family_height" value="102.4976" />
  </include>
 </control>

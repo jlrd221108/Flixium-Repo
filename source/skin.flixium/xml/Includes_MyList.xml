@@ -153,7 +153,12 @@
           </control>
           <control type="fixedlist" id="18011">
             <focusposition>1</focusposition>
-            <movement>1</movement>
+            <include content="WidgetFixedListMovement" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)]">
+              <param name="value" value="5" />
+            </include>
+            <include content="WidgetFixedListMovement" condition="![[String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)]]">
+              <param name="value" value="2" />
+            </include>
             <onclick condition="String.IsEqual(ListItem.DBType,set)">$VAR[MovieSetOnClickActionVar]</onclick>
             <onclick condition="String.IsEqual(ListItem.DBType,tvshow)">$VAR[TVShowOnClickActionVar]</onclick>
             <left>54.375</left>
@@ -198,7 +203,9 @@
               <param name="target" value="videos" />
               <param name="limit" value="15" />
             </include>
-            <width>1473.75</width>
+            <width>1520.625</width>
+
+
             <include content="WidgetFixedListGeometry" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)]">
               <param name="top" value="8" />
               <param name="height" value="336" />
@@ -207,10 +214,10 @@
               <param name="top" value="64" />
               <param name="height" value="256" />
             </include>
-            <itemlayout width="344" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)">
+            <itemlayout width="350" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18011.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18011.short)) + Integer.IsGreater(Container(18011).NumItems,0) + Integer.IsLess(Container(18011).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-350,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18011.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18011.short)) + Integer.IsGreater(Container(18011).NumItems,0) + Integer.IsLess(Container(18011).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <left>11.25</left>
                   <top>11.25</top>
@@ -232,10 +239,10 @@
                 </control>
               </control>
             </itemlayout>
-            <focusedlayout width="344" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)">
+            <focusedlayout width="350" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18011.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18011.short)) + Integer.IsGreater(Container(18011).NumItems,0) + Integer.IsLess(Container(18011).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-350,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18011.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18011.short)) + Integer.IsGreater(Container(18011).NumItems,0) + Integer.IsLess(Container(18011).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <include content="FlixiumHomeWidgetControlZoom">
@@ -272,11 +279,11 @@
                 </control>
               </control>
             </focusedlayout>
-            <itemlayout width="208" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)]">
+            <itemlayout width="200" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)]">
               <control type="group">
                 <top>16</top>
                 <left>11.25</left>
-                <animation effect="slide" end="-208,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18011.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18011.short)) + Integer.IsGreater(Container(18011).NumItems,0) + Integer.IsLess(Container(18011).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-200,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18011.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18011.short)) + Integer.IsGreater(Container(18011).NumItems,0) + Integer.IsLess(Container(18011).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <left>11.25</left>
                   <top>4</top>
@@ -299,11 +306,11 @@
                 </control>
               </control>
             </itemlayout>
-            <focusedlayout width="208" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)]">
+            <focusedlayout width="200" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)]">
               <control type="group">
                 <top>16</top>
                 <left>11.25</left>
-                <animation effect="slide" end="-208,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18011.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18011.short)) + Integer.IsGreater(Container(18011).NumItems,0) + Integer.IsLess(Container(18011).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-200,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18011.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18011.short)) + Integer.IsGreater(Container(18011).NumItems,0) + Integer.IsLess(Container(18011).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <animation effect="zoom" start="100" end="102" time="180" tween="sine" easing="inout" center="104,142" condition="Control.HasFocus(18011)">Conditional</animation>
@@ -333,46 +340,46 @@
                 </control>
               </control>
             </focusedlayout>
-            <itemlayout width="344" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)">
+            <itemlayout width="338" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18011.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18011.short)) + Integer.IsGreater(Container(18011).NumItems,0) + Integer.IsLess(Container(18011).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-338,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18011.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18011.short)) + Integer.IsGreater(Container(18011).NumItems,0) + Integer.IsLess(Container(18011).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <description>Movie genre card</description>
                   <left>11.25</left>
-                  <top>11.25</top>
-                  <width>320</width>
-                  <height>180</height>
+                  <top>15.75</top>
+                  <width>304</width>
+                  <height>171</height>
                   <texture diffuse="special://skin/extras/home-landscape-mask.png" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSurfaceVar]</texture>
                 </control>
                 <include>FlixiumGenreTileContent</include>
               </control>
             </itemlayout>
-            <focusedlayout width="344" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)">
+            <focusedlayout width="338" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.1.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18011.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18011.short)) + Integer.IsGreater(Container(18011).NumItems,0) + Integer.IsLess(Container(18011).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-338,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18011.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18011.short)) + Integer.IsGreater(Container(18011).NumItems,0) + Integer.IsLess(Container(18011).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <include content="FlixiumHomeWidgetControlZoom">
-                    <param name="center" value="172.0,101.25" />
+                    <param name="center" value="164.0,101.25" />
                     <param name="list_id" value="18011" />
                   </include>
                   <control type="image">
                     <description>Movie genre focus</description>
                     <left>1.25</left>
-                    <top>1.25</top>
-                    <width>340</width>
-                    <height>200</height>
+                    <top>5.75</top>
+                    <width>324</width>
+                    <height>191</height>
                     <texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/media/genres/focus-edge-glow.png</texture>
                     <visible>Control.HasFocus(18011)</visible>
                   </control>
                   <control type="image">
                     <description>Movie genre card</description>
                     <left>11.25</left>
-                    <top>11.25</top>
-                    <width>320</width>
-                    <height>180</height>
+                    <top>15.75</top>
+                    <width>304</width>
+                    <height>171</height>
                     <texture diffuse="special://skin/extras/home-landscape-mask.png" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSurfaceVar]</texture>
                   </control>
                   <include>FlixiumGenreTileContent</include>
@@ -430,7 +437,12 @@
           </control>
           <control type="fixedlist" id="18021">
             <focusposition>1</focusposition>
-            <movement>1</movement>
+            <include content="WidgetFixedListMovement" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)]">
+              <param name="value" value="5" />
+            </include>
+            <include content="WidgetFixedListMovement" condition="![[String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)]]">
+              <param name="value" value="2" />
+            </include>
             <onclick condition="String.IsEqual(ListItem.DBType,set)">$VAR[MovieSetOnClickActionVar]</onclick>
             <onclick condition="String.IsEqual(ListItem.DBType,tvshow)">$VAR[TVShowOnClickActionVar]</onclick>
             <left>54.375</left>
@@ -475,7 +487,9 @@
               <param name="target" value="videos" />
               <param name="limit" value="15" />
             </include>
-            <width>1473.75</width>
+            <width>1520.625</width>
+
+
             <include content="WidgetFixedListGeometry" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)]">
               <param name="top" value="8" />
               <param name="height" value="336" />
@@ -484,10 +498,10 @@
               <param name="top" value="64" />
               <param name="height" value="256" />
             </include>
-            <itemlayout width="344" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)">
+            <itemlayout width="350" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18021.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18021.short)) + Integer.IsGreater(Container(18021).NumItems,0) + Integer.IsLess(Container(18021).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-350,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18021.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18021.short)) + Integer.IsGreater(Container(18021).NumItems,0) + Integer.IsLess(Container(18021).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <left>11.25</left>
                   <top>11.25</top>
@@ -509,10 +523,10 @@
                 </control>
               </control>
             </itemlayout>
-            <focusedlayout width="344" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)">
+            <focusedlayout width="350" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18021.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18021.short)) + Integer.IsGreater(Container(18021).NumItems,0) + Integer.IsLess(Container(18021).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-350,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18021.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18021.short)) + Integer.IsGreater(Container(18021).NumItems,0) + Integer.IsLess(Container(18021).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <include content="FlixiumHomeWidgetControlZoom">
@@ -549,11 +563,11 @@
                 </control>
               </control>
             </focusedlayout>
-            <itemlayout width="208" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)]">
+            <itemlayout width="200" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)]">
               <control type="group">
                 <top>16</top>
                 <left>11.25</left>
-                <animation effect="slide" end="-208,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18021.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18021.short)) + Integer.IsGreater(Container(18021).NumItems,0) + Integer.IsLess(Container(18021).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-200,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18021.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18021.short)) + Integer.IsGreater(Container(18021).NumItems,0) + Integer.IsLess(Container(18021).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <left>11.25</left>
                   <top>4</top>
@@ -576,11 +590,11 @@
                 </control>
               </control>
             </itemlayout>
-            <focusedlayout width="208" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)]">
+            <focusedlayout width="200" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)]">
               <control type="group">
                 <top>16</top>
                 <left>11.25</left>
-                <animation effect="slide" end="-208,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18021.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18021.short)) + Integer.IsGreater(Container(18021).NumItems,0) + Integer.IsLess(Container(18021).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-200,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18021.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18021.short)) + Integer.IsGreater(Container(18021).NumItems,0) + Integer.IsLess(Container(18021).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <animation effect="zoom" start="100" end="102" time="180" tween="sine" easing="inout" center="104,142" condition="Control.HasFocus(18021)">Conditional</animation>
@@ -610,46 +624,46 @@
                 </control>
               </control>
             </focusedlayout>
-            <itemlayout width="344" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)">
+            <itemlayout width="338" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18021.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18021.short)) + Integer.IsGreater(Container(18021).NumItems,0) + Integer.IsLess(Container(18021).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-338,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18021.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18021.short)) + Integer.IsGreater(Container(18021).NumItems,0) + Integer.IsLess(Container(18021).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <description>Movie genre card</description>
                   <left>11.25</left>
-                  <top>11.25</top>
-                  <width>320</width>
-                  <height>180</height>
+                  <top>15.75</top>
+                  <width>304</width>
+                  <height>171</height>
                   <texture diffuse="special://skin/extras/home-landscape-mask.png" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSurfaceVar]</texture>
                 </control>
                 <include>FlixiumGenreTileContent</include>
               </control>
             </itemlayout>
-            <focusedlayout width="344" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)">
+            <focusedlayout width="338" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.2.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18021.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18021.short)) + Integer.IsGreater(Container(18021).NumItems,0) + Integer.IsLess(Container(18021).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-338,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18021.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18021.short)) + Integer.IsGreater(Container(18021).NumItems,0) + Integer.IsLess(Container(18021).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <include content="FlixiumHomeWidgetControlZoom">
-                    <param name="center" value="172.0,101.25" />
+                    <param name="center" value="164.0,101.25" />
                     <param name="list_id" value="18021" />
                   </include>
                   <control type="image">
                     <description>Movie genre focus</description>
                     <left>1.25</left>
-                    <top>1.25</top>
-                    <width>340</width>
-                    <height>200</height>
+                    <top>5.75</top>
+                    <width>324</width>
+                    <height>191</height>
                     <texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/media/genres/focus-edge-glow.png</texture>
                     <visible>Control.HasFocus(18021)</visible>
                   </control>
                   <control type="image">
                     <description>Movie genre card</description>
                     <left>11.25</left>
-                    <top>11.25</top>
-                    <width>320</width>
-                    <height>180</height>
+                    <top>15.75</top>
+                    <width>304</width>
+                    <height>171</height>
                     <texture diffuse="special://skin/extras/home-landscape-mask.png" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSurfaceVar]</texture>
                   </control>
                   <include>FlixiumGenreTileContent</include>
@@ -711,7 +725,12 @@
           </control>
           <control type="fixedlist" id="18031">
             <focusposition>1</focusposition>
-            <movement>1</movement>
+            <include content="WidgetFixedListMovement" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)]">
+              <param name="value" value="5" />
+            </include>
+            <include content="WidgetFixedListMovement" condition="![[String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)]]">
+              <param name="value" value="2" />
+            </include>
             <onclick condition="String.IsEqual(ListItem.DBType,set)">$VAR[MovieSetOnClickActionVar]</onclick>
             <onclick condition="String.IsEqual(ListItem.DBType,tvshow)">$VAR[TVShowOnClickActionVar]</onclick>
             <left>54.375</left>
@@ -756,7 +775,9 @@
               <param name="target" value="videos" />
               <param name="limit" value="15" />
             </include>
-            <width>1473.75</width>
+            <width>1520.625</width>
+
+
             <include content="WidgetFixedListGeometry" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)]">
               <param name="top" value="8" />
               <param name="height" value="336" />
@@ -765,10 +786,10 @@
               <param name="top" value="64" />
               <param name="height" value="256" />
             </include>
-            <itemlayout width="344" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)">
+            <itemlayout width="350" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18031.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18031.short)) + Integer.IsGreater(Container(18031).NumItems,0) + Integer.IsLess(Container(18031).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-350,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18031.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18031.short)) + Integer.IsGreater(Container(18031).NumItems,0) + Integer.IsLess(Container(18031).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <left>11.25</left>
                   <top>11.25</top>
@@ -790,10 +811,10 @@
                 </control>
               </control>
             </itemlayout>
-            <focusedlayout width="344" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)">
+            <focusedlayout width="350" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18031.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18031.short)) + Integer.IsGreater(Container(18031).NumItems,0) + Integer.IsLess(Container(18031).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-350,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18031.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18031.short)) + Integer.IsGreater(Container(18031).NumItems,0) + Integer.IsLess(Container(18031).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <include content="FlixiumHomeWidgetControlZoom">
@@ -830,11 +851,11 @@
                 </control>
               </control>
             </focusedlayout>
-            <itemlayout width="208" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)]">
+            <itemlayout width="200" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)]">
               <control type="group">
                 <top>16</top>
                 <left>11.25</left>
-                <animation effect="slide" end="-208,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18031.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18031.short)) + Integer.IsGreater(Container(18031).NumItems,0) + Integer.IsLess(Container(18031).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-200,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18031.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18031.short)) + Integer.IsGreater(Container(18031).NumItems,0) + Integer.IsLess(Container(18031).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <left>11.25</left>
                   <top>4</top>
@@ -857,11 +878,11 @@
                 </control>
               </control>
             </itemlayout>
-            <focusedlayout width="208" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)]">
+            <focusedlayout width="200" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)]">
               <control type="group">
                 <top>16</top>
                 <left>11.25</left>
-                <animation effect="slide" end="-208,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18031.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18031.short)) + Integer.IsGreater(Container(18031).NumItems,0) + Integer.IsLess(Container(18031).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-200,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18031.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18031.short)) + Integer.IsGreater(Container(18031).NumItems,0) + Integer.IsLess(Container(18031).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <animation effect="zoom" start="100" end="102" time="180" tween="sine" easing="inout" center="104,142" condition="Control.HasFocus(18031)">Conditional</animation>
@@ -891,46 +912,46 @@
                 </control>
               </control>
             </focusedlayout>
-            <itemlayout width="344" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)">
+            <itemlayout width="338" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18031.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18031.short)) + Integer.IsGreater(Container(18031).NumItems,0) + Integer.IsLess(Container(18031).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-338,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18031.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18031.short)) + Integer.IsGreater(Container(18031).NumItems,0) + Integer.IsLess(Container(18031).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <description>Movie genre card</description>
                   <left>11.25</left>
-                  <top>11.25</top>
-                  <width>320</width>
-                  <height>180</height>
+                  <top>15.75</top>
+                  <width>304</width>
+                  <height>171</height>
                   <texture diffuse="special://skin/extras/home-landscape-mask.png" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSurfaceVar]</texture>
                 </control>
                 <include>FlixiumGenreTileContent</include>
               </control>
             </itemlayout>
-            <focusedlayout width="344" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)">
+            <focusedlayout width="338" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.3.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18031.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18031.short)) + Integer.IsGreater(Container(18031).NumItems,0) + Integer.IsLess(Container(18031).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-338,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18031.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18031.short)) + Integer.IsGreater(Container(18031).NumItems,0) + Integer.IsLess(Container(18031).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <include content="FlixiumHomeWidgetControlZoom">
-                    <param name="center" value="172.0,101.25" />
+                    <param name="center" value="164.0,101.25" />
                     <param name="list_id" value="18031" />
                   </include>
                   <control type="image">
                     <description>Movie genre focus</description>
                     <left>1.25</left>
-                    <top>1.25</top>
-                    <width>340</width>
-                    <height>200</height>
+                    <top>5.75</top>
+                    <width>324</width>
+                    <height>191</height>
                     <texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/media/genres/focus-edge-glow.png</texture>
                     <visible>Control.HasFocus(18031)</visible>
                   </control>
                   <control type="image">
                     <description>Movie genre card</description>
                     <left>11.25</left>
-                    <top>11.25</top>
-                    <width>320</width>
-                    <height>180</height>
+                    <top>15.75</top>
+                    <width>304</width>
+                    <height>171</height>
                     <texture diffuse="special://skin/extras/home-landscape-mask.png" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSurfaceVar]</texture>
                   </control>
                   <include>FlixiumGenreTileContent</include>
@@ -996,7 +1017,12 @@
           </control>
           <control type="fixedlist" id="18041">
             <focusposition>1</focusposition>
-            <movement>1</movement>
+            <include content="WidgetFixedListMovement" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)]">
+              <param name="value" value="5" />
+            </include>
+            <include content="WidgetFixedListMovement" condition="![[String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)]]">
+              <param name="value" value="2" />
+            </include>
             <onclick condition="String.IsEqual(ListItem.DBType,set)">$VAR[MovieSetOnClickActionVar]</onclick>
             <onclick condition="String.IsEqual(ListItem.DBType,tvshow)">$VAR[TVShowOnClickActionVar]</onclick>
             <left>54.375</left>
@@ -1041,7 +1067,9 @@
               <param name="target" value="videos" />
               <param name="limit" value="15" />
             </include>
-            <width>1473.75</width>
+            <width>1520.625</width>
+
+
             <include content="WidgetFixedListGeometry" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)]">
               <param name="top" value="8" />
               <param name="height" value="336" />
@@ -1050,10 +1078,10 @@
               <param name="top" value="64" />
               <param name="height" value="256" />
             </include>
-            <itemlayout width="344" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)">
+            <itemlayout width="350" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18041.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18041.short)) + Integer.IsGreater(Container(18041).NumItems,0) + Integer.IsLess(Container(18041).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-350,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18041.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18041.short)) + Integer.IsGreater(Container(18041).NumItems,0) + Integer.IsLess(Container(18041).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <left>11.25</left>
                   <top>11.25</top>
@@ -1075,10 +1103,10 @@
                 </control>
               </control>
             </itemlayout>
-            <focusedlayout width="344" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)">
+            <focusedlayout width="350" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18041.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18041.short)) + Integer.IsGreater(Container(18041).NumItems,0) + Integer.IsLess(Container(18041).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-350,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18041.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18041.short)) + Integer.IsGreater(Container(18041).NumItems,0) + Integer.IsLess(Container(18041).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <include content="FlixiumHomeWidgetControlZoom">
@@ -1115,11 +1143,11 @@
                 </control>
               </control>
             </focusedlayout>
-            <itemlayout width="208" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)]">
+            <itemlayout width="200" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)]">
               <control type="group">
                 <top>16</top>
                 <left>11.25</left>
-                <animation effect="slide" end="-208,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18041.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18041.short)) + Integer.IsGreater(Container(18041).NumItems,0) + Integer.IsLess(Container(18041).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-200,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18041.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18041.short)) + Integer.IsGreater(Container(18041).NumItems,0) + Integer.IsLess(Container(18041).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <left>11.25</left>
                   <top>4</top>
@@ -1142,11 +1170,11 @@
                 </control>
               </control>
             </itemlayout>
-            <focusedlayout width="208" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)]">
+            <focusedlayout width="200" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)]">
               <control type="group">
                 <top>16</top>
                 <left>11.25</left>
-                <animation effect="slide" end="-208,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18041.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18041.short)) + Integer.IsGreater(Container(18041).NumItems,0) + Integer.IsLess(Container(18041).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-200,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18041.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18041.short)) + Integer.IsGreater(Container(18041).NumItems,0) + Integer.IsLess(Container(18041).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <animation effect="zoom" start="100" end="102" time="180" tween="sine" easing="inout" center="104,142" condition="Control.HasFocus(18041)">Conditional</animation>
@@ -1176,46 +1204,46 @@
                 </control>
               </control>
             </focusedlayout>
-            <itemlayout width="344" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)">
+            <itemlayout width="338" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18041.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18041.short)) + Integer.IsGreater(Container(18041).NumItems,0) + Integer.IsLess(Container(18041).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-338,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18041.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18041.short)) + Integer.IsGreater(Container(18041).NumItems,0) + Integer.IsLess(Container(18041).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <description>Movie genre card</description>
                   <left>11.25</left>
-                  <top>11.25</top>
-                  <width>320</width>
-                  <height>180</height>
+                  <top>15.75</top>
+                  <width>304</width>
+                  <height>171</height>
                   <texture diffuse="special://skin/extras/home-landscape-mask.png" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSurfaceVar]</texture>
                 </control>
                 <include>FlixiumGenreTileContent</include>
               </control>
             </itemlayout>
-            <focusedlayout width="344" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)">
+            <focusedlayout width="338" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.4.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18041.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18041.short)) + Integer.IsGreater(Container(18041).NumItems,0) + Integer.IsLess(Container(18041).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-338,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18041.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18041.short)) + Integer.IsGreater(Container(18041).NumItems,0) + Integer.IsLess(Container(18041).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <include content="FlixiumHomeWidgetControlZoom">
-                    <param name="center" value="172.0,101.25" />
+                    <param name="center" value="164.0,101.25" />
                     <param name="list_id" value="18041" />
                   </include>
                   <control type="image">
                     <description>Movie genre focus</description>
                     <left>1.25</left>
-                    <top>1.25</top>
-                    <width>340</width>
-                    <height>200</height>
+                    <top>5.75</top>
+                    <width>324</width>
+                    <height>191</height>
                     <texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/media/genres/focus-edge-glow.png</texture>
                     <visible>Control.HasFocus(18041)</visible>
                   </control>
                   <control type="image">
                     <description>Movie genre card</description>
                     <left>11.25</left>
-                    <top>11.25</top>
-                    <width>320</width>
-                    <height>180</height>
+                    <top>15.75</top>
+                    <width>304</width>
+                    <height>171</height>
                     <texture diffuse="special://skin/extras/home-landscape-mask.png" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSurfaceVar]</texture>
                   </control>
                   <include>FlixiumGenreTileContent</include>
@@ -1285,7 +1313,12 @@
           </control>
           <control type="fixedlist" id="18051">
             <focusposition>1</focusposition>
-            <movement>1</movement>
+            <include content="WidgetFixedListMovement" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)]">
+              <param name="value" value="5" />
+            </include>
+            <include content="WidgetFixedListMovement" condition="![[String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)]]">
+              <param name="value" value="2" />
+            </include>
             <onclick condition="String.IsEqual(ListItem.DBType,set)">$VAR[MovieSetOnClickActionVar]</onclick>
             <onclick condition="String.IsEqual(ListItem.DBType,tvshow)">$VAR[TVShowOnClickActionVar]</onclick>
             <left>54.375</left>
@@ -1330,7 +1363,9 @@
               <param name="target" value="videos" />
               <param name="limit" value="15" />
             </include>
-            <width>1473.75</width>
+            <width>1520.625</width>
+
+
             <include content="WidgetFixedListGeometry" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)]">
               <param name="top" value="8" />
               <param name="height" value="336" />
@@ -1339,10 +1374,10 @@
               <param name="top" value="64" />
               <param name="height" value="256" />
             </include>
-            <itemlayout width="344" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)">
+            <itemlayout width="350" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18051.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18051.short)) + Integer.IsGreater(Container(18051).NumItems,0) + Integer.IsLess(Container(18051).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-350,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18051.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18051.short)) + Integer.IsGreater(Container(18051).NumItems,0) + Integer.IsLess(Container(18051).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <left>11.25</left>
                   <top>11.25</top>
@@ -1364,10 +1399,10 @@
                 </control>
               </control>
             </itemlayout>
-            <focusedlayout width="344" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)">
+            <focusedlayout width="350" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18051.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18051.short)) + Integer.IsGreater(Container(18051).NumItems,0) + Integer.IsLess(Container(18051).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-350,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18051.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18051.short)) + Integer.IsGreater(Container(18051).NumItems,0) + Integer.IsLess(Container(18051).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <include content="FlixiumHomeWidgetControlZoom">
@@ -1404,11 +1439,11 @@
                 </control>
               </control>
             </focusedlayout>
-            <itemlayout width="208" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)]">
+            <itemlayout width="200" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)]">
               <control type="group">
                 <top>16</top>
                 <left>11.25</left>
-                <animation effect="slide" end="-208,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18051.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18051.short)) + Integer.IsGreater(Container(18051).NumItems,0) + Integer.IsLess(Container(18051).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-200,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18051.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18051.short)) + Integer.IsGreater(Container(18051).NumItems,0) + Integer.IsLess(Container(18051).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <left>11.25</left>
                   <top>4</top>
@@ -1431,11 +1466,11 @@
                 </control>
               </control>
             </itemlayout>
-            <focusedlayout width="208" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)]">
+            <focusedlayout width="200" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)]">
               <control type="group">
                 <top>16</top>
                 <left>11.25</left>
-                <animation effect="slide" end="-208,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18051.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18051.short)) + Integer.IsGreater(Container(18051).NumItems,0) + Integer.IsLess(Container(18051).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-200,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18051.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18051.short)) + Integer.IsGreater(Container(18051).NumItems,0) + Integer.IsLess(Container(18051).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <animation effect="zoom" start="100" end="102" time="180" tween="sine" easing="inout" center="104,142" condition="Control.HasFocus(18051)">Conditional</animation>
@@ -1465,46 +1500,46 @@
                 </control>
               </control>
             </focusedlayout>
-            <itemlayout width="344" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)">
+            <itemlayout width="338" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18051.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18051.short)) + Integer.IsGreater(Container(18051).NumItems,0) + Integer.IsLess(Container(18051).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-338,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18051.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18051.short)) + Integer.IsGreater(Container(18051).NumItems,0) + Integer.IsLess(Container(18051).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <description>Movie genre card</description>
                   <left>11.25</left>
-                  <top>11.25</top>
-                  <width>320</width>
-                  <height>180</height>
+                  <top>15.75</top>
+                  <width>304</width>
+                  <height>171</height>
                   <texture diffuse="special://skin/extras/home-landscape-mask.png" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSurfaceVar]</texture>
                 </control>
                 <include>FlixiumGenreTileContent</include>
               </control>
             </itemlayout>
-            <focusedlayout width="344" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)">
+            <focusedlayout width="338" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.5.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18051.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18051.short)) + Integer.IsGreater(Container(18051).NumItems,0) + Integer.IsLess(Container(18051).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-338,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18051.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18051.short)) + Integer.IsGreater(Container(18051).NumItems,0) + Integer.IsLess(Container(18051).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <include content="FlixiumHomeWidgetControlZoom">
-                    <param name="center" value="172.0,101.25" />
+                    <param name="center" value="164.0,101.25" />
                     <param name="list_id" value="18051" />
                   </include>
                   <control type="image">
                     <description>Movie genre focus</description>
                     <left>1.25</left>
-                    <top>1.25</top>
-                    <width>340</width>
-                    <height>200</height>
+                    <top>5.75</top>
+                    <width>324</width>
+                    <height>191</height>
                     <texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/media/genres/focus-edge-glow.png</texture>
                     <visible>Control.HasFocus(18051)</visible>
                   </control>
                   <control type="image">
                     <description>Movie genre card</description>
                     <left>11.25</left>
-                    <top>11.25</top>
-                    <width>320</width>
-                    <height>180</height>
+                    <top>15.75</top>
+                    <width>304</width>
+                    <height>171</height>
                     <texture diffuse="special://skin/extras/home-landscape-mask.png" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSurfaceVar]</texture>
                   </control>
                   <include>FlixiumGenreTileContent</include>
@@ -1578,7 +1613,12 @@
           </control>
           <control type="fixedlist" id="18061">
             <focusposition>1</focusposition>
-            <movement>1</movement>
+            <include content="WidgetFixedListMovement" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)]">
+              <param name="value" value="5" />
+            </include>
+            <include content="WidgetFixedListMovement" condition="![[String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)]]">
+              <param name="value" value="2" />
+            </include>
             <onclick condition="String.IsEqual(ListItem.DBType,set)">$VAR[MovieSetOnClickActionVar]</onclick>
             <onclick condition="String.IsEqual(ListItem.DBType,tvshow)">$VAR[TVShowOnClickActionVar]</onclick>
             <left>54.375</left>
@@ -1623,7 +1663,9 @@
               <param name="target" value="videos" />
               <param name="limit" value="15" />
             </include>
-            <width>1473.75</width>
+            <width>1520.625</width>
+
+
             <include content="WidgetFixedListGeometry" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)]">
               <param name="top" value="8" />
               <param name="height" value="336" />
@@ -1632,10 +1674,10 @@
               <param name="top" value="64" />
               <param name="height" value="256" />
             </include>
-            <itemlayout width="344" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)">
+            <itemlayout width="350" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18061.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18061.short)) + Integer.IsGreater(Container(18061).NumItems,0) + Integer.IsLess(Container(18061).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-350,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18061.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18061.short)) + Integer.IsGreater(Container(18061).NumItems,0) + Integer.IsLess(Container(18061).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <left>11.25</left>
                   <top>11.25</top>
@@ -1657,10 +1699,10 @@
                 </control>
               </control>
             </itemlayout>
-            <focusedlayout width="344" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)">
+            <focusedlayout width="350" height="256" condition="[![String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)]] + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18061.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18061.short)) + Integer.IsGreater(Container(18061).NumItems,0) + Integer.IsLess(Container(18061).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-350,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18061.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18061.short)) + Integer.IsGreater(Container(18061).NumItems,0) + Integer.IsLess(Container(18061).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <include content="FlixiumHomeWidgetControlZoom">
@@ -1697,11 +1739,11 @@
                 </control>
               </control>
             </focusedlayout>
-            <itemlayout width="208" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)]">
+            <itemlayout width="200" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)]">
               <control type="group">
                 <top>16</top>
                 <left>11.25</left>
-                <animation effect="slide" end="-208,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18061.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18061.short)) + Integer.IsGreater(Container(18061).NumItems,0) + Integer.IsLess(Container(18061).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-200,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18061.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18061.short)) + Integer.IsGreater(Container(18061).NumItems,0) + Integer.IsLess(Container(18061).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <left>11.25</left>
                   <top>4</top>
@@ -1724,11 +1766,11 @@
                 </control>
               </control>
             </itemlayout>
-            <focusedlayout width="208" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)]">
+            <focusedlayout width="200" height="336" condition="[String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Artwork),posters) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),fullscreen) + !String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)]">
               <control type="group">
                 <top>16</top>
                 <left>11.25</left>
-                <animation effect="slide" end="-208,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18061.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18061.short)) + Integer.IsGreater(Container(18061).NumItems,0) + Integer.IsLess(Container(18061).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-200,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18061.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18061.short)) + Integer.IsGreater(Container(18061).NumItems,0) + Integer.IsLess(Container(18061).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <animation effect="zoom" start="100" end="102" time="180" tween="sine" easing="inout" center="104,142" condition="Control.HasFocus(18061)">Conditional</animation>
@@ -1758,46 +1800,46 @@
                 </control>
               </control>
             </focusedlayout>
-            <itemlayout width="344" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)">
+            <itemlayout width="338" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18061.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18061.short)) + Integer.IsGreater(Container(18061).NumItems,0) + Integer.IsLess(Container(18061).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-338,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18061.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18061.short)) + Integer.IsGreater(Container(18061).NumItems,0) + Integer.IsLess(Container(18061).NumItems,3)]">Conditional</animation>
                 <control type="image">
                   <description>Movie genre card</description>
                   <left>11.25</left>
-                  <top>11.25</top>
-                  <width>320</width>
-                  <height>180</height>
+                  <top>15.75</top>
+                  <width>304</width>
+                  <height>171</height>
                   <texture diffuse="special://skin/extras/home-landscape-mask.png" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSurfaceVar]</texture>
                 </control>
                 <include>FlixiumGenreTileContent</include>
               </control>
             </itemlayout>
-            <focusedlayout width="344" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)">
+            <focusedlayout width="338" height="256" condition="String.IsEqual(Skin.String(Flixium.Widgets.mylist.6.Id),genres)">
               <control type="group">
                 <left>11.25</left>
-                <animation effect="slide" end="-344,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18061.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18061.short)) + Integer.IsGreater(Container(18061).NumItems,0) + Integer.IsLess(Container(18061).NumItems,3)]">Conditional</animation>
+                <animation effect="slide" end="-338,0" time="0" condition="[String.IsEqual(Window(home).Property(flixium.widgets.18061.short),true)] | [String.IsEmpty(Window(home).Property(flixium.widgets.18061.short)) + Integer.IsGreater(Container(18061).NumItems,0) + Integer.IsLess(Container(18061).NumItems,3)]">Conditional</animation>
                 <control type="group">
                   <depth>DepthContentPopout</depth>
                   <include content="FlixiumHomeWidgetControlZoom">
-                    <param name="center" value="172.0,101.25" />
+                    <param name="center" value="164.0,101.25" />
                     <param name="list_id" value="18061" />
                   </include>
                   <control type="image">
                     <description>Movie genre focus</description>
                     <left>1.25</left>
-                    <top>1.25</top>
-                    <width>340</width>
-                    <height>200</height>
+                    <top>5.75</top>
+                    <width>324</width>
+                    <height>191</height>
                     <texture colordiffuse="$VAR[FlixFocusGlowColorVar]">special://skin/media/genres/focus-edge-glow.png</texture>
                     <visible>Control.HasFocus(18061)</visible>
                   </control>
                   <control type="image">
                     <description>Movie genre card</description>
                     <left>11.25</left>
-                    <top>11.25</top>
-                    <width>320</width>
-                    <height>180</height>
+                    <top>15.75</top>
+                    <width>304</width>
+                    <height>171</height>
                     <texture diffuse="special://skin/extras/home-landscape-mask.png" colordiffuse="$VAR[GlassThemeCardTintVar]">$VAR[GlassSurfaceVar]</texture>
                   </control>
                   <include>FlixiumGenreTileContent</include>

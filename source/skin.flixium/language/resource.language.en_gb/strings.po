@@ -4081,3 +4081,8 @@ msgstr ""
 msgctxt "#31805"
 msgid "{} TRACKS"
 msgstr ""
+
+#: resources/lib/home_widgets.py
+msgctxt "#31806"
+msgid "Browse TV show genres, including empty genres awaiting library content."
+msgstr ""

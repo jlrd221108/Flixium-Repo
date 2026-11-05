@@ -1,5 +1,10 @@
 # Release notes
 
+## Skin 1.1.30 (2026-11-05)
+
+- Refine widget spacing, screen-edge previews and final-item focus stops.
+- Add TV genre widgets, empty genre entries and matching artwork.
+
 ## Skin 1.1.29 (2026-11-04)
 
 - Balance home widget poster glow on all four edges.

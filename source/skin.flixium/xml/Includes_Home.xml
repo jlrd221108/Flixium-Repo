@@ -1488,6 +1488,10 @@
 		<param name="animation_left">49.25</param><param name="animation_top">47.75</param>
 		<param name="music_genre_left">52.196905</param><param name="music_genre_top">46.724711</param>
 		<param name="biography_left">49.290577</param><param name="biography_top">43.185077</param>
+		<param name="history_left">52</param><param name="history_top">45.213017</param>
+		<param name="sport_left">59.3</param><param name="sport_top">46.892057</param>
+		<param name="war_left">64.591737</param><param name="war_top">44.875474</param>
+		<param name="documentary_left">36.416942</param><param name="documentary_top">41.864315</param>
 		<param name="family_left">58.171766</param><param name="family_top">69.352856</param>
 		<param name="family_height">67.1536</param>
 		<param name="crime_left">62.042809</param><param name="crime_top">47.176798</param>
@@ -1507,7 +1511,7 @@
 				<left>$PARAM[left]</left><top>$PARAM[top]</top><width>$PARAM[width]</width><height>$PARAM[height]</height>
 				<font>FlixiumGenreLabel</font><align>center</align><aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label><textcolor>FFFFFFFF</textcolor>
-				<visible>![String.IsEqual(ListItem.Label,Horror) | String.IsEqual(ListItem.Label,Drama) | String.IsEqual(ListItem.Label,Romance) | String.IsEqual(ListItem.Label,Comedy) | String.IsEqual(ListItem.Label,Action) | String.IsEqual(ListItem.Label,Adventure) | String.IsEqual(ListItem.Label,Fantasy) | String.IsEqual(ListItem.Label,Thriller) | String.IsEqual(ListItem.Label,Mystery) | String.IsEqual(ListItem.Label,Crime) | String.IsEqual(ListItem.Label,Science Fiction) | String.IsEqual(ListItem.Label,Sci-Fi) | String.IsEqual(ListItem.Label,Animation) | String.IsEqual(ListItem.Label,Family) | String.IsEqual(ListItem.Label,Music) | String.IsEqual(ListItem.Label,Musical) | String.IsEqual(ListItem.Label,Biography)]</visible>
+				<visible>![String.IsEqual(ListItem.Label,Horror) | String.IsEqual(ListItem.Label,Drama) | String.IsEqual(ListItem.Label,Mini-Series) | String.IsEqual(ListItem.Label,Reality TV) | String.IsEqual(ListItem.Label,Romance) | String.IsEqual(ListItem.Label,Comedy) | String.IsEqual(ListItem.Label,Action) | String.IsEqual(ListItem.Label,Adventure) | String.IsEqual(ListItem.Label,Fantasy) | String.IsEqual(ListItem.Label,Thriller) | String.IsEqual(ListItem.Label,Suspense) | String.IsEqual(ListItem.Label,Mystery) | String.IsEqual(ListItem.Label,Crime) | String.IsEqual(ListItem.Label,Science Fiction) | String.IsEqual(ListItem.Label,Sci-Fi) | String.IsEqual(ListItem.Label,Animation) | String.IsEqual(ListItem.Label,Family) | String.IsEqual(ListItem.Label,Music) | String.IsEqual(ListItem.Label,Musical) | String.IsEqual(ListItem.Label,Biography) | String.IsEqual(ListItem.Label,History) | String.IsEqual(ListItem.Label,Sport) | String.IsEqual(ListItem.Label,Sports) | String.IsEqual(ListItem.Label,War) | String.IsEqual(ListItem.Label,Documentary)]</visible>
 			</control>
 			<control type="image">
 				<description>Horror Scream preview</description>
@@ -1521,7 +1525,7 @@
 				<left>$PARAM[drama_left]</left><top>$PARAM[drama_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
 				<animation effect="zoom" start="139.8" end="139.8" center="auto" time="0" condition="true">Conditional</animation>
 				<aspectratio>keep</aspectratio><texture>$VAR[FlixiumGenrePreviewVar]</texture>
-				<visible>String.IsEqual(ListItem.Label,Drama)</visible>
+				<visible>String.IsEqual(ListItem.Label,Drama) | String.IsEqual(ListItem.Label,Mini-Series) | String.IsEqual(ListItem.Label,Reality TV)</visible>
 			</control>
 			<control type="image">
 				<description>Romance supplied icon</description>
@@ -1563,7 +1567,7 @@
 				<left>$PARAM[thriller_left]</left><top>$PARAM[thriller_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
 				<animation effect="zoom" start="121.748141" end="121.748141" center="auto" time="0" condition="true">Conditional</animation>
 				<aspectratio>keep</aspectratio><texture>special://skin/media/genres/thriller-cleaver.png</texture>
-				<visible>String.IsEqual(ListItem.Label,Thriller)</visible>
+				<visible>String.IsEqual(ListItem.Label,Thriller) | String.IsEqual(ListItem.Label,Suspense)</visible>
 			</control>
 			<control type="image">
 				<description>Mystery detective magnifier icon</description>
@@ -1616,12 +1620,40 @@
 				<aspectratio>keep</aspectratio><texture>$VAR[FlixiumGenrePreviewVar]</texture>
 				<visible>String.IsEqual(ListItem.Label,Biography)</visible>
 			</control>
+			<control type="image">
+				<description>History helmet and crossed swords icon</description>
+				<left>$PARAM[history_left]</left><top>$PARAM[history_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="122.046495" end="122.046495" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>$VAR[FlixiumGenrePreviewVar]</texture>
+				<visible>String.IsEqual(ListItem.Label,History)</visible>
+			</control>
+			<control type="image">
+				<description>Sport footballer icon</description>
+				<left>$PARAM[sport_left]</left><top>$PARAM[sport_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="125.878923" end="125.878923" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>$VAR[FlixiumGenrePreviewVar]</texture>
+				<visible>String.IsEqual(ListItem.Label,Sport) | String.IsEqual(ListItem.Label,Sports)</visible>
+			</control>
+			<control type="image">
+				<description>War soldiers icon</description>
+				<left>$PARAM[war_left]</left><top>$PARAM[war_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="102.994746" end="102.994746" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>$VAR[FlixiumGenrePreviewVar]</texture>
+				<visible>String.IsEqual(ListItem.Label,War)</visible>
+			</control>
+			<control type="image">
+				<description>Documentary camera icon</description>
+				<left>$PARAM[documentary_left]</left><top>$PARAM[documentary_top]</top><width>$PARAM[icon_width]</width><height>$PARAM[icon_height]</height>
+				<animation effect="zoom" start="125.817767" end="125.817767" center="auto" time="0" condition="true">Conditional</animation>
+				<aspectratio>keep</aspectratio><texture>$VAR[FlixiumGenrePreviewVar]</texture>
+				<visible>String.IsEqual(ListItem.Label,Documentary)</visible>
+			</control>
 			<control type="label">
 				<description>Genre name beside icon</description>
 				<left>$PARAM[horror_left]</left><top>$PARAM[top]</top><width>$PARAM[horror_width]</width><height>$PARAM[height]</height>
 				<font>FlixiumGenreLabel</font><align>center</align><aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label><textcolor>FFFFFFFF</textcolor>
-				<visible>String.IsEqual(ListItem.Label,Horror) | String.IsEqual(ListItem.Label,Drama) | String.IsEqual(ListItem.Label,Romance) | String.IsEqual(ListItem.Label,Comedy) | String.IsEqual(ListItem.Label,Action) | String.IsEqual(ListItem.Label,Adventure) | String.IsEqual(ListItem.Label,Fantasy) | String.IsEqual(ListItem.Label,Thriller) | String.IsEqual(ListItem.Label,Mystery) | String.IsEqual(ListItem.Label,Crime) | String.IsEqual(ListItem.Label,Science Fiction) | String.IsEqual(ListItem.Label,Sci-Fi) | String.IsEqual(ListItem.Label,Animation) | String.IsEqual(ListItem.Label,Family) | String.IsEqual(ListItem.Label,Music) | String.IsEqual(ListItem.Label,Musical) | String.IsEqual(ListItem.Label,Biography)</visible>
+				<visible>String.IsEqual(ListItem.Label,Horror) | String.IsEqual(ListItem.Label,Drama) | String.IsEqual(ListItem.Label,Mini-Series) | String.IsEqual(ListItem.Label,Reality TV) | String.IsEqual(ListItem.Label,Romance) | String.IsEqual(ListItem.Label,Comedy) | String.IsEqual(ListItem.Label,Action) | String.IsEqual(ListItem.Label,Adventure) | String.IsEqual(ListItem.Label,Fantasy) | String.IsEqual(ListItem.Label,Thriller) | String.IsEqual(ListItem.Label,Suspense) | String.IsEqual(ListItem.Label,Mystery) | String.IsEqual(ListItem.Label,Crime) | String.IsEqual(ListItem.Label,Science Fiction) | String.IsEqual(ListItem.Label,Sci-Fi) | String.IsEqual(ListItem.Label,Animation) | String.IsEqual(ListItem.Label,Family) | String.IsEqual(ListItem.Label,Music) | String.IsEqual(ListItem.Label,Musical) | String.IsEqual(ListItem.Label,Biography) | String.IsEqual(ListItem.Label,History) | String.IsEqual(ListItem.Label,Sport) | String.IsEqual(ListItem.Label,Sports) | String.IsEqual(ListItem.Label,War) | String.IsEqual(ListItem.Label,Documentary)</visible>
 			</control>
 		</definition>
 	</include>

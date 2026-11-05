@@ -40,9 +40,10 @@ CATALOGUE = {
         option("rated", L(31656), playlist("movies", "rated"), L(31657)),
         option("random", L(31006), playlist("movies", "random"), L(31658)),
         option("sets", L(31659), "videodb://movies/sets/", L(31660)),
-        option("genres", L(31661), "videodb://movies/genres/", L(31662)),
+        option("genres", L(31661), "plugin://skin.flixium/?action=genres&media=movies", L(31662)),
     ],
     "tvshows": [
+        option("genres", L(31661), "plugin://skin.flixium/?action=genres&media=tvshows", L(31806)),
         option("all", L(31257), "videodb://tvshows/titles/", L(31663)),
         option("fullscreen", L(31664), "videodb://tvshows/titles/", L(31665)),
         option("continue", L(31250), "plugin://skin.flixium/?action=continue&media=tvshows", L(31666)),

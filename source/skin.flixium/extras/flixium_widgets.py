@@ -495,7 +495,10 @@ def list_my_tvshows(handle):
 if __name__ == "__main__":
     if sys.argv[0].startswith("plugin://"):
         action = parse_qs(sys.argv[2].lstrip("?")).get("action", [""])[0]
-        if action == "musicalbums":
+        if action == "genres":
+            from genre_widgets import directory
+            directory(int(sys.argv[1]), parse_qs(sys.argv[2].lstrip("?")).get("media", ["movies"])[0])
+        elif action == "musicalbums":
             from music_widgets import directory
             directory(int(sys.argv[1]), parse_qs(sys.argv[2].lstrip("?")).get("slot", ["1"])[0])
         elif action == "continue":
