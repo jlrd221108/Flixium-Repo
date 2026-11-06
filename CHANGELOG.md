@@ -1,5 +1,10 @@
 # Release notes
 
+## Skin 1.1.31 (2026-11-06)
+
+- Fix checksum line endings rejected by Kodi and publish fresh update URLs.
+- Validate checksum sidecars with Kodi's exact parsing rules.
+
 ## Skin 1.1.30 (2026-11-05)
 
 - Refine widget spacing, screen-edge previews and final-item focus stops.

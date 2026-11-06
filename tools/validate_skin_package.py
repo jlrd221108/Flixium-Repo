@@ -10,6 +10,13 @@ import xml.etree.ElementTree as E
 
 ROOT = Path(__file__).resolve().parents[1]
 
+def validate_checksum(data, record):
+    expected = record['sha256'].encode('ascii')
+    # Kodi stops at a space or LF, leaving a CR in a CRLF checksum.
+    kodi_checksum = data.split(b' ', 1)[0].split(b'\n', 1)[0]
+    assert kodi_checksum == expected, 'Checksum fails Kodi parsing (possible CRLF)'
+    assert data in (expected, expected + b'\n'), 'Unsafe checksum sidecar format'
+
 def validate(data, record):
     assert hashlib.sha256(data).hexdigest() == record['sha256'], 'Skin SHA256 mismatch'
     assert len(data) == record['bytes'], 'Skin size mismatch'
@@ -44,5 +51,12 @@ if __name__ == '__main__':
     args = parser.parse_args()
     manifest = json.loads((ROOT / 'package-manifest.json').read_text())
     record = next(r for r in manifest['packages'] if r.get('id') == 'skin.flixium')
-    data = args.zip.read_bytes() if args.zip else urllib.request.urlopen('https://github.com/jlrd221108/Flixium-Repo/releases/download/' + record['path'], timeout=90).read()
+    if args.zip:
+        data = args.zip.read_bytes()
+        checksum = Path(str(args.zip) + '.sha256').read_bytes()
+    else:
+        url = 'https://github.com/jlrd221108/Flixium-Repo/releases/download/' + record['path']
+        checksum = urllib.request.urlopen(url + '.sha256', timeout=90).read()
+        data = urllib.request.urlopen(url, timeout=90).read()
+    validate_checksum(checksum, record)
     validate(data, record)
